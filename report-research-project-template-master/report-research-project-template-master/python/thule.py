@@ -71,4 +71,11 @@ plt.xlabel("x (m)")
 plt.ylabel("y (m)")
 plt.show()
 
-
+##FIGURA 4. -3D: Thule
+fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+ax = plt.axes(projection='3d')
+surf=ax.plot_surface(x, y, z, rstride=1, cstride=1,
+                cmap=segmented_cmaps, edgecolor='none')
+# Add a color bar which maps values to colors.
+fig.colorbar(surf, shrink=0.5, aspect=5)
+plt.show()
