@@ -120,7 +120,7 @@ As a consequence, there is an urgent need to improve marine ice-sheets models in
 
 Also, \cite{durand2009full} showed, using the finite element code Elmer, that the full stokes modeling of the ice-sheet/ice-shelf transition they proposed can give consistent predictions of grounding-line migration, and that their approach is highly sensitive to the chosen mesh resolution. However, in their results with a grid size down $<5 km$ in the vicinity of the grounding line, predictions start to be robust because: whatever the grid size($<5km$) the steady-state grounding line position is sensibly the same (6km the standart deviation), and with a grid-size refinement in the vicinity of the grounding line (200m), the steady state solution is independent of the applied perturbation in fluidity, provided this perturbation remains monotonic.
 
-A comparison between the numerics and simulation results for the two full stokes ice sheet models FELIX-S \cite[]{leng2012parallel} and Elmer/Ice \cite[]{gagliardini2013capabilities} was presented by \cite{zhang2017comparison} and were applied to the marine ice sheet model intercomparison project for plan view models MIS-MIP3d. Both models gave similar results for the diagnostic experiment when using identical geometries and computational meshes, which can be interpreted as an indication of similarities between the two models. However, for other prognostic experiments, \cite{zhang2017comparison} found that FELIX-S grounding lines are relatively more retreated (advanced), results that are consistent with minor differences observed in the diagnostic experiment results and that \cite{zhang2017comparison} showed to be due to different choices in the implementation of basal boundary conditions in the two models (Figure \ref{comparison}). They also showed that these differences decrease with increasing horizontal grid resolution and that grounding-line positions for FELIX-S and Elmer/ice converge to within the estimated truncation error for Elmer/ice, and they proposed that an alternative estimate for the uncertainaty in the grounding line position is the span of grounding line position predicted by multiple stokes models. 
+A comparison between the numerics and simulation results for the two full stokes ice sheet models FELIX-S \cite[]{leng2012parallel} and Elmer/Ice \cite[]{gagliardini2013capabilities} was presented by \cite{zhang2017comparison} and were applied to the marine ice sheet model intercomparison project for plan view models MIS-MIP3d. Both models gave similar results for the diagnostic experiment when using identical geometries and computational meshes, which can be interpreted as an indication of similarities between the two models. However, for other prognostic experiments, \cite{zhang2017comparison} found that FELIX-S grounding lines are relatively more retreated; results that are consistent with minor differences observed in the diagnostic experiment results and that \cite{zhang2017comparison} showed to be due to different choices in the implementation of basal boundary conditions in the two models (Figure \ref{comparison}). They also showed that these differences decrease with increasing horizontal grid resolution and that grounding-line positions for FELIX-S and Elmer/ice converge to within the estimated truncation error for Elmer/ice, and they proposed that an alternative estimate for the uncertainaty in the grounding line position is the span of grounding line position predicted by multiple stokes models. 
 
 \begin{figure}[!h]
 	\centering
@@ -179,6 +179,10 @@ But these approximations are not mandatory: the Full Stokes model is still the m
 In this project, only the Shallow Shelf approximation is made, as this is how future projections of Greenland and Antarctica are done with the Elmer/Ice model.
 \subsubsection{The Elmer/Ice model}
 In order to model ice sheets, both finite difference method (FDM) and finite element method (FEM) are used (e.g. ISSM (https://issm.jpl.nasa.gov/) and Elmer/ice). Those are numerical methods, since most of the time analytical solutions are challenging, or even impossible to obtain. Finite Difference Method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the Finite Element Method.
+
+Elmer is an open source, parallel, Finite element code, mainly depeloped by the CSC in Finland. The ice sheet/ice flow model Elmer/ice is based on Elmer and includes developments related to glaciological problems. Elmer/ice includes a large number of dedicated solvers and users functions.
+Elmer/ice solves the full-stokes equations for various ice rheologies (classical  Glen's flow law, anisotropic laws and porous compressible firns/snow law). It includes solvers for the classical asymptotical expansions of the stokes equations, namely the shallow 	ice approximation (SIA) and the shallow shelf approximation (SSA). All these equations can be solved diagnostically or in transient, allowing the displacement of the boundaries. 
+
 It considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, on which are applied the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines, or solvers. To each equation corresponds one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows to visualise the evolution of the flow through time.
 \subsection{Numerical setup}
 The objective is to simulate the flow of the ice sheets, starting from certain topography in the idealised case. We will have the possibility to measure and follow the change in the position of the grounding line. The project consists in making and analysing these simulations, at different resolutions and spacial scales, and also by varying some key parameters to estimate their impact and importance in the variation of the position in the grounding line. 
@@ -226,7 +230,12 @@ With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
 	\caption{Thule bedrock topview.}
 	\label{Thule_2D}
 \end{figure}
-
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Thule_3D}
+	\caption{Thule bedrock topography 3D sideview.}
+	\label{Thule_3D}
+\end{figure}
 \subsubsection{Boundary conditions}
 Boundary conditions are needed in order to solve differential equations. It will be assumed that:
 \begin{itemize}
