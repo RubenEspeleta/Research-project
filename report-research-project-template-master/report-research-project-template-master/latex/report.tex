@@ -180,7 +180,100 @@ In this project, only the Shallow Shelf approximation is made, as this is how fu
 \subsubsection{The Elmer/Ice model}
 In order to model ice sheets, both finite difference method (FDM) and finite element method (FEM) are used (e.g. ISSM (https://issm.jpl.nasa.gov/) and Elmer/ice). Those are numerical methods, since most of the time analytical solutions are challenging, or even impossible to obtain. Finite Difference Method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the Finite Element Method.
 It considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, on which are applied the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines, or solvers. To each equation corresponds one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows to visualise the evolution of the flow through time.
+\subsection{Numerical setup}
+The objective is to simulate the flow of the ice sheets, starting from certain topography in the idealised case. We will have the possibility to measure and follow the change in the position of the grounding line. The project consists in making and analysing these simulations, at different resolutions and spacial scales, and also by varying some key parameters to estimate their impact and importance in the variation of the position in the grounding line. 
+\subsubsection{Bedrock and topography}
+The idealised model consists of a circular bedrock configuration $Bed$ (Figure \ref{circular_topo_top} and Figure \ref{circular_topo_jet}) given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=R-cos(2\theta)\frac{R}{2}
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{R2}^;
+\end{equation}
+Where $R=800x10^3 m$, $Bc=0.9 x 10^3 m$, and $BI=-2 x 10^3 m$. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/circular_topo_top}
+	\caption{Circular bedrock top view.}
+	\label{circular_topo_top}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/circular_topo_jet}
+	\caption{Circular bedrock sideview.}
+	\label{circular_topo_jet}
+\end{figure}
+The thule bedrock configuration (Bed) is shown in Figure \ref{Thule_2D} and is given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=R-cos(2\theta)\frac{R}{2};
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{R^2};
+\end{equation}
+\begin{equation}
+	Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
+\end{equation}
+With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Thule_2D}
+	\caption{Thule bedrock topview.}
+	\label{Thule_2D}
+\end{figure}
+
+\subsubsection{Boundary conditions}
+Boundary conditions are needed in order to solve differential equations. It will be assumed that:
+\begin{itemize}
+	\item The bedrock is impermeable (The vertical component of the ice flow velocity is 0). 
+	\item The flow follows Weertman friction law.
+	\item Mass acumulation is a constant parameter.
+	\item The simulation will be performed on a quarter of the domain, since the geometry of the topography is symmetric, which allows to have free slip boundary condition at the left and down side of the topography, and open boundary condition at the right and top side of the domain. 
+\end{itemize}
+\subsubsection{Physical parameters}
+There will be two types of physical parameters in the simulation, the ones we will assume constant during all our simulations, and the ones which can vary during and in between the simulation. The figure \ref{Constants_parameters} presents the constant parameters that will be used
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Constants_parameters}
+	\caption{Constants parameters based on Hilmar Gudmundsson's experiment for thule's configuration.}
+	\label{Constants_parameters}
+\end{figure}
+The numerical resolution will be our variable physical parameter, which we will vary such that $\delta x= \delta y \in [0.250, 10] km$.
+\subsubsection{External forcing}
+We will assume that the only external force acting is the gravity ($g=9.81 m/s^2$), which is translated to the weight of the ice sheet and the flotation force of this in the ocean water.
+\subsubsection{Initial condition}
+The simulation starts from rest state, were no ice is formed. 
+As stated before, the flow will follow the linear Weertman friction law at the base of the ice sheet:
+\begin{equation}
+	\tau_b=\beta u;
+\end{equation}
+Where $\tau$ is the friction shear stress, $\beta$ is the basal friction coefficient, and $u$ is the velocity.
+Comparisons were made using friction coefficients ranging from $\beta=10^-8$ to simulate a friction close to 0, to $\beta=10^-2$. This coefficient is also the one chosen to perform the simulations. 
+\subsubsection{Time step}
+The Courant-Friedrichs-Lewy (CFL) condition is a necessary condition to solve numerically partial differential equations. It states that the distance a variable travels between two time steps must be smaller than the distance between two points of the mesh \cite[]{courant1967partial}. It is needed that:
+\begin{equation}
+	C=\frac{u\Delta t}{\Delta x}<Cmax;
+\end{equation}
+With C the courant number, $u$ the magnitude of the velocity, $\Delta t$ the time step, $\Delta x$ the horizontal resolution, and Cmax = 1. This implies then, for a given mesh:
+\begin{equation}
+	\Delta t < \frac{\Delta x}{u};
+\end{equation}
+This is a safe approximation. Cmax then has to be estimated running different parameters in the simulation and see if it converges or not. In order to satisfy the CFL condition, a good starting point is 1 year, since it works propertly and converges even for a resolution of 1km.
+However, in this experiment it is asked to report the results every 10 years, and for this reason we will save the results of the simulation with a frequency of 10 years. 
 \section{Tasks schedule}
+Figure \ref{Schedule} shows the tasks schedule for the project, that will be held between the 12th of january 2023 and the 5th of may 2023. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Schedule}
+	\caption{Tasks schedule.}
+	\label{Schedule}
+\end{figure}
+The first two months, we will carry on the simulation of the first idealised case, for a circular topography. From february to march we will analyze the results from the first idealised case, and in the month of april we will carry on the simulation of the more realistic but still idealised thule topography. We will spend the last days of april analyzing the results of the lasts simulations and compare the results with different resolutions, to finally obtain a relation that allows us to see the change in the position of the grounding line, and working on the elaboration of the final report the first days of may. 
 \bibliographystyle{jfm}
 \bibliography{./biblio}
 \end{document}
