@@ -27,49 +27,78 @@
 %}
 
 \usepackage{titling}
+\usepackage{ragged2e}
 
-\pretitle{%
-\includegraphics[width=0.3\linewidth]{../fig/logo_UGA}
-\hspace{5cm}
-\includegraphics[width=0.3\linewidth]{../fig/logo_IGE}
-\vspace{2cm}
-\begin{center}
-\LARGE
-}
-\posttitle{\end{center}}
-\postdate{\par\end{center}\vspace{12cm}~}
+
+
 
 \usepackage[nottoc,numbib]{tocbibind}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\title{Numerical experiments of glacial inceptions in Northern Europe}
-\author{Ruben ESPELETA BOLIVAR}
+
 
 % to define new commands
-\newcommand{\R}{\mathcal{R}}
-\newcommand{\mean}[1]{\langle #1 \rangle}
+%\newcommand{\R}{\mathcal{R}}
+%\newcommand{\mean}[1]{\langle #1 \rangle}
 
 % to show the pieces of advice
-\newcommand{\advice}[1]{{\it #1}}
+%\newcommand{\advice}[1]{{\it #1}}
 % to hide the pieces of advice
 % \newcommand{\advice}[1]{}
 
 \begin{document}
 
+\begin{center}
+	
+	\begin{figure} [t]
+		\includegraphics[width=0.3\linewidth]{../fig/logo_UGA.png}
+		\hspace{5.0cm}
+		\includegraphics[width=0.3\linewidth]{../fig/logo_IGE.png}
+		\vspace{2.0cm}
+	\end{figure}
+	
+	\begin{Large}
+		\textbf{Numerical experiments of glacial inceptions in Northern Europe}
+	\end{Large}
+	
+	\vspace{0.4cm}
+	
+	\textbf{ESPELETA BOLIVAR, Ruben Dario}
+	
+	\vspace{3.0cm}
+	
+	
+	\textbf{Research project}\\
+	Presented in partial fulfillment of the requirements for the degree of\\
+	\textbf{Master applied mechanics}\\
+	
+	
+	\vspace{3.0cm}
+	
+	Université Grenoble Alpes\\
+	\textbf{\today}
+	\vspace{4.0cm}
+	
+\end{center}
+
+\flushleft{
+	Project Advisor(s):\\
+	Cruz Garcia Molina
+}
 \renewcommand{\labelitemi}{$\bullet$}
 
-\maketitle
 
 \tableofcontents
 
 \newpage
-
 \begin{abstract}
-	This is the abstract part
+	\justifying
+	This is the abstract part. 
 \end{abstract}
 \pagebreak
-\section{Introduction}
 
+\section{Introduction}
+\justifying
 Glaciers and ice sheets dinamics play a vital role in the global oceanic and climatic systems. In Antarctica, for example, cold water is formed and because freshwater ice at the surface freezes into icebergs, the water is not only cold, but salty. This cold, dense, salty water sinks into the ocean floor, and drives the global ocean currents, being replaced with warmer surface water from the equatorial regions. This is known as the global thermohaline circulation, and these ocean currents drive the earth's climatic system (insertar referencia de la pagina).
 
 Historically, this type of climatic system and processes has been affected by climate change. Water melting from glaciers has the potential to raise sea levels (insertar referencia pagina) and global warming causes this melting of ice caps. If all the ice were to melt completely, the sea level would rise by an estimated 65m \cite[]{morlighem2017bedmachine,haywood2011pliocene} and force populations to emigrate their land submerged by water. This may be an indication of how impactfull could be the climate change in the future.
