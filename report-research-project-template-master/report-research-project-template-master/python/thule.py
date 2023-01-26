@@ -63,7 +63,7 @@ plt.show()
 
 ## FIGURA 3. - 2D: Thule
 # Crea la malla para graficar:
-x,y = np.mgrid[-1600e3:1600e3:500j, -1600e3:1600e3:500j]
+x,y = np.mgrid[-1600e3:1600e3:500j, -1600e3:1600e3:800j]
 z = b(y,x,R,Bc,Bl)
 plt.imshow(z,extent=[-1600e3,1600e3,-1600e3,1600e3],cmap=segmented_cmaps,vmin=-3500,vmax=2000)
 plt.colorbar()
