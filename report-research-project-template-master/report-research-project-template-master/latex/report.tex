@@ -93,9 +93,8 @@
 \newpage
 \begin{abstract}
 	\justifying
-	In response to the perturbation of global climate systems, such as climate change, glaciars are losing mass. This mass loss has had consequences on sea level rise, but also on the climate system itself as a whole through different phenomena. 
-	
-	The present project's aim is to perform numerical simulations using the Finite element method Elmer/Ice. The impact of the variation of different parameters that are involved in idealised tophography ice sheet flows will be studied. These results will help us to better understand the behiavor and the importance that these parameters have on Northern Europe ice sheets dynamics. Through these analysis of idealised cases in the present project, we aim to understand the behavior in more realistic scenarios of past and present glacial inceptions in Northern Europe. 
+
+	The present project aims to understand the impact of the variation of parameters in the glaciers dynamics, such as the grounding line. Using the finite-element code Elmer/Ice, we propose simulations based on idealised topographies of Northern Europe glaciers. These idealised topographies are set up in the CalvinMIP experiment, and using these, we will perform experiments varying parameters such as the resolution. We will use different resolutions to compare and analyze the behaviour of the grounding line position in the different idealised cases. The analysis of these results will let us understand the dynamics of glaciers in the Northern Europe, and to better predict their behaviours.
 \end{abstract}
 \pagebreak
 
@@ -196,7 +195,7 @@ In the aim to study the last glacier inception over the Nothern Europe, we run a
 \subsection{Topographic profiles}
 This numerical experiment uses two different topographic profiles. A cone and a more realistic topography (thule).
 \subsubsection{Cone}
-	The idealised model consists of a circular bedrock configuration $Bed$ (Figure \ref{circular_topo_top} and Figure \ref{circular_topo_jet}) given by:
+	The idealised model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
 	\begin{equation}
 		\theta=arctan2(y,x);
 	\end{equation}
@@ -216,7 +215,7 @@ This numerical experiment uses two different topographic profiles. A cone and a 
 	\end{figure}
 
 \subsubsection{Thule}
- The thule bedrock configuration is shown in Figure \ref{Thule_2D} and is given by:
+ The thule bedrock configuration is shown in Figure \ref{Thule_3D} and \ref{Thule_3D1} and is given by:
 	\begin{equation}
 		\theta=arctan2(y,x);
 	\end{equation}
@@ -237,6 +236,12 @@ This numerical experiment uses two different topographic profiles. A cone and a 
 		\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
 		\label{Thule_3D}
 	\end{figure}
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D1}
+	\caption{Thule bedrock topography 3D with a front view.}
+	\label{Thule_3D1}
+\end{figure}
 
 \subsection{Boundary conditions}
 Boundary conditions are needed in order to solve differential equations. It will be assumed that:
@@ -309,6 +314,7 @@ The work plan and detailed tasks for the project will be carried out as follows:
 \begin{itemize}
 	\item First week: We will prepare the presentation of the results.
 \end{itemize}
+\pagebreak
 \bibliographystyle{jfm}
 \bibliography{./biblio}
 \end{document}
