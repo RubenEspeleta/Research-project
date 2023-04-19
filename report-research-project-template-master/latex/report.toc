@@ -1,0 +1,21 @@
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Glacier dynamics}{4}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Mass and movement balance equations}{4}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Grounding line stability}{6}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Numerical model}{6}{section.3}%
+\contentsline {subsection}{\numberline {3.1}The Elmer/Ice finite element method}{6}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Tophographic profiles}{7}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Cone}{7}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Thule}{7}{subsubsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.3}Boundary conditions}{8}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Physical constants}{8}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Numerical parameters}{9}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}External forcing}{10}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Initial condition}{10}{subsubsection.3.4.3}%
+\contentsline {subsubsection}{\numberline {3.4.4}Time step}{10}{subsubsection.3.4.4}%
+\contentsline {section}{\numberline {4}Results}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Cone configuration}{10}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Thule configuration}{12}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Comparison with different constant parameters}{14}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discussion}{14}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{16}{section.6}%

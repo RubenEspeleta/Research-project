@@ -1,0 +1,173 @@
+\begin{thebibliography}{}
+
+\bibitem[Allison et~al., 2009]{allison2009ice}
+Allison, I., Alley, R., Fricker, H., Thomas, R., and Warner, R. (2009).
+\newblock Ice sheet mass balance and sea level.
+\newblock {\em Antarctic Science}, 21(5):413--426.
+
+\bibitem[Bamber et~al., 2001]{bamber2001new}
+Bamber, J.~L., Layberry, R.~L., and Gogineni, S. (2001).
+\newblock A new ice thickness and bed data set for the greenland ice sheet: 1.
+  measurement, data reduction, and errors.
+\newblock {\em Journal of Geophysical Research: Atmospheres},
+  106(D24):33773--33780.
+
+\bibitem[Brunt et~al., 2010]{brunt2010mapping}
+Brunt, K.~M., Fricker, H.~A., Padman, L., Scambos, T.~A., and O’Neel, S.
+  (2010).
+\newblock Mapping the grounding zone of the ross ice shelf, antarctica, using
+  icesat laser altimetry.
+\newblock {\em Annals of Glaciology}, 51(55):71--79.
+
+\bibitem[Cheng et~al., 2019]{cheng2019full}
+Cheng, G., L{\"o}tstedt, P., and von Sydow, L. (2019).
+\newblock A full stokes subgrid model for simulation of grounding line
+  migration in ice sheets.
+\newblock {\em arXiv preprint arXiv:1908.10751}.
+
+\bibitem[Chugunov and Wilchinsky, 1996]{chugunov1996modelling}
+Chugunov, V.~A. and Wilchinsky, A.~V. (1996).
+\newblock Modelling of a marine glacier and ice-sheet-ice-shelf transition zone
+  based on asymptotic analysis.
+\newblock {\em Annals of Glaciology}, 23:59--67.
+
+\bibitem[Clark et~al., 2015]{clark2015recent}
+Clark, P.~U., Church, J.~A., Gregory, J.~M., and Payne, A.~J. (2015).
+\newblock Recent progress in understanding and projecting regional and global
+  mean sea level change.
+\newblock {\em Current Climate Change Reports}, 1(4):224--246.
+
+\bibitem[Courant et~al., 1967]{courant1967partial}
+Courant, R., Friedrichs, K., and Lewy, H. (1967).
+\newblock On the partial difference equations of mathematical physics.
+\newblock {\em IBM journal of Research and Development}, 11(2):215--234.
+
+\bibitem[Durand et~al., 2009a]{durand2009marine}
+Durand, G., Gagliardini, O., De~Fleurian, B., Zwinger, T., and Le~Meur, E.
+  (2009a).
+\newblock Marine ice sheet dynamics: Hysteresis and neutral equilibrium.
+\newblock {\em Journal of Geophysical Research: Earth Surface}, 114(F3).
+
+\bibitem[Durand et~al., 2009b]{durand2009full}
+Durand, G., Gagliardini, O., Zwinger, T., Le~Meur, E., and Hindmarsh, R.~C.
+  (2009b).
+\newblock Full stokes modeling of marine ice sheets: influence of the grid
+  size.
+\newblock {\em Annals of Glaciology}, 50(52):109--114.
+
+\bibitem[Fricker et~al., 2009]{fricker2009mapping}
+Fricker, H.~A., Coleman, R., Padman, L., Scambos, T.~A., Bohlander, J., and
+  Brunt, K.~M. (2009).
+\newblock Mapping the grounding zone of the amery ice shelf, east antarctica
+  using insar, modis and icesat.
+\newblock {\em Antarctic Science}, 21(5):515--532.
+
+\bibitem[Friedl et~al., 2020]{friedl2020remote}
+Friedl, P., Weiser, F., Fluhrer, A., and Braun, M.~H. (2020).
+\newblock Remote sensing of glacier and ice sheet grounding lines: A review.
+\newblock {\em Earth-Science Reviews}, 201:102948.
+
+\bibitem[Glen, 1958]{glen1958flow}
+Glen, J. (1958).
+\newblock The flow law of ice: A discussion of the assumptions made in glacier
+  theory, their experimental foundations and consequences.
+\newblock {\em IASH Publ}, 47(171):e183.
+
+\bibitem[Goldberg et~al., 2018]{goldberg2018representing}
+Goldberg, D., Snow, K., Holland, P., Jordan, J., Campin, J.-M., Heimbach, P.,
+  Arthern, R., and Jenkins, A. (2018).
+\newblock Representing grounding line migration in synchronous coupling between
+  a marine ice sheet model and a z-coordinate ocean model.
+\newblock {\em Ocean Modelling}, 125:45--60.
+
+\bibitem[Haywood et~al., 2011]{haywood2011pliocene}
+Haywood, A., Dowsett, H.~J., Robinson, M.~M., Stoll, D.~K., Dolan, A., Lunt,
+  D., Otto-Bliesner, B., and Chandler, M. (2011).
+\newblock Pliocene model intercomparison project (pliomip): experimental design
+  and boundary conditions (experiment 2).
+\newblock {\em Geoscientific Model Development}, 4(3):571--577.
+
+\bibitem[Hindmarsh, 1996]{hindmarsh1996stability}
+Hindmarsh, R. (1996).
+\newblock Stability of ice rises and uncoupled marine ice sheets.
+\newblock {\em Annals of Glaciology}, 23:105--115.
+
+\bibitem[Hutter, 1982]{hutter1982mathematical}
+Hutter, K. (1982).
+\newblock A mathematical model of polythermal glaciers and ice sheets.
+\newblock {\em Geophysical \& Astrophysical Fluid Dynamics}, 21(3-4):201--224.
+
+\bibitem[Konrad et~al., 2018]{konrad2018net}
+Konrad, H., Shepherd, A., Gilbert, L., Hogg, A.~E., McMillan, M., Muir, A., and
+  Slater, T. (2018).
+\newblock Net retreat of antarctic glacier grounding lines.
+\newblock {\em Nature Geoscience}, 11(4):258--262.
+
+\bibitem[Larour et~al., 2012]{larour2012continental}
+Larour, E., Seroussi, H., Morlighem, M., and Rignot, E. (2012).
+\newblock Continental scale, high order, high spatial resolution, ice sheet
+  modeling using the ice sheet system model (issm).
+\newblock {\em Journal of Geophysical Research: Earth Surface}, 117(F1).
+
+\bibitem[MacAyeal, 1989]{macayeal1989large}
+MacAyeal, D.~R. (1989).
+\newblock Large-scale ice flow over a viscous basal sediment: Theory and
+  application to ice stream b, antarctica.
+\newblock {\em Journal of Geophysical Research: Solid Earth},
+  94(B4):4071--4087.
+
+\bibitem[Morlighem et~al., 2017]{morlighem2017bedmachine}
+Morlighem, M., Williams, C.~N., Rignot, E., An, L., Arndt, J.~E., Bamber,
+  J.~L., Catania, G., Chauch{\'e}, N., Dowdeswell, J.~A., Dorschel, B., et~al.
+  (2017).
+\newblock Bedmachine v3: Complete bed topography and ocean bathymetry mapping
+  of greenland from multibeam echo sounding combined with mass conservation.
+\newblock {\em Geophysical research letters}, 44(21):11--051.
+
+\bibitem[Parizek and Walker, 2010]{parizek2010implications}
+Parizek, B.~R. and Walker, R.~T. (2010).
+\newblock Implications of initial conditions and ice--ocean coupling for
+  grounding-line evolution.
+\newblock {\em Earth and Planetary Science Letters}, 300(3-4):351--358.
+
+\bibitem[Pritchard et~al., 2012]{pritchard2012antarctic}
+Pritchard, H., Ligtenberg, S.~R., Fricker, H.~A., Vaughan, D.~G., van~den
+  Broeke, M.~R., and Padman, L. (2012).
+\newblock Antarctic ice-sheet loss driven by basal melting of ice shelves.
+\newblock {\em Nature}, 484(7395):502--505.
+
+\bibitem[Schoof, 2007a]{schoof2007ice}
+Schoof, C. (2007a).
+\newblock Ice sheet grounding line dynamics: Steady states, stability, and
+  hysteresis.
+\newblock {\em Journal of Geophysical Research: Earth Surface}, 112(F3).
+
+\bibitem[Schoof, 2007b]{schoof2007marine}
+Schoof, C. (2007b).
+\newblock Marine ice-sheet dynamics. part 1. the case of rapid sliding.
+\newblock {\em Journal of Fluid Mechanics}, 573:27--55.
+
+\bibitem[Van~der Veen, 1985]{van1985response}
+Van~der Veen, C. (1985).
+\newblock Response of a marine ice sheet to changes at the grounding line.
+\newblock {\em Quaternary Research}, 24(3):257--267.
+
+\bibitem[Vieli and Payne, 2005]{vieli2005assessing}
+Vieli, A. and Payne, A.~J. (2005).
+\newblock Assessing the ability of numerical ice sheet models to simulate
+  grounding line migration.
+\newblock {\em Journal of Geophysical Research: Earth Surface}, 110(F1).
+
+\bibitem[Weertman, 1974]{weertman1974stability}
+Weertman, J. (1974).
+\newblock Stability of the junction of an ice sheet and an ice shelf.
+\newblock {\em Journal of Glaciology}, 13(67):3--11.
+
+\bibitem[Zhang et~al., 2017]{zhang2017comparison}
+Zhang, T., Price, S., Ju, L., Leng, W., Brondex, J., Durand, G., and
+  Gagliardini, O. (2017).
+\newblock A comparison of two stokes ice sheet models applied to the marine ice
+  sheet model intercomparison project for plan view models (mismip3d).
+\newblock {\em The Cryosphere}, 11(1):179--190.
+
+\end{thebibliography}

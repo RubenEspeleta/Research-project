@@ -1,0 +1,21 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Glacier dynamics}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Mass and movement balance equations}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Grounding line stability}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Numerical model}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{The Elmer/Ice finite element method}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.2}{Tophographic profiles}{section.3}% 7
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Cone}{subsection.3.2}% 8
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Thule}{subsection.3.2}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Boundary conditions}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Physical constants}{section.3}% 11
+\BOOKMARK [3][-]{subsubsection.3.4.1}{Numerical parameters}{subsection.3.4}% 12
+\BOOKMARK [3][-]{subsubsection.3.4.2}{External forcing}{subsection.3.4}% 13
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Initial condition}{subsection.3.4}% 14
+\BOOKMARK [3][-]{subsubsection.3.4.4}{Time step}{subsection.3.4}% 15
+\BOOKMARK [1][-]{section.4}{Results}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Cone configuration}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Thule configuration}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.3}{Comparison with different constant parameters}{section.4}% 19
+\BOOKMARK [1][-]{section.5}{Discussion}{}% 20
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 21
