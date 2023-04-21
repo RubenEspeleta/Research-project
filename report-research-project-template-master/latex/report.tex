@@ -272,66 +272,102 @@ As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as
 
 Figure \ref{hvelocity and h10km} shows a snap of the final steady state result of the simulation for the computation of two of the variables, namely the thickness and thickness velocity (or thickness rate change) of the ice sheet with the 10km mesh resolution, in figure \ref{h10km} and \ref{hvelocity10km}, respectively. It can be observed that the final rate change for the ice thickness varies within a range of very small values in all the domain, and for this reason, we conclude the convergence of the simulation. 
 
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.9\linewidth]{../fig/Profiles_Cone_combined_domains.png}
-		\caption{Circular domain experimental profiles proposed for cone configuration. Highlighted the quarter of the domain.}
-		\label{profiles}
-	\end{figure}
+\begin{figure}[!h]
+	\centering % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_50km_CONE.png}
+		\caption{CONE50KM}
+		\label{figCONE50KM}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_20km_CONE.png}
+		\caption{CONE20KM}
+		\label{figCONE20}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_10km_CONE.png}
+		\caption{CONE10KM}
+		\label{figCONE10KM}
+	\end{subfigure}
+	
+	\medskip
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_5km_CONE.png}
+		\caption{CONE5KM}
+		\label{figCONE5}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_2km_CONE.png}
+		\caption{CONE2KM}
+		\label{figCONE2}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_1km_CONE.png}
+		\caption{CONE1}
+		\label{CONE1KM}
+	\end{subfigure}
+	\caption{Impact of the resolution in the grounded area.}
+	\label{figCONO1}
+\end{figure}
+
 
 \begin{figure}[!h]
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/h_10km_quarter.png}
-  \caption{Thickness of the ice denoted as $h$.}
-  \label{h10km}
-\end{subfigure}%
-\hskip -10ex
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/hvelocity_10km_quarter.png}
-  \caption{Ice thickness velocity in the domain.}
-  \label{hvelocity10km}
-\end{subfigure}
-\caption{Plots of the ice sheet thickness and the ice thickness velocity at the steady state for 10km resolution mesh.}
-\label{hvelocity and h10km}
+	\centering
+	\includegraphics[width=0.9\linewidth]{../fig/Profiles_Cone_combined_domains.png}
+	\caption{Circular domain experimental profiles proposed for cone configuration. Highlighted the quarter of the domain.}
+	\label{profiles}
 \end{figure}
 
 \begin{figure}[!h]
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/h_5km_quarter.png}
-  \caption{Thickness of the ice denoted as $h$.}
-  \label{h5km}
-\end{subfigure}%
-\hskip -10ex
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/hvelocity_5km_quarter.png}
-  \caption{Ice thickness velocity in the domain.}
-  \label{hvelocity5km}
-\end{subfigure}
-\caption{Plots of the ice sheet thickness and the ice thickness velocity at the steady state for 5km resolution mesh.}
-\label{hvelocity and h5km}
+	\centering % <-- added
+	\begin{minipage}[t]{.25\textwidth}
+		\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{../fig/h_10km_quarter.png}
+			\caption{Ice thickness for 10km resolution.}
+			\label{h10km}
+		\end{subfigure}\hfil % <-- added
+		\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{../fig/h_5km_quarter.png}
+			\caption{Ice thickness 5km resolution.}
+			\label{h5km}
+		\end{subfigure}\hfil % <-- added
+		\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{../fig/h_2km_quarter.png}
+			\caption{Ice thickness for 2km resolution.}
+			\label{h2km}
+		\end{subfigure}
+		\begin{subfigure}{\textwidth}
+		\includegraphics[width=\linewidth]{../fig/h_1km_quarter.png}
+		\caption{Ice thickness for 1km resolution.}
+		\label{h1km}
+	    \end{subfigure}
+	\end{minipage}\hfil
+	\begin{minipage}[t]{.25\textwidth}
+		\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{../fig/hvelocity_10km_quarter.png}
+			\caption{Ice sheet thickness velocity 10km.}
+			\label{hvelocity10km}
+		\end{subfigure}\hfil % <-- added
+		\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{../fig/hvelocity_5km_quarter.png}
+			\caption{Ice sheet thickness velocity 5km}
+			\label{hvelocity5km}
+		\end{subfigure}\hfil % <-- added
+		\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{../fig/hvelocity_2km_quarter.png}
+			\caption{Ice sheet thickness velocity 2km}
+			\label{hvelocity2km}
+		\end{subfigure}
+				\begin{subfigure}{\textwidth}
+			\includegraphics[width=\linewidth]{../fig/hvelocity_1km_quarter.png}
+			\caption{Ice sheet thickness velocity 1km}
+			\label{hvelocity1km}
+		\end{subfigure}	
+	\end{minipage}
+	\caption{Ice thickness and ice sheet thickness rate of change for quarter domain per each resolution after steady state.}
+	\label{h_and_h_velocities_cone}
 \end{figure}
 
-\begin{figure}[!h]
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/h_2km_quarter.png}
-  \caption{Thickness of the ice denoted as $h$.}
-  \label{h2km}
-\end{subfigure}%
-\hskip -10ex
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/hvelocity_2km_quarter.png}
-  \caption{Ice thickness velocity in the domain.}
-  \label{hvelocity2km}
-\end{subfigure}
-\caption{Plots of the ice sheet thickness and the ice thickness velocity at the steady state for 2km resolution mesh.}
-\label{hvelocity and h2km}
-\end{figure}
 
 For this configuration, the simulations were done using different resolutions with the same parameters listed in table \ref{Physical constants}. 
 	\begin{figure}[!h]
@@ -431,45 +467,6 @@ For the results after the steady state is reached, figure \ref{zb_zs_10_5_capron
 	\label{fig:images}
 \end{figure}
 
-\begin{figure}[!h]
-	\centering % <-- added
-	\begin{minipage}[t]{.25\textwidth}
-		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/Grounded_zone_50km.png}
-			\caption{image1}
-			\label{fig:1}
-		\end{subfigure}\hfil % <-- added
-		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/Grounded_zone_20km.png}
-			\caption{image2}
-			\label{fig:2}
-		\end{subfigure}\hfil % <-- added
-		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/Grounded_zone_10km.png}
-			\caption{image3}
-			\label{fig:3}
-		\end{subfigure}
-	\end{minipage}\hfil
-	\begin{minipage}[t]{.25\textwidth}
-		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/Grounded_zone_5km.png}
-			\caption{image4}
-			\label{fig:4}
-		\end{subfigure}\hfil % <-- added
-		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/Grounded_zone_2km.png}
-			\caption{image5}
-			\label{fig:5}
-		\end{subfigure}\hfil % <-- added
-		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/Grounded_zone_1km.png}
-			\caption{image6}
-			\label{fig:6}
-		\end{subfigure}
-	\end{minipage}
-	\caption{Fasi del processo di impregnazione}
-	\label{fig:images}
-\end{figure}
 
  \begin{figure}[!h]
 \begin{subfigure}{.6\textwidth}
@@ -526,8 +523,17 @@ Figure \ref{Grounding_line_HalbraneB} shows a detailed plot of the comparison of
 	\end{figure}
 
 
-\subsection{Comparison with different constant parameters}
-Here we show the different results obtained with one complete domain for the previous constant parameters set up by the Calvin MIP project before the changes, which differences will be discussed in the next section. 
+\subsection{Comparison of parameters for each resolution for the different configurations}
+In this part of the experiment, we compared the time spent during the simulations as a function of the number of nodes. The figure \ref{TimeVsNumberofnodes} shows this relation for both experiment, the cirular and the thule profile domain, both for the domain complete. 
+
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{../fig/TimeVsNumberOfNodes.png}
+	\caption{Comparison of the time spent by the simulation as a function of the number of nodes for both configurations.}
+	\label{TimeVsNumberofnodes}
+\end{figure}
+
+The time shown in figure \ref{TimeVsNumberofnodes} is the time spent by the computer using the 32 processors to run the simulations
 \section{Discussion}
 Here we will discuss the differences found between the results obtained for the different spacial resolutions for thule and cone, for the complete domain using the previous constant parameters, and the results obtained for the quarter domain using the new parameters. We will discuss the accuracy of the model for the different resolutions in predicting the position of the grounding line for both types of configurations. We will compare the position of the grounding line as a function of the resolution. 
 Also, we will discuss the time spent in the simulations as a function of the number of processors used (plot) and we can try to discuss an optimum number of processors that can be used (will be reviewed).
