@@ -370,21 +370,30 @@ Figure \ref{hvelocity and h10km} shows a snap of the final steady state result o
 
 
 For this configuration, the simulations were done using different resolutions with the same parameters listed in table \ref{Physical constants}. 
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.8\linewidth]{../fig/zb_zs_10km_cone.png}
-		\caption{Height of the upper and down part of the ice sheet, denoted as zb and zs, respectively, for a 10km resolution mesh using a quarter of the domain.}
-		\label{zb_zs_10km}
-	\end{figure}
-Figure \ref{zb_zs_10km} shows the first simulation made for this resolution, and the result shown is the thickness of the ice sheet, as a function of the horizontal distance. We see in red the position of the bedrock, so this way the result shows that the zone where the lower part of the glacier (green) separates from the bedrock, corresponds to the grounding line position, at the steady state after 10,000 thousand years of simulation.  
 
-Figure \ref{zb_10km_2km_1km} shows a comparison of the position of the grounding line for different mesh resolutions, starting from 10km until 1km. We see how the differences in position start to decrease as we decrease the mesh resolution. 
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.8\linewidth]{../fig/zb_10km_2km_1km.png}
-		\caption{Position of the grounding line for different mesh resolutions.}
-		\label{zb_10km_2km_1km}
-	\end{figure}
+\begin{figure}[!h]
+	\centering % <-- added
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\linewidth]{../fig/zb_10km_2km_1km.png}
+		\caption{Profile A}
+		\label{Grounded_line_profile_A}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\linewidth]{../fig/zb_10km_5km_2km_1km_CONE_profileB.png}
+		\caption{Profile B}
+		\label{Grounded_line_profile_B}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\linewidth]{../fig/zb_10km_5km_2km_1km_CONE_profileC.png}
+		\caption{Profile C}
+		\label{Grounded_line_profile_C}
+	\end{subfigure}
+
+	\caption{Grounded line position for different mesh resolution along the different profiles for the circular domain cone.}
+	\label{Grounded_line_CONE}
+\end{figure}
+
+Figure \ref{zb_zs_10km} shows the first simulation made for this resolution, and the result shown is the thickness of the ice sheet, as a function of the horizontal distance. We see in red the position of the bedrock, so this way the result shows that the zone where the lower part of the glacier (green) separates from the bedrock, corresponds to the grounding line position, at the steady state after 10,000 thousand years of simulation.  
  
 \subsection{Thule configuration}
 For the second part of the experiments, the results for the thule configuration were obtained for a quarter of the domain, and following the Calving MIP intercomparison project, the graphs of the variables as a function of the position were plot along the two profiles proposed, namely Halbrane B and Caprona B as shown in figure \ref{Thule_domain}.
@@ -468,72 +477,56 @@ For the results after the steady state is reached, figure \ref{zb_zs_10_5_capron
 \end{figure}
 
 
- \begin{figure}[!h]
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/zb_zs_10km_CapronaB_THULE.png}
-  \caption{10km resolution result along Caprona B profile.}
-  \label{Thule_10km_Caprona}
-\end{subfigure}%
-\hskip -10ex
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/zb_zs_5km_Caprona_B_5km.png}
-  \caption{5km resolution result along Caprona B profile.}
-  \label{Thule_5km_Caprona}
-\end{subfigure}
-\caption{Plots of the ice sheet heights zb, zs and the position of the bedrock as a function of the horizontal position along Caprona B profile, for 10km and 5km resolution.}
-\label{zb_zs_10_5_capronaB}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/zb_10km_5km_CapronaB_Thule.png}
+	\includegraphics[width=0.45\linewidth]{../fig/zb_10km_5km_HalbraneB_Thule.png}
+	\caption{Grounding line positions along Halbrane (right hand side) and Caprona (left hand side) profiles for different resolutions in the quarter of the thule domain.}
+	\label{Grounding_lines_Thule_Profiles}
 \end{figure}
 
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.9\linewidth]{../fig/zb_10km_5km_CapronaB_THULE.png}
-		\caption{Grounding line position for different mesh resolutions along the Caprona B profile.}
-		\label{Grounding_line_CapronaB}
-	\end{figure}
 
 The same procedure was performed along the Halbrane B line, which results are summarized in figure \ref{zb_zs_10_5_halbraneB}. 
 
- \begin{figure}[!h]
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/zb_zs_10km_HalbraneB_Thule.png}
-  \caption{10km resolution result along Halbrane B profile.}
-  \label{Thule_10km_Halbrane}
-\end{subfigure}%
-\hskip -10ex
-\begin{subfigure}{.6\textwidth}
-  \centering
-  \includegraphics[width=.8\linewidth]{../fig/zb_zs_5km_Halbrane_B_Thule.png}
-  \caption{5km resolution result along Halbrane B profile.}
-  \label{Thule_5km_HalbraneB}
-\end{subfigure}
-\caption{Plots of the ice sheet heights zb, zs and the position of the bedrock as a function of the horizontal position along Halbrane B profile, for 10km and 5km resolution.}
-\label{zb_zs_10_5_halbraneB}
-\end{figure}
-
 Figure \ref{Grounding_line_HalbraneB} shows a detailed plot of the comparison of the grounding line position along the Halbrane B profile for the different resolutions, where it can be identified as the position where zb and the bedrock start to be different, and the ice is no longer grounded. 
-
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.9\linewidth]{../fig/zb_10km_5km_HalbraneB_Thule.png}
-		\caption{Grounding line position for different mesh resolutions along the Halbrane B profile.}
-		\label{Grounding_line_HalbraneB}
-	\end{figure}
 
 
 \subsection{Comparison of parameters for each resolution for the different configurations}
 In this part of the experiment, we compared the time spent during the simulations as a function of the number of nodes. The figure \ref{TimeVsNumberofnodes} shows this relation for both experiment, the cirular and the thule profile domain, both for the domain complete. 
+The time shown in figure \ref{TimeVsNumberofnodes} is the time spent by the computer using the 32 processors to run the simulations.
 
 	\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.9\linewidth]{../fig/TimeVsNumberOfNodes.png}
 	\caption{Comparison of the time spent by the simulation as a function of the number of nodes for both configurations.}
 	\label{TimeVsNumberofnodes}
+	\end{figure}
+
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{../fig/Grounding_line_integrated_full_domain_CONE_time.png}
+	\caption{Grounding line position as a function of time for different resolutions for the complete circular domain.}
+	\label{TimeVsGroundingLinePosition_full}
+	\end{figure}
+
+
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/H_CONE_full_all_res_vs_time.png}
+	\includegraphics[width=0.45\linewidth]{../fig/H_CONE_full_all_res_vs_num_nodes.png}
+	\caption{a) Ice thickness as a function of time. b) Ice thickness as a function of the number of nodes.}
+	\label{H_CONE_all_res}
+	\end{figure}
+
+	\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/Volume_CONE_full_all_res_vs_time.png}
+	\includegraphics[width=0.45\linewidth]{../fig/Volume_CONE_full_all_res_vs_num_nodes.png}
+	\caption{a) Ice volume as a function of time. b) Ice volume as a function of the number of nodes.}
+	\label{Volume_CONE_all_res}
 \end{figure}
 
-The time shown in figure \ref{TimeVsNumberofnodes} is the time spent by the computer using the 32 processors to run the simulations
+
 \section{Discussion}
 Here we will discuss the differences found between the results obtained for the different spacial resolutions for thule and cone, for the complete domain using the previous constant parameters, and the results obtained for the quarter domain using the new parameters. We will discuss the accuracy of the model for the different resolutions in predicting the position of the grounding line for both types of configurations. We will compare the position of the grounding line as a function of the resolution. 
 Also, we will discuss the time spent in the simulations as a function of the number of processors used (plot) and we can try to discuss an optimum number of processors that can be used (will be reviewed).
