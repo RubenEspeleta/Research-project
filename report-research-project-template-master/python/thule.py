@@ -1,7 +1,8 @@
 import numpy as np # Imports a library called numpy. The name in the program is going to be np.
 import matplotlib # if you don't include an "as" then the local-name is going to be matplotlib.
 # from matplotlib import * ### In this case you import all contained libraries in matplotlib and you call them only by their name.
-##########################FUNCTIONS DEFINITION ###############################################################
+import matplotlib.pyplot as plt
+#########################FUNCTIONS DEFINITION ###############################################################
 def cone(x,y,R,Bc,Bl) :
     rc=0
     ###############################################################
@@ -39,43 +40,54 @@ Bl=-2e3 # -2km
 Ba=1.1e3
 rc=0
 ##########- END OF PARAMETERS #########
+def PlotCone2D():
+	## FIGURA 1. - 2D: Cone
+	#R=800e3
+	x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+	plt.rcParams.update({'font.size': 22})
+	z = cone(y,x,R,Bc,Bl)
+	plt.imshow(z,extent=[-800e3,800e3,-800e3,800e3],cmap=segmented_cmaps,vmin=-20e3,vmax=0.9e3)
+	plt.colorbar()
+	plt.xlabel("x (m)")
+	plt.ylabel("y (m)")
+	plt.show()
 
-## FIGURA 1. - 2D: Cone
-#R=800e3
-x,y = np.mgrid[-1600e3:1600e3:100j, -1600e3:1600e3:100j]
-plt.rcParams.update({'font.size': 22})
-z = cone(y,x,R,Bc,Bl)
-import matplotlib.pyplot as plt
-plt.imshow(z,extent=[-1600e3,1600e3,-1600e3,1600e3],cmap=segmented_cmaps,vmin=-20e3,vmax=0.9e3)
-plt.colorbar()
-plt.xlabel("x (m)")
-plt.ylabel("y (m)")
-plt.show()
-
-## FIGURA 2. - 3D: Cone
-fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
-ax = plt.axes(projection='3d')
-surf=ax.plot_surface(x, y, z, rstride=1, cstride=1,
+def PlotCone3D():
+	## FIGURA 2. - 3D: Cone
+	fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+	ax = plt.axes(projection='3d')
+	surf=ax.plot_surface(x, y, z, rstride=1, cstride=1,
                 cmap=segmented_cmaps, edgecolor='none')
-# Add a color bar which maps values to colors.
-fig.colorbar(surf, shrink=0.5, aspect=5)
-plt.show()
+	# Add a color bar which maps values to colors.
+	fig.colorbar(surf, shrink=0.5, aspect=5)
+	plt.show()
 
-## FIGURA 3. - 2D: Thule
-# Crea la malla para graficar:
-x,y = np.mgrid[-1600e3:1600e3:100j, -1600e3:1600e3:100j]
-z = b(y,x,R,Bc,Bl)
-plt.imshow(z,extent=[-1600e3,1600e3,-1600e3,1600e3],cmap=segmented_cmaps,vmin=-3500,vmax=2000)
-plt.colorbar()
-plt.xlabel("x (m)")
-plt.ylabel("y (m)")
-plt.show()
+def PlotThule2D():
+	## FIGURA 3. - 2D: Thule
+	# Crea la malla para graficar:
+	x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+	z = b(y,x,R,Bc,Bl)
+	plt.imshow(z,extent=[-800e3,800e3,-800e3,800e3],cmap=segmented_cmaps,vmin=-3500,vmax=2000)
+	plt.colorbar()
+	plt.xlabel("x (m)")
+	plt.ylabel("y (m)")
+	plt.show()
 
-##FIGURA 4. -3D: Thule
-fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
-ax = plt.axes(projection='3d')
-surf=ax.plot_surface(x, y, z, rstride=1, cstride=1,
+def PlotThule3D():
+	##FIGURA 4. -3D: Thule
+	x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+	z = b(y,x,R,Bc,Bl)
+	fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+	ax = plt.axes(projection='3d')
+	ax.set_zticks([])
+	plt.xlabel("x (km)")
+	plt.ylabel("y (km)")
+	surf=ax.plot_surface(x/1000, y/1000, z, rstride=1, cstride=1,
                 cmap=segmented_cmaps, edgecolor='none')
-# Add a color bar which maps values to colors.
-fig.colorbar(surf, shrink=0.5, aspect=5)
-plt.show()
+	# Add a color bar which maps values to colors.
+	fig.colorbar(surf, shrink=0.5, aspect=10,ticks=[-5000,-4000,-3000,-2000,-1000,0,1000,1500])
+	ax.xaxis.labelpad=20
+	ax.yaxis.labelpad=20
+	#ax.dist = 10
+	#ax.xaxis._axinfo['label']['space_factor'] = 2
+	plt.show()
