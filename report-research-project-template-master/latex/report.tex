@@ -4,6 +4,7 @@
 \usepackage[top=1.2in, bottom=1.2in, left=3cm, right=3cm, a4paper]{geometry}
 \usepackage{subcaption}
 \usepackage{ragged2e}
+\usepackage{amsmath}
 \begin{document}
 
 \input{coverpage}
@@ -270,53 +271,77 @@ As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as
  
 \subsection{Cone configuration}
 
-Figure \ref{hvelocity and h10km} shows a snap of the final steady state result of the simulation for the computation of two of the variables, namely the thickness and thickness velocity (or thickness rate change) of the ice sheet with the 10km mesh resolution, in figure \ref{h10km} and \ref{hvelocity10km}, respectively. It can be observed that the final rate change for the ice thickness varies within a range of very small values in all the domain, and for this reason, we conclude the convergence of the simulation. 
+For this first experiment proposed, the simulations were run varying the resolution from 10km and up to 1km. In figure \ref{figCONO1} we show a qualitative representation of the simulation results for the different resolutions, where we also run 50 and 20km resolution just to have a better idea of how this change in the resolution has an impact in the results. In these figures, the blue part represents the grounded part of the domain, and the grey part represent the floating part. This way we can identify the changes in the transition from grounded to not grounded, namely the grounding zone. We can see also how, as we go closer to a minimum resolution, the differences start to be not that notorious. 
 
 \begin{figure}[!h]
 	\centering % <-- added
 	\begin{subfigure}{0.25\textwidth}
 		\includegraphics[width=\linewidth]{../fig/Grounded_zone_50km_CONE.png}
-		\caption{CONE50KM}
+		\caption{Grounded zone (blue) and floating ice (grey) for 50km resolution}
 		\label{figCONE50KM}
 	\end{subfigure}\hfil % <-- added
 	\begin{subfigure}{0.25\textwidth}
 		\includegraphics[width=\linewidth]{../fig/Grounded_zone_20km_CONE.png}
-		\caption{CONE20KM}
+		\caption{Grounded zone (blue) and floating ice (grey) for 20km resolution}
 		\label{figCONE20}
 	\end{subfigure}\hfil % <-- added
 	\begin{subfigure}{0.25\textwidth}
 		\includegraphics[width=\linewidth]{../fig/Grounded_zone_10km_CONE.png}
-		\caption{CONE10KM}
+		\caption{Grounded zone (blue) and floating ice (grey) for 10km resolution}
 		\label{figCONE10KM}
 	\end{subfigure}
 	
 	\medskip
 	\begin{subfigure}{0.25\textwidth}
 		\includegraphics[width=\linewidth]{../fig/Grounded_zone_5km_CONE.png}
-		\caption{CONE5KM}
+		\caption{Grounded zone (blue) and floating ice (grey) for 5km resolution}
 		\label{figCONE5}
 	\end{subfigure}\hfil % <-- added
 	\begin{subfigure}{0.25\textwidth}
 		\includegraphics[width=\linewidth]{../fig/Grounded_zone_2km_CONE.png}
-		\caption{CONE2KM}
+		\caption{Grounded zone (blue) and floating ice (grey) for 2km resolution}
 		\label{figCONE2}
 	\end{subfigure}\hfil % <-- added
 	\begin{subfigure}{0.25\textwidth}
 		\includegraphics[width=\linewidth]{../fig/Grounded_zone_1km_CONE.png}
-		\caption{CONE1}
+		\caption{Grounded zone (blue) and floating ice (grey) for 1km resolution}
 		\label{CONE1KM}
 	\end{subfigure}
-	\caption{Impact of the resolution in the grounded area.}
+	\caption{Impact of the resolution in the grounded area for the cone circular domain.}
 	\label{figCONO1}
 \end{figure}
 
+In figure \ref{Cone_scheme}, we see an schematic representation of the results for the cone circular domain experiment. For the analysis of these results, the ice thickness of the profile was analysed along 8 linear profiles, namely A,B,C,D,E,F,G and H for the domain complete, as shown in figure \ref{Schematic_Cone}, and in figure \ref{Profiles_cone} we see all the positions and the ice thickness along the different profiles in the same figure. The point or zone where the lower part of the ice sheet stops being in contact with the bedrock is the grounding line. In this figure it is also highlighted the quarter of the domain in figure \ref{Schematic_Cone} and its three profiles A,B,C since, as mentioned before, both simulations for the domain complete and the quarter domain were run to compare the results.
 
-\begin{figure}[!h]
+\begin{figure}
 	\centering
-	\includegraphics[width=0.9\linewidth]{../fig/Profiles_Cone_combined_domains.png}
-	\caption{Circular domain experimental profiles proposed for cone configuration. Highlighted the quarter of the domain.}
-	\label{profiles}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_combined_domains.png}
+		\caption{Profiles for Cone circular domain}
+		\label{Schematic_Cone}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_domain_sin_fondo.png}
+		\caption{Ice thickess per profile}
+		\label{Profiles_cone}
+	\end{subfigure}
+	\caption{Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.}
+	\label{Cone_scheme}
 \end{figure}
+
+To have a better idea of the simulations convergence, in figure \ref{h_and_h_velocities_cone} it is shown on the left sides all the values of ice thickness in meters per each resolution, and on the left sides the values of the ice thickness velocity obtained, namely the rate of change of the ice thickness in meters per year. The range of these values, maximum and minimum per resolution are very low (less than 0,001 m/y), which is a brief image that shows that the simulations reached a steady state with a low estimation error. 
+
+Once both results were obtained, for the domain complete and the quarter domain, the next step consists in quantify the grounding line position per each resolution along the profiles proposed. For this, a function that can be denominated grounding line was created, and this function was defined as the product of the bedrock position and a grounding mask. This grounded mask is a step function created, which a value of -1 is assigned to the grounded ice, and 1 to the part of the ice that is no longer in contact with the bedrock, namely:
+
+\[ \begin{cases} 
+	-1 & bedrock = z_b \\
+	1 & z_b \leq bedrock   
+\end{cases}
+\]
+
+Using this mask, we created the grounding line function as the negative product of this mask and the bedrock (the negative sign is only implemented for convention). From the fact that this grounding line function is an increasing function, it must have an unique maximum, namely, the point where the function changes sign. This maximum means the point where $z_b$ is no longer equal to bedrock position, so starting from this point, the lower part of the ice sheet is not grounded any more. This maximum value of the grounding line function corresponds, physically, to the point where the grounding line or zone is along an x-profile. Knowing this point, the distance from the origin of our coordinate system to that point can be computed, knowing the x and y coordinates of this point, as the norm if this vector, this distance determines the grounding line position, in meters, along an x axis. The results were calculated in two parts: along three profiles A,B and C for the quarter of the domain, and along all the profiles from A to H for the domain complete. For both cases, per each resolution the mean, maximum and minimum value of the grounding line position was calculated. 
 
 \begin{figure}[!h]
 	\centering % <-- added
@@ -368,35 +393,21 @@ Figure \ref{hvelocity and h10km} shows a snap of the final steady state result o
 	\label{h_and_h_velocities_cone}
 \end{figure}
 
-
-For this configuration, the simulations were done using different resolutions with the same parameters listed in table \ref{Physical constants}. 
+These mean, maximum and minimum value of the grounding line position per resolution is shown in figure \ref{Grounding_lines__CONE_comparison} for both case studies, the quarter and complete domain. In the y-axis we have the grounding line position in meters, that is the distance calculated from an origin to the grounding line or zone computed before using the function. This distance is computed as the norm of a vector (x,y) that defines this grounding line position. 
 
 \begin{figure}[!h]
-	\centering % <-- added
-	\begin{subfigure}{0.4\textwidth}
-		\includegraphics[width=\linewidth]{../fig/zb_10km_2km_1km.png}
-		\caption{Profile A}
-		\label{Grounded_line_profile_A}
-	\end{subfigure}\hfil % <-- added
-	\begin{subfigure}{0.4\textwidth}
-		\includegraphics[width=\linewidth]{../fig/zb_10km_5km_2km_1km_CONE_profileB.png}
-		\caption{Profile B}
-		\label{Grounded_line_profile_B}
-	\end{subfigure}\hfil % <-- added
-	\begin{subfigure}{0.4\textwidth}
-		\includegraphics[width=\linewidth]{../fig/zb_10km_5km_2km_1km_CONE_profileC.png}
-		\caption{Profile C}
-		\label{Grounded_line_profile_C}
-	\end{subfigure}
-
-	\caption{Grounded line position for different mesh resolution along the different profiles for the circular domain cone.}
-	\label{Grounded_line_CONE}
+	\centering
+	\includegraphics[width=0.8\linewidth]{../fig/Figure_CONE_GL_positions.png}
+	\caption{Grounding line positions as a function of the resolution for quarter and complete circular cone domain.}
+	\label{Grounding_lines__CONE_comparison}
 \end{figure}
 
-Figure \ref{zb_zs_10km} shows the first simulation made for this resolution, and the result shown is the thickness of the ice sheet, as a function of the horizontal distance. We see in red the position of the bedrock, so this way the result shows that the zone where the lower part of the glacier (green) separates from the bedrock, corresponds to the grounding line position, at the steady state after 10,000 thousand years of simulation.  
- 
+For both cases, the complete and quarter of the domain results, it is associated an error bar for the mean values of the grounding line position. The yellow bar corresponds to the quarter domain mean value error bar, and the blue bar corresponds to the complete domain mean value error bar. The error associated was determined as half of the value for each resolution (5km for the 10km resolution, 2.5km for 5km, 1km for 2km and 500m for 1km resolution).
+
+It can be observed how, for greater resolutions as 10km, the results have a difference of around 20km for the grounding line position between the quarter of the domain and the complete domain results, but for lower resolutions these difference starts to be lower. 
+
 \subsection{Thule configuration}
-For the second part of the experiments, the results for the thule configuration were obtained for a quarter of the domain, and following the Calving MIP intercomparison project, the graphs of the variables as a function of the position were plot along the two profiles proposed, namely Halbrane B and Caprona B as shown in figure \ref{Thule_domain}.
+For the second part of the experiments, the results for the thule configuration were obtained for a quarter of the domain and the domain complete, and following the Calving MIP inter comparison project, the simulations using this topography were run using 10,5,2 and 2 km meshes. The figure \ref{Thule_profiles_capronas_and_halbranes} shows the schematic representation of the thule domain experiment results. Similar to the Cone domain experiment, here it is proposed to analyse the results along profiles called Caprona and Halbrane. The figure \ref{Profiles_Thule} highlights the quarter of the domain, since the simulations were also run for this part of the domain to compare it with the complete system. In this case the results were analysed for Caprona profiles and separately for the Halbrane profiles. In figures \ref{Capronas_thule} and \ref{Halbranes_thule} it can be observed the ice thickness along each one of the profiles and so the position of the grounding line.
 
 \begin{figure}[!h]
   \begin{subfigure}[c]{.52\linewidth}
@@ -404,8 +415,8 @@ For the second part of the experiments, the results for the thule configuration 
     \includegraphics[width=\linewidth]{../fig/Profiles_Thule_combined_domains_2_con_fondo.png}%
     \caption
       {%
-        the big one%
-        \label{fig:big}%
+        Profiles for the thule domain%
+        \label{Profiles_Thule}%
       }%
   \end{subfigure}\hfill
   \begin{tabular}[c]{@{}c@{}}
@@ -414,8 +425,8 @@ For the second part of the experiments, the results for the thule configuration 
       \includegraphics[width=\linewidth]{../fig/Capronas_Thule_Domain_con_fondo.png}%
       \caption
         {%
-          the upper small one%
-          \label{fig:upper}%
+          Ice thickness along each Caprona profile%
+          \label{Capronas_thule}%
         }%
     \end{subfigure}\\
     \noalign{\bigskip}%
@@ -424,19 +435,19 @@ For the second part of the experiments, the results for the thule configuration 
       \includegraphics[width=\linewidth,page=2]{../fig/Halbranes_thule_domain_con_fondo.png}%
       \caption
         {%
-          the lower small one%
-          \label{fig:lower}%
+          Ice thickness along each Halbrane profile%
+          \label{Halbranes_thule}%
         }%
     \end{subfigure}
   \end{tabular}
   \caption
     {%
       Schematic representation of thule ice sheet showing ice thickness along Caprona and Halbrane profiles.%
-      \label{fig:every}%
+      \label{Thule_profiles_capronas_and_halbranes}%
     }
 \end{figure}
 
-For the results after the steady state is reached, figure \ref{zb_zs_10_5_capronaB} shows the heights zb and zs along the Caprona B profile, for the 10km resolution (figure \ref{Thule_10km_Caprona}) and 5km resolution (figure \ref{Thule_5km_Caprona}).
+In figure \ref{Thule_resolutions} a qualitative representation of the simulations results can be observed as well to have a visualization of the impact of the resolution on the grounded area of the domain. Similar to the results for the Cone circular domain, the blue part represents the grounded part and the grey part represents the part of the ice that is floating in water. 
 
 \begin{figure}[!h]
 	\centering % <-- added
@@ -472,23 +483,9 @@ For the results after the steady state is reached, figure \ref{zb_zs_10_5_capron
 		\caption{image6}
 		\label{fig:6}
 	\end{subfigure}
-	\caption{Fasi del processo di impregnazione}
-	\label{fig:images}
+	\caption{Impact of the resolution in the grounded area}
+	\label{Thule_resolutions}
 \end{figure}
-
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/zb_10km_5km_CapronaB_Thule.png}
-	\includegraphics[width=0.45\linewidth]{../fig/zb_10km_5km_HalbraneB_Thule.png}
-	\caption{Grounding line positions along Halbrane (right hand side) and Caprona (left hand side) profiles for different resolutions in the quarter of the thule domain.}
-	\label{Grounding_lines_Thule_Profiles}
-\end{figure}
-
-
-The same procedure was performed along the Halbrane B line, which results are summarized in figure \ref{zb_zs_10_5_halbraneB}. 
-
-Figure \ref{Grounding_line_HalbraneB} shows a detailed plot of the comparison of the grounding line position along the Halbrane B profile for the different resolutions, where it can be identified as the position where zb and the bedrock start to be different, and the ice is no longer grounded. 
 
 
 \subsection{Comparison of parameters for each resolution for the different configurations}

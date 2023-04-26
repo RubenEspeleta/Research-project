@@ -15,7 +15,7 @@
 \contentsline {subsubsection}{\numberline {3.4.4}Time step}{10}{subsubsection.3.4.4}%
 \contentsline {section}{\numberline {4}Results}{10}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Cone configuration}{10}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Thule configuration}{12}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Comparison of parameters for each resolution for the different configurations}{12}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Discussion}{12}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{13}{section.6}%
+\contentsline {subsection}{\numberline {4.2}Thule configuration}{14}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Comparison of parameters for each resolution for the different configurations}{15}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Discussion}{15}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{15}{section.6}%

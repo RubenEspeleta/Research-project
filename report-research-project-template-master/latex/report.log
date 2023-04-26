@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.2.20)  21 APR 2023 16:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.4.23)  26 APR 2023 17:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **report.tex
 (./report.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-07-15>
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-01-16>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: size10.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -19,9 +19,9 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@subparagraph=\count190
 \c@figure=\count191
 \c@table=\count192
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen138
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
@@ -42,13 +42,13 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 107.
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen139
-\Gin@req@width=\dimen140
+\Gin@req@height=\dimen141
+\Gin@req@width=\dimen142
 )
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+Package: hyperref 2022-11-13 v7.00u Hypertext links for LaTeX
 
 (/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
@@ -67,8 +67,8 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
@@ -99,12 +99,12 @@ Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count193
 )
-\@linkdim=\dimen141
+\@linkdim=\dimen143
 \Hy@linkcounter=\count194
 \Hy@pagecounter=\count195
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2022-11-13 v7.00u Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
@@ -117,7 +117,7 @@ Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 \Hy@SavedSpaceFactor=\count196
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2022-11-13 v7.00u Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
@@ -127,15 +127,15 @@ Package hyperref Info: Hyper index ON on input line 4170.
 Package hyperref Info: Plain pages OFF on input line 4177.
 Package hyperref Info: Backreferencing OFF on input line 4182.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4408.
+Package hyperref Info: Bookmarks ON on input line 4410.
 \c@Hy@tempcnt=\count197
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4746.
-\XeTeXLinkMargin=\dimen142
+LaTeX Info: Redefining \url on input line 4748.
+\XeTeXLinkMargin=\dimen144
 
 (/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -145,15 +145,15 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
 \Fld@menulength=\count198
-\Field@Width=\dimen143
-\Fld@charsize=\dimen144
-Package hyperref Info: Hyper figures OFF on input line 6024.
-Package hyperref Info: Link nesting OFF on input line 6029.
-Package hyperref Info: Hyper index ON on input line 6032.
-Package hyperref Info: backreferencing OFF on input line 6039.
-Package hyperref Info: Link coloring OFF on input line 6044.
-Package hyperref Info: Link coloring with OCG OFF on input line 6049.
-Package hyperref Info: PDF/A mode OFF on input line 6054.
+\Field@Width=\dimen145
+\Fld@charsize=\dimen146
+Package hyperref Info: Hyper figures OFF on input line 6027.
+Package hyperref Info: Link nesting OFF on input line 6032.
+Package hyperref Info: Hyper index ON on input line 6035.
+Package hyperref Info: backreferencing OFF on input line 6042.
+Package hyperref Info: Link coloring OFF on input line 6047.
+Package hyperref Info: Link coloring with OCG OFF on input line 6052.
+Package hyperref Info: PDF/A mode OFF on input line 6057.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
@@ -166,7 +166,7 @@ package with kernel methods
 Package hyperref Info: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
+File: hpdftex.def 2022-11-13 v7.00u Hyperref driver for pdfTeX
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
@@ -185,7 +185,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 85.
 )
-\Hy@SectionHShift=\skip49
+\Hy@SectionHShift=\skip50
 )
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
@@ -196,14 +196,14 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@cnth=\count270
 \Gm@cntv=\count271
 \c@Gm@tempcnt=\count272
-\Gm@bindingoffset=\dimen145
-\Gm@wd@mp=\dimen146
-\Gm@odd@mp=\dimen147
-\Gm@even@mp=\dimen148
-\Gm@layoutwidth=\dimen149
-\Gm@layoutheight=\dimen150
-\Gm@layouthoffset=\dimen151
-\Gm@layoutvoffset=\dimen152
+\Gm@bindingoffset=\dimen147
+\Gm@wd@mp=\dimen148
+\Gm@odd@mp=\dimen149
+\Gm@even@mp=\dimen150
+\Gm@layoutwidth=\dimen151
+\Gm@layoutheight=\dimen152
+\Gm@layouthoffset=\dimen153
+\Gm@layoutvoffset=\dimen154
 \Gm@dimlist=\toks17
 )
 (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
@@ -214,14 +214,14 @@ Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
-\caption@tempdima=\dimen153
-\captionmargin=\dimen154
-\caption@leftmargin=\dimen155
-\caption@rightmargin=\dimen156
-\caption@width=\dimen157
-\caption@indent=\dimen158
-\caption@parindent=\dimen159
-\caption@hangindent=\dimen160
+\caption@tempdima=\dimen155
+\captionmargin=\dimen156
+\caption@leftmargin=\dimen157
+\caption@rightmargin=\dimen158
+\caption@width=\dimen159
+\caption@indent=\dimen160
+\caption@parindent=\dimen161
+\caption@hangindent=\dimen162
 Package caption Info: Standard document class detected.
 )
 \c@caption@flags=\count273
@@ -232,72 +232,148 @@ Package caption Info: hyperref package is loaded.
 \c@subtable=\count276
 )
 (/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty
-Package: ragged2e 2021/12/15 v3.1 ragged2e Package
-\CenteringLeftskip=\skip50
-\RaggedLeftLeftskip=\skip51
-\RaggedRightLeftskip=\skip52
-\CenteringRightskip=\skip53
-\RaggedLeftRightskip=\skip54
-\RaggedRightRightskip=\skip55
-\CenteringParfillskip=\skip56
-\RaggedLeftParfillskip=\skip57
-\RaggedRightParfillskip=\skip58
-\JustifyingParfillskip=\skip59
-\CenteringParindent=\skip60
-\RaggedLeftParindent=\skip61
-\RaggedRightParindent=\skip62
-\JustifyingParindent=\skip63
+Package: ragged2e 2022/11/13 v3.2 ragged2e Package
+\CenteringLeftskip=\skip51
+\RaggedLeftLeftskip=\skip52
+\RaggedRightLeftskip=\skip53
+\CenteringRightskip=\skip54
+\RaggedLeftRightskip=\skip55
+\RaggedRightRightskip=\skip56
+\CenteringParfillskip=\skip57
+\RaggedLeftParfillskip=\skip58
+\RaggedRightParfillskip=\skip59
+\JustifyingParfillskip=\skip60
+\CenteringParindent=\skip61
+\RaggedLeftParindent=\skip62
+\RaggedRightParindent=\skip63
+\JustifyingParindent=\skip64
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2022/04/08 v2.17n AMS math features
+\@mathmargin=\skip65
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2021/08/26 v2.01 AMS text
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks18
+\ex@=\dimen163
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen164
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count277
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count278
+\leftroot@=\count279
+LaTeX Info: Redefining \overline on input line 399.
+LaTeX Info: Redefining \colon on input line 410.
+\classnum@=\count280
+\DOTSCASE@=\count281
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box51
+\strutbox@=\box52
+LaTeX Info: Redefining \big on input line 722.
+LaTeX Info: Redefining \Big on input line 723.
+LaTeX Info: Redefining \bigg on input line 724.
+LaTeX Info: Redefining \Bigg on input line 725.
+\big@size=\dimen165
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count282
+LaTeX Info: Redefining \bmod on input line 905.
+LaTeX Info: Redefining \pmod on input line 910.
+LaTeX Info: Redefining \smash on input line 940.
+LaTeX Info: Redefining \relbar on input line 970.
+LaTeX Info: Redefining \Relbar on input line 971.
+\c@MaxMatrixCols=\count283
+\dotsspace@=\muskip17
+\c@parentequation=\count284
+\dspbrk@lvl=\count285
+\tag@help=\toks19
+\row@=\count286
+\column@=\count287
+\maxfields@=\count288
+\andhelp@=\toks20
+\eqnshift@=\dimen166
+\alignsep@=\dimen167
+\tagshift@=\dimen168
+\tagwidth@=\dimen169
+\totwidth@=\dimen170
+\lineht@=\dimen171
+\@envbody=\toks21
+\multlinegap=\skip66
+\multlinetaggap=\skip67
+\mathdisplay@stack=\toks22
+LaTeX Info: Redefining \[ on input line 2953.
+LaTeX Info: Redefining \] on input line 2954.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count277
-\l__pdf_internal_box=\box51
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count289
+\l__pdf_internal_box=\box53
 )
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count278
-\scratchdimen=\dimen161
-\scratchbox=\box52
-\nofMPsegments=\count279
-\nofMParguments=\count280
-\everyMPshowfont=\toks18
-\MPscratchCnt=\count281
-\MPscratchDim=\dimen162
-\MPnumerator=\count282
-\makeMPintoPDFobject=\count283
-\everyMPtoPDFconversion=\toks19
+\scratchcounter=\count290
+\scratchdimen=\dimen172
+\scratchbox=\box54
+\nofMPsegments=\count291
+\nofMParguments=\count292
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count293
+\MPscratchDim=\dimen173
+\MPnumerator=\count294
+\makeMPintoPDFobject=\count295
+\everyMPtoPDFconversion=\toks24
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring OFF on input line 7.
+Package hyperref Info: Link coloring OFF on input line 8.
 
 (./report.out) (./report.out)
 \@outlinefile=\write3
@@ -354,12 +430,7 @@ Package pdftex.def Info: ../fig/logo_IGE.png  used on input line 6.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <../fig/logo_UGA.png> <../f
-ig/logo_IGE.png>]) (./abstract.tex) (./report.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 3.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 3.
-)
+ig/logo_IGE.png>]) (./abstract.tex) (./report.toc)
 \tf@toc=\write4
 \openout4 = `report.toc'.
 
@@ -370,12 +441,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: ../fig/Scheme_grounding_line.png Graphic file (type png)
 <use ../fig/Scheme_grounding_line.png>
 Package pdftex.def Info: ../fig/Scheme_grounding_line.png  used on input line 2
-3.
+4.
 (pdftex.def)             Requested size: 298.75264pt x 145.51888pt.
 <../fig/groundingzone.png, id=136, 522.0303pt x 302.3295pt>
 File: ../fig/groundingzone.png Graphic file (type png)
 <use ../fig/groundingzone.png>
-Package pdftex.def Info: ../fig/groundingzone.png  used on input line 32.
+Package pdftex.def Info: ../fig/groundingzone.png  used on input line 33.
 (pdftex.def)             Requested size: 298.75264pt x 173.02618pt.
 
 [3 <../fig/Scheme_grounding_line.png> <../fig/groundingzone.png (PNG copy)>]
@@ -383,22 +454,22 @@ Package pdftex.def Info: ../fig/groundingzone.png  used on input line 32.
 <../fig/velocityglaciar.png, id=192, 256.5585pt x 173.448pt>
 File: ../fig/velocityglaciar.png Graphic file (type png)
 <use ../fig/velocityglaciar.png>
-Package pdftex.def Info: ../fig/velocityglaciar.png  used on input line 78.
+Package pdftex.def Info: ../fig/velocityglaciar.png  used on input line 79.
 (pdftex.def)             Requested size: 298.75264pt x 201.99379pt.
 
-Overfull \hbox (16.97684pt too wide) in paragraph at lines 86--88
+Overfull \hbox (16.97684pt too wide) in paragraph at lines 87--89
 \OT1/cmr/m/n/10 [[]]. The most ac-cu-rate ice model is the Full Stokes (FS) equ
 a-tions [[]].
  []
 
 [5 <../fig/velocityglaciar.png>]
-Overfull \hbox (9.67253pt too wide) in paragraph at lines 93--94
+Overfull \hbox (9.67253pt too wide) in paragraph at lines 94--95
 \OT1/cmr/m/n/10 pre-dic-tions and to ob-tain con-fi-dent sim-u-la-tions of the 
 ground-ing line dy-nam-ics. [[]]
  []
 
 
-Overfull \hbox (51.29298pt too wide) in paragraph at lines 93--94
+Overfull \hbox (51.29298pt too wide) in paragraph at lines 94--95
 []\OT1/cmr/m/n/10 , [], [], [], [],
  []
 
@@ -406,27 +477,27 @@ Overfull \hbox (51.29298pt too wide) in paragraph at lines 93--94
 <../fig/circular_topo_top.png, id=240, 858.5676pt x 655.4889pt>
 File: ../fig/circular_topo_top.png Graphic file (type png)
 <use ../fig/circular_topo_top.png>
-Package pdftex.def Info: ../fig/circular_topo_top.png  used on input line 124.
+Package pdftex.def Info: ../fig/circular_topo_top.png  used on input line 125.
 (pdftex.def)             Requested size: 192.0548pt x 146.61847pt.
 <../fig/circular_topo_jet.png, id=241, 734.2632pt x 502.9992pt>
 File: ../fig/circular_topo_jet.png Graphic file (type png)
 <use ../fig/circular_topo_jet.png>
-Package pdftex.def Info: ../fig/circular_topo_jet.png  used on input line 125.
+Package pdftex.def Info: ../fig/circular_topo_jet.png  used on input line 126.
 (pdftex.def)             Requested size: 192.0548pt x 131.55957pt.
 <../fig/Thule_2D.png, id=244, 818.8191pt x 641.0349pt>
 File: ../fig/Thule_2D.png Graphic file (type png)
 <use ../fig/Thule_2D.png>
-Package pdftex.def Info: ../fig/Thule_2D.png  used on input line 147.
+Package pdftex.def Info: ../fig/Thule_2D.png  used on input line 148.
 (pdftex.def)             Requested size: 192.0548pt x 150.34978pt.
 <../fig/Thule_3D.png, id=245, 753.0534pt x 533.3526pt>
 File: ../fig/Thule_3D.png Graphic file (type png)
 <use ../fig/Thule_3D.png>
-Package pdftex.def Info: ../fig/Thule_3D.png  used on input line 148.
+Package pdftex.def Info: ../fig/Thule_3D.png  used on input line 149.
 (pdftex.def)             Requested size: 192.0548pt x 136.02345pt.
 <../fig/Thule_3D1.png, id=246, 714.0276pt x 572.3784pt>
 File: ../fig/Thule_3D1.png Graphic file (type png)
 <use ../fig/Thule_3D1.png>
-Package pdftex.def Info: ../fig/Thule_3D1.png  used on input line 154.
+Package pdftex.def Info: ../fig/Thule_3D1.png  used on input line 155.
 (pdftex.def)             Requested size: 192.0548pt x 153.95033pt.
 
 
@@ -447,328 +518,262 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 File: ../fig/non_structured_grid_10km.png Graphic file (type png)
 <use ../fig/non_structured_grid_10km.png>
 Package pdftex.def Info: ../fig/non_structured_grid_10km.png  used on input lin
-e 263.
+e 264.
 (pdftex.def)             Requested size: 192.0548pt x 192.33296pt.
 <../fig/regular_grid_10km.png, id=290, 678.535pt x 679.53876pt>
 File: ../fig/regular_grid_10km.png Graphic file (type png)
 <use ../fig/regular_grid_10km.png>
-Package pdftex.def Info: ../fig/regular_grid_10km.png  used on input line 264.
+Package pdftex.def Info: ../fig/regular_grid_10km.png  used on input line 265.
 (pdftex.def)             Requested size: 192.0548pt x 192.33296pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-LaTeX Warning: Reference `hvelocity and h10km' on page 10 undefined on input li
-ne 273.
-
-<../fig/Grounded_zone_50km_CONE.png, id=293, 545.03625pt x 606.265pt>
+[10]
+<../fig/Grounded_zone_50km_CONE.png, id=302, 545.03625pt x 606.265pt>
 File: ../fig/Grounded_zone_50km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_50km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_50km_CONE.png  used on input line
- 278.
+ 279.
 (pdftex.def)             Requested size: 106.69783pt x 118.67911pt.
-<../fig/Grounded_zone_20km_CONE.png, id=294, 591.20876pt x 637.38126pt>
+<../fig/Grounded_zone_20km_CONE.png, id=303, 591.20876pt x 637.38126pt>
 File: ../fig/Grounded_zone_20km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_20km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_20km_CONE.png  used on input line
- 283.
+ 284.
 (pdftex.def)             Requested size: 106.69783pt x 115.02516pt.
-<../fig/Grounded_zone_10km_CONE.png, id=295, 588.1975pt x 636.3775pt>
+<../fig/Grounded_zone_10km_CONE.png, id=304, 588.1975pt x 636.3775pt>
 File: ../fig/Grounded_zone_10km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_10km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_10km_CONE.png  used on input line
- 288.
+ 289.
 (pdftex.def)             Requested size: 106.69783pt x 115.43636pt.
-<../fig/Grounded_zone_5km_CONE.png, id=296, 587.19376pt x 635.37375pt>
+<../fig/Grounded_zone_5km_CONE.png, id=305, 587.19376pt x 635.37375pt>
 File: ../fig/Grounded_zone_5km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_5km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_5km_CONE.png  used on input line 
-295.
+296.
 (pdftex.def)             Requested size: 106.69783pt x 115.44818pt.
-<../fig/Grounded_zone_2km_CONE.png, id=297, 585.18625pt x 633.36626pt>
+<../fig/Grounded_zone_2km_CONE.png, id=306, 585.18625pt x 633.36626pt>
 File: ../fig/Grounded_zone_2km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_2km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_2km_CONE.png  used on input line 
-300.
+301.
 (pdftex.def)             Requested size: 106.69783pt x 115.47964pt.
-<../fig/Grounded_zone_1km_CONE.png, id=298, 583.17876pt x 633.36626pt>
+<../fig/Grounded_zone_1km_CONE.png, id=307, 583.17876pt x 633.36626pt>
 File: ../fig/Grounded_zone_1km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_1km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_1km_CONE.png  used on input line 
-305.
+306.
 (pdftex.def)             Requested size: 106.69783pt x 115.87589pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../fig/Profiles_Cone_combined_domains.png, id=299, 971.63pt x 745.78625pt>
+ [11 <../fig/non_structured_grid_10km.png> <../fig/regular_grid_10km.png> <../f
+ig/Grounded_zone_50km_CONE.png> <../fig/Grounded_zone_20km_CONE.png> <../fig/Gr
+ounded_zone_10km_CONE.png> <../fig/Grounded_zone_5km_CONE.png> <../fig/Grounded
+_zone_2km_CONE.png> <../fig/Grounded_zone_1km_CONE.png>]
+<../fig/Profiles_Cone_combined_domains.png, id=321, 971.63pt x 745.78625pt>
 File: ../fig/Profiles_Cone_combined_domains.png Graphic file (type png)
 <use ../fig/Profiles_Cone_combined_domains.png>
 Package pdftex.def Info: ../fig/Profiles_Cone_combined_domains.png  used on inp
-ut line 316.
-(pdftex.def)             Requested size: 384.1096pt x 294.82701pt.
+ut line 320.
+(pdftex.def)             Requested size: 211.26288pt x 162.1503pt.
+<../fig/Profiles_Cone_domain_sin_fondo.png, id=322, 1305.87875pt x 791.95876pt>
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../fig/h_10km_quarter.png, id=300, 795.97375pt x 681.54625pt>
+File: ../fig/Profiles_Cone_domain_sin_fondo.png Graphic file (type png)
+<use ../fig/Profiles_Cone_domain_sin_fondo.png>
+Package pdftex.def Info: ../fig/Profiles_Cone_domain_sin_fondo.png  used on inp
+ut line 326.
+(pdftex.def)             Requested size: 211.26288pt x 128.11777pt.
+<../fig/h_10km_quarter.png, id=324, 795.97375pt x 681.54625pt>
 File: ../fig/h_10km_quarter.png Graphic file (type png)
 <use ../fig/h_10km_quarter.png>
-Package pdftex.def Info: ../fig/h_10km_quarter.png  used on input line 325.
+Package pdftex.def Info: ../fig/h_10km_quarter.png  used on input line 350.
 (pdftex.def)             Requested size: 106.69783pt x 91.3496pt.
-<../fig/h_5km_quarter.png, id=301, 792.9625pt x 683.55376pt>
+<../fig/h_5km_quarter.png, id=325, 792.9625pt x 683.55376pt>
 File: ../fig/h_5km_quarter.png Graphic file (type png)
 <use ../fig/h_5km_quarter.png>
-Package pdftex.def Info: ../fig/h_5km_quarter.png  used on input line 330.
+Package pdftex.def Info: ../fig/h_5km_quarter.png  used on input line 355.
 (pdftex.def)             Requested size: 106.69783pt x 91.9733pt.
-<../fig/h_2km_quarter.png, id=302, 793.96625pt x 682.55pt>
+<../fig/h_2km_quarter.png, id=326, 793.96625pt x 682.55pt>
 File: ../fig/h_2km_quarter.png Graphic file (type png)
 <use ../fig/h_2km_quarter.png>
-Package pdftex.def Info: ../fig/h_2km_quarter.png  used on input line 335.
+Package pdftex.def Info: ../fig/h_2km_quarter.png  used on input line 360.
 (pdftex.def)             Requested size: 106.69783pt x 91.72368pt.
-<../fig/h_1km_quarter.png, id=303, 676.5275pt x 563.10374pt>
+<../fig/h_1km_quarter.png, id=327, 676.5275pt x 563.10374pt>
 File: ../fig/h_1km_quarter.png Graphic file (type png)
 <use ../fig/h_1km_quarter.png>
-Package pdftex.def Info: ../fig/h_1km_quarter.png  used on input line 340.
+Package pdftex.def Info: ../fig/h_1km_quarter.png  used on input line 365.
 (pdftex.def)             Requested size: 106.69783pt x 88.8096pt.
-<../fig/hvelocity_10km_quarter.png, id=304, 796.9775pt x 681.54625pt>
+<../fig/hvelocity_10km_quarter.png, id=328, 796.9775pt x 681.54625pt>
 File: ../fig/hvelocity_10km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_10km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_10km_quarter.png  used on input line 
-347.
+372.
 (pdftex.def)             Requested size: 106.69783pt x 91.2352pt.
-<../fig/hvelocity_5km_quarter.png, id=305, 804.00375pt x 681.54625pt>
+<../fig/hvelocity_5km_quarter.png, id=329, 804.00375pt x 681.54625pt>
 File: ../fig/hvelocity_5km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_5km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_5km_quarter.png  used on input line 3
-52.
+77.
 (pdftex.def)             Requested size: 106.69783pt x 90.44484pt.
-<../fig/hvelocity_2km_quarter.png, id=306, 801.99625pt x 682.55pt>
+<../fig/hvelocity_2km_quarter.png, id=330, 801.99625pt x 682.55pt>
 File: ../fig/hvelocity_2km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_2km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_2km_quarter.png  used on input line 3
-57.
+82.
 (pdftex.def)             Requested size: 106.69783pt x 90.79675pt.
-<../fig/hvelocity_1km_quarter.png, id=307, 683.55376pt x 561.09625pt>
+<../fig/hvelocity_1km_quarter.png, id=331, 683.55376pt x 561.09625pt>
 File: ../fig/hvelocity_1km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_1km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_1km_quarter.png  used on input line 3
-62.
+87.
 (pdftex.def)             Requested size: 106.69783pt x 87.57689pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../fig/zb_10km_2km_1km.png, id=309, 1534.73375pt x 791.95876pt>
-File: ../fig/zb_10km_2km_1km.png Graphic file (type png)
-<use ../fig/zb_10km_2km_1km.png>
-Package pdftex.def Info: ../fig/zb_10km_2km_1km.png  used on input line 377.
-(pdftex.def)             Requested size: 170.71393pt x 88.08247pt.
-<../fig/zb_10km_5km_2km_1km_CONE_profileB.png, id=310, 1506.62875pt x 791.95876
-pt>
-File: ../fig/zb_10km_5km_2km_1km_CONE_profileB.png Graphic file (type png)
-<use ../fig/zb_10km_5km_2km_1km_CONE_profileB.png>
-Package pdftex.def Info: ../fig/zb_10km_5km_2km_1km_CONE_profileB.png  used on 
-input line 382.
-(pdftex.def)             Requested size: 170.71393pt x 89.72594pt.
-<../fig/zb_10km_5km_2km_1km_CONE_profileC.png, id=311, 1466.47874pt x 791.95876
-pt>
-File: ../fig/zb_10km_5km_2km_1km_CONE_profileC.png Graphic file (type png)
-<use ../fig/zb_10km_5km_2km_1km_CONE_profileC.png>
-Package pdftex.def Info: ../fig/zb_10km_5km_2km_1km_CONE_profileC.png  used on 
-input line 387.
-(pdftex.def)             Requested size: 170.71393pt x 92.19113pt.
-[10]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[12 <../fig/Profiles_Cone_combined_domains.png> <../fig/Profiles_Cone_domain_si
+n_fondo.png (PNG copy)>]
+<../fig/Figure_CONE_GL_positions.png, id=339, 1387.584pt x 724.8681pt>
+File: ../fig/Figure_CONE_GL_positions.png Graphic file (type png)
+<use ../fig/Figure_CONE_GL_positions.png>
+Package pdftex.def Info: ../fig/Figure_CONE_GL_positions.png  used on input lin
+e 400.
+(pdftex.def)             Requested size: 341.43437pt x 178.36295pt.
 
-LaTeX Warning: Reference `zb_zs_10km' on page 11 undefined on input line 396.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Warning: Reference `Thule_domain' on page 11 undefined on input line 399.
-
-
-[11 <../fig/non_structured_grid_10km.png> <../fig/regular_grid_10km.png> <../fi
-g/Grounded_zone_50km_CONE.png> <../fig/Grounded_zone_20km_CONE.png> <../fig/Gro
-unded_zone_10km_CONE.png> <../fig/Grounded_zone_5km_CONE.png> <../fig/Grounded_
-zone_2km_CONE.png> <../fig/Grounded_zone_1km_CONE.png>]
-<../fig/Profiles_Thule_combined_domains_2_con_fondo.png, id=331, 936.49875pt x 
+[13 <../fig/h_10km_quarter.png> <../fig/h_5km_quarter.png> <../fig/h_2km_quarte
+r.png> <../fig/h_1km_quarter.png> <../fig/hvelocity_10km_quarter.png> <../fig/h
+velocity_5km_quarter.png> <../fig/hvelocity_2km_quarter.png> <../fig/hvelocity_
+1km_quarter.png>]
+<../fig/Profiles_Thule_combined_domains_2_con_fondo.png, id=358, 936.49875pt x 
 677.53125pt>
 File: ../fig/Profiles_Thule_combined_domains_2_con_fondo.png Graphic file (type
  png)
 <use ../fig/Profiles_Thule_combined_domains_2_con_fondo.png>
 Package pdftex.def Info: ../fig/Profiles_Thule_combined_domains_2_con_fondo.png
-  used on input line 404.
+  used on input line 415.
 (pdftex.def)             Requested size: 221.93332pt x 160.56384pt.
-<../fig/Capronas_Thule_Domain_con_fondo.png, id=332, 919.435pt x 378.41376pt>
+<../fig/Capronas_Thule_Domain_con_fondo.png, id=359, 919.435pt x 378.41376pt>
 File: ../fig/Capronas_Thule_Domain_con_fondo.png Graphic file (type png)
 <use ../fig/Capronas_Thule_Domain_con_fondo.png>
 Package pdftex.def Info: ../fig/Capronas_Thule_Domain_con_fondo.png  used on in
-put line 414.
+put line 425.
 (pdftex.def)             Requested size: 204.85802pt x 84.31372pt.
-<../fig/Halbranes_thule_domain_con_fondo.png, id=333, 919.435pt x 377.41pt>
+<../fig/Halbranes_thule_domain_con_fondo.png, id=360, 919.435pt x 377.41pt>
 File: ../fig/Halbranes_thule_domain_con_fondo.png Graphic file (type png)
 <use ../fig/Halbranes_thule_domain_con_fondo.png>
 Package pdftex.def Info: ../fig/Halbranes_thule_domain_con_fondo.png  used on i
-nput line 424.
+nput line 435.
 (pdftex.def)             Requested size: 204.85802pt x 84.09007pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `zb_zs_10_5_capronaB' on page 12 undefined on input li
-ne 439.
-
-
-LaTeX Warning: Reference `Thule_10km_Caprona' on page 12 undefined on input lin
-e 439.
-
-
-LaTeX Warning: Reference `Thule_5km_Caprona' on page 12 undefined on input line
- 439.
-
-<../fig/Grounded_zone_50km.png, id=334, 527.9725pt x 602.25pt>
+ [14 <../fig/Figure_CONE_GL_positions.png> <../fig/Profiles_Thule_combined_doma
+ins_2_con_fondo.png> <../fig/Capronas_Thule_Domain_con_fondo.png (PNG copy)> <.
+./fig/Halbranes_thule_domain_con_fondo.png (PNG copy)>]
+<../fig/Grounded_zone_50km.png, id=368, 527.9725pt x 602.25pt>
 File: ../fig/Grounded_zone_50km.png Graphic file (type png)
 <use ../fig/Grounded_zone_50km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_50km.png  used on input line 444.
+Package pdftex.def Info: ../fig/Grounded_zone_50km.png  used on input line 455.
 
 (pdftex.def)             Requested size: 106.69783pt x 121.70683pt.
-<../fig/Grounded_zone_20km.png, id=335, 583.17876pt x 626.34pt>
+<../fig/Grounded_zone_20km.png, id=369, 583.17876pt x 626.34pt>
 File: ../fig/Grounded_zone_20km.png Graphic file (type png)
 <use ../fig/Grounded_zone_20km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_20km.png  used on input line 449.
+Package pdftex.def Info: ../fig/Grounded_zone_20km.png  used on input line 460.
 
 (pdftex.def)             Requested size: 106.69783pt x 114.59042pt.
-<../fig/Grounded_zone_10km.png, id=336, 591.20876pt x 633.36626pt>
+<../fig/Grounded_zone_10km.png, id=370, 591.20876pt x 633.36626pt>
 File: ../fig/Grounded_zone_10km.png Graphic file (type png)
 <use ../fig/Grounded_zone_10km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_10km.png  used on input line 454.
+Package pdftex.def Info: ../fig/Grounded_zone_10km.png  used on input line 465.
 
 (pdftex.def)             Requested size: 106.69783pt x 114.3006pt.
-<../fig/Grounded_zone_5km.png, id=337, 587.19376pt x 632.3625pt>
+<../fig/Grounded_zone_5km.png, id=371, 587.19376pt x 632.3625pt>
 File: ../fig/Grounded_zone_5km.png Graphic file (type png)
 <use ../fig/Grounded_zone_5km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_5km.png  used on input line 461.
+Package pdftex.def Info: ../fig/Grounded_zone_5km.png  used on input line 472.
 (pdftex.def)             Requested size: 106.69783pt x 114.90103pt.
-<../fig/Grounded_zone_2km.png, id=338, 585.18625pt x 630.355pt>
+<../fig/Grounded_zone_2km.png, id=372, 585.18625pt x 630.355pt>
 File: ../fig/Grounded_zone_2km.png Graphic file (type png)
 <use ../fig/Grounded_zone_2km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_2km.png  used on input line 466.
+Package pdftex.def Info: ../fig/Grounded_zone_2km.png  used on input line 477.
 (pdftex.def)             Requested size: 106.69783pt x 114.93062pt.
-<../fig/Grounded_zone_1km.png, id=339, 583.17876pt x 630.355pt>
+<../fig/Grounded_zone_1km.png, id=373, 583.17876pt x 630.355pt>
 File: ../fig/Grounded_zone_1km.png Graphic file (type png)
 <use ../fig/Grounded_zone_1km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_1km.png  used on input line 471.
+Package pdftex.def Info: ../fig/Grounded_zone_1km.png  used on input line 482.
 (pdftex.def)             Requested size: 106.69783pt x 115.32497pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<../fig/zb_10km_5km_CapronaB_Thule.png, id=340, 1470.49374pt x 791.95876pt>
-File: ../fig/zb_10km_5km_CapronaB_Thule.png Graphic file (type png)
-<use ../fig/zb_10km_5km_CapronaB_Thule.png>
-Package pdftex.def Info: ../fig/zb_10km_5km_CapronaB_Thule.png  used on input l
-ine 482.
-(pdftex.def)             Requested size: 192.0548pt x 103.42953pt.
-<../fig/zb_10km_5km_HalbraneB_Thule.png, id=341, 1476.51625pt x 791.95876pt>
-File: ../fig/zb_10km_5km_HalbraneB_Thule.png Graphic file (type png)
-<use ../fig/zb_10km_5km_HalbraneB_Thule.png>
-Package pdftex.def Info: ../fig/zb_10km_5km_HalbraneB_Thule.png  used on input 
-line 483.
-(pdftex.def)             Requested size: 192.0548pt x 103.00659pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `zb_zs_10_5_halbraneB' on page 12 undefined on input l
-ine 489.
-
-
-LaTeX Warning: Reference `Grounding_line_HalbraneB' on page 12 undefined on inp
-ut line 491.
-
-<../fig/TimeVsNumberOfNodes.png, id=344, 765.3393pt x 607.7907pt>
+<../fig/TimeVsNumberOfNodes.png, id=376, 765.3393pt x 607.7907pt>
 File: ../fig/TimeVsNumberOfNodes.png Graphic file (type png)
 <use ../fig/TimeVsNumberOfNodes.png>
-Package pdftex.def Info: ../fig/TimeVsNumberOfNodes.png  used on input line 500
+Package pdftex.def Info: ../fig/TimeVsNumberOfNodes.png  used on input line 497
 .
 (pdftex.def)             Requested size: 384.1096pt x 305.04459pt.
 
+
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../fig/Grounding_line_integrated_full_domain_CONE_time.png, id=345, 462.528pt 
+<../fig/Grounding_line_integrated_full_domain_CONE_time.png, id=377, 462.528pt 
 x 346.896pt>
 File: ../fig/Grounding_line_integrated_full_domain_CONE_time.png Graphic file (
 type png)
 <use ../fig/Grounding_line_integrated_full_domain_CONE_time.png>
 Package pdftex.def Info: ../fig/Grounding_line_integrated_full_domain_CONE_time
-.png  used on input line 507.
+.png  used on input line 504.
 (pdftex.def)             Requested size: 384.1096pt x 288.09827pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../fig/H_CONE_full_all_res_vs_time.png, id=346, 1387.584pt x 723.4227pt>
+<../fig/H_CONE_full_all_res_vs_time.png, id=378, 1387.584pt x 723.4227pt>
 File: ../fig/H_CONE_full_all_res_vs_time.png Graphic file (type png)
 <use ../fig/H_CONE_full_all_res_vs_time.png>
 Package pdftex.def Info: ../fig/H_CONE_full_all_res_vs_time.png  used on input 
-line 515.
+line 512.
 (pdftex.def)             Requested size: 192.0548pt x 100.11943pt.
-<../fig/H_CONE_full_all_res_vs_num_nodes.png, id=347, 837.6093pt x 682.2288pt>
+<../fig/H_CONE_full_all_res_vs_num_nodes.png, id=379, 837.6093pt x 682.2288pt>
 File: ../fig/H_CONE_full_all_res_vs_num_nodes.png Graphic file (type png)
 <use ../fig/H_CONE_full_all_res_vs_num_nodes.png>
 Package pdftex.def Info: ../fig/H_CONE_full_all_res_vs_num_nodes.png  used on i
-nput line 516.
+nput line 513.
 (pdftex.def)             Requested size: 192.0548pt x 156.42004pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../fig/Volume_CONE_full_all_res_vs_time.png, id=348, 1000.9395pt x 602.0091pt>
+<../fig/Volume_CONE_full_all_res_vs_time.png, id=380, 1000.9395pt x 602.0091pt>
 
 File: ../fig/Volume_CONE_full_all_res_vs_time.png Graphic file (type png)
 <use ../fig/Volume_CONE_full_all_res_vs_time.png>
 Package pdftex.def Info: ../fig/Volume_CONE_full_all_res_vs_time.png  used on i
-nput line 523.
+nput line 520.
 (pdftex.def)             Requested size: 192.0548pt x 115.50359pt.
-<../fig/Volume_CONE_full_all_res_vs_num_nodes.png, id=349, 802.9197pt x 624.412
+<../fig/Volume_CONE_full_all_res_vs_num_nodes.png, id=381, 802.9197pt x 624.412
 8pt>
 File: ../fig/Volume_CONE_full_all_res_vs_num_nodes.png Graphic file (type png)
 <use ../fig/Volume_CONE_full_all_res_vs_num_nodes.png>
 Package pdftex.def Info: ../fig/Volume_CONE_full_all_res_vs_num_nodes.png  used
- on input line 524.
+ on input line 521.
 (pdftex.def)             Requested size: 192.0548pt x 149.35716pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12 <../fig/Profiles_Cone_combined_domains.png>] [13 <../fig/h_10km_quarter.png
-> <../fig/h_5km_quarter.png> <../fig/h_2km_quarter.png> <../fig/h_1km_quarter.p
-ng> <../fig/hvelocity_10km_quarter.png> <../fig/hvelocity_5km_quarter.png> <../
-fig/hvelocity_2km_quarter.png> <../fig/hvelocity_1km_quarter.png>]
-(./report.bbl [14 <../fig/zb_10km_2km_1km.png (PNG copy)> <../fig/zb_10km_5km_2
-km_1km_CONE_profileB.png (PNG copy)> <../fig/zb_10km_5km_2km_1km_CONE_profileC.
-png (PNG copy)> <../fig/Profiles_Thule_combined_domains_2_con_fondo.png> <../fi
-g/Capronas_Thule_Domain_con_fondo.png (PNG copy)> <../fig/Halbranes_thule_domai
-n_con_fondo.png (PNG copy)>] [15 <../fig/Grounded_zone_50km.png> <../fig/Ground
-ed_zone_20km.png> <../fig/Grounded_zone_10km.png> <../fig/Grounded_zone_5km.png
-> <../fig/Grounded_zone_2km.png> <../fig/Grounded_zone_1km.png> <../fig/zb_10km
-_5km_CapronaB_THULE.png (PNG copy)> <../fig/zb_10km_5km_HalbraneB_Thule.png (PN
-G copy)>] [16 <../fig/TimeVsNumberOfNodes.png>] [17 <../fig/Grounding_line_inte
-grated_full_domain_CONE_time.png> <../fig/H_CONE_full_all_res_vs_time.png> <../
-fig/H_CONE_full_all_res_vs_num_nodes.png>]) [18 <../fig/Volume_CONE_full_all_re
-s_vs_time.png> <../fig/Volume_CONE_full_all_res_vs_num_nodes.png>]
-(./report.aux)
-
-LaTeX Warning: There were undefined references.
-
+[15 <../fig/Grounded_zone_50km.png> <../fig/Grounded_zone_20km.png> <../fig/Gro
+unded_zone_10km.png> <../fig/Grounded_zone_5km.png> <../fig/Grounded_zone_2km.p
+ng> <../fig/Grounded_zone_1km.png>] (./report.bbl [16 <../fig/TimeVsNumberOfNod
+es.png>] [17 <../fig/Grounding_line_integrated_full_domain_CONE_time.png> <../f
+ig/H_CONE_full_all_res_vs_time.png> <../fig/H_CONE_full_all_res_vs_num_nodes.pn
+g>] [18 <../fig/Volume_CONE_full_all_res_vs_time.png> <../fig/Volume_CONE_full_
+all_res_vs_num_nodes.png>]) [19] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: EFA1467AD0E99E1EE0C9A851C0990125;3310.
  ) 
 Here is how much of TeX's memory you used:
- 10665 strings out of 479983
- 181381 string characters out of 5888070
- 483187 words of memory out of 5000000
- 28612 multiletter control sequences out of 15000+600000
- 471757 words of font info for 36 fonts, out of 8000000 for 9000
+ 11385 strings out of 478051
+ 191061 string characters out of 5840943
+ 1870330 words of memory out of 5000000
+ 31243 multiletter control sequences out of 15000+600000
+ 515239 words of font info for 42 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 72i,14n,77p,1265b,607s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,77p,1265b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/ruben/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
@@ -783,10 +788,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (18 pages, 2938880 bytes).
+Output written on report.pdf (19 pages, 2863596 bytes).
 PDF statistics:
- 495 PDF objects out of 1000 (max. 8388607)
- 366 compressed objects within 4 object streams
+ 506 PDF objects out of 1000 (max. 8388607)
+ 378 compressed objects within 4 object streams
  110 named destinations out of 1000 (max. 500000)
- 404 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 389 words of extra memory for PDF output out of 10000 (max. 10000000)
 
