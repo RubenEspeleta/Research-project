@@ -97,60 +97,51 @@ There is a need to improve marine ice-sheets models in order to corroborate rece
 
 In order to study and test the behavior of the different components of the models, idealized systems are studied and, based on the results that are obtained from these idealized cases, the hypothesis, models, and numerical methods used to solve the problems are improved. For this reason, within the framework of this project, we will analyze the behavior of the Elmer/Ice method to solve idealized systems and topographies. The framework in which the present project is focused is on the study of the Northern Europe glacier. But, since this glacier does not exist anymore, idealized cases simulations of North Europe glaciers, such as Greenland can be analyzed as mentioned before, and their results can be used to improve the numerical models, hypothesis, and parameters of the models, and this way we can better understand the behavior of ancient glaciers such as the Northern Europe glacier.
 
- \section{Numerical model}
- \subsection{The Elmer/Ice finite element method}
- Most of the time analytical solutions are challenging or even impossible to obtain. In order to model ice sheets, both the finite difference method (FDM) and the finite element method (FEM) are used. The finite difference method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the finite element method.
- The ice sheet/ice flow model Elmer/Ice includes developments related to glaciological problems and a large number of dedicated solvers and user functions that solve the Full-Stokes equations for various ice rheologies (classical, Glenn's flow law, anisotropic laws, and porous compressible firns/snow law). It includes solvers for the classical asymptotical expansions of the Stokes equations, namely the shallow ice approximation and the shallow and shallow shelf approximation (SSA). All these equations can be solved diagnostically or transiently, allowing the displacement of the boundaries.
-
- Elmer/Ice considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, which are applied to the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines or solvers. Each equation corresponds to one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows us to visualize the evolution of the flow through time.
-
- Here I can put the figures showing the mesh for a quarter domain for thule and the cone.
-
-\subsection{Tophographic profiles}
+\subsection{Systems and domains}
 This numerical experiment uses two different topographic profiles. A cone and a more realistic topography (Thule).
 \subsubsection{Cone}
-	The idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
-	\begin{equation}
-		\theta=arctan2(y,x);
-	\end{equation}
-	\begin{equation}
-		I=R-cos(2\theta)\frac{R}{2}
-	\end{equation}
-	\begin{equation}
-		Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{R2}^;
-	\end{equation}
-	Where $R=800x10^3 m$, $Bc=0.9 x 10^3 m$, and $BI=-2 x 10^3 m$. 
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
-		\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
-		\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
-		\label{circular_topo_top}
-	\end{figure}
- 
- \subsubsection{Thule}
- The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and \ref{Thule_3D1} and is given by:
-	\begin{equation}
-		\theta=arctan2(y,x);
-	\end{equation}
-	\begin{equation}
-		I=R-cos(2\theta)\frac{R}{2};
-	\end{equation}
-	\begin{equation}
-		Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{R^2};
-	\end{equation}
-	\begin{equation}
-		Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
-	\end{equation}
-	With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
-		\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
-		\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
-		\label{Thule_3D}
-	\end{figure}
-	\begin{figure}[!h]
+The idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=R-cos(2\theta)\frac{R}{2}
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{R2}^;
+\end{equation}
+Where $R=800x10^3 m$, $Bc=0.9 x 10^3 m$, and $BI=-2 x 10^3 m$. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
+	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
+	\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
+	\label{circular_topo_top}
+\end{figure}
+
+\subsubsection{Thule}
+The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and \ref{Thule_3D1} and is given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=R-cos(2\theta)\frac{R}{2};
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{R^2};
+\end{equation}
+\begin{equation}
+	Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
+\end{equation}
+With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
+	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
+	\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
+	\label{Thule_3D}
+\end{figure}
+\begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D1}
 	\caption{Thule bedrock topography 3D with a front view.}
@@ -167,68 +158,68 @@ Boundary conditions are needed in order to solve differential equations. It will
 \subsection{Physical constants}
 Table \ref{Physical constants 1}shows the constants parameters that were set up for the experiment by the Calvin MIP project at the beginning of the project. 
 \begin{table}[!h]
-\begin{center}
-\caption{Physical constants 1}
-\label{Physical constants 1}
-\begin{tabular}{|l|l|l|}
-\hline
-Variable          & Description                 & Units           \\ \hline
-$g=9.81$         & Gravitational acceleration  & $ms^{-2}$         \\ \hline
-$a_s=0.3$       & Surface mass balance (SMB)  & $ma^{-1}$         \\ \hline
-$a_b=0$             & Basal mass balance (BMB)    & $ma^{-1}$         \\ \hline
-$\rho i=917$        & Ice density                 & $kg m^{-3}$       \\ \hline
-$\rho w=1030$      & Sea water density           & $kg m^{-3}$       \\ \hline
-$A= 2.9377x10^{-9}$ & Ice rate factor             & $KPa^{-3}a^{-1}$  \\ \hline
-$n=3$               & Flow law stress exponent    &                 \\ \hline
-$C=0.001$           & basal slipperiness          & $ma^{-1}Kpa^{-3}$ \\ \hline
-$m=3$               & Sliding law stress exponent &                 \\ \hline
-$d2a=365.2422$     & days in a year           & days         \\ \hline
-\end{tabular}
-\end{center}
+	\begin{center}
+		\caption{Physical constants 1}
+		\label{Physical constants 1}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Variable          & Description                 & Units           \\ \hline
+			$g=9.81$         & Gravitational acceleration  & $ms^{-2}$         \\ \hline
+			$a_s=0.3$       & Surface mass balance (SMB)  & $ma^{-1}$         \\ \hline
+			$a_b=0$             & Basal mass balance (BMB)    & $ma^{-1}$         \\ \hline
+			$\rho i=917$        & Ice density                 & $kg m^{-3}$       \\ \hline
+			$\rho w=1030$      & Sea water density           & $kg m^{-3}$       \\ \hline
+			$A= 2.9377x10^{-9}$ & Ice rate factor             & $KPa^{-3}a^{-1}$  \\ \hline
+			$n=3$               & Flow law stress exponent    &                 \\ \hline
+			$C=0.001$           & basal slipperiness          & $ma^{-1}Kpa^{-3}$ \\ \hline
+			$m=3$               & Sliding law stress exponent &                 \\ \hline
+			$d2a=365.2422$     & days in a year           & days         \\ \hline
+		\end{tabular}
+	\end{center}
 \end{table}
 
 After modifications were done in the experiment proposal, the final values used in the simulations are the ones listed in Table \ref{Physical constants}
 \begin{table}[!h]
-\begin{center}
-\caption{Physical constants}
-\label{Physical constants}
-\begin{tabular}{|l|l|l|}
-\hline
-Variable          & Description                 & Units           \\ \hline
-$g=9.81$         & Gravitational acceleration  & $ms^{-2}$         \\ \hline
-$a_s=0.3$       & Surface mass balance (SMB)  & $ma^{-1}$         \\ \hline
-$a_b=0$             & Basal mass balance (BMB)    & $ma^{-1}$         \\ \hline
-$\rho i=917$        & Ice density                 & $kg m^{-3}$       \\ \hline
-$\rho w=1028$      & Sea water density           & $kg m^{-3}$       \\ \hline
-$A= 2.9377x10^{-9}$ & Ice rate factor             & $KPa^{-3}a^{-1}$  \\ \hline
-$n=3$               & Flow law stress exponent    &                 \\ \hline
-$C=0.001$           & basal slipperiness          & $ma^{-1}Kpa^{-3}$ \\ \hline
-$m=3$               & Sliding law stress exponent &                 \\ \hline
-$s2a=31556926$     & Seconds in a year           & seconds         \\ \hline
-\end{tabular}
-\end{center}
+	\begin{center}
+		\caption{Physical constants}
+		\label{Physical constants}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Variable          & Description                 & Units           \\ \hline
+			$g=9.81$         & Gravitational acceleration  & $ms^{-2}$         \\ \hline
+			$a_s=0.3$       & Surface mass balance (SMB)  & $ma^{-1}$         \\ \hline
+			$a_b=0$             & Basal mass balance (BMB)    & $ma^{-1}$         \\ \hline
+			$\rho i=917$        & Ice density                 & $kg m^{-3}$       \\ \hline
+			$\rho w=1028$      & Sea water density           & $kg m^{-3}$       \\ \hline
+			$A= 2.9377x10^{-9}$ & Ice rate factor             & $KPa^{-3}a^{-1}$  \\ \hline
+			$n=3$               & Flow law stress exponent    &                 \\ \hline
+			$C=0.001$           & basal slipperiness          & $ma^{-1}Kpa^{-3}$ \\ \hline
+			$m=3$               & Sliding law stress exponent &                 \\ \hline
+			$s2a=31556926$     & Seconds in a year           & seconds         \\ \hline
+		\end{tabular}
+	\end{center}
 \end{table}
 
 For the computation of $u_b=2$, we used the Weertman style sliding law:
 \begin{equation}
-    u_b = C\tau _b^m
+	u_b = C\tau _b^m
 \end{equation}
 where C is the basal slipperiness and $\tau _b$ is the basal shear stress.
 In order to enter these values into the Elmer code, we need to convert all units to Elmer units, namely: MPa, meter, and years. It means that all units that are derivated from time in seconds, must be converted to time in years using the time equivalence proposed in the project and all units or values expressed in terms of KPa must be multiplied by a factor of $10^{-3}$ to be converted to MPa.
 Also, to compute the basal sliding velocity $u_b$, Elmer uses the term $\beta$ that is related to $u_b$ by:
 \begin{equation}
-    \tau = \beta u_b^{\frac{1}{m}}
+	\tau = \beta u_b^{\frac{1}{m}}
 \end{equation}
 So, we have:
 \begin{equation}
-    u_b = (\frac{\tau}{\beta})^m;
+	u_b = (\frac{\tau}{\beta})^m;
 \end{equation}
 \begin{equation}
-    u_b = \frac{1}{\beta^m} \tau^m
+	u_b = \frac{1}{\beta^m} \tau^m
 \end{equation}
 Using the notation from equation (1), we can say that $C=  \frac{1}{\beta^m}$. So, we can compute $\beta$ as:
 \begin{equation}
-    \beta=(\frac{1}{C})^{\frac{1}{3}}
+	\beta=(\frac{1}{C})^{\frac{1}{3}}
 \end{equation}
 If we replace C by its value given in table \ref{Physical constants}, we get $\beta= 10^4 Pa m^{\frac{-1}{3}} a^{\frac{1}{3}}$ which converted to Mpa will give us a value of 10.
 
@@ -256,19 +247,26 @@ With C the courant number, $u$ the magnitude of the velocity, $\Delta t$ the tim
 This is a safe approximation. Cmax then has to be estimated by running different parameters in the simulation and seeing if it converges or not. In order to satisfy the CFL condition, a good starting point is 1 year, since it works properly and converges even for a resolution of 1km.
 However, in this experiment, it is asked to report the results every 10 years, and for this reason, we will save the results of the simulation with a frequency of 10 years. 
 
-\section{Results}
-As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as shown in the left-hand side of figure \ref{meshes} for a 10km resolution mesh. This is very helpful in terms of simulating complex geometries, for example, the thule configuration.
+ \section{Numerical model}
+ \subsection{The Elmer/Ice finite element method}
+ Most of the time analytical solutions are challenging or even impossible to obtain. In order to model ice sheets, both the finite difference method (FDM) and the finite element method (FEM) are used. The finite difference method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the finite element method.
+ The ice sheet/ice flow model Elmer/Ice includes developments related to glaciological problems and a large number of dedicated solvers and user functions that solve the Full-Stokes equations for various ice rheologies (classical, Glenn's flow law, anisotropic laws, and porous compressible firns/snow law). It includes solvers for the classical asymptotical expansions of the Stokes equations, namely the shallow ice approximation and the shallow and shallow shelf approximation (SSA). All these equations can be solved diagnostically or transiently, allowing the displacement of the boundaries.
 
-	\begin{figure}[!h]
-		\centering
-		\includegraphics[width=0.45\linewidth]{../fig/non_structured_grid_10km.png}
-            \includegraphics[width=0.45\linewidth]{../fig/regular_grid_10km.png}
-		\caption{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.}
-		\label{meshes}
-	\end{figure}
+ Elmer/Ice considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, which are applied to the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines or solvers. Each equation corresponds to one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows us to visualize the evolution of the flow through time.
  
- However, once the simulation is done and to better interpret the results obtained, we need to build a structured mesh, because it is ideal for these time-domain simulations this way we can  easily identify elements and nodes when plotting time-dependent or spacial-dependent graphics. In our case, our objective of interest will be the spacial behavior or dynamic of the glacier since we will analyze the position of the grounding line after the steady state is reached. To build the structured mesh, we performed an interpolation made from the unstructured mesh values of the nodes, namely we interpolate per each node the value of the variables of interest with the values of these variables in the non-structured mesh. This way we know which position the node is in, and we can plot figures spacial-dependent, namely, we can plot the value of different variables, for example, the velocity components, as a function of the horizontal position. 
+ As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as shown in the left-hand side of figure \ref{meshes} for a 10km resolution mesh. This is very helpful in terms of simulating complex geometries, for example, the thule configuration.
  
+ \begin{figure}[!h]
+ 	\centering
+ 	\includegraphics[width=0.45\linewidth]{../fig/non_structured_grid_10km.png}
+ 	\includegraphics[width=0.45\linewidth]{../fig/regular_grid_10km.png}
+ 	\caption{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.}
+ 	\label{meshes}
+ \end{figure}
+
+However, once the simulation is done and to better interpret the results obtained, it is needed to build a structured mesh, because it is ideal for these time-domain simulations this it can  easily identified elements and nodes when plotting time-dependent or spacial-dependent graphics. In this case, the objective of interest will be the spacial behaviour or dynamic of the glacier since we will analyse the position of the grounding line after the steady state is reached. To build the structured mesh, an interpolation made from the unstructured mesh values of the nodes is performed, namely an interpolation per each node of the value of the variables of interest with the values of these same variables in the non-structured mesh. This way it can be known which position the node is in, and the spacial dependent variables can be plot; for example, the velocity components as a function of the horizontal position. 
+
+\section{Results}
 \subsection{Cone configuration}
 
 For this first experiment proposed, the simulations were run varying the resolution from 10km and up to 1km. In figure \ref{figCONO1} we show a qualitative representation of the simulation results for the different resolutions, where we also run 50 and 20km resolution just to have a better idea of how this change in the resolution has an impact in the results. In these figures, the blue part represents the grounded part of the domain, and the grey part represent the floating part. This way we can identify the changes in the transition from grounded to not grounded, namely the grounding zone. We can see also how, as we go closer to a minimum resolution, the differences start to be not that notorious. 
