@@ -91,94 +91,17 @@ In this project, only the Shallow Shelf approximation is made, as this is how fu
 
 A long debate on the dynamics of such ice sheets was initiated in the 1970s when \cite{weertman1974stability} proposed that a marine ice sheet that lies on an upward-sloping bed is unstable. Recently, the instability hypothesis has been strongly reinforced, based on a boundary-layer theory due to \cite{schoof2007ice}. Moreover, \cite{vieli2005assessing} showed the poor ability of marine ice-sheet models to give consistent prognostic results and, more particularly, they highlighted the influence of the grid size on model results. One of their main conclusions was that no reliable model was able to predict grounding line dynamics at the time of their study.
 
-There is a need to improve marine ice-sheets models in order to corroborate recent theoretical predictions and to obtain confident simulations of the grounding line dynamics. \cite{durand2009marine} proposed a full-Stokes solution of the ice-sheet/ice-shelf transition. This approach has been built on literature dealing with the coupling between a grounded ice sheet and a floating ice shelf and identifying this transition zone as a crucial control of the marine ice sheet dynamics \cite[]{weertman1974stability, van1985response, chugunov1996modelling, hindmarsh1996stability, vieli2005assessing, schoof2007ice, schoof2007marine}.
+There is a need to improve marine ice-sheets models in order to corroborate recent theoretical predictions and to obtain confident simulations of the grounding line dynamics. \cite{durand2009marine} proposed a full-Stokes solution of the ice-sheet/ice-shelf transition. This approach has been built on literature dealing with the coupling between a grounded ice sheet and a floating ice shelf and identifying this transition zone as a crucial control of the marine ice sheet dynamics, like the studies carried out by \cite{weertman1974stability}, \cite{van1985response}, \cite{schoof2007ice}, and \cite{schoof2007marine}. Also, \cite{chugunov1996modelling} presented a model for the behavior of a marine glacier and ice-sheet-ice-shelf transition zone based on asymptotic analysis, which involves breaking down the equations into simpler components and analyzing their behavior as certain variables approach infinity or zero, to derive a set of simplified equations that can be used to predict the behavior of the glacier and ice-sheet-ice-shelf transition zone. \cite{hindmarsh1996stability} presents a mathematical model of ice rise stability, which takes into account the effects of ice flow, ice shelf melt, and ocean circulation. He uses this model to analyze the stability of several ice rises and uncoupled marine ice sheets in Antarctica, finding that some of these features may be more stable than previously thought. On the other hand, \cite{vieli2005assessing} evaluate the ability of numerical ice sheet models to simulate grounding line migration. They concluded that while numerical ice sheet models have made significant progress in simulating grounding line migration, there is still much work to be done to improve their accuracy and reliability.
 
 \cite{durand2009full} showed, using the finite element code Elmer/Ice, that the full-Stokes modeling of the ice-sheet/ice-shelf transition gives a consistent prediction of grounding-line migration. However, their approach is highly sensitive to the chosen mesh resolution. For a grid size smaller than $5 km$ in the grounding-line vicinity, predictions start to be consistent. For any finer resolution than $5 km$, the steady-state grounding-line position is the same (6km is the standard deviation). If a sub-grid refinement of 200m in the vicinity of the grounding line is applied the steady-state position is stable.
 
 In order to study and test the behavior of the different components of the models, idealized systems are studied and, based on the results that are obtained from these idealized cases, the hypothesis, models, and numerical methods used to solve the problems are improved. For this reason, within the framework of this project, we will analyze the behavior of the Elmer/Ice method to solve idealized systems and topographies. The framework in which the present project is focused is on the study of the Northern Europe glacier. But, since this glacier does not exist anymore, idealized cases simulations of North Europe glaciers, such as Greenland can be analyzed as mentioned before, and their results can be used to improve the numerical models, hypothesis, and parameters of the models, and this way we can better understand the behavior of ancient glaciers such as the Northern Europe glacier.
 
-\subsection{Systems and domains}
-This numerical experiment uses two different topographic profiles. A cone and a more realistic topography (Thule).
-\subsubsection{Cone}
-The idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
-\begin{equation}
-	\theta=arctan2(y,x);
-\end{equation}
-\begin{equation}
-	I=R-cos(2\theta)\frac{R}{2}
-\end{equation}
-\begin{equation}
-	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{R2}^;
-\end{equation}
-Where $R=800x10^3 m$, $Bc=0.9 x 10^3 m$, and $BI=-2 x 10^3 m$. 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
-	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
-	\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
-	\label{circular_topo_top}
-\end{figure}
+\section{Systems and domains}
 
-\subsubsection{Thule}
-The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and \ref{Thule_3D1} and is given by:
-\begin{equation}
-	\theta=arctan2(y,x);
-\end{equation}
-\begin{equation}
-	I=R-cos(2\theta)\frac{R}{2};
-\end{equation}
-\begin{equation}
-	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{R^2};
-\end{equation}
-\begin{equation}
-	Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
-\end{equation}
-With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
-	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
-	\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
-	\label{Thule_3D}
-\end{figure}
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D1}
-	\caption{Thule bedrock topography 3D with a front view.}
-	\label{Thule_3D1}
-\end{figure}
-\subsection{Boundary conditions}
-Boundary conditions are needed in order to solve differential equations. It will be assumed that:
-\begin{itemize}
-	\item The bedrock is impermeable (The vertical component of the ice flow velocity is 0). 
-	\item The flow follows the Weertman friction law.
-	\item Mass accumulation is a constant parameter.
-	\item The simulation will be performed on a quarter of the domain since the geometry of the topography is symmetric, which allows having free slip boundary conditions at the left and downsides of the topography, and open boundary conditions at the right and top sides of the domain. 
-\end{itemize}
 \subsection{Physical constants}
-Table \ref{Physical constants 1}shows the constants parameters that were set up for the experiment by the Calvin MIP project at the beginning of the project. 
-\begin{table}[!h]
-	\begin{center}
-		\caption{Physical constants 1}
-		\label{Physical constants 1}
-		\begin{tabular}{|l|l|l|}
-			\hline
-			Variable          & Description                 & Units           \\ \hline
-			$g=9.81$         & Gravitational acceleration  & $ms^{-2}$         \\ \hline
-			$a_s=0.3$       & Surface mass balance (SMB)  & $ma^{-1}$         \\ \hline
-			$a_b=0$             & Basal mass balance (BMB)    & $ma^{-1}$         \\ \hline
-			$\rho i=917$        & Ice density                 & $kg m^{-3}$       \\ \hline
-			$\rho w=1030$      & Sea water density           & $kg m^{-3}$       \\ \hline
-			$A= 2.9377x10^{-9}$ & Ice rate factor             & $KPa^{-3}a^{-1}$  \\ \hline
-			$n=3$               & Flow law stress exponent    &                 \\ \hline
-			$C=0.001$           & basal slipperiness          & $ma^{-1}Kpa^{-3}$ \\ \hline
-			$m=3$               & Sliding law stress exponent &                 \\ \hline
-			$d2a=365.2422$     & days in a year           & days         \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+Table \ref{Physical constants} shows the constants parameters that were set up for the experiment by the Calvin MIP project. 
 
-After modifications were done in the experiment proposal, the final values used in the simulations are the ones listed in Table \ref{Physical constants}
 \begin{table}[!h]
 	\begin{center}
 		\caption{Physical constants}
@@ -200,7 +123,10 @@ After modifications were done in the experiment proposal, the final values used 
 	\end{center}
 \end{table}
 
+These constants parameters were modified by the Calvin MIP intercomparisson project after the current project was proposed. The water density and the time equivalence from year to seconds was changed from 1030 $kg/m^3$ to 1028 $kg/m^3$ and from 365.2422 days in a year to 31556926 seconds in a year, respectively. All the rest of the parameters remained the same as listed in table \ref{Physical constants}.
+
 For the computation of $u_b=2$, we used the Weertman style sliding law:
+
 \begin{equation}
 	u_b = C\tau _b^m
 \end{equation}
@@ -223,18 +149,34 @@ Using the notation from equation (1), we can say that $C=  \frac{1}{\beta^m}$. S
 \end{equation}
 If we replace C by its value given in table \ref{Physical constants}, we get $\beta= 10^4 Pa m^{\frac{-1}{3}} a^{\frac{1}{3}}$ which converted to Mpa will give us a value of 10.
 
+\subsection{Boundary conditions}
+Boundary conditions are needed in order to solve differential equations. It will be assumed that:
+\begin{itemize}
+	\item The bedrock is impermeable (The vertical component of the ice flow velocity is 0):
+	\begin{equation}
+		v = 0
+	\end{equation}
+	\item The flow follows the Weertman friction law:
+	\begin{equation}
+		u_b = C\tau_b^m
+	\end{equation}
+	\item Mass accumulation is a constant parameter.
+	\item The simulation will be performed on a quarter of the domain since the geometry of the topography is symmetric, which allows having free slip boundary conditions at the left and downsides of the topography, and open boundary conditions at the right and top sides of the domain. 
+\end{itemize}
+
 \subsubsection{Numerical parameters}
 The numerical resolution will be our variable physical parameter, which we will vary from 10 km, 5 km, 2 km, 1 km, 500 m, and 250 m. 
 \subsubsection{External forcing}
-We will assume that the only external force acting is gravity ($g=9.81 m/s^2$), which is translated to the weight of the ice sheet and the flotation force of this in the ocean water.
+We will assume that the only external force acting are gravity ($g=9.81 m/s^2$), which is translated to the weight of the ice sheet and the flotation force of this in the ocean water, as well as the ice friction with the bedrock.
 \subsubsection{Initial condition}
 The simulation departs from no iced configuration. 
 As stated before, the flow will follow the linear Weertman friction law at the base of the ice sheet:
 \begin{equation}
-	\tau_b=\beta u;
+	u_b=C\tau_b^m;
 \end{equation}
-Where $\tau$ is the friction shear stress, $\beta$ is the basal friction coefficient, and $u$ is the velocity.
-Comparisons were made using friction coefficients ranging from $\beta=10^{-8}$ to simulate a friction close to 0, to $\beta=10^{-2}$. This coefficient is also the one chosen to perform the simulations. 
+Where $\tau$ is the friction shear stress, $C$ is the basal slipperiness coefficient, and $u$ is the velocity.
+Comparisons were made using friction coefficients ranging from $C=10^{-8}$ to simulate a friction close to 0, to $C=10^{-2}$. This coefficient is also the one chosen to perform the simulations.
+The simulations will start from a topography with no ice, namely $h_0 = 0$. However, the Elmer/Ice code uses a notation where at least a minimum value should be enter in order to avoid convergence problems, so a very small value of $h_0 = 0,01$ is introduced as initial ice thickness. 
 \subsubsection{Time step}
 The Courant-Friedrichs-Lewy (CFL) condition is a necessary condition to solve numerical partial differential equations. It states that the distance a variable travels between two-time steps must be smaller than the distance between two points of the mesh \cite[]{courant1967partial}. It is needed that:
 \begin{equation}
@@ -247,24 +189,82 @@ With C the courant number, $u$ the magnitude of the velocity, $\Delta t$ the tim
 This is a safe approximation. Cmax then has to be estimated by running different parameters in the simulation and seeing if it converges or not. In order to satisfy the CFL condition, a good starting point is 1 year, since it works properly and converges even for a resolution of 1km.
 However, in this experiment, it is asked to report the results every 10 years, and for this reason, we will save the results of the simulation with a frequency of 10 years. 
 
+This numerical experiment uses two different topographic profiles. A cone and a more realistic topography (Thule).
+\subsection{Cone domain}
+The idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=R-cos(2\theta)\frac{R}{2}
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{R2}^;
+\end{equation}
+Where $R=800x10^3 m$, $Bc=0.9 x 10^3 m$, and $BI=-2 x 10^3 m$. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
+	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
+	\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
+	\label{circular_topo_top}
+\end{figure}
+
+\subsection{Thule domain}
+The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and is given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=R-cos(2\theta)\frac{R}{2};
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{R^2};
+\end{equation}
+\begin{equation}
+	Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
+\end{equation}
+With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
+	\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
+	\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
+	\label{Thule_3D}
+\end{figure}
+
  \section{Numerical model}
  \subsection{The Elmer/Ice finite element method}
- Most of the time analytical solutions are challenging or even impossible to obtain. In order to model ice sheets, both the finite difference method (FDM) and the finite element method (FEM) are used. The finite difference method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the finite element method.
- The ice sheet/ice flow model Elmer/Ice includes developments related to glaciological problems and a large number of dedicated solvers and user functions that solve the Full-Stokes equations for various ice rheologies (classical, Glenn's flow law, anisotropic laws, and porous compressible firns/snow law). It includes solvers for the classical asymptotical expansions of the Stokes equations, namely the shallow ice approximation and the shallow and shallow shelf approximation (SSA). All these equations can be solved diagnostically or transiently, allowing the displacement of the boundaries.
 
- Elmer/Ice considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, which are applied to the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines or solvers. Each equation corresponds to one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows us to visualize the evolution of the flow through time.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/non_structured_grid_10km.png}
+	\includegraphics[width=0.45\linewidth]{../fig/regular_grid_10km.png}
+	\caption{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.}
+	\label{meshes}
+\end{figure}
+
+Most of the time analytical solutions are challenging or even impossible to obtain. In order to model ice sheets, both the finite difference method (FDM) and the finite element method (FEM) are used. The finite difference method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the finite element method.
+
+The ice sheet/ice flow model Elmer/Ice includes developments related to glaciological problems and a large number of dedicated solvers and user functions that solve the Full-Stokes equations for various ice rheologies (classical, Glenn's flow law, anisotropic laws, and porous compressible firns/snow law). It includes solvers for the classical asymptotical expansions of the Stokes equations, namely the shallow ice approximation and the shallow and shallow shelf approximation (SSA). All these equations can be solved diagnostically or transiently, allowing the displacement of the boundaries.
+
+Elmer/Ice considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, which are applied to the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines or solvers. Each equation corresponds to one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows us to visualize the evolution of the flow through time.
  
- As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as shown in the left-hand side of figure \ref{meshes} for a 10km resolution mesh. This is very helpful in terms of simulating complex geometries, for example, the thule configuration.
- 
- \begin{figure}[!h]
- 	\centering
- 	\includegraphics[width=0.45\linewidth]{../fig/non_structured_grid_10km.png}
- 	\includegraphics[width=0.45\linewidth]{../fig/regular_grid_10km.png}
- 	\caption{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.}
- 	\label{meshes}
- \end{figure}
+As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as shown in the left-hand side of figure \ref{meshes} for a 10km resolution mesh. This is very helpful in terms of simulating complex geometries, for example, the thule configuration.
+
 
 However, once the simulation is done and to better interpret the results obtained, it is needed to build a structured mesh, because it is ideal for these time-domain simulations this it can  easily identified elements and nodes when plotting time-dependent or spacial-dependent graphics. In this case, the objective of interest will be the spacial behaviour or dynamic of the glacier since we will analyse the position of the grounding line after the steady state is reached. To build the structured mesh, an interpolation made from the unstructured mesh values of the nodes is performed, namely an interpolation per each node of the value of the variables of interest with the values of these same variables in the non-structured mesh. This way it can be known which position the node is in, and the spacial dependent variables can be plot; for example, the velocity components as a function of the horizontal position. 
+
+\section{Set-up of the simulations data}
+Once both results for both experiments are obtained, for the domain complete and the quarter domain, the grounding line position per each resolution along the profiles proposed will be quantified. For this, a function that can be denominated grounding line needs to be created, and this function is defined as the product of the bedrock position and a grounding mask. This grounded mask is a step function created, which a value of -1 is assigned to the grounded ice, and 1 to the part of the ice that is no longer in contact with the bedrock, namely:
+
+\[ \begin{cases} 
+	-1 & bedrock = z_b \\
+	1 & z_b \leq bedrock   
+\end{cases}
+\]
+
+Using this mask, the grounding line function is defined as the negative product of this mask and the bedrock (the negative sign is only implemented for convention). From the fact that this grounding line function is an increasing function, it must have an unique maximum, namely, the point where the function changes sign. This maximum means the point where $z_b$ is no longer equal to bedrock position, so starting from this point, the lower part of the ice sheet is not grounded any more. This maximum value of the grounding line function corresponds, physically, to the point where the grounding line or zone is along an x-profile. Knowing this point, the distance from the origin of our coordinate system to that point can be computed, knowing the x and y coordinates of this point, as the norm if this vector, this distance determines the grounding line position, in meters, along an x axis. The results are calculated in two parts: along three profiles A,B and C for the quarter of the domain, and along all the profiles from A to H for the domain complete, in the case of the Cone domain experiment. For the thule experiment, in the first part the grounding line position along Caprona B and Halbrane B needs to be calculated for the quarter domain, and then along all Capronas and Halbranes profiles for the complete domain. For both cases, per each resolution the mean, maximum and minimum value of the grounding line position was calculated.
 
 \section{Results}
 \subsection{Cone configuration}
@@ -331,16 +331,6 @@ In figure \ref{Cone_scheme}, we see an schematic representation of the results f
 
 To have a better idea of the simulations convergence, in figure \ref{h_and_h_velocities_cone} it is shown on the left sides all the values of ice thickness in meters per each resolution, and on the left sides the values of the ice thickness velocity obtained, namely the rate of change of the ice thickness in meters per year. The range of these values, maximum and minimum per resolution are very low (less than 0,001 m/y), which is a brief image that shows that the simulations reached a steady state with a low estimation error. 
 
-Once both results were obtained, for the domain complete and the quarter domain, the next step consists in quantify the grounding line position per each resolution along the profiles proposed. For this, a function that can be denominated grounding line was created, and this function was defined as the product of the bedrock position and a grounding mask. This grounded mask is a step function created, which a value of -1 is assigned to the grounded ice, and 1 to the part of the ice that is no longer in contact with the bedrock, namely:
-
-\[ \begin{cases} 
-	-1 & bedrock = z_b \\
-	1 & z_b \leq bedrock   
-\end{cases}
-\]
-
-Using this mask, we created the grounding line function as the negative product of this mask and the bedrock (the negative sign is only implemented for convention). From the fact that this grounding line function is an increasing function, it must have an unique maximum, namely, the point where the function changes sign. This maximum means the point where $z_b$ is no longer equal to bedrock position, so starting from this point, the lower part of the ice sheet is not grounded any more. This maximum value of the grounding line function corresponds, physically, to the point where the grounding line or zone is along an x-profile. Knowing this point, the distance from the origin of our coordinate system to that point can be computed, knowing the x and y coordinates of this point, as the norm if this vector, this distance determines the grounding line position, in meters, along an x axis. The results were calculated in two parts: along three profiles A,B and C for the quarter of the domain, and along all the profiles from A to H for the domain complete. For both cases, per each resolution the mean, maximum and minimum value of the grounding line position was calculated. 
-
 \begin{figure}[!h]
 	\centering % <-- added
 	\begin{minipage}[t]{.25\textwidth}
@@ -391,7 +381,7 @@ Using this mask, we created the grounding line function as the negative product 
 	\label{h_and_h_velocities_cone}
 \end{figure}
 
-These mean, maximum and minimum value of the grounding line position per resolution is shown in figure \ref{Grounding_lines__CONE_comparison} for both case studies, the quarter and complete domain. In the y-axis we have the grounding line position in meters, that is the distance calculated from an origin to the grounding line or zone computed before using the function. This distance is computed as the norm of a vector (x,y) that defines this grounding line position. 
+The mean, maximum and minimum value of the grounding line position per resolution is shown in figure \ref{Grounding_lines__CONE_comparison} for both case studies, the quarter and complete domain. In the y-axis we have the grounding line position in meters, that is the distance calculated from an origin to the grounding line or zone computed before using the function. This distance is computed as the norm of a vector (x,y) that defines this grounding line position. 
 
 \begin{figure}[!h]
 	\centering
@@ -485,52 +475,163 @@ In figure \ref{Thule_resolutions} a qualitative representation of the simulation
 	\label{Thule_resolutions}
 \end{figure}
 
+For the analysis of these results the same procedure was followed; the simulations were run using a quarter of the domain and the complete one, and the results for the grounding line position were analysed along the profile of Halbrane B and Caprona B for the quarter of the domain. A grounding line function is created and computed as the product of the grounded mask function and the negative of the bedrock position. The negative sign is introduced for the same reason as for the cone domain procedure, since the grounding line is an increasing function and as long as $z_b$ is equal to the bedrock position (namely, the ice sheet is grounded) this product will be negative, so if a negative sign is introduced, it will turn positive, making the inflexion point a unique maximum. This point that represents the position of the grounding line is identified per each resolution and the distance to the origin is calculated, along each one of the profiles Capronas and Halbranes.
 
-\subsection{Comparison of parameters for each resolution for the different configurations}
-In this part of the experiment, we compared the time spent during the simulations as a function of the number of nodes. The figure \ref{TimeVsNumberofnodes} shows this relation for both experiment, the cirular and the thule profile domain, both for the domain complete. 
-The time shown in figure \ref{TimeVsNumberofnodes} is the time spent by the computer using the 32 processors to run the simulations.
+The figure \ref{Grounding_lines__caprona_halbrane_comparison} shows the comparison of the grounding line position along the two types of profiles, Caprona and Halbrane for the quarter and complete domain. 
 
-	\begin{figure}[!h]
+\begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{../fig/TimeVsNumberOfNodes.png}
-	\caption{Comparison of the time spent by the simulation as a function of the number of nodes for both configurations.}
-	\label{TimeVsNumberofnodes}
-	\end{figure}
-
-	\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.9\linewidth]{../fig/Grounding_line_integrated_full_domain_CONE_time.png}
-	\caption{Grounding line position as a function of time for different resolutions for the complete circular domain.}
-	\label{TimeVsGroundingLinePosition_full}
-	\end{figure}
-
-
-	\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/H_CONE_full_all_res_vs_time.png}
-	\includegraphics[width=0.45\linewidth]{../fig/H_CONE_full_all_res_vs_num_nodes.png}
-	\caption{a) Ice thickness as a function of time. b) Ice thickness as a function of the number of nodes.}
-	\label{H_CONE_all_res}
-	\end{figure}
-
-	\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/Volume_CONE_full_all_res_vs_time.png}
-	\includegraphics[width=0.45\linewidth]{../fig/Volume_CONE_full_all_res_vs_num_nodes.png}
-	\caption{a) Ice volume as a function of time. b) Ice volume as a function of the number of nodes.}
-	\label{Volume_CONE_all_res}
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Capronas.png}
+		\caption{Grounding line positions along Capronas profiles.}
+		\label{Thule_Capronas}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Halbranes.png}
+		\caption{Grounding line positions along Halbrane profiles}
+		\label{Thule_halbranes}
+	\end{subfigure}
+	\caption{Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.}
+	\label{Grounding_lines__caprona_halbrane_comparison}
 \end{figure}
 
+For this experiment, for the quarter of the domain there are only two profiles Caprona B and Halbrane B. For both profiles there is only a value of grounding line position, that is shown in figure \ref{Thule_Capronas} and \ref{Thule_halbranes} respectively. To compare these positions obtained for the quarter domain, the grounding line positions along Halbrane A,B, C and D are computed for the complete domain following the procedure described previously, and the mean, maximum and minimum value per each resolution are listed in figure \ref{Thule_halbranes}. The exact same procedure is applied using the results along the Capronas profiles. For both, the mean value of the grounding line position for the complete domain, and the grounding line position for the quarter domain, the associated error bars are also shown.
+
+It can be observed that as the mesh resolution starts to decrease, the differences between the results for the grounding line positions along both profiles for the complete and quarter domain start to decrease, a similar behaviour observed in the cone circular domain results. 
+
+\subsection{Comparison of parameters for each resolution for the different configurations}
+
+An important parameter to take into account for the results for both experiments, is the computation time spent to complete all the simulations of the experiments. The figure \ref{Computation time} shows the relation between the number of nodes for each one of the mesh resolutions and the time.
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_Segundos.png}
+		\caption{Time for 32 processors used.}
+		\label{32_proce}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_32.png}
+		\caption{Time for 1 processor.}
+		\label{1_proce}
+	\end{subfigure}
+	\caption{Simulation time as a function of the number of nodes for each resolution mesh.}
+	\label{Computation time}
+\end{figure}
+
+Figure \ref{32_proce} shows the time spent using the 32 processors to run all the simulations, while in the figure \ref{1_proce} it is shown the expected time for a 50000 years of simulation if 1 processor was used. 
+
+In figure \ref{H_CONE_VS_TIME_VS_NODES} it can be observed also a comparison of the ice thickness variation in time, for each one of the resolutions for the cone circular domain experiment and the error graph associated to this ice thickness as a function of the number of nodes per each resolution.
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_time.png}
+		\caption{Ice thickess variation in time.}
+		\label{H_CONE_VS_TIME}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_num_nodes.png}
+		\caption{Ice thickness error as a function of the number of nodes.}
+		\label{H_CONE_VS_NODES}
+	\end{subfigure}
+	\caption{Ice thickess variation in time for the Cone circular domain experiment.}
+	\label{H_CONE_VS_TIME_VS_NODES}
+\end{figure}
+
+As it can be observed, the ice thickess does not vary nor oscillates around each value for each resolution, which shows the convergence of the system.
+
+The same figures can be plot for the thule experiment, where in figure X it can be observed the ice thickness variation as a function of time and the error or variation of the ice thickness as a function of the number of nodes per each resolution. In both cases, for the computation of $\epsilon_H$ the reference value of H it is assumed to be the one corresponding to 1km resolution. 
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/H_THULE_full_all_res_vs_time.png}
+		\caption{Ice thickess variation in time.}
+		\label{H_THULE_VS_TIME}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/H_THULE_full_all_res_vs_num_nodes.png}
+		\caption{Ice thickness error as a function of the number of nodes.}
+		\label{H_THULE_VS_NODES}
+	\end{subfigure}
+	\caption{Ice thickess variation in time for the Thule domain experiment.}
+	\label{H_THULE_VS_TIME_VS_NODES}
+\end{figure}
+
+A similar procedure can be done for the volume of the ice sheet. In the figure \ref{Volume_CONE_VS_TIME_VS_NODES} it is shown the volume as a function of time and the relative variation associated taking into account the 1km resolution volume as the reference for the computation of $\epsilon_V$. It can be observed how the differences start to decrease as long as the resolution decreases until the 1 km reference resolution is reached. 
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_time.png}
+		\caption{Volume variation in time.}
+		\label{VOLUME_CONE_VS_TIME}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_num_nodes.png}
+		\caption{Volume relative variation as a function of the number of nodes.}
+		\label{VOLUME_CONE_VS_NODES}
+	\end{subfigure}
+	\caption{Volume variation in time for the cone domain experiment.}
+	\label{Volume_CONE_VS_TIME_VS_NODES}
+\end{figure}
+
+In figure \ref{Volume_THULE_VS_TIME_VS_NODES}, the evolution in time for the volume is also computed for the thule domain per each resolution, as well as the relative variation having the 1km resolution volume as reference. 
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Volume_THULE_full_all_res_vs_time.png}
+		\caption{Volume variation in time.}
+		\label{VOLUME_THULE_VS_TIME}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Volume_THULE_full_all_res_vs_num_nodes.png}
+		\caption{Volume relative variation as a function of the number of nodes.}
+		\label{VOLUME_THULE_VS_NODES}
+	\end{subfigure}
+	\caption{Volume variation in time for the thule domain experiment.}
+	\label{Volume_THULE_VS_TIME_VS_NODES}
+\end{figure}
 
 \section{Discussion}
-Here we will discuss the differences found between the results obtained for the different spacial resolutions for thule and cone, for the complete domain using the previous constant parameters, and the results obtained for the quarter domain using the new parameters. We will discuss the accuracy of the model for the different resolutions in predicting the position of the grounding line for both types of configurations. We will compare the position of the grounding line as a function of the resolution. 
-Also, we will discuss the time spent in the simulations as a function of the number of processors used (plot) and we can try to discuss an optimum number of processors that can be used (will be reviewed).
-\section{Conclusion}
-We will present our main conclusions of the project. The main objectives that were accomplished and future changes or improvements to do for further research.
-   \pagebreak
 
-    \bibliographystyle{apalike}
-    \bibliography{./biblio}
+The outcomes of this research have provided insight into the importance of the mesh resolution in the prediction of important parameters like the grounding line position for the glaciers dynamics. The results obtained for the grounding line position for both experiments were consistent with the ones carried out by \cite{durand2009full} were they could show that the grounding line position results start to be consistent for a grid size smaller than 5km. In that case, a Full-Stokes model was implemented, while in this case a Shallow-Shelf approximation was carried out, decreasing the simulation time and the computational resources. For the complete domains, as well as for the quarter domains, the results start to be consistent after 5 km resolution meshes. 
+
+However, this prediction should be interpreted with caution due to the limitations of the current research. As it can be observed in figure \ref{Computation time}, the time spent by simulations as a function of the number of nodes in the mesh was obtained, showing a linear behaviour. This expected computational time is calculated based on 50000 years of simulation, and shows that for example, to complete a simulation of a 1 km mesh ($3x10^6$ nodes), on 50000 years of simulation, the computing time would be around 2222 hours with the maximum computational time allowed in the laboratory using the 32 processors, as showed in figure \ref{32_proce}. This time would be 32 times greater if 1 processor is used, instead of using all, as shown in figure \ref{1_proce}. This is the main limitation of the project, due to the amount of time required for further simulations of mesh resolutions lower than 1km that could not be carried out for these reason. Besides, even that it has been shown according to the results that a shallow shelf approximation of the Full-Stokes equations can be a good approximation for the prediction of the grounding line position, further experiments with lower mesh resolutions need to be implemented to conclude a robust prediction of these result. 
+
+On the other hand, with respect to the convergence of the simulations, figure \ref{h_and_h_velocities_cone} shows the range of values for the ice thickness rate of change after the steady state was reached, results that are later detailed on figure \ref{H_CONE_VS_TIME} and \ref{H_THULE_VS_TIME} for both configurations. In these last figures, it can be observed how after several iterations for different time steps, the ice thickness starts to converge to a constant value. Due to the large computation times discussed before, the implementation of this research was to perform each simulation starting from the previous one as a restart point, and that is the reason why it can be observed that each simluation for each resolution mesh starts from the previous value, (except for the 1km resolution simulation that was performed at the same time with the 2km one, starting from the 5km result, for both configurations.) The fact that the 1 km simulations were run starting from the 5km resolution result, may explain the reason why this simulation did not stabilized completely to a constant value, since it can be observed that it did not converged fully to a constant line. Also, the values of convergence were increasing as the resolution mesh decreased (from a very small close to 0 value for ice thickness for the 10km resolution, to around 1,77 m/y for the thule domain and 2,5 m/y for the cone domain). 
+
+For these reasons, the convergence of the ice thickness can not be fully concluded after these results obtained. further simulations beyond 1km resolution mesh could be needed in order to evaluate the convergence to an specific value of ice thickness for a certain configuration domain. In figure \ref{h_and_h_velocities_cone} it can be observed in the right hand side the zones where the variation of the ice thickness was the lowest and the highest, and as stated before, since the simulations were run using the previous results as a restart point, the iterations started from these values and not from 0. For these reasons, for a certain time of simulation, it converged faster for the zones of the domain where the variables (in this case, the high thickness velocity) did not change too much with respect to one resolution or another, due to the simplicity of the zone or the geometry.
+
+However, even if the convergence of the ice thickness can not be fully concluded as stated before, figures \ref{VOLUME_CONE_VS_TIME} and \ref{VOLUME_THULE_VS_TIME} show a different behaviour for the convergence of the domains volume. For both configurations, the volume variation in time converges to a constant value. The behaviour of convergence is similar to the one for the ice thickness, but in this case for both configuration the value of the volume starts to reach the same constant value as the resolution mesh decreases. For this case as well the 1 km resolution is taken as the reference for the computation of the relative variation and it can be observed in figure \ref{VOLUME_CONE_VS_NODES} and \ref{VOLUME_THULE_VS_NODES} that the differences decrease as a function of the number of nodes, with a slight difference for the 2 km resolution for both configurations. This difference in the convergence of the volume and the convergence of the ice thickness can be explained, by the fact that the volume not only depends of the ice thickness but also on the surface area. The computation of the volume stands for the summary of each volume per element, and each element surface area is greater than its thickness and ends up being the determinant quantity at the time of computing the complete domain volume. 
+
+For these reasons, even if the results obtained show that the position of the grounding line can be well predicted using the SSA model for resolution meshes lower than 5km, these results may not indicate enough information about the convergence of variables as the ice thickness when varying the resolution. However, as it was shown, using only a quarter domain can reduce the computation time of further simulations and researches, and these way further simulations beyond 1km resolution meshes can be performed in order to reach to a convergence for these kind of variables.  
+
+\section{Conclusion}
+
+In this project an approach using a shallow shelf approximation (SSA) model was proposed to simulate the motion of glaciers with two different configuration topography. The ice flow is determined by solving the Stokes problem implemented in finite element code Elmer/Ice with the SSA assumptions. This problem was solved by taking into account the complete domain and also solving only a quarter of the domain, due to the symmetry of the system. The position of the grounding line was studied for different resolution meshes starting from 10km and up to 1km, and it was shown that despite the sensitivity of the grounding line to the mesh resolution, it started to converge for resolutions lower to 5km, despite the configuration or the topography as well. The results for the quarter domain for both topographies showed consistency with the results for the complete domain for the prediction of the grounding line position. However, further simulations need to be performed with resolution meshes lower than 1km to fully conclude the convergence of all the variable results. According to the results obtained in this research project, it can be a good path for future researches to run simulation experiments with a quarter of the domain to save computational time, as the results are consistent due to the symmetry, and it can be possible to model more realistic glacier topographies using SSA models. Developing approaches to model more realistic glacier topographies, can allowed to better understand and predict the dynamics of the glaciers along time, and this way it can be better understood its impact on the formation and changes of the ice sheets and their behaviour. 
+
+\section{Acknowledgments} 
+
+This research is part of the Calvin MIP intercomparison project proposed as part of the  PROTECT (projecting sea-level rise: from ice sheet to local implications), an EU project funded to assess and project changes in the land-based cryosphere, with fully quantified uncertainties to produce robust global, regional and local projections on a range of timescales. All the computations and simulations run and presented in this project were performed in the Institut des géosciences de l'environnement (IGE) and the Observatoire des sciences de l'univers de Grenoble (OSUG-B).
+
+\pagebreak
+\bibliographystyle{apalike}
+\bibliography{./biblio}
 \end{document}
 
 

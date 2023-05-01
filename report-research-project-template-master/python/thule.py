@@ -43,51 +43,56 @@ rc=0
 def PlotCone2D():
 	## FIGURA 1. - 2D: Cone
 	#R=800e3
-	x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
-	plt.rcParams.update({'font.size': 22})
-	z = cone(y,x,R,Bc,Bl)
-	plt.imshow(z,extent=[-800e3,800e3,-800e3,800e3],cmap=segmented_cmaps,vmin=-20e3,vmax=0.9e3)
-	plt.colorbar()
-	plt.xlabel("x (m)")
-	plt.ylabel("y (m)")
-	plt.show()
+    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    plt.rcParams.update({'font.size': 22})
+    z = cone(x,y,R,Bc,Bl) 
+    plt.imshow(z,extent=[-800,800,-800,800],cmap=segmented_cmaps,vmin=-5000,vmax=1000)
+    plt.colorbar()
+    plt.xlabel("x(km)") 
+    plt.ylabel("y(km)")
+    plt.show()
 
 def PlotCone3D():
 	## FIGURA 2. - 3D: Cone
-	fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
-	ax = plt.axes(projection='3d')
-	surf=ax.plot_surface(x, y, z, rstride=1, cstride=1,
-                cmap=segmented_cmaps, edgecolor='none')
+    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    z = cone(y,x,R,Bc,Bl)
+    ax = plt.axes(projection='3d')
+    surf=ax.plot_surface(x/1000, y/1000, z, rstride=1, cstride=1,cmap=segmented_cmaps, edgecolor='none')
+    ax.set_zticks([])
+    plt.xlabel("x (km)")
+    plt.ylabel("y (km)")
 	# Add a color bar which maps values to colors.
-	fig.colorbar(surf, shrink=0.5, aspect=5)
-	plt.show()
+    fig.colorbar(surf, shrink=0.5, aspect=5)
+    ax.xaxis.labelpad=20
+    ax.yaxis.labelpad=20
+    plt.show()
 
 def PlotThule2D():
 	## FIGURA 3. - 2D: Thule
 	# Crea la malla para graficar:
-	x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
-	z = b(y,x,R,Bc,Bl)
-	plt.imshow(z,extent=[-800e3,800e3,-800e3,800e3],cmap=segmented_cmaps,vmin=-3500,vmax=2000)
-	plt.colorbar()
-	plt.xlabel("x (m)")
-	plt.ylabel("y (m)")
-	plt.show()
+    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    z = b(y,x,R,Bc,Bl)
+    plt.imshow(z,extent=[-800,800,-800,800],cmap=segmented_cmaps,vmin=-5000,vmax=2000)
+    plt.colorbar()
+    plt.xlabel("x (km)")
+    plt.ylabel("y (km)")
+    plt.show()
 
 def PlotThule3D():
 	##FIGURA 4. -3D: Thule
-	x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
-	z = b(y,x,R,Bc,Bl)
-	fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
-	ax = plt.axes(projection='3d')
-	ax.set_zticks([])
-	plt.xlabel("x (km)")
-	plt.ylabel("y (km)")
-	surf=ax.plot_surface(x/1000, y/1000, z, rstride=1, cstride=1,
-                cmap=segmented_cmaps, edgecolor='none')
+    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    z = b(x,y,R,Bc,Bl)
+    fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
+    ax = plt.axes(projection='3d')
+    ax.set_zticks([])
+    plt.xlabel("x (km)")
+    plt.ylabel("y (km)")
+    surf=ax.plot_surface(x/1000, y/1000, z, rstride=1, cstride=1, cmap=segmented_cmaps, edgecolor='none')
 	# Add a color bar which maps values to colors.
-	fig.colorbar(surf, shrink=0.5, aspect=10,ticks=[-5000,-4000,-3000,-2000,-1000,0,1000,1500])
-	ax.xaxis.labelpad=20
-	ax.yaxis.labelpad=20
+    fig.colorbar(surf, shrink=0.5, aspect=10,ticks=[-5000,-4000,-3000,-2000,-1000,0,1000,1500])
+    ax.xaxis.labelpad=20
+    ax.yaxis.labelpad=20
 	#ax.dist = 10
 	#ax.xaxis._axinfo['label']['space_factor'] = 2
-	plt.show()
+    plt.show()

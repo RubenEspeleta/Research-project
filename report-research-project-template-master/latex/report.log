@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.4.23)  27 APR 2023 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Debian) (preloaded format=pdflatex 2023.4.23)  1 MAY 2023 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -417,12 +417,12 @@ Package hyperref Info: Link coloring OFF on input line 8.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 (./coverpage.tex
-<../fig/logo_UGA.png, id=88, 171.64125pt x 111.41624pt>
+<../fig/logo_UGA.png, id=96, 171.64125pt x 111.41624pt>
 File: ../fig/logo_UGA.png Graphic file (type png)
 <use ../fig/logo_UGA.png>
 Package pdftex.def Info: ../fig/logo_UGA.png  used on input line 4.
 (pdftex.def)             Requested size: 85.35696pt x 55.40706pt.
-<../fig/logo_IGE.png, id=90, 214.8025pt x 236.885pt>
+<../fig/logo_IGE.png, id=98, 214.8025pt x 236.885pt>
 File: ../fig/logo_IGE.png Graphic file (type png)
 <use ../fig/logo_IGE.png>
 Package pdftex.def Info: ../fig/logo_IGE.png  used on input line 6.
@@ -437,13 +437,13 @@ ig/logo_IGE.png>]) (./abstract.tex) (./report.toc)
  [2
 
 ]
-<../fig/Scheme_grounding_line.png, id=132, 395.67825pt x 192.72pt>
+<../fig/Scheme_grounding_line.png, id=142, 395.67825pt x 192.72pt>
 File: ../fig/Scheme_grounding_line.png Graphic file (type png)
 <use ../fig/Scheme_grounding_line.png>
 Package pdftex.def Info: ../fig/Scheme_grounding_line.png  used on input line 2
 4.
 (pdftex.def)             Requested size: 298.75264pt x 145.51888pt.
-<../fig/groundingzone.png, id=136, 522.0303pt x 302.3295pt>
+<../fig/groundingzone.png, id=146, 522.0303pt x 302.3295pt>
 File: ../fig/groundingzone.png Graphic file (type png)
 <use ../fig/groundingzone.png>
 Package pdftex.def Info: ../fig/groundingzone.png  used on input line 33.
@@ -451,7 +451,7 @@ Package pdftex.def Info: ../fig/groundingzone.png  used on input line 33.
 
 [3 <../fig/Scheme_grounding_line.png> <../fig/groundingzone.png (PNG copy)>]
 [4]
-<../fig/velocityglaciar.png, id=192, 256.5585pt x 173.448pt>
+<../fig/velocityglaciar.png, id=202, 256.5585pt x 173.448pt>
 File: ../fig/velocityglaciar.png Graphic file (type png)
 <use ../fig/velocityglaciar.png>
 Package pdftex.def Info: ../fig/velocityglaciar.png  used on input line 79.
@@ -468,310 +468,410 @@ Overfull \hbox (9.67253pt too wide) in paragraph at lines 94--95
 ground-ing line dy-nam-ics. [[]]
  []
 
-
-Overfull \hbox (51.29298pt too wide) in paragraph at lines 94--95
-[]\OT1/cmr/m/n/10 , [], [], [], [],
- []
-
-<../fig/circular_topo_top.png, id=228, 858.5676pt x 655.4889pt>
+[6] [7] [8]
+<../fig/circular_topo_top.png, id=276, 796.4154pt x 602.7318pt>
 File: ../fig/circular_topo_top.png Graphic file (type png)
 <use ../fig/circular_topo_top.png>
-Package pdftex.def Info: ../fig/circular_topo_top.png  used on input line 116.
-(pdftex.def)             Requested size: 192.0548pt x 146.61847pt.
-<../fig/circular_topo_jet.png, id=229, 734.2632pt x 502.9992pt>
+Package pdftex.def Info: ../fig/circular_topo_top.png  used on input line 207.
+(pdftex.def)             Requested size: 192.0548pt x 145.34834pt.
+<../fig/circular_topo_jet.png, id=277, 745.8264pt x 493.6041pt>
 File: ../fig/circular_topo_jet.png Graphic file (type png)
 <use ../fig/circular_topo_jet.png>
-Package pdftex.def Info: ../fig/circular_topo_jet.png  used on input line 117.
-(pdftex.def)             Requested size: 192.0548pt x 131.55957pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6]
-<../fig/Thule_2D.png, id=248, 818.8191pt x 641.0349pt>
-File: ../fig/Thule_2D.png Graphic file (type png)
-<use ../fig/Thule_2D.png>
-Package pdftex.def Info: ../fig/Thule_2D.png  used on input line 139.
-(pdftex.def)             Requested size: 192.0548pt x 150.34978pt.
-<../fig/Thule_3D.png, id=249, 753.0534pt x 533.3526pt>
+Package pdftex.def Info: ../fig/circular_topo_jet.png  used on input line 208.
+(pdftex.def)             Requested size: 192.0548pt x 127.10635pt.
+<../fig/Thule_3D.png, id=279, 796.4154pt x 602.7318pt>
 File: ../fig/Thule_3D.png Graphic file (type png)
 <use ../fig/Thule_3D.png>
-Package pdftex.def Info: ../fig/Thule_3D.png  used on input line 140.
-(pdftex.def)             Requested size: 192.0548pt x 136.02345pt.
-<../fig/Thule_3D1.png, id=250, 714.0276pt x 572.3784pt>
-File: ../fig/Thule_3D1.png Graphic file (type png)
-<use ../fig/Thule_3D1.png>
-Package pdftex.def Info: ../fig/Thule_3D1.png  used on input line 146.
-(pdftex.def)             Requested size: 192.0548pt x 153.95033pt.
+Package pdftex.def Info: ../fig/Thule_3D.png  used on input line 230.
+(pdftex.def)             Requested size: 192.0548pt x 145.34834pt.
+<../fig/Thule_2D.png, id=280, 719.0865pt x 497.2176pt>
+File: ../fig/Thule_2D.png Graphic file (type png)
+<use ../fig/Thule_2D.png>
+Package pdftex.def Info: ../fig/Thule_2D.png  used on input line 231.
+(pdftex.def)             Requested size: 192.0548pt x 132.79385pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <../fig/circular_topo_top.png> <../fig/circular_topo_jet.png> <../fig/Thule_
-2D.png> <../fig/Thule_3D.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[8 <../fig/Thule_3D1.png>] [9]
-<../fig/non_structured_grid_10km.png, id=292, 678.535pt x 679.53876pt>
+<../fig/non_structured_grid_10km.png, id=281, 678.535pt x 679.53876pt>
 File: ../fig/non_structured_grid_10km.png Graphic file (type png)
 <use ../fig/non_structured_grid_10km.png>
 Package pdftex.def Info: ../fig/non_structured_grid_10km.png  used on input lin
-e 261.
+e 241.
 (pdftex.def)             Requested size: 192.0548pt x 192.33296pt.
-<../fig/regular_grid_10km.png, id=293, 678.535pt x 679.53876pt>
+<../fig/regular_grid_10km.png, id=282, 678.535pt x 679.53876pt>
 File: ../fig/regular_grid_10km.png Graphic file (type png)
 <use ../fig/regular_grid_10km.png>
-Package pdftex.def Info: ../fig/regular_grid_10km.png  used on input line 262.
+Package pdftex.def Info: ../fig/regular_grid_10km.png  used on input line 242.
 (pdftex.def)             Requested size: 192.0548pt x 192.33296pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[10]
-<../fig/Grounded_zone_50km_CONE.png, id=302, 545.03625pt x 606.265pt>
+[9 <../fig/circular_topo_top.png> <../fig/circular_topo_jet.png>] [10 <../fig/T
+hule_3D.png> <../fig/Thule_2D.png> <../fig/non_structured_grid_10km.png> <../fi
+g/regular_grid_10km.png>]
+<../fig/Grounded_zone_50km_CONE.png, id=310, 545.03625pt x 606.265pt>
 File: ../fig/Grounded_zone_50km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_50km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_50km_CONE.png  used on input line
  277.
 (pdftex.def)             Requested size: 106.69783pt x 118.67911pt.
-<../fig/Grounded_zone_20km_CONE.png, id=303, 591.20876pt x 637.38126pt>
+<../fig/Grounded_zone_20km_CONE.png, id=311, 591.20876pt x 637.38126pt>
 File: ../fig/Grounded_zone_20km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_20km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_20km_CONE.png  used on input line
  282.
 (pdftex.def)             Requested size: 106.69783pt x 115.02516pt.
-<../fig/Grounded_zone_10km_CONE.png, id=304, 588.1975pt x 636.3775pt>
+<../fig/Grounded_zone_10km_CONE.png, id=312, 588.1975pt x 636.3775pt>
 File: ../fig/Grounded_zone_10km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_10km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_10km_CONE.png  used on input line
  287.
 (pdftex.def)             Requested size: 106.69783pt x 115.43636pt.
-<../fig/Grounded_zone_5km_CONE.png, id=305, 587.19376pt x 635.37375pt>
+<../fig/Grounded_zone_5km_CONE.png, id=313, 587.19376pt x 635.37375pt>
 File: ../fig/Grounded_zone_5km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_5km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_5km_CONE.png  used on input line 
 294.
 (pdftex.def)             Requested size: 106.69783pt x 115.44818pt.
-<../fig/Grounded_zone_2km_CONE.png, id=306, 585.18625pt x 633.36626pt>
+<../fig/Grounded_zone_2km_CONE.png, id=314, 585.18625pt x 633.36626pt>
 File: ../fig/Grounded_zone_2km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_2km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_2km_CONE.png  used on input line 
 299.
 (pdftex.def)             Requested size: 106.69783pt x 115.47964pt.
-<../fig/Grounded_zone_1km_CONE.png, id=307, 583.17876pt x 633.36626pt>
+<../fig/Grounded_zone_1km_CONE.png, id=315, 583.17876pt x 633.36626pt>
 File: ../fig/Grounded_zone_1km_CONE.png Graphic file (type png)
 <use ../fig/Grounded_zone_1km_CONE.png>
 Package pdftex.def Info: ../fig/Grounded_zone_1km_CONE.png  used on input line 
 304.
 (pdftex.def)             Requested size: 106.69783pt x 115.87589pt.
- [11 <../fig/non_structured_grid_10km.png> <../fig/regular_grid_10km.png> <../f
-ig/Grounded_zone_50km_CONE.png> <../fig/Grounded_zone_20km_CONE.png> <../fig/Gr
-ounded_zone_10km_CONE.png> <../fig/Grounded_zone_5km_CONE.png> <../fig/Grounded
-_zone_2km_CONE.png> <../fig/Grounded_zone_1km_CONE.png>]
-<../fig/Profiles_Cone_combined_domains.png, id=319, 971.63pt x 745.78625pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../fig/Profiles_Cone_combined_domains.png, id=320, 971.63pt x 745.78625pt>
 File: ../fig/Profiles_Cone_combined_domains.png Graphic file (type png)
 <use ../fig/Profiles_Cone_combined_domains.png>
 Package pdftex.def Info: ../fig/Profiles_Cone_combined_domains.png  used on inp
 ut line 318.
 (pdftex.def)             Requested size: 211.26288pt x 162.1503pt.
-<../fig/Profiles_Cone_domain_sin_fondo.png, id=320, 1305.87875pt x 791.95876pt>
+<../fig/Profiles_Cone_domain_sin_fondo.png, id=321, 1305.87875pt x 791.95876pt>
 
 File: ../fig/Profiles_Cone_domain_sin_fondo.png Graphic file (type png)
 <use ../fig/Profiles_Cone_domain_sin_fondo.png>
 Package pdftex.def Info: ../fig/Profiles_Cone_domain_sin_fondo.png  used on inp
 ut line 324.
 (pdftex.def)             Requested size: 211.26288pt x 128.11777pt.
-<../fig/h_10km_quarter.png, id=322, 795.97375pt x 681.54625pt>
+[11]
+<../fig/h_10km_quarter.png, id=330, 795.97375pt x 681.54625pt>
 File: ../fig/h_10km_quarter.png Graphic file (type png)
 <use ../fig/h_10km_quarter.png>
-Package pdftex.def Info: ../fig/h_10km_quarter.png  used on input line 348.
+Package pdftex.def Info: ../fig/h_10km_quarter.png  used on input line 338.
 (pdftex.def)             Requested size: 106.69783pt x 91.3496pt.
-<../fig/h_5km_quarter.png, id=323, 792.9625pt x 683.55376pt>
+<../fig/h_5km_quarter.png, id=331, 792.9625pt x 683.55376pt>
 File: ../fig/h_5km_quarter.png Graphic file (type png)
 <use ../fig/h_5km_quarter.png>
-Package pdftex.def Info: ../fig/h_5km_quarter.png  used on input line 353.
+Package pdftex.def Info: ../fig/h_5km_quarter.png  used on input line 343.
 (pdftex.def)             Requested size: 106.69783pt x 91.9733pt.
-<../fig/h_2km_quarter.png, id=324, 793.96625pt x 682.55pt>
+<../fig/h_2km_quarter.png, id=332, 793.96625pt x 682.55pt>
 File: ../fig/h_2km_quarter.png Graphic file (type png)
 <use ../fig/h_2km_quarter.png>
-Package pdftex.def Info: ../fig/h_2km_quarter.png  used on input line 358.
+Package pdftex.def Info: ../fig/h_2km_quarter.png  used on input line 348.
 (pdftex.def)             Requested size: 106.69783pt x 91.72368pt.
-<../fig/h_1km_quarter.png, id=325, 676.5275pt x 563.10374pt>
+<../fig/h_1km_quarter.png, id=333, 676.5275pt x 563.10374pt>
 File: ../fig/h_1km_quarter.png Graphic file (type png)
 <use ../fig/h_1km_quarter.png>
-Package pdftex.def Info: ../fig/h_1km_quarter.png  used on input line 363.
+Package pdftex.def Info: ../fig/h_1km_quarter.png  used on input line 353.
 (pdftex.def)             Requested size: 106.69783pt x 88.8096pt.
-<../fig/hvelocity_10km_quarter.png, id=326, 796.9775pt x 681.54625pt>
+<../fig/hvelocity_10km_quarter.png, id=334, 796.9775pt x 681.54625pt>
 File: ../fig/hvelocity_10km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_10km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_10km_quarter.png  used on input line 
-370.
+360.
 (pdftex.def)             Requested size: 106.69783pt x 91.2352pt.
-<../fig/hvelocity_5km_quarter.png, id=327, 804.00375pt x 681.54625pt>
+<../fig/hvelocity_5km_quarter.png, id=335, 804.00375pt x 681.54625pt>
 File: ../fig/hvelocity_5km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_5km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_5km_quarter.png  used on input line 3
-75.
+65.
 (pdftex.def)             Requested size: 106.69783pt x 90.44484pt.
-<../fig/hvelocity_2km_quarter.png, id=328, 801.99625pt x 682.55pt>
+<../fig/hvelocity_2km_quarter.png, id=336, 801.99625pt x 682.55pt>
 File: ../fig/hvelocity_2km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_2km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_2km_quarter.png  used on input line 3
-80.
+70.
 (pdftex.def)             Requested size: 106.69783pt x 90.79675pt.
-<../fig/hvelocity_1km_quarter.png, id=329, 683.55376pt x 561.09625pt>
+<../fig/hvelocity_1km_quarter.png, id=337, 683.55376pt x 561.09625pt>
 File: ../fig/hvelocity_1km_quarter.png Graphic file (type png)
 <use ../fig/hvelocity_1km_quarter.png>
 Package pdftex.def Info: ../fig/hvelocity_1km_quarter.png  used on input line 3
-85.
+75.
 (pdftex.def)             Requested size: 106.69783pt x 87.57689pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[12 <../fig/Profiles_Cone_combined_domains.png> <../fig/Profiles_Cone_domain_si
-n_fondo.png (PNG copy)>]
 <../fig/Figure_CONE_GL_positions.png, id=339, 1387.584pt x 724.8681pt>
 File: ../fig/Figure_CONE_GL_positions.png Graphic file (type png)
 <use ../fig/Figure_CONE_GL_positions.png>
 Package pdftex.def Info: ../fig/Figure_CONE_GL_positions.png  used on input lin
-e 398.
+e 388.
 (pdftex.def)             Requested size: 341.43437pt x 178.36295pt.
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[13 <../fig/h_10km_quarter.png> <../fig/h_5km_quarter.png> <../fig/h_2km_quarte
-r.png> <../fig/h_1km_quarter.png> <../fig/hvelocity_10km_quarter.png> <../fig/h
-velocity_5km_quarter.png> <../fig/hvelocity_2km_quarter.png> <../fig/hvelocity_
-1km_quarter.png>]
-<../fig/Profiles_Thule_combined_domains_2_con_fondo.png, id=358, 936.49875pt x 
+[12 <../fig/Grounded_zone_50km_CONE.png> <../fig/Grounded_zone_20km_CONE.png> <
+../fig/Grounded_zone_10km_CONE.png> <../fig/Grounded_zone_5km_CONE.png> <../fig
+/Grounded_zone_2km_CONE.png> <../fig/Grounded_zone_1km_CONE.png>]
+<../fig/Profiles_Thule_combined_domains_2_con_fondo.png, id=352, 936.49875pt x 
 677.53125pt>
 File: ../fig/Profiles_Thule_combined_domains_2_con_fondo.png Graphic file (type
  png)
 <use ../fig/Profiles_Thule_combined_domains_2_con_fondo.png>
 Package pdftex.def Info: ../fig/Profiles_Thule_combined_domains_2_con_fondo.png
-  used on input line 413.
+  used on input line 403.
 (pdftex.def)             Requested size: 221.93332pt x 160.56384pt.
-<../fig/Capronas_Thule_Domain_con_fondo.png, id=359, 919.435pt x 378.41376pt>
+<../fig/Capronas_Thule_Domain_con_fondo.png, id=353, 919.435pt x 378.41376pt>
 File: ../fig/Capronas_Thule_Domain_con_fondo.png Graphic file (type png)
 <use ../fig/Capronas_Thule_Domain_con_fondo.png>
 Package pdftex.def Info: ../fig/Capronas_Thule_Domain_con_fondo.png  used on in
-put line 423.
+put line 413.
 (pdftex.def)             Requested size: 204.85802pt x 84.31372pt.
-<../fig/Halbranes_thule_domain_con_fondo.png, id=360, 919.435pt x 377.41pt>
+<../fig/Halbranes_thule_domain_con_fondo.png, id=354, 919.435pt x 377.41pt>
 File: ../fig/Halbranes_thule_domain_con_fondo.png Graphic file (type png)
 <use ../fig/Halbranes_thule_domain_con_fondo.png>
 Package pdftex.def Info: ../fig/Halbranes_thule_domain_con_fondo.png  used on i
-nput line 433.
+nput line 423.
 (pdftex.def)             Requested size: 204.85802pt x 84.09007pt.
- [14 <../fig/Figure_CONE_GL_positions.png> <../fig/Profiles_Thule_combined_doma
-ins_2_con_fondo.png> <../fig/Capronas_Thule_Domain_con_fondo.png (PNG copy)> <.
-./fig/Halbranes_thule_domain_con_fondo.png (PNG copy)>]
-<../fig/Grounded_zone_50km.png, id=368, 527.9725pt x 602.25pt>
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../fig/Grounded_zone_50km.png, id=356, 527.9725pt x 602.25pt>
 File: ../fig/Grounded_zone_50km.png Graphic file (type png)
 <use ../fig/Grounded_zone_50km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_50km.png  used on input line 453.
+Package pdftex.def Info: ../fig/Grounded_zone_50km.png  used on input line 443.
 
 (pdftex.def)             Requested size: 106.69783pt x 121.70683pt.
-<../fig/Grounded_zone_20km.png, id=369, 583.17876pt x 626.34pt>
+<../fig/Grounded_zone_20km.png, id=357, 583.17876pt x 626.34pt>
 File: ../fig/Grounded_zone_20km.png Graphic file (type png)
 <use ../fig/Grounded_zone_20km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_20km.png  used on input line 458.
+Package pdftex.def Info: ../fig/Grounded_zone_20km.png  used on input line 448.
 
 (pdftex.def)             Requested size: 106.69783pt x 114.59042pt.
-<../fig/Grounded_zone_10km.png, id=370, 591.20876pt x 633.36626pt>
+<../fig/Grounded_zone_10km.png, id=358, 591.20876pt x 633.36626pt>
 File: ../fig/Grounded_zone_10km.png Graphic file (type png)
 <use ../fig/Grounded_zone_10km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_10km.png  used on input line 463.
+Package pdftex.def Info: ../fig/Grounded_zone_10km.png  used on input line 453.
 
 (pdftex.def)             Requested size: 106.69783pt x 114.3006pt.
-<../fig/Grounded_zone_5km.png, id=371, 587.19376pt x 632.3625pt>
+<../fig/Grounded_zone_5km.png, id=359, 587.19376pt x 632.3625pt>
 File: ../fig/Grounded_zone_5km.png Graphic file (type png)
 <use ../fig/Grounded_zone_5km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_5km.png  used on input line 470.
+Package pdftex.def Info: ../fig/Grounded_zone_5km.png  used on input line 460.
 (pdftex.def)             Requested size: 106.69783pt x 114.90103pt.
-<../fig/Grounded_zone_2km.png, id=372, 585.18625pt x 630.355pt>
+<../fig/Grounded_zone_2km.png, id=360, 585.18625pt x 630.355pt>
 File: ../fig/Grounded_zone_2km.png Graphic file (type png)
 <use ../fig/Grounded_zone_2km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_2km.png  used on input line 475.
+Package pdftex.def Info: ../fig/Grounded_zone_2km.png  used on input line 465.
 (pdftex.def)             Requested size: 106.69783pt x 114.93062pt.
-<../fig/Grounded_zone_1km.png, id=373, 583.17876pt x 630.355pt>
+<../fig/Grounded_zone_1km.png, id=361, 583.17876pt x 630.355pt>
 File: ../fig/Grounded_zone_1km.png Graphic file (type png)
 <use ../fig/Grounded_zone_1km.png>
-Package pdftex.def Info: ../fig/Grounded_zone_1km.png  used on input line 480.
+Package pdftex.def Info: ../fig/Grounded_zone_1km.png  used on input line 470.
 (pdftex.def)             Requested size: 106.69783pt x 115.32497pt.
-<../fig/TimeVsNumberOfNodes.png, id=376, 765.3393pt x 607.7907pt>
-File: ../fig/TimeVsNumberOfNodes.png Graphic file (type png)
-<use ../fig/TimeVsNumberOfNodes.png>
-Package pdftex.def Info: ../fig/TimeVsNumberOfNodes.png  used on input line 495
-.
-(pdftex.def)             Requested size: 384.1096pt x 305.04459pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../fig/Figure_THULE_GLpositions_Capronas.png, id=363, 1336.995pt x 706.0779pt>
+
+File: ../fig/Figure_THULE_GLpositions_Capronas.png Graphic file (type png)
+<use ../fig/Figure_THULE_GLpositions_Capronas.png>
+Package pdftex.def Info: ../fig/Figure_THULE_GLpositions_Capronas.png  used on 
+input line 486.
+(pdftex.def)             Requested size: 234.73654pt x 123.96411pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 486--487
+ [][] 
+ []
+
+<../fig/Figure_THULE_GLpositions_Halbranes.png, id=364, 1336.995pt x 706.0779pt
+>
+File: ../fig/Figure_THULE_GLpositions_Halbranes.png Graphic file (type png)
+<use ../fig/Figure_THULE_GLpositions_Halbranes.png>
+Package pdftex.def Info: ../fig/Figure_THULE_GLpositions_Halbranes.png  used on
+ input line 492.
+(pdftex.def)             Requested size: 234.73654pt x 123.96411pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 492--493
+ [][] 
+ []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../fig/Grounding_line_integrated_full_domain_CONE_time.png, id=377, 462.528pt 
-x 346.896pt>
-File: ../fig/Grounding_line_integrated_full_domain_CONE_time.png Graphic file (
-type png)
-<use ../fig/Grounding_line_integrated_full_domain_CONE_time.png>
-Package pdftex.def Info: ../fig/Grounding_line_integrated_full_domain_CONE_time
-.png  used on input line 502.
-(pdftex.def)             Requested size: 384.1096pt x 288.09827pt.
+[13 <../fig/Profiles_Cone_combined_domains.png> <../fig/Profiles_Cone_domain_si
+n_fondo.png (PNG copy)>]
+<../fig/Figure_Time_vs_nodes_Segundos.png, id=377, 1336.995pt x 706.0779pt>
+File: ../fig/Figure_Time_vs_nodes_Segundos.png Graphic file (type png)
+<use ../fig/Figure_Time_vs_nodes_Segundos.png>
+Package pdftex.def Info: ../fig/Figure_Time_vs_nodes_Segundos.png  used on inpu
+t line 512.
+(pdftex.def)             Requested size: 234.73654pt x 123.96411pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 512--513
+ [][] 
+ []
+
+<../fig/Figure_Time_vs_nodes_32.png, id=378, 1336.995pt x 706.0779pt>
+File: ../fig/Figure_Time_vs_nodes_32.png Graphic file (type png)
+<use ../fig/Figure_Time_vs_nodes_32.png>
+Package pdftex.def Info: ../fig/Figure_Time_vs_nodes_32.png  used on input line
+ 518.
+(pdftex.def)             Requested size: 234.73654pt x 123.96411pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 518--519
+ [][] 
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../fig/H_CONE_full_all_res_vs_time.png, id=378, 1387.584pt x 723.4227pt>
+<../fig/H_CONE_full_all_res_vs_time.png, id=382, 1387.584pt x 723.4227pt>
 File: ../fig/H_CONE_full_all_res_vs_time.png Graphic file (type png)
 <use ../fig/H_CONE_full_all_res_vs_time.png>
 Package pdftex.def Info: ../fig/H_CONE_full_all_res_vs_time.png  used on input 
-line 510.
-(pdftex.def)             Requested size: 192.0548pt x 100.11943pt.
-<../fig/H_CONE_full_all_res_vs_num_nodes.png, id=379, 837.6093pt x 682.2288pt>
+line 534.
+(pdftex.def)             Requested size: 234.73654pt x 122.37311pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 534--535
+ [][] 
+ []
+
+<../fig/H_CONE_full_all_res_vs_num_nodes.png, id=383, 837.6093pt x 682.2288pt>
 File: ../fig/H_CONE_full_all_res_vs_num_nodes.png Graphic file (type png)
 <use ../fig/H_CONE_full_all_res_vs_num_nodes.png>
 Package pdftex.def Info: ../fig/H_CONE_full_all_res_vs_num_nodes.png  used on i
-nput line 511.
-(pdftex.def)             Requested size: 192.0548pt x 156.42004pt.
+nput line 540.
+(pdftex.def)             Requested size: 234.73654pt x 191.18932pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 540--541
+ [][] 
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../fig/Volume_CONE_full_all_res_vs_time.png, id=380, 1000.9395pt x 602.0091pt>
+[14 <../fig/h_10km_quarter.png> <../fig/h_5km_quarter.png> <../fig/h_2km_quarte
+r.png> <../fig/h_1km_quarter.png> <../fig/hvelocity_10km_quarter.png> <../fig/h
+velocity_5km_quarter.png> <../fig/hvelocity_2km_quarter.png> <../fig/hvelocity_
+1km_quarter.png>]
+<../fig/H_THULE_full_all_res_vs_time.png, id=398, 1387.584pt x 723.4227pt>
+File: ../fig/H_THULE_full_all_res_vs_time.png Graphic file (type png)
+<use ../fig/H_THULE_full_all_res_vs_time.png>
+Package pdftex.def Info: ../fig/H_THULE_full_all_res_vs_time.png  used on input
+ line 556.
+(pdftex.def)             Requested size: 234.73654pt x 122.37311pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 556--557
+ [][] 
+ []
+
+<../fig/H_THULE_full_all_res_vs_num_nodes.png, id=399, 812.3148pt x 612.1269pt>
+
+File: ../fig/H_THULE_full_all_res_vs_num_nodes.png Graphic file (type png)
+<use ../fig/H_THULE_full_all_res_vs_num_nodes.png>
+Package pdftex.def Info: ../fig/H_THULE_full_all_res_vs_num_nodes.png  used on 
+input line 562.
+(pdftex.def)             Requested size: 234.73654pt x 176.88644pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 562--563
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<../fig/Volume_CONE_full_all_res_vs_time.png, id=401, 1000.9395pt x 602.0091pt>
 
 File: ../fig/Volume_CONE_full_all_res_vs_time.png Graphic file (type png)
 <use ../fig/Volume_CONE_full_all_res_vs_time.png>
 Package pdftex.def Info: ../fig/Volume_CONE_full_all_res_vs_time.png  used on i
-nput line 518.
-(pdftex.def)             Requested size: 192.0548pt x 115.50359pt.
-<../fig/Volume_CONE_full_all_res_vs_num_nodes.png, id=381, 802.9197pt x 624.412
+nput line 576.
+(pdftex.def)             Requested size: 234.73654pt x 141.1782pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 576--577
+ [][] 
+ []
+
+<../fig/Volume_CONE_full_all_res_vs_num_nodes.png, id=402, 802.9197pt x 624.412
 8pt>
 File: ../fig/Volume_CONE_full_all_res_vs_num_nodes.png Graphic file (type png)
 <use ../fig/Volume_CONE_full_all_res_vs_num_nodes.png>
 Package pdftex.def Info: ../fig/Volume_CONE_full_all_res_vs_num_nodes.png  used
- on input line 519.
-(pdftex.def)             Requested size: 192.0548pt x 149.35716pt.
+ on input line 582.
+(pdftex.def)             Requested size: 234.73654pt x 182.55186pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 582--583
+ [][] 
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15 <../fig/Grounded_zone_50km.png> <../fig/Grounded_zone_20km.png> <../fig/Gro
-unded_zone_10km.png> <../fig/Grounded_zone_5km.png> <../fig/Grounded_zone_2km.p
-ng> <../fig/Grounded_zone_1km.png>] (./report.bbl [16 <../fig/TimeVsNumberOfNod
-es.png>] [17 <../fig/Grounding_line_integrated_full_domain_CONE_time.png> <../f
-ig/H_CONE_full_all_res_vs_time.png> <../fig/H_CONE_full_all_res_vs_num_nodes.pn
-g>] [18 <../fig/Volume_CONE_full_all_res_vs_time.png> <../fig/Volume_CONE_full_
-all_res_vs_num_nodes.png>]) [19] (./report.aux)
+<../fig/Volume_THULE_full_all_res_vs_time.png, id=404, 1113.6807pt x 688.0104pt
+>
+File: ../fig/Volume_THULE_full_all_res_vs_time.png Graphic file (type png)
+<use ../fig/Volume_THULE_full_all_res_vs_time.png>
+Package pdftex.def Info: ../fig/Volume_THULE_full_all_res_vs_time.png  used on 
+input line 596.
+(pdftex.def)             Requested size: 234.73654pt x 145.01135pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 596--597
+ [][] 
+ []
+
+<../fig/Volume_THULE_full_all_res_vs_num_nodes.png, id=405, 906.9885pt x 601.28
+64pt>
+File: ../fig/Volume_THULE_full_all_res_vs_num_nodes.png Graphic file (type png)
+
+<use ../fig/Volume_THULE_full_all_res_vs_num_nodes.png>
+Package pdftex.def Info: ../fig/Volume_THULE_full_all_res_vs_num_nodes.png  use
+d on input line 602.
+(pdftex.def)             Requested size: 234.73654pt x 155.61513pt.
+
+Overfull \hbox (21.34087pt too wide) in paragraph at lines 602--603
+ [][] 
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[15 <../fig/Figure_CONE_GL_positions.png> <../fig/Profiles_Thule_combined_domai
+ns_2_con_fondo.png> <../fig/Capronas_Thule_Domain_con_fondo.png (PNG copy)> <..
+/fig/Halbranes_thule_domain_con_fondo.png (PNG copy)>] [16 <../fig/Grounded_zon
+e_50km.png> <../fig/Grounded_zone_20km.png> <../fig/Grounded_zone_10km.png> <..
+/fig/Grounded_zone_5km.png> <../fig/Grounded_zone_2km.png> <../fig/Grounded_zon
+e_1km.png> <../fig/Figure_THULE_GLpositions_Capronas.png> <../fig/Figure_THULE_
+GLpositions_Halbranes.png>] [17 <../fig/Figure_Time_vs_nodes_Segundos.png> <../
+fig/Figure_TIme_vs_nodes_32.png> <../fig/H_CONE_full_all_res_vs_time.png> <../f
+ig/H_CONE_full_all_res_vs_num_nodes.png>] [18 <../fig/H_THULE_full_all_res_vs_t
+ime.png> <../fig/H_THULE_full_all_res_vs_num_nodes.png> <../fig/Volume_CONE_ful
+l_all_res_vs_time.png> <../fig/Volume_CONE_full_all_res_vs_num_nodes.png>]
+[19 <../fig/Volume_THULE_full_all_res_vs_time.png> <../fig/Volume_THULE_full_al
+l_res_vs_num_nodes.png>] [20] (./report.bbl [21]) [22] (./report.aux)
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: DB287CA3283098D8E75810D3C7AFEEC0;3303.
+(rerunfilecheck)             Checksum: 367675131DEB3606A9C7C43556C58277;3670.
  ) 
 Here is how much of TeX's memory you used:
- 11385 strings out of 478051
- 191061 string characters out of 5840943
- 1866330 words of memory out of 5000000
- 31243 multiletter control sequences out of 15000+600000
+ 11449 strings out of 478051
+ 193275 string characters out of 5840943
+ 1868330 words of memory out of 5000000
+ 31295 multiletter control sequences out of 15000+600000
  515239 words of font info for 42 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,14n,77p,1265b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,14n,77p,1801b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/ruben/.texlive2022/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600
 pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
@@ -786,10 +886,10 @@ amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on report.pdf (19 pages, 2864663 bytes).
+Output written on report.pdf (22 pages, 2876283 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 378 compressed objects within 4 object streams
- 110 named destinations out of 1000 (max. 500000)
- 389 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 561 PDF objects out of 1000 (max. 8388607)
+ 419 compressed objects within 5 object streams
+ 117 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 
