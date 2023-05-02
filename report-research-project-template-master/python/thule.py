@@ -43,18 +43,19 @@ rc=0
 def PlotCone2D():
 	## FIGURA 1. - 2D: Cone
 	#R=800e3
-    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    x,y = np.mgrid[-800e3:800e3:1000j, -800e3:800e3:1000j]
     plt.rcParams.update({'font.size': 22})
     z = cone(x,y,R,Bc,Bl) 
     plt.imshow(z,extent=[-800,800,-800,800],cmap=segmented_cmaps,vmin=-5000,vmax=1000)
-    plt.colorbar()
+    cbar = plt.colorbar()
+    cbar.ax.set_ylabel("Elevation (m)", rotation=270, labelpad=25)
     plt.xlabel("x(km)") 
     plt.ylabel("y(km)")
     plt.show()
 
 def PlotCone3D():
 	## FIGURA 2. - 3D: Cone
-    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    x,y = np.mgrid[-800e3:800e3:500j, -800e3:800e3:500j]
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     z = cone(y,x,R,Bc,Bl)
     ax = plt.axes(projection='3d')
@@ -63,7 +64,8 @@ def PlotCone3D():
     plt.xlabel("x (km)")
     plt.ylabel("y (km)")
 	# Add a color bar which maps values to colors.
-    fig.colorbar(surf, shrink=0.5, aspect=5)
+    cbar = fig.colorbar(surf, shrink=0.5, aspect=5)
+    cbar.ax.set_ylabel("Elevation (m)", rotation=270, labelpad=25)
     ax.xaxis.labelpad=20
     ax.yaxis.labelpad=20
     plt.show()
