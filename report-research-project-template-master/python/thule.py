@@ -73,17 +73,18 @@ def PlotCone3D():
 def PlotThule2D():
 	## FIGURA 3. - 2D: Thule
 	# Crea la malla para graficar:
-    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    x,y = np.mgrid[-800e3:800e3:1000j, -800e3:800e3:1000j]
     z = b(y,x,R,Bc,Bl)
     plt.imshow(z,extent=[-800,800,-800,800],cmap=segmented_cmaps,vmin=-5000,vmax=2000)
-    plt.colorbar()
+    cbar = plt.colorbar()
+    cbar.ax.set_ylabel("Elevation (m)", rotation=270, labelpad=25)
     plt.xlabel("x (km)")
     plt.ylabel("y (km)")
     plt.show()
 
 def PlotThule3D():
 	##FIGURA 4. -3D: Thule
-    x,y = np.mgrid[-800e3:800e3:100j, -800e3:800e3:100j]
+    x,y = np.mgrid[-800e3:800e3:500j, -800e3:800e3:500j]
     z = b(x,y,R,Bc,Bl)
     fig, ax = plt.subplots(subplot_kw={"projection": "3d"})
     ax = plt.axes(projection='3d')
@@ -92,7 +93,8 @@ def PlotThule3D():
     plt.ylabel("y (km)")
     surf=ax.plot_surface(x/1000, y/1000, z, rstride=1, cstride=1, cmap=segmented_cmaps, edgecolor='none')
 	# Add a color bar which maps values to colors.
-    fig.colorbar(surf, shrink=0.5, aspect=10,ticks=[-5000,-4000,-3000,-2000,-1000,0,1000,1500])
+    cbar = fig.colorbar(surf, shrink=0.5, aspect=10,ticks=[-5000,-4000,-3000,-2000,-1000,0,1000,1500])
+    cbar.ax.set_ylabel("Elevation (m)", rotation=270, labelpad=25)
     ax.xaxis.labelpad=20
     ax.yaxis.labelpad=20
 	#ax.dist = 10
