@@ -5,7 +5,7 @@ The style file: apalike.bst
 Database file #1: ./biblio.bib
 You've used 31 entries,
             1935 wiz_defined-function locations,
-            676 strings with 10110 characters,
+            676 strings with 10058 characters,
 and the built_in function-call counts, 13351 in all, are:
 = -- 1288
 > -- 653

@@ -13,6 +13,7 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{anesio2012glaciers}
 \citation{zhang2017comparison}
 \citation{clark2015recent}
 \citation{morlighem2017bedmachine}
@@ -20,12 +21,8 @@
 \citation{barbier2015climate}
 \citation{montgomery2007united}
 \citation{nevermann2023land}
-\citation{parizek2010implications}
-\citation{parizek2010implications}
-\citation{goldberg2018representing}
 \citation{fricker2009mapping}
 \citation{fricker2009mapping}
-\citation{parizek2010implications}
 \citation{cheng2019full}
 \citation{brunt2010mapping}
 \citation{pritchard2012antarctic}
@@ -36,16 +33,32 @@
 \citation{schoof2007ice}
 \citation{schoof2007marine}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{3}{section.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Schematic simplified diagram of the model domain of a glacier \cite  {parizek2010implications}\relax }}{3}{figure.caption.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Process of modelling starting with a physical process which can be described mathematically and turned into a computer code where discretized equations are solved numerically.\relax }}{3}{figure.caption.3}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{groundingline}{{1}{3}{Schematic simplified diagram of the model domain of a glacier \cite {parizek2010implications}\relax }{figure.caption.3}{}}
+\newlabel{Modelling_process}{{1}{3}{Process of modelling starting with a physical process which can be described mathematically and turned into a computer code where discretized equations are solved numerically.\relax }{figure.caption.3}{}}
 \citation{hutter1982mathematical}
-\citation{hutter1982mathematical}
-\citation{glen1958flow}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Schematic of a tributary glacier where we can observe the different parts denoting the grounding zone \cite  {fricker2009mapping}.\relax }}{4}{figure.caption.4}\protected@file@percent }
 \newlabel{groundingzone}{{2}{4}{Schematic of a tributary glacier where we can observe the different parts denoting the grounding zone \cite {fricker2009mapping}.\relax }{figure.caption.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {2}Glacier dynamics}{4}{section.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Mass and movement balance equations}{4}{subsection.2.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Derivation of the condition of incompressibility.\relax }}{5}{figure.caption.5}\protected@file@percent }
+\newlabel{control_volume}{{3}{5}{Derivation of the condition of incompressibility.\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.1}Stresses}{6}{subsubsection.2.1.1}\protected@file@percent }
+\newlabel{Stress2D}{{4a}{6}{Sign convention for stresses in plain strain.\relax }{figure.caption.6}{}}
+\newlabel{sub@Stress2D}{{a}{6}{Sign convention for stresses in plain strain.\relax }{figure.caption.6}{}}
+\newlabel{Stress_tensor}{{4b}{6}{Stresses on a cube.\relax }{figure.caption.6}{}}
+\newlabel{sub@Stress_tensor}{{b}{6}{Stresses on a cube.\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Stress in a elementary control volume of ice.\relax }}{6}{figure.caption.6}\protected@file@percent }
+\newlabel{Stress}{{4}{6}{Stress in a elementary control volume of ice.\relax }{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.2}Strain and strain rate}{6}{subsubsection.2.1.2}\protected@file@percent }
+\citation{glen1958flow}
+\citation{hutter1982mathematical}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.3}Yield stress}{7}{subsubsection.2.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.4}Deviatoric stress}{7}{subsubsection.2.1.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Sketch to illustrate non-hydrostatic pressure.\relax }}{7}{figure.caption.7}\protected@file@percent }
+\newlabel{Deviatoric_stress}{{5}{7}{Sketch to illustrate non-hydrostatic pressure.\relax }{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.1.5}The flow law}{7}{subsubsection.2.1.5}\protected@file@percent }
+\citation{glen1958flow}
 \citation{bamber2001new}
 \citation{allison2009ice}
 \citation{allison2009ice}
@@ -54,8 +67,7 @@
 \citation{cheng2019full}
 \citation{macayeal1989large}
 \citation{cheng2019full}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Ice velocities in Antarctica and Greenland topographies, where we can see in red the highest velocity profiles in the glaciers and as a consequence we consider the basal shear stress as 0 and the longitudinal stress dominates, which allows using a Shallow Shelf approximation \cite  []{allison2009ice}.\relax }}{5}{figure.caption.5}\protected@file@percent }
-\newlabel{velocityglaciar}{{3}{5}{Ice velocities in Antarctica and Greenland topographies, where we can see in red the highest velocity profiles in the glaciers and as a consequence we consider the basal shear stress as 0 and the longitudinal stress dominates, which allows using a Shallow Shelf approximation \cite []{allison2009ice}.\relax }{figure.caption.5}{}}
+\citation{goldberg2018representing}
 \citation{weertman1974stability}
 \citation{schoof2007ice}
 \citation{vieli2005assessing}
@@ -68,137 +80,140 @@
 \citation{hindmarsh1996stability}
 \citation{vieli2005assessing}
 \citation{durand2009full}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Grounding line stability}{6}{subsection.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {3}Systems and domains}{7}{section.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Physical constants}{7}{subsection.3.1}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Physical constants\relax }}{7}{table.caption.6}\protected@file@percent }
-\newlabel{Physical constants}{{1}{7}{Physical constants\relax }{table.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Boundary conditions}{7}{subsection.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Ice velocities in Antarctica and Greenland topographies, where we can see in red the highest velocity profiles in the glaciers and as a consequence we consider the basal shear stress as 0 and the longitudinal stress dominates, which allows using a Shallow Shelf approximation \cite  []{allison2009ice}.\relax }}{9}{figure.caption.8}\protected@file@percent }
+\newlabel{velocityglaciar}{{6}{9}{Ice velocities in Antarctica and Greenland topographies, where we can see in red the highest velocity profiles in the glaciers and as a consequence we consider the basal shear stress as 0 and the longitudinal stress dominates, which allows using a Shallow Shelf approximation \cite []{allison2009ice}.\relax }{figure.caption.8}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Grounding line stability}{9}{subsection.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Systems and domains}{10}{section.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Physical constants}{10}{subsection.3.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Physical constants\relax }}{10}{table.caption.9}\protected@file@percent }
+\newlabel{Physical constants}{{1}{10}{Physical constants\relax }{table.caption.9}{}}
 \citation{courant1967partial}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Numerical parameters}{8}{subsubsection.3.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}External forcing}{8}{subsubsection.3.2.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.3}Initial condition}{8}{subsubsection.3.2.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.4}Time step}{8}{subsubsection.3.2.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Cone domain}{9}{subsection.3.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Circular bedrock topography. On the left side top view and on the right side, lateral view.\relax }}{9}{figure.caption.7}\protected@file@percent }
-\newlabel{circular_topo_top}{{4}{9}{Circular bedrock topography. On the left side top view and on the right side, lateral view.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Thule domain}{9}{subsection.3.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4}Numerical model}{9}{section.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}The Elmer/Ice finite element method}{9}{subsection.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.\relax }}{10}{figure.caption.8}\protected@file@percent }
-\newlabel{Thule_3D}{{5}{10}{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.\relax }{figure.caption.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.\relax }}{10}{figure.caption.9}\protected@file@percent }
-\newlabel{meshes}{{6}{10}{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.\relax }{figure.caption.9}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Set-up of the simulations data}{11}{section.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{11}{section.6}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Cone configuration}{11}{subsection.6.1}\protected@file@percent }
-\newlabel{figCONE50KM}{{7a}{12}{Grounded zone (blue) and floating ice (grey) for 50km resolution\relax }{figure.caption.10}{}}
-\newlabel{sub@figCONE50KM}{{a}{12}{Grounded zone (blue) and floating ice (grey) for 50km resolution\relax }{figure.caption.10}{}}
-\newlabel{figCONE20}{{7b}{12}{Grounded zone (blue) and floating ice (grey) for 20km resolution\relax }{figure.caption.10}{}}
-\newlabel{sub@figCONE20}{{b}{12}{Grounded zone (blue) and floating ice (grey) for 20km resolution\relax }{figure.caption.10}{}}
-\newlabel{figCONE10KM}{{7c}{12}{Grounded zone (blue) and floating ice (grey) for 10km resolution\relax }{figure.caption.10}{}}
-\newlabel{sub@figCONE10KM}{{c}{12}{Grounded zone (blue) and floating ice (grey) for 10km resolution\relax }{figure.caption.10}{}}
-\newlabel{figCONE5}{{7d}{12}{Grounded zone (blue) and floating ice (grey) for 5km resolution\relax }{figure.caption.10}{}}
-\newlabel{sub@figCONE5}{{d}{12}{Grounded zone (blue) and floating ice (grey) for 5km resolution\relax }{figure.caption.10}{}}
-\newlabel{figCONE2}{{7e}{12}{Grounded zone (blue) and floating ice (grey) for 2km resolution\relax }{figure.caption.10}{}}
-\newlabel{sub@figCONE2}{{e}{12}{Grounded zone (blue) and floating ice (grey) for 2km resolution\relax }{figure.caption.10}{}}
-\newlabel{CONE1KM}{{7f}{12}{Grounded zone (blue) and floating ice (grey) for 1km resolution\relax }{figure.caption.10}{}}
-\newlabel{sub@CONE1KM}{{f}{12}{Grounded zone (blue) and floating ice (grey) for 1km resolution\relax }{figure.caption.10}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Impact of the resolution in the grounded area for the cone circular domain.\relax }}{12}{figure.caption.10}\protected@file@percent }
-\newlabel{figCONO1}{{7}{12}{Impact of the resolution in the grounded area for the cone circular domain.\relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Thule configuration}{12}{subsection.6.2}\protected@file@percent }
-\newlabel{Schematic_Cone}{{8a}{13}{Profiles for Cone circular domain\relax }{figure.caption.11}{}}
-\newlabel{sub@Schematic_Cone}{{a}{13}{Profiles for Cone circular domain\relax }{figure.caption.11}{}}
-\newlabel{Profiles_cone}{{8b}{13}{Ice thickess per profile\relax }{figure.caption.11}{}}
-\newlabel{sub@Profiles_cone}{{b}{13}{Ice thickess per profile\relax }{figure.caption.11}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.\relax }}{13}{figure.caption.11}\protected@file@percent }
-\newlabel{Cone_scheme}{{8}{13}{Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.\relax }{figure.caption.11}{}}
-\newlabel{h10km}{{9a}{14}{Ice thickness for 10km resolution.\relax }{figure.caption.12}{}}
-\newlabel{sub@h10km}{{a}{14}{Ice thickness for 10km resolution.\relax }{figure.caption.12}{}}
-\newlabel{h5km}{{9b}{14}{Ice thickness 5km resolution.\relax }{figure.caption.12}{}}
-\newlabel{sub@h5km}{{b}{14}{Ice thickness 5km resolution.\relax }{figure.caption.12}{}}
-\newlabel{h2km}{{9c}{14}{Ice thickness for 2km resolution.\relax }{figure.caption.12}{}}
-\newlabel{sub@h2km}{{c}{14}{Ice thickness for 2km resolution.\relax }{figure.caption.12}{}}
-\newlabel{h1km}{{9d}{14}{Ice thickness for 1km resolution.\relax }{figure.caption.12}{}}
-\newlabel{sub@h1km}{{d}{14}{Ice thickness for 1km resolution.\relax }{figure.caption.12}{}}
-\newlabel{hvelocity10km}{{9e}{14}{Ice sheet thickness velocity 10km.\relax }{figure.caption.12}{}}
-\newlabel{sub@hvelocity10km}{{e}{14}{Ice sheet thickness velocity 10km.\relax }{figure.caption.12}{}}
-\newlabel{hvelocity5km}{{9f}{14}{Ice sheet thickness velocity 5km\relax }{figure.caption.12}{}}
-\newlabel{sub@hvelocity5km}{{f}{14}{Ice sheet thickness velocity 5km\relax }{figure.caption.12}{}}
-\newlabel{hvelocity2km}{{9g}{14}{Ice sheet thickness velocity 2km\relax }{figure.caption.12}{}}
-\newlabel{sub@hvelocity2km}{{g}{14}{Ice sheet thickness velocity 2km\relax }{figure.caption.12}{}}
-\newlabel{hvelocity1km}{{9h}{14}{Ice sheet thickness velocity 1km\relax }{figure.caption.12}{}}
-\newlabel{sub@hvelocity1km}{{h}{14}{Ice sheet thickness velocity 1km\relax }{figure.caption.12}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Ice thickness and ice sheet thickness rate of change for quarter domain per each resolution after steady state.\relax }}{14}{figure.caption.12}\protected@file@percent }
-\newlabel{h_and_h_velocities_cone}{{9}{14}{Ice thickness and ice sheet thickness rate of change for quarter domain per each resolution after steady state.\relax }{figure.caption.12}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Comparison of parameters for each resolution for the different configurations}{14}{subsection.6.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Numerical parameters}{11}{subsection.3.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}External forcing}{11}{subsection.3.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Initial condition}{11}{subsection.3.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Time step}{11}{subsection.3.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Cone domain}{12}{subsection.3.6}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Circular bedrock topography. On the left side top view and on the right side, lateral view.\relax }}{12}{figure.caption.10}\protected@file@percent }
+\newlabel{circular_topo_top}{{7}{12}{Circular bedrock topography. On the left side top view and on the right side, lateral view.\relax }{figure.caption.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7}Thule domain}{12}{subsection.3.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.8}Boundary conditions}{12}{subsection.3.8}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.\relax }}{13}{figure.caption.11}\protected@file@percent }
+\newlabel{Thule_3D}{{8}{13}{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Numerical model}{13}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}The Elmer/Ice finite element method}{13}{subsection.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.\relax }}{13}{figure.caption.12}\protected@file@percent }
+\newlabel{meshes}{{9}{13}{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.\relax }{figure.caption.12}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Set-up of the simulations data}{14}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Results}{14}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Cone configuration}{14}{subsection.6.1}\protected@file@percent }
+\newlabel{figCONE50KM}{{10a}{15}{Grounded zone (blue) and floating ice (grey) for 50km resolution\relax }{figure.caption.13}{}}
+\newlabel{sub@figCONE50KM}{{a}{15}{Grounded zone (blue) and floating ice (grey) for 50km resolution\relax }{figure.caption.13}{}}
+\newlabel{figCONE20}{{10b}{15}{Grounded zone (blue) and floating ice (grey) for 20km resolution\relax }{figure.caption.13}{}}
+\newlabel{sub@figCONE20}{{b}{15}{Grounded zone (blue) and floating ice (grey) for 20km resolution\relax }{figure.caption.13}{}}
+\newlabel{figCONE10KM}{{10c}{15}{Grounded zone (blue) and floating ice (grey) for 10km resolution\relax }{figure.caption.13}{}}
+\newlabel{sub@figCONE10KM}{{c}{15}{Grounded zone (blue) and floating ice (grey) for 10km resolution\relax }{figure.caption.13}{}}
+\newlabel{figCONE5}{{10d}{15}{Grounded zone (blue) and floating ice (grey) for 5km resolution\relax }{figure.caption.13}{}}
+\newlabel{sub@figCONE5}{{d}{15}{Grounded zone (blue) and floating ice (grey) for 5km resolution\relax }{figure.caption.13}{}}
+\newlabel{figCONE2}{{10e}{15}{Grounded zone (blue) and floating ice (grey) for 2km resolution\relax }{figure.caption.13}{}}
+\newlabel{sub@figCONE2}{{e}{15}{Grounded zone (blue) and floating ice (grey) for 2km resolution\relax }{figure.caption.13}{}}
+\newlabel{CONE1KM}{{10f}{15}{Grounded zone (blue) and floating ice (grey) for 1km resolution\relax }{figure.caption.13}{}}
+\newlabel{sub@CONE1KM}{{f}{15}{Grounded zone (blue) and floating ice (grey) for 1km resolution\relax }{figure.caption.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Impact of the resolution in the grounded area for the cone circular domain.\relax }}{15}{figure.caption.13}\protected@file@percent }
+\newlabel{figCONO1}{{10}{15}{Impact of the resolution in the grounded area for the cone circular domain.\relax }{figure.caption.13}{}}
+\newlabel{Schematic_Cone}{{11a}{16}{Profiles for Cone circular domain\relax }{figure.caption.14}{}}
+\newlabel{sub@Schematic_Cone}{{a}{16}{Profiles for Cone circular domain\relax }{figure.caption.14}{}}
+\newlabel{Profiles_cone}{{11b}{16}{Ice thickess per profile\relax }{figure.caption.14}{}}
+\newlabel{sub@Profiles_cone}{{b}{16}{Ice thickess per profile\relax }{figure.caption.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.\relax }}{16}{figure.caption.14}\protected@file@percent }
+\newlabel{Cone_scheme}{{11}{16}{Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.\relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}Thule configuration}{16}{subsection.6.2}\protected@file@percent }
+\newlabel{h10km}{{12a}{17}{Ice thickness for 10km resolution.\relax }{figure.caption.15}{}}
+\newlabel{sub@h10km}{{a}{17}{Ice thickness for 10km resolution.\relax }{figure.caption.15}{}}
+\newlabel{h5km}{{12b}{17}{Ice thickness 5km resolution.\relax }{figure.caption.15}{}}
+\newlabel{sub@h5km}{{b}{17}{Ice thickness 5km resolution.\relax }{figure.caption.15}{}}
+\newlabel{h2km}{{12c}{17}{Ice thickness for 2km resolution.\relax }{figure.caption.15}{}}
+\newlabel{sub@h2km}{{c}{17}{Ice thickness for 2km resolution.\relax }{figure.caption.15}{}}
+\newlabel{h1km}{{12d}{17}{Ice thickness for 1km resolution.\relax }{figure.caption.15}{}}
+\newlabel{sub@h1km}{{d}{17}{Ice thickness for 1km resolution.\relax }{figure.caption.15}{}}
+\newlabel{hvelocity10km}{{12e}{17}{Ice sheet thickness velocity 10km.\relax }{figure.caption.15}{}}
+\newlabel{sub@hvelocity10km}{{e}{17}{Ice sheet thickness velocity 10km.\relax }{figure.caption.15}{}}
+\newlabel{hvelocity5km}{{12f}{17}{Ice sheet thickness velocity 5km\relax }{figure.caption.15}{}}
+\newlabel{sub@hvelocity5km}{{f}{17}{Ice sheet thickness velocity 5km\relax }{figure.caption.15}{}}
+\newlabel{hvelocity2km}{{12g}{17}{Ice sheet thickness velocity 2km\relax }{figure.caption.15}{}}
+\newlabel{sub@hvelocity2km}{{g}{17}{Ice sheet thickness velocity 2km\relax }{figure.caption.15}{}}
+\newlabel{hvelocity1km}{{12h}{17}{Ice sheet thickness velocity 1km\relax }{figure.caption.15}{}}
+\newlabel{sub@hvelocity1km}{{h}{17}{Ice sheet thickness velocity 1km\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Ice thickness and ice sheet thickness rate of change in space for quarter domain per each resolution after steady state.\relax }}{17}{figure.caption.15}\protected@file@percent }
+\newlabel{h_and_h_velocities_cone}{{12}{17}{Ice thickness and ice sheet thickness rate of change in space for quarter domain per each resolution after steady state.\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Grounding line positions as a function of the resolution for quarter and complete circular cone domain.\relax }}{18}{figure.caption.16}\protected@file@percent }
+\newlabel{Grounding_lines__CONE_comparison}{{13}{18}{Grounding line positions as a function of the resolution for quarter and complete circular cone domain.\relax }{figure.caption.16}{}}
+\newlabel{Profiles_Thule}{{14a}{18}{Profiles for the thule domain\relax }{figure.caption.17}{}}
+\newlabel{sub@Profiles_Thule}{{a}{18}{Profiles for the thule domain\relax }{figure.caption.17}{}}
+\newlabel{Capronas_thule}{{14b}{18}{Ice thickness along each Caprona profile\relax }{figure.caption.17}{}}
+\newlabel{sub@Capronas_thule}{{b}{18}{Ice thickness along each Caprona profile\relax }{figure.caption.17}{}}
+\newlabel{Halbranes_thule}{{14c}{18}{Ice thickness along each Halbrane profile\relax }{figure.caption.17}{}}
+\newlabel{sub@Halbranes_thule}{{c}{18}{Ice thickness along each Halbrane profile\relax }{figure.caption.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Schematic representation of thule ice sheet showing ice thickness along Caprona and Halbrane profiles.\relax }}{18}{figure.caption.17}\protected@file@percent }
+\newlabel{Thule_profiles_capronas_and_halbranes}{{14}{18}{Schematic representation of thule ice sheet showing ice thickness along Caprona and Halbrane profiles.\relax }{figure.caption.17}{}}
+\newlabel{fig:1}{{15a}{19}{image1\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:1}{{a}{19}{image1\relax }{figure.caption.18}{}}
+\newlabel{fig:2}{{15b}{19}{image2\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:2}{{b}{19}{image2\relax }{figure.caption.18}{}}
+\newlabel{fig:3}{{15c}{19}{image3\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:3}{{c}{19}{image3\relax }{figure.caption.18}{}}
+\newlabel{fig:4}{{15d}{19}{image4\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:4}{{d}{19}{image4\relax }{figure.caption.18}{}}
+\newlabel{fig:5}{{15e}{19}{image5\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:5}{{e}{19}{image5\relax }{figure.caption.18}{}}
+\newlabel{fig:6}{{15f}{19}{image6\relax }{figure.caption.18}{}}
+\newlabel{sub@fig:6}{{f}{19}{image6\relax }{figure.caption.18}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Impact of the resolution in the grounded area\relax }}{19}{figure.caption.18}\protected@file@percent }
+\newlabel{Thule_resolutions}{{15}{19}{Impact of the resolution in the grounded area\relax }{figure.caption.18}{}}
+\newlabel{Thule_Capronas}{{16a}{19}{Grounding line positions along Capronas profiles.\relax }{figure.caption.19}{}}
+\newlabel{sub@Thule_Capronas}{{a}{19}{Grounding line positions along Capronas profiles.\relax }{figure.caption.19}{}}
+\newlabel{Thule_halbranes}{{16b}{19}{Grounding line positions along Halbrane profiles\relax }{figure.caption.19}{}}
+\newlabel{sub@Thule_halbranes}{{b}{19}{Grounding line positions along Halbrane profiles\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.\relax }}{19}{figure.caption.19}\protected@file@percent }
+\newlabel{Grounding_lines__caprona_halbrane_comparison}{{16}{19}{Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}Comparison of parameters for each resolution for the different configurations}{19}{subsection.6.3}\protected@file@percent }
 \citation{durand2009full}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Grounding line positions as a function of the resolution for quarter and complete circular cone domain.\relax }}{15}{figure.caption.13}\protected@file@percent }
-\newlabel{Grounding_lines__CONE_comparison}{{10}{15}{Grounding line positions as a function of the resolution for quarter and complete circular cone domain.\relax }{figure.caption.13}{}}
-\newlabel{Profiles_Thule}{{11a}{15}{Profiles for the thule domain\relax }{figure.caption.14}{}}
-\newlabel{sub@Profiles_Thule}{{a}{15}{Profiles for the thule domain\relax }{figure.caption.14}{}}
-\newlabel{Capronas_thule}{{11b}{15}{Ice thickness along each Caprona profile\relax }{figure.caption.14}{}}
-\newlabel{sub@Capronas_thule}{{b}{15}{Ice thickness along each Caprona profile\relax }{figure.caption.14}{}}
-\newlabel{Halbranes_thule}{{11c}{15}{Ice thickness along each Halbrane profile\relax }{figure.caption.14}{}}
-\newlabel{sub@Halbranes_thule}{{c}{15}{Ice thickness along each Halbrane profile\relax }{figure.caption.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Schematic representation of thule ice sheet showing ice thickness along Caprona and Halbrane profiles.\relax }}{15}{figure.caption.14}\protected@file@percent }
-\newlabel{Thule_profiles_capronas_and_halbranes}{{11}{15}{Schematic representation of thule ice sheet showing ice thickness along Caprona and Halbrane profiles.\relax }{figure.caption.14}{}}
-\newlabel{fig:1}{{12a}{16}{image1\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:1}{{a}{16}{image1\relax }{figure.caption.15}{}}
-\newlabel{fig:2}{{12b}{16}{image2\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:2}{{b}{16}{image2\relax }{figure.caption.15}{}}
-\newlabel{fig:3}{{12c}{16}{image3\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:3}{{c}{16}{image3\relax }{figure.caption.15}{}}
-\newlabel{fig:4}{{12d}{16}{image4\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:4}{{d}{16}{image4\relax }{figure.caption.15}{}}
-\newlabel{fig:5}{{12e}{16}{image5\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:5}{{e}{16}{image5\relax }{figure.caption.15}{}}
-\newlabel{fig:6}{{12f}{16}{image6\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:6}{{f}{16}{image6\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Impact of the resolution in the grounded area\relax }}{16}{figure.caption.15}\protected@file@percent }
-\newlabel{Thule_resolutions}{{12}{16}{Impact of the resolution in the grounded area\relax }{figure.caption.15}{}}
-\newlabel{Thule_Capronas}{{13a}{16}{Grounding line positions along Capronas profiles.\relax }{figure.caption.16}{}}
-\newlabel{sub@Thule_Capronas}{{a}{16}{Grounding line positions along Capronas profiles.\relax }{figure.caption.16}{}}
-\newlabel{Thule_halbranes}{{13b}{16}{Grounding line positions along Halbrane profiles\relax }{figure.caption.16}{}}
-\newlabel{sub@Thule_halbranes}{{b}{16}{Grounding line positions along Halbrane profiles\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.\relax }}{16}{figure.caption.16}\protected@file@percent }
-\newlabel{Grounding_lines__caprona_halbrane_comparison}{{13}{16}{Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.\relax }{figure.caption.16}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{16}{section.7}\protected@file@percent }
-\newlabel{32_proce}{{14a}{17}{Time for 32 processors used.\relax }{figure.caption.17}{}}
-\newlabel{sub@32_proce}{{a}{17}{Time for 32 processors used.\relax }{figure.caption.17}{}}
-\newlabel{1_proce}{{14b}{17}{Time for 1 processor.\relax }{figure.caption.17}{}}
-\newlabel{sub@1_proce}{{b}{17}{Time for 1 processor.\relax }{figure.caption.17}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Simulation time as a function of the number of nodes for each resolution mesh.\relax }}{17}{figure.caption.17}\protected@file@percent }
-\newlabel{Computation time}{{14}{17}{Simulation time as a function of the number of nodes for each resolution mesh.\relax }{figure.caption.17}{}}
-\newlabel{H_CONE_VS_TIME}{{15a}{17}{Ice thickess variation in time.\relax }{figure.caption.18}{}}
-\newlabel{sub@H_CONE_VS_TIME}{{a}{17}{Ice thickess variation in time.\relax }{figure.caption.18}{}}
-\newlabel{H_CONE_VS_NODES}{{15b}{17}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.18}{}}
-\newlabel{sub@H_CONE_VS_NODES}{{b}{17}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.18}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces Ice thickess variation in time for the Cone circular domain experiment.\relax }}{17}{figure.caption.18}\protected@file@percent }
-\newlabel{H_CONE_VS_TIME_VS_NODES}{{15}{17}{Ice thickess variation in time for the Cone circular domain experiment.\relax }{figure.caption.18}{}}
-\newlabel{H_THULE_VS_TIME}{{16a}{18}{Ice thickess variation in time.\relax }{figure.caption.19}{}}
-\newlabel{sub@H_THULE_VS_TIME}{{a}{18}{Ice thickess variation in time.\relax }{figure.caption.19}{}}
-\newlabel{H_THULE_VS_NODES}{{16b}{18}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.19}{}}
-\newlabel{sub@H_THULE_VS_NODES}{{b}{18}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces Ice thickess variation in time for the Thule domain experiment.\relax }}{18}{figure.caption.19}\protected@file@percent }
-\newlabel{H_THULE_VS_TIME_VS_NODES}{{16}{18}{Ice thickess variation in time for the Thule domain experiment.\relax }{figure.caption.19}{}}
-\newlabel{VOLUME_CONE_VS_TIME}{{17a}{18}{Volume variation in time.\relax }{figure.caption.20}{}}
-\newlabel{sub@VOLUME_CONE_VS_TIME}{{a}{18}{Volume variation in time.\relax }{figure.caption.20}{}}
-\newlabel{VOLUME_CONE_VS_NODES}{{17b}{18}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.20}{}}
-\newlabel{sub@VOLUME_CONE_VS_NODES}{{b}{18}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Volume variation in time for the cone domain experiment.\relax }}{18}{figure.caption.20}\protected@file@percent }
-\newlabel{Volume_CONE_VS_TIME_VS_NODES}{{17}{18}{Volume variation in time for the cone domain experiment.\relax }{figure.caption.20}{}}
-\newlabel{VOLUME_THULE_VS_TIME}{{18a}{19}{Volume variation in time.\relax }{figure.caption.21}{}}
-\newlabel{sub@VOLUME_THULE_VS_TIME}{{a}{19}{Volume variation in time.\relax }{figure.caption.21}{}}
-\newlabel{VOLUME_THULE_VS_NODES}{{18b}{19}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.21}{}}
-\newlabel{sub@VOLUME_THULE_VS_NODES}{{b}{19}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.21}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Volume variation in time for the thule domain experiment.\relax }}{19}{figure.caption.21}\protected@file@percent }
-\newlabel{Volume_THULE_VS_TIME_VS_NODES}{{18}{19}{Volume variation in time for the thule domain experiment.\relax }{figure.caption.21}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{19}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {9}Acknowledgments}{20}{section.9}\protected@file@percent }
+\newlabel{32_proce}{{17a}{20}{Time for 32 processors used.\relax }{figure.caption.20}{}}
+\newlabel{sub@32_proce}{{a}{20}{Time for 32 processors used.\relax }{figure.caption.20}{}}
+\newlabel{1_proce}{{17b}{20}{Time for 1 processor.\relax }{figure.caption.20}{}}
+\newlabel{sub@1_proce}{{b}{20}{Time for 1 processor.\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {17}{\ignorespaces Simulation time as a function of the number of nodes for each resolution mesh.\relax }}{20}{figure.caption.20}\protected@file@percent }
+\newlabel{Computation time}{{17}{20}{Simulation time as a function of the number of nodes for each resolution mesh.\relax }{figure.caption.20}{}}
+\newlabel{H_CONE_VS_TIME}{{18a}{20}{Ice thickess variation in time.\relax }{figure.caption.21}{}}
+\newlabel{sub@H_CONE_VS_TIME}{{a}{20}{Ice thickess variation in time.\relax }{figure.caption.21}{}}
+\newlabel{H_CONE_VS_NODES}{{18b}{20}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.21}{}}
+\newlabel{sub@H_CONE_VS_NODES}{{b}{20}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {18}{\ignorespaces Ice thickess variation in time for the Cone circular domain experiment.\relax }}{20}{figure.caption.21}\protected@file@percent }
+\newlabel{H_CONE_VS_TIME_VS_NODES}{{18}{20}{Ice thickess variation in time for the Cone circular domain experiment.\relax }{figure.caption.21}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Discussion}{20}{section.7}\protected@file@percent }
+\newlabel{H_THULE_VS_TIME}{{19a}{21}{Ice thickess variation in time.\relax }{figure.caption.22}{}}
+\newlabel{sub@H_THULE_VS_TIME}{{a}{21}{Ice thickess variation in time.\relax }{figure.caption.22}{}}
+\newlabel{H_THULE_VS_NODES}{{19b}{21}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.22}{}}
+\newlabel{sub@H_THULE_VS_NODES}{{b}{21}{Ice thickness error as a function of the number of nodes.\relax }{figure.caption.22}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {19}{\ignorespaces Ice thickess variation in time for the Thule domain experiment.\relax }}{21}{figure.caption.22}\protected@file@percent }
+\newlabel{H_THULE_VS_TIME_VS_NODES}{{19}{21}{Ice thickess variation in time for the Thule domain experiment.\relax }{figure.caption.22}{}}
+\newlabel{VOLUME_CONE_VS_TIME}{{20a}{21}{Volume variation in time.\relax }{figure.caption.23}{}}
+\newlabel{sub@VOLUME_CONE_VS_TIME}{{a}{21}{Volume variation in time.\relax }{figure.caption.23}{}}
+\newlabel{VOLUME_CONE_VS_NODES}{{20b}{21}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.23}{}}
+\newlabel{sub@VOLUME_CONE_VS_NODES}{{b}{21}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {20}{\ignorespaces Volume variation in time for the cone domain experiment.\relax }}{21}{figure.caption.23}\protected@file@percent }
+\newlabel{Volume_CONE_VS_TIME_VS_NODES}{{20}{21}{Volume variation in time for the cone domain experiment.\relax }{figure.caption.23}{}}
+\newlabel{VOLUME_THULE_VS_TIME}{{21a}{22}{Volume variation in time.\relax }{figure.caption.24}{}}
+\newlabel{sub@VOLUME_THULE_VS_TIME}{{a}{22}{Volume variation in time.\relax }{figure.caption.24}{}}
+\newlabel{VOLUME_THULE_VS_NODES}{{21b}{22}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.24}{}}
+\newlabel{sub@VOLUME_THULE_VS_NODES}{{b}{22}{Volume relative variation as a function of the number of nodes.\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {21}{\ignorespaces Volume variation in time for the thule domain experiment.\relax }}{22}{figure.caption.24}\protected@file@percent }
+\newlabel{Volume_THULE_VS_TIME_VS_NODES}{{21}{22}{Volume variation in time for the thule domain experiment.\relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusion}{23}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {9}Acknowledgments}{23}{section.9}\protected@file@percent }
 \bibstyle{apalike}
 \bibdata{./biblio}
 \bibcite{allison2009ice}{Allison et\nobreakspace  {}al., 2009}
+\bibcite{anesio2012glaciers}{Anesio and Laybourn-Parry, 2012}
 \bibcite{bamber2001new}{Bamber et\nobreakspace  {}al., 2001}
 \bibcite{barbier2015climate}{Barbier, 2015}
 \bibcite{brunt2010mapping}{Brunt et\nobreakspace  {}al., 2010}
@@ -221,7 +236,6 @@
 \bibcite{montgomery2007united}{Montgomery, 2007}
 \bibcite{morlighem2017bedmachine}{Morlighem et\nobreakspace  {}al., 2017}
 \bibcite{nevermann2023land}{Nevermann et\nobreakspace  {}al., 2023}
-\bibcite{parizek2010implications}{Parizek and Walker, 2010}
 \bibcite{pritchard2012antarctic}{Pritchard et\nobreakspace  {}al., 2012}
 \bibcite{schoof2007ice}{Schoof, 2007a}
 \bibcite{schoof2007marine}{Schoof, 2007b}
@@ -229,4 +243,4 @@
 \bibcite{vieli2005assessing}{Vieli and Payne, 2005}
 \bibcite{weertman1974stability}{Weertman, 1974}
 \bibcite{zhang2017comparison}{Zhang et\nobreakspace  {}al., 2017}
-\gdef \@abspage@last{22}
+\gdef \@abspage@last{25}

@@ -15,18 +15,18 @@
 
 \section{Introduction}
 \justifying
-Ice sheets are important components of global climate systems \cite{zhang2017comparison}. The perturbation of these climate systems has several impacts for example, changes in global sea level, as ice sheets grow or decay in response to climate forcing and internally controlled dynamics. The rate of present-day sea-level rise is dominated by ocean steric changes and eustatic changes due to shrinking mountain glaciers, and the eustatic contribution from the large ice sheets (Greenland and Antarctic) has increased in recent decades and it is expected to continue increasing in coming decades and centuries \cite{clark2015recent}. For example, \cite{morlighem2017bedmachine} and \cite{haywood2011pliocene} mentioned that if all the ice were to melt completely, the sea level would rise by an estimated of 65m. Also the Unites Nations states that around 40\% of the world's population lives in coastal regions, within 100km of the coastline \cite{barbier2015climate, montgomery2007united}. The land area that is less than 10m above sea level is just 2\% of the world's total land area, yet it is home to 10\% of the world's population and 13\% of the world's urban population \cite{nevermann2023land}. This indicates the amount of population that could be affected by a sea level rise of this magnitude. 
+Glaciers can be defined as a mass of ice that accumulates from snow and flows slowly downwards. The ice sheets are very large mass of this ice of continental scale that flows outwards \cite{anesio2012glaciers}. Some representative examples are Antarctic and Greenland ice sheets. Ice sheets are important components of global climate systems \cite{zhang2017comparison}. The perturbation of these climate systems has several impacts for example, changes in global sea level, as ice sheets grow or decay in response to climate forcing and internally controlled dynamics. The rate of present-day sea-level rise is dominated by ocean steric changes and eustatic changes due to shrinking mountain glaciers, and the eustatic contribution from the large ice sheets (Greenland and Antarctic) has increased in recent decades and it is expected to continue increasing in coming decades and centuries \cite{clark2015recent}. For example, \cite{morlighem2017bedmachine} and \cite{haywood2011pliocene} mentioned that if all the ice were to melt completely, the sea level would rise by an estimated of 65m. Also the Unites Nations states that around 40\% of the world's population lives in coastal regions, within 100km of the coastline \cite{barbier2015climate, montgomery2007united}. The land area that is less than 10m above sea level is just 2\% of the world's total land area, yet it is home to 10\% of the world's population and 13\% of the world's urban population \cite{nevermann2023land}. This indicates the amount of population that could be affected by a sea level rise of this magnitude. 
 
-In order to understand these impacts on the dynamics and melting of ice sheets and glaciers, numerical models are developed. Through these models, some of them which are based on finite elements, we can have simulations that can make better predictions of future ice sheets' behavior and rate of sea level rise, and ultimately provide policymakers with improved estimates of future change.
+In order to understand these impacts on the dynamics and melting of ice sheets and glaciers, numerical models are developed. These models are a simplification of reality, and they represent physical real-world processes by a series of equations, which can be solved to understand how the system will respond under different scenarios. The figure \ref{Modelling_process} shows a scheme where the modelling process is described. The mathematical description of a physical process or phenomena can be discretized to be then solved numerically, using a numerical method. However, these mathematical models are usually complicated to discretized or solved numerically, due to the complexity of the differential equations. For this reason, different approximations can be implemented to represent ice flow dynamics that allows to make certain simplifications to these equations. 
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.7\linewidth]{../fig/Scheme_grounding_line.png}
-	\caption{Schematic simplified diagram of the model domain of a glacier \cite{parizek2010implications}}
-	\label{groundingline}
+	\includegraphics[width=0.7\linewidth]{../fig/Numerical_modelling_scheme.png}
+	\caption{Process of modelling starting with a physical process which can be described mathematically and turned into a computer code where discretized equations are solved numerically.}
+	\label{Modelling_process}
 \end{figure}
 
-There are different variables that play an important role in the dynamics of the glaciers. There is, for example, the grounding line. Its location is still a topic of discussion in the literature surrounding ice sheet dynamics \cite{goldberg2018representing}.
+The different approximations that can be done to the mathematical models that described the glacier dynamics are presented in this document, where the equations of motion will be presented in the next section. Also, the different numerical methods that can be used to solved the approximations of these mathematical methods will be also introduced.  
 
 \begin{figure}[!h]
 	\centering
@@ -35,17 +35,129 @@ There are different variables that play an important role in the dynamics of the
 	\label{groundingzone}
 \end{figure}
 
-Glaciers that end in the ocean are called tidewater glaciers. Glaciers that flow into an ice shelf are called tributary glaciers as the one shown in figure \ref{groundingline} by \cite{parizek2010implications}. The line that divides the part of the glacier that is in contact with the solid bedrock and the ice shelf floating on water driven by buoyancy, is called the grounding line \cite{cheng2019full}. The location of the grounding line is important because the mass loss from glaciers is strongly linked to changes in the ice shelves and their grounding lines \cite{brunt2010mapping,pritchard2012antarctic}. Its long-term horizontal position is very susceptible to temporal and spatial changes in ice thickness and sea level, as well as bedrock and ice surface slopes. Ice thinning and rising sea levels can cause grounding lines to retreat while thickening or declining sea levels can cause an advance \cite{friedl2020remote}. It is important to know the grounding line position to be able to quantify the ice discharge into the sea and as an indicator, if the ice sheet is advancing or retreating \cite{konrad2018net}.
+There exist different types of glaciers. Glaciers that end in the ocean are called tidewater glaciers. The ones that flow into an ice shelf are called tributary glaciers as the one shown in figure \ref{groundingzone}. The line that divides the part of the glacier that is in contact with the solid bedrock and the ice shelf floating on water driven by buoyancy, is called the grounding line \cite{cheng2019full}. The location of the grounding line is important because the mass loss from glaciers is strongly linked to changes in the ice shelves and their grounding lines \cite{brunt2010mapping,pritchard2012antarctic}. Its long-term horizontal position is very susceptible to temporal and spatial changes in ice thickness and sea level, as well as bedrock and ice surface slopes. Ice thinning and rising sea levels can cause grounding lines to retreat while thickening or declining sea levels can cause an advance \cite{friedl2020remote}. It is important to know the grounding line position to be able to quantify the ice discharge into the sea and as an indicator, if the ice sheet is advancing or retreating \cite{konrad2018net}.
 
-Grounding lines are actually more of a zone. The grounding zone is the region where ice transitions from a grounded ice sheet to a freely floating ice shelf, typically over several kilometers. The grounding zone is the region between point F in figure \ref{groundingzone} by \cite{fricker2009mapping}, where there is no tidal movement, and point H, which is the seaward limit of ice flexure, where the ice is free-floating. The floating ice shelf changes in elevation in response to tides, atmospheric air, pressure, and oceanic processes. Grounding occurs when the ice shelf comes into contact with the bedrock below \cite{fricker2009mapping}. The transition from grounded ice sheets to floating ice shelves plays an important role in controlling marine ice sheet dynamics, as it determines the rate at which ice flows out of the grounded part of the ice sheet \cite{schoof2007ice}. This is because ice flux through the grounding line increases sharply with ice thickness at the grounding line. This means that grounding lines are unstable on reverse-bed slopes, such as those under Pine island glaciers, because recession into deeper water increases ice flux and further encourages more glacier recession \cite{schoof2007marine}.
+Grounding lines are actually more of a zone or region where ice transitions from a grounded ice sheet to a freely floating ice shelf, typically over several kilometres. The grounding zone is the region between point F in figure \ref{groundingzone} by \cite{fricker2009mapping}, where there is no tidal movement, and point H, which is the seaward limit of ice flexure, where the ice is free-floating. The floating ice shelf changes in elevation in response to tides, atmospheric air, pressure, and oceanic processes. Grounding occurs when the ice shelf comes into contact with the bedrock below \cite{fricker2009mapping}. The transition from grounded ice sheets to floating ice shelves plays an important role in controlling marine ice sheet dynamics, as it determines the rate at which ice flows out of the grounded part of the ice sheet \cite{schoof2007ice}. This is because ice flux through the grounding line increases sharply with ice thickness at the grounding line. This means that grounding lines are unstable on reverse-bed slopes, such as those under Pine island glaciers, because recession into deeper water increases ice flux and further encourages more glacier recession \cite{schoof2007marine}.
 
- This project aims to understand the direct impact of changes in the position of the grounding line on the flow dynamics of ice sheets glaciers. We will use the finite element model Elmer/Ice to explore the spatial resolution impact on the grounding line position. We will compare the changes in the position of the grounding line for two different idealized topographies. This will let us understand the behavior of real present and past glaciers such as the Northern European glacier. 
+The stability conditions for the position of the grounding line determined by the numerical methods used to solve the glacier dynamics models equations are discussed in this project in section. Also, in the next section a literature review on the grounding line position studies is presented. The impact of parameters such as the mesh resolution on the prediction of the grounding line position is discussed and presented as a research gap and opportunity for the present study that aims to understand and to obtain reliable models able to predict this grounding line dynamics, by implementing experiments on glacier dynamics through idealized topographies presented in section X. 
 
  \section{Glacier dynamics}
  \subsection{Mass and movement balance equations}
- An ice sheet is a continuous sheet of land ice that covers a very large area of several thousand to millions of square meters. It is formed by an accumulation of snow which will densify under its own weight until it becomes ice. This ice will then flow downhill under its weight, and can eventually reach the sea. If it does, and the ice propagates above the sea, this part of the ice sheet is called an ice shelf \cite{hutter1982mathematical}. Figure \ref{groundingline} shows a diagram of an ice sheet showing different parts of it, such as the ice shelf, and some phenomena happening inside of it, such as the ice flow or the snow accumulation.
+An ice sheet is a continuous sheet of land ice that covers a very large area of several thousand to millions of square meters. It is formed by an accumulation of snow which will densify under its own weight until it becomes ice. This ice will then flow downhill under its weight, and can eventually reach the sea. If it does, and the ice propagates above the sea, this part of the ice sheet is called an ice shelf \cite{hutter1982mathematical}. Figure \ref{groundingline} shows a diagram of an ice sheet showing different parts of it, such as the ice shelf, and the grounded ice. The grounding zone can also be identified. 
 
- For large time scales the ice is considered a very viscous fluid. The ice flow equations are then derived from the Stokes equation \cite{hutter1982mathematical}:
+Figure \ref{control_volume} shows a control volume of size $dx.dy.dz$. The velocities into the volume in the $x$, $y$ and $z$ directions are $u$, $v$, and $w$, respectively. The velocity out in the $x$-direction is:
+
+\begin{equation}
+	u+\frac{\delta u}{\delta x}dx;
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Control_volume.png}
+	\caption{Derivation of the condition of incompressibility.}
+	\label{control_volume}
+\end{figure}
+
+Here, $\frac{\delta u}{\delta x}$ is the velocity gradient through the volume, which, when multiplied by the length of the volume, $dx$, gives the change in velocity through the volume in the $x$-direction. The mass fluxes into and out of the volume in the $x$-direction are:
+\begin{equation}
+	({\rho u + \frac{\delta \rho u}{\delta x}dx})dy dz;
+\end{equation}
+
+Here, $\rho$ is the density of the ice. Similar relations may be written for the mass fluxes into and out of the volume control in the $y$ and $z$-directions. Summing these fluxes we find that the change in mass with time, $\frac{\delta m}{\delta t}$ in the control volume is:
+
+\begin{equation}
+	\frac{\delta m}{\delta t}=\rho u dydz-({\rho u+\frac{\delta \rho u}{\delta x}})dydz-({\rho v+\frac{\delta \rho v}{\delta y}})dxdz+\rho vdxdz+\rho wdxdy-({\rho w+\frac{\delta \rho w}{\delta z}})dxdy
+\end{equation}
+Simplifying by cancelling terms of opposite sign and dividing by $dxdydz$ yields to:
+\begin{equation}
+	-\frac{1}{dxdydz}\frac{\delta m}{\delta t}=\frac{\delta \rho u}{\delta x}+\frac{\delta \rho v}{\delta y}+\frac{\delta \rho w}{\delta z};
+\end{equation}
+Ice is normally considered incompressible, which means that $\rho$ is constant. This is not true near the surface of a glacier, where snow and firn are undergoing compaction, but to a good approximation is valid throughout the bulk of most ice masses. In this case, the equation becomes:
+\begin{equation}
+	-\frac{1}{\rho dxdydz}\frac{\delta m}{\delta t}=\frac{\delta u}{\delta x}+\frac{\delta v}{\delta y}+\frac{\delta w}{\delta z};
+\end{equation}
+
+The mass of ice in the control volume can change if the control volume is not full initially. When it is full of incompressible ice, however, $\frac{\delta m}{\delta t}=0$, and the equation becomes:
+\begin{equation}
+	\frac{\delta u}{\delta x}+\frac{\delta v}{\delta y}+\frac{\delta w}{\delta z}=0;
+\end{equation}
+
+This is the condition of incompressibility; it describes the situation in which neither mass nor density are changing in the volume control.
+\subsubsection{Stresses}
+A stress is a force per unit area, and has the dimensions N$m^2$ or Pa. Stresses are vector quantities in that they have a magnitude and direction. Stresses that are directed normal to the surface on which they are acting are called normal stresses, while those that are parallel to the surface are shear stresses. A force applied to a surface at an oblique angle results in both shear and normal stresses on the surface.
+As shown in figure \ref{Stress2D}, $\sigma_{XZ}$ is the shear stress in the z‑direction on the plane normal to the $x$-axis. Thus, the ﬁrst subscript in a pair is the orientation of the normal to the plane on which the stress acts, and the second gives the direction of the stress. The figure \ref{Stress_tensor} shows stress vectors on three faces of a cube. Similar stresses occur on the concealed faces, but they are in the opposite directions. The cube is considered to be inﬁnitesimal, representing, say, a point in a glacier. Thus, stresses on any given face can be regarded as uniformly distributed and constant. To completely describe the state of stress at this point, we need nine stress components; thus: $\sigma_{XX}$, $\sigma_{XY}$, $\sigma_{XZ}$, $\sigma_{YX}$, $\sigma_{YY}$, $\sigma_{YZ}$, $\sigma_{ZX}$, $\sigma_{ZY}$, $\sigma_{ZZ}$. This assemblage of stress vectors is called a second-rank tensor. For comparison, a vector, like velocity, is a ﬁrst-rank tensor; to describe it we need its components along three coordinate axes, so we need three numbers. Similarly, pressure, a scaler, is a zero-rank tensor; it can be described with only one number, the magnitude of the pressure.
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\linewidth]{../fig/Stress_2D.png}
+		\caption{Sign convention for stresses in plain strain.}
+		\label{Stress2D}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\linewidth]{../fig/Stress_tensor.png}
+		\caption{Stresses on a cube.}
+		\label{Stress_tensor}
+	\end{subfigure}
+	\caption{Stress in a elementary control volume of ice.}
+	\label{Stress}
+\end{figure}
+
+\subsubsection{Strain and strain rate}
+In a deformable medium, stresses induce deformation or strain. Strain is deﬁned as the change, $\Delta l$, in length of a line divided by the line's initial length, $\Delta l_0$, thus: $\frac{\Delta l}{l_0}$. The symbol $\epsilon$ is commonly used to denote the strain. The rate at which strain occurs, or the strain rate, $\frac{d\epsilon}{dt}$, is denoted as $\dot{\epsilon}$. As nine separate stress vectors are needed to fully describe the state of stress at a point, so also are nine strains or strain rates needed to describe the state of straining at that point. Thus, these assemblages of strains and strain rates are also second rank tensors, the strain and strain-rate tensors. For the strain rate:
+
+\begin{equation}
+	\dot{\epsilon_{XY}}=\frac{1}{2}({\frac{\delta u}{\delta y}+\frac{\delta v}{\delta y}});
+\end{equation}
+
+Also, the incompressibility condition can be expressed in terms of the strain rate as:
+
+\begin{equation}
+	\dot{\epsilon_{XX}}+\dot{\epsilon_{YY}}+\dot{\epsilon_{ZZ}}=0;
+\end{equation}
+
+\subsubsection{Yield stress}
+In some materials there is no deformation at stresses below a certain stress, called the yield stress. This is a property of that particular material. In other materials, deformation rates are so low at low stresses that theoretical models sometimes assume the existence of a yield stress, even though there may not actually be one. Ice is such a material.
+
+\subsubsection{Deviatoric stress}
+
+Ice does not deform signiﬁcantly in response to hydrostatic pressure alone. In other words, in a topographic depression containing ice the hydrostatic (or
+cryostatic) pressure increases linearly with depth, $z$, at a rate $\rho gz$, where $g$ is the acceleration due to gravity. As a rule of thumb, the pressure increases at a rate of 0.1 MPa for every 11m of depth. Thus, it becomes quite high at large depths. However, if the surface of the ice in the depression is horizontal, as in a lake, the only deformation that would occur would be a relatively insigniﬁcant elastic compression.
+
+On the other hand, if the ice surface were to slope gently (dashed line in
+Figure 2.6), and if points A and B are on a horizontal plane, then the pressure at A would be greater than the pressure at B. This pressure difference would result in a compressive strain between A and B. The strain rate would depend upon the small pressure difference, and not, in any signiﬁcant way, on the much larger hydrostatic pressure at depth z. In other words, deformation is a result of the non-hydrostatic stresses. It is convenient to deﬁne a stress, called the deviatoric stress or stress deviator, which reﬂects this principle. The deviatoric normal stress in the x-direction is:
+
+\begin{equation}
+	\sigma_{XX}'= \sigma_{XX}-P;
+\end{equation}
+
+Where P is the mean normal stress:
+\begin{equation}
+	P=-\frac{1}{3}({\sigma_{XX}+\sigma_{YY}+\sigma_{ZZ}})
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Non_hydrostatic_pressure.png}
+	\caption{Sketch to illustrate non-hydrostatic pressure.}
+	\label{Deviatoric_stress}
+\end{figure}
+
+\subsubsection{The flow law}
+
+The most commonly used ﬂow law for ice is Glen’s ﬂow law, named after John
+W. Glen upon whose experiments it is based \cite{glen1958flow}. This equation was originally written in the form:
+\begin{equation}
+	\dot{\epsilon_{e}}=({\frac{\sigma_{e}}{B}})^n;
+\end{equation}
+where B is a viscosity parameter that increases as the ice becomes stiffer, and n is an empirically determined constant. Most studies have found that n=3¸. An alternative form of the ﬂow law that is commonly used, and that can be used, is:
+\begin{equation}
+	\dot{\epsilon_{e}}=A\dot{\epsilon_{e}}^n
+\end{equation}
+A is called the rate factor. B is normally given in Mpa $yr^{\frac{1}{n}}$ while A is in $MPa^{-n} yr ^{-1}$ or $MPa^{-n} s ^{-1}$.
+
+For large time scales the ice is considered a very viscous fluid. The ice flow equations are then derived from the conservation of momentum \cite{hutter1982mathematical}:
 \begin{equation}
 	div\sigma + \rho g = div\tau - gradp + \rho g = 0;
 \end{equation}
@@ -57,7 +169,7 @@ And the mass conservation:
 \end{equation}
 With $u$ the velocity, H the ice thickness, $M_s$ and $M_b$ the mass balance at the surface and at the bottom respectively. $M_s$ will be defined, and $M_b$ is considered as 0 for convenience purposes. 
 
-The stresses are related to the viscosity and the strain by Glen's law \cite{glen1958flow}:
+The stresses are related to the viscosity and the strain by a constitutive equation \cite{glen1958flow}:
 \begin{equation}
 	\tau = 2\eta\dot{\epsilon},
 \end{equation}
@@ -89,7 +201,7 @@ In this project, only the Shallow Shelf approximation is made, as this is how fu
 
 \subsection{Grounding line stability}
 
-A long debate on the dynamics of such ice sheets was initiated in the 1970s when \cite{weertman1974stability} proposed that a marine ice sheet that lies on an upward-sloping bed is unstable. Recently, the instability hypothesis has been strongly reinforced, based on a boundary-layer theory due to \cite{schoof2007ice}. Moreover, \cite{vieli2005assessing} showed the poor ability of marine ice-sheet models to give consistent prognostic results and, more particularly, they highlighted the influence of the grid size on model results. One of their main conclusions was that no reliable model was able to predict grounding line dynamics at the time of their study.
+There are different variables that play an important role in the dynamics of the glaciers. There is, for example, the grounding line. Its location is still a topic of discussion in the literature surrounding ice sheet dynamics \cite{goldberg2018representing}. A long debate on the dynamics of such ice sheets was initiated in the 1970s when \cite{weertman1974stability} proposed that a marine ice sheet that lies on an upward-sloping bed is unstable. Recently, the instability hypothesis has been strongly reinforced, based on a boundary-layer theory due to \cite{schoof2007ice}. Moreover, \cite{vieli2005assessing} showed the poor ability of marine ice-sheet models to give consistent prognostic results and, more particularly, they highlighted the influence of the grid size on model results. One of their main conclusions was that no reliable model was able to predict grounding line dynamics at the time of their study.
 
 There is a need to improve marine ice-sheets models in order to corroborate recent theoretical predictions and to obtain confident simulations of the grounding line dynamics. \cite{durand2009marine} proposed a full-Stokes solution of the ice-sheet/ice-shelf transition. This approach has been built on literature dealing with the coupling between a grounded ice sheet and a floating ice shelf and identifying this transition zone as a crucial control of the marine ice sheet dynamics, like the studies carried out by \cite{weertman1974stability}, \cite{van1985response}, \cite{schoof2007ice}, and \cite{schoof2007marine}. Also, \cite{chugunov1996modelling} presented a model for the behavior of a marine glacier and ice-sheet-ice-shelf transition zone based on asymptotic analysis, which involves breaking down the equations into simpler components and analyzing their behavior as certain variables approach infinity or zero, to derive a set of simplified equations that can be used to predict the behavior of the glacier and ice-sheet-ice-shelf transition zone. \cite{hindmarsh1996stability} presents a mathematical model of ice rise stability, which takes into account the effects of ice flow, ice shelf melt, and ocean circulation. He uses this model to analyze the stability of several ice rises and uncoupled marine ice sheets in Antarctica, finding that some of these features may be more stable than previously thought. On the other hand, \cite{vieli2005assessing} evaluate the ability of numerical ice sheet models to simulate grounding line migration. They concluded that while numerical ice sheet models have made significant progress in simulating grounding line migration, there is still much work to be done to improve their accuracy and reliability.
 
@@ -149,26 +261,11 @@ Using the notation from equation (1), we can say that $C=  \frac{1}{\beta^m}$. S
 \end{equation}
 If we replace C by its value given in table \ref{Physical constants}, we get $\beta= 10^4 Pa m^{\frac{-1}{3}} a^{\frac{1}{3}}$ which converted to Mpa will give us a value of 10.
 
-\subsection{Boundary conditions}
-Boundary conditions are needed in order to solve differential equations. It will be assumed that:
-\begin{itemize}
-	\item The bedrock is impermeable (The vertical component of the ice flow velocity is 0):
-	\begin{equation}
-		v = 0
-	\end{equation}
-	\item The flow follows the Weertman friction law:
-	\begin{equation}
-		u_b = C\tau_b^m
-	\end{equation}
-	\item Mass accumulation is a constant parameter.
-	\item The simulation will be performed on a quarter of the domain since the geometry of the topography is symmetric, which allows having free slip boundary conditions at the left and downsides of the topography, and open boundary conditions at the right and top sides of the domain. 
-\end{itemize}
-
-\subsubsection{Numerical parameters}
+\subsection{Numerical parameters}
 The numerical resolution will be our variable physical parameter, which we will vary from 10 km, 5 km, 2 km, 1 km, 500 m, and 250 m. 
-\subsubsection{External forcing}
+\subsection{External forcing}
 We will assume that the only external force acting are gravity ($g=9.81 m/s^2$), which is translated to the weight of the ice sheet and the flotation force of this in the ocean water, as well as the ice friction with the bedrock.
-\subsubsection{Initial condition}
+\subsection{Initial condition}
 The simulation departs from no iced configuration. 
 As stated before, the flow will follow the linear Weertman friction law at the base of the ice sheet:
 \begin{equation}
@@ -177,7 +274,7 @@ As stated before, the flow will follow the linear Weertman friction law at the b
 Where $\tau$ is the friction shear stress, $C$ is the basal slipperiness coefficient, and $u$ is the velocity.
 Comparisons were made using friction coefficients ranging from $C=10^{-8}$ to simulate a friction close to 0, to $C=10^{-2}$. This coefficient is also the one chosen to perform the simulations.
 The simulations will start from a topography with no ice, namely $h_0 = 0$. However, the Elmer/Ice code uses a notation where at least a minimum value should be enter in order to avoid convergence problems, so a very small value of $h_0 = 0,01$ is introduced as initial ice thickness. 
-\subsubsection{Time step}
+\subsection{Time step}
 The Courant-Friedrichs-Lewy (CFL) condition is a necessary condition to solve numerical partial differential equations. It states that the distance a variable travels between two-time steps must be smaller than the distance between two points of the mesh \cite[]{courant1967partial}. It is needed that:
 \begin{equation}
 	C=\frac{u\Delta t}{\Delta x}<Cmax;
@@ -232,6 +329,21 @@ With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
 	\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
 	\label{Thule_3D}
 \end{figure}
+
+\subsection{Boundary conditions}
+Boundary conditions are needed in order to solve differential equations. It will be assumed that:
+\begin{itemize}
+	\item The bedrock is impermeable (The vertical component of the ice flow velocity is 0):
+	\begin{equation}
+		v = 0
+	\end{equation}
+	\item The flow follows the Weertman friction law:
+	\begin{equation}
+		u_b = C\tau_b^m
+	\end{equation}
+	\item Mass accumulation is a constant parameter.
+	\item The simulation will be performed on a quarter of the domain since the geometry of the topography is symmetric, which allows having free slip boundary conditions at the left and downsides of the topography, and open boundary conditions at the right and top sides of the domain. 
+\end{itemize}
 
  \section{Numerical model}
  \subsection{The Elmer/Ice finite element method}
@@ -333,51 +445,51 @@ To have a better idea of the simulations convergence, in figure \ref{h_and_h_vel
 
 \begin{figure}[!h]
 	\centering % <-- added
-	\begin{minipage}[t]{.25\textwidth}
+	\begin{minipage}[t]{.45\textwidth}
 		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/h_10km_quarter.png}
+			\includegraphics[width=\linewidth]{../fig/10km_quarter_h_thickness_sin_fondo.png}
 			\caption{Ice thickness for 10km resolution.}
 			\label{h10km}
 		\end{subfigure}\hfil % <-- added
 		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/h_5km_quarter.png}
+			\includegraphics[width=\linewidth]{../fig/5km_quarter_h_thickness_sin_fondo.png}
 			\caption{Ice thickness 5km resolution.}
 			\label{h5km}
 		\end{subfigure}\hfil % <-- added
 		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/h_2km_quarter.png}
+			\includegraphics[width=\linewidth]{../fig/2km_quarter_h_thickness_sin_fondo.png}
 			\caption{Ice thickness for 2km resolution.}
 			\label{h2km}
 		\end{subfigure}
 		\begin{subfigure}{\textwidth}
-		\includegraphics[width=\linewidth]{../fig/h_1km_quarter.png}
+		\includegraphics[width=\linewidth]{../fig/1km_quarter_h_thickness_sin_fondo.png}
 		\caption{Ice thickness for 1km resolution.}
 		\label{h1km}
 	    \end{subfigure}
 	\end{minipage}\hfil
-	\begin{minipage}[t]{.25\textwidth}
+	\begin{minipage}[t]{.45\textwidth}
 		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/hvelocity_10km_quarter.png}
+			\includegraphics[width=\linewidth]{../fig/10km_quarter_cone_hvelocity_sin_fondo.png}
 			\caption{Ice sheet thickness velocity 10km.}
 			\label{hvelocity10km}
 		\end{subfigure}\hfil % <-- added
 		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/hvelocity_5km_quarter.png}
+			\includegraphics[width=\linewidth]{../fig/5km_quarter_cone_hvelocity_sin_fondo.png}
 			\caption{Ice sheet thickness velocity 5km}
 			\label{hvelocity5km}
 		\end{subfigure}\hfil % <-- added
 		\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/hvelocity_2km_quarter.png}
+			\includegraphics[width=\linewidth]{../fig/2km_quarter_cone_hvelocity_sin_fondo.png}
 			\caption{Ice sheet thickness velocity 2km}
 			\label{hvelocity2km}
 		\end{subfigure}
 				\begin{subfigure}{\textwidth}
-			\includegraphics[width=\linewidth]{../fig/hvelocity_1km_quarter.png}
+			\includegraphics[width=\linewidth]{../fig/1km_quarter_cone_hvelocity_sin_fondo.png}
 			\caption{Ice sheet thickness velocity 1km}
 			\label{hvelocity1km}
 		\end{subfigure}	
 	\end{minipage}
-	\caption{Ice thickness and ice sheet thickness rate of change for quarter domain per each resolution after steady state.}
+	\caption{Ice thickness and ice sheet thickness rate of change in space for quarter domain per each resolution after steady state.}
 	\label{h_and_h_velocities_cone}
 \end{figure}
 
