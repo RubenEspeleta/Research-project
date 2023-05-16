@@ -126,7 +126,7 @@ Ice does not deform signiﬁcantly in response to hydrostatic pressure alone. In
 cryostatic) pressure increases linearly with depth, $z$, at a rate $\rho gz$, where $g$ is the acceleration due to gravity. As a rule of thumb, the pressure increases at a rate of 0.1 MPa for every 11m of depth. Thus, it becomes quite high at large depths. However, if the surface of the ice in the depression is horizontal, as in a lake, the only deformation that would occur would be a relatively insigniﬁcant elastic compression.
 
 On the other hand, if the ice surface were to slope gently (dashed line in
-Figure 2.6), and if points A and B are on a horizontal plane, then the pressure at A would be greater than the pressure at B. This pressure difference would result in a compressive strain between A and B. The strain rate would depend upon the small pressure difference, and not, in any signiﬁcant way, on the much larger hydrostatic pressure at depth z. In other words, deformation is a result of the non-hydrostatic stresses. It is convenient to deﬁne a stress, called the deviatoric stress or stress deviator, which reﬂects this principle. The deviatoric normal stress in the x-direction is:
+Figure \ref{Deviatoric_stress}), and if points A and B are on a horizontal plane, then the pressure at A would be greater than the pressure at B. This pressure difference would result in a compressive strain between A and B. The strain rate would depend upon the small pressure difference, and not, in any signiﬁcant way, on the much larger hydrostatic pressure at depth z. In other words, deformation is a result of the non-hydrostatic stresses. It is convenient to deﬁne a stress, called the deviatoric stress or stress deviator, which reﬂects this principle. The deviatoric normal stress in the x-direction is:
 
 \begin{equation}
 	\sigma_{XX}'= \sigma_{XX}-P;
@@ -157,33 +157,58 @@ where B is a viscosity parameter that increases as the ice becomes stiffer, and 
 \end{equation}
 A is called the rate factor. B is normally given in Mpa $yr^{\frac{1}{n}}$ while A is in $MPa^{-n} yr ^{-1}$ or $MPa^{-n} s ^{-1}$.
 
-For large time scales the ice is considered a very viscous fluid. The ice flow equations are then derived from the conservation of momentum \cite{hutter1982mathematical}:
-\begin{equation}
-	div\sigma + \rho g = div\tau - gradp + \rho g = 0;
-\end{equation}
-with $\sigma$ the stress tensor, $\rho$ the density of the ice, g the gravity vector, $\tau$ the deviatoric stress tensor, with $\sigma = \tau - pI$ and $p=\frac{tr\sigma}{3}$. 
+Glaciers move because the surface of the ice is sloped. This generates a stress on the ice, which is proportional to the slope and to the depth below the surface \cite{earle2015physical}. As shown in fig \ref{Flow_ice}, the stresses are quite small near the ice surface but much larger at depth, and also greater in areas where the ice surface is relatively steep. Ice will deform, meaning that it will behave in a plastic manner, at stress levels of around 100 kilopascals; therefore, in the upper 50 m to 100 m of the ice (above the dashed red line), flow is not plastic (the ice is rigid), while below that depth, ice is plastic and will flow.
 
-And the mass conservation:
+When the lower ice of a glacier flows, it moves the upper ice along with it, so although it might seem from the stress patterns (red numbers and red arrows) shown in figure \ref{Flow_ice} that the lower part moves the most, in fact while the lower part deforms (and flows) and the upper part does not deform at all, the upper part moves the fastest because it is pushed along by the lower ice \cite{earle2015physical}.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/ice_flow.png}
+	\caption{Stress within a valley glacier (red numbers) as determined from the slope of the ice surface and the depth within the ice. The ice will deform and flow where the stress is greater than 100 kilopascals, and the relative extent of that deformation is depicted by the red arrows. Any deformation motion in the lower ice will be transmitted to the ice above it, so although the red arrows get shorter toward the top, the ice velocity increases upward (blue arrows). The upper ice (above the red dashed line) does not flow, but it is pushed along with the lower ice. Adapted from \cite{earle2015physical}}
+	\label{Flow_ice}
+\end{figure}
+
+The plastic lower ice of a glacier can flow like a very viscous fluid, and can therefore flow over irregularities in the base of the ice and around corners \cite{earle2015physical}. For this reason, for large time scales the ice is considered a very viscous fluid. Since the ice is considered an incompressible fluid, such that mass conservation implies that the velocity is divergence free:
+\begin{equation}
+	\nabla .u=0
+\end{equation}
+Where $u=(u,v,w)^T$ describes the velocity field of the ice with respect to a cartisian coordinate system. For ice flow, the acceleration term can be neglected in the Navier-Stokes equations \cite{hutter1982mathematical}. Therefore, the ice flow equation can be derived from the conservation of momentum under the action of gravity $g$ \cite{hutter1982mathematical}:
+\begin{equation}
+	-\nabla p+\nabla (\eta (\nabla u+(\nabla u)^T))+\rho g = 0;
+\end{equation}
+Where $\nabla$ is the gradient operator, $p$ is the pressure, $\eta$ is the viscosity, $\rho$ is the ice density, and $g$ is the gravity. Letting $\sigma$ denote the stress tensor, pressure $p$ is the mean normal stress denoted previously, and the strain rate tensor $\epsilon_{e}$, related by:
+\begin{equation}
+	\sigma=2\eta \epsilon_{e}-pI = \eta (\nabla u+(\nabla u)^T)-pI; 
+\end{equation}
+Where I is the identity tensor. Together, these two last mathematical equations are called the full-stokes model. Observations by \cite{glen1958flow} suggest that the viscosity depends on temperature $T$ and the effective strain rate:
+\begin{equation}
+	\eta (u,T)=\frac{1}{2}A(T)^{-\frac{1}{n}}\dot{\epsilon_e}^{\frac{1-n}{n}};
+\end{equation}
+\begin{equation}
+	\dot{\epsilon_e}=\sqrt{\frac{1}{2}(({\frac{\delta u}{\delta x})}^2+{(\frac{\delta v}{\delta y})}^2+{(\frac{\delta w}{\delta z})}^2)+{\frac{1}{4}({(\frac{\delta u}{\delta y}+\frac{\delta v}{\delta x})}^2+{(\frac{\delta u}{\delta z}+\frac{\delta w}{\delta x})}^2+{(\frac{\delta v}{\delta z}+\frac{\delta w}{\delta y})}^2)}}
+\end{equation}
+Where Glenn's exponent n=3. The fluid parameter A increases exponentially with the temperature described by Arrhenius. However, as suggested by \cite{glen1958flow} the viscosity can also be written as:
+\begin{equation}
+	\eta = \frac{1}{2}(EA)^\frac{-1}{n} \dot{\epsilon_e}^\frac{(1-n)}{n}.
+\end{equation}
+Where A(T) can be expressed in terms of E and A, where E is an enhancement factor to account for an anisotropic effect (E=1) and A is a rheological parameter A=15,46. From the mass conservation:
 \begin{equation}
 	\frac{dh}{dt}+ div(uH)=M_s + M_b;
 \end{equation}
 With $u$ the velocity, H the ice thickness, $M_s$ and $M_b$ the mass balance at the surface and at the bottom respectively. $M_s$ will be defined, and $M_b$ is considered as 0 for convenience purposes. 
+\subsection{Shallow shelf approximation}
 
-The stresses are related to the viscosity and the strain by a constitutive equation \cite{glen1958flow}:
+Floating ice does not experience basal drag, hence all resistance comes from longitudinal stresses all lateral drag at the margins. For ice shelves, the shallow shelf approximation, also called SSA, has been derived by dimensional analysis based on a small aspect ratio and surface slope. This dimensional analysis shows that vertical variation of in $u$ and $v$ is negligible, such that $w$ and $p$ can be eliminated by integrating the remaining stresses over the vertical and applying the boundary conditions at the glacier surface and base. Then, the conservation of momentum simplifies to:
 \begin{equation}
-	\tau = 2\eta\dot{\epsilon},
+	\nabla_h.(2\bar{\eta}(\dot{\epsilon_h}I))=\rho g H \nabla_h z_s;
 \end{equation}
-with the viscosity given by:
+Where the subscript h represents the components in the x-y plane, $\bar{\eta}$ the vertically integrated viscosity, H the ice thickness, and $z_s$ the upper ice surface. The effective strain rate simplifies to:
+
 \begin{equation}
-	\eta = \frac{1}{2}(EA)^\frac{-1}{n} \dot{\epsilon_e}^\frac{(1-n)}{n}.
+	\dot{\epsilon_h}=\sqrt{{\frac{\delta u}{\delta x}}^2+{\frac{\delta v}{\delta y}}^2+\frac{\delta u}{\delta x}\frac{\delta v}{\delta y}+\frac{1}{4}{(\frac{\delta u}{\delta y}+\frac{\delta v}{\delta y})}^2};
 \end{equation}
-Where:
-\begin{itemize}
-	\item The strain rate $\dot{\epsilon}$.
-	\item Glen's constant n=3.
-	\item The enhancement factor to account for an anisotropic effect E=1.
-	\item The rheological parameter A=15,46.
-\end{itemize}
+Where $w$ is eliminated using incompressibility. The SSA model is still non linear through $\bar{\eta}$, but since $w$ and $p$ are eliminated and vertical variation in $u$ and $v$ is neglected, the 3-D problem with four unknowns is reduced to a 2-D problem with two unknowns. If desirable, the vertical velocity can also be computed from the incompressibility condition. 
+
 For an ice sheet, the ratio of the vertical length over the horizontal length is more than $1:10^3$. Indeed, the thickness of an ice sheet goes from 0 m to a few thousand of meters (e.g. the ice sheet in Greenland is 3300 m thick at most \cite[]{bamber2001new}) and the typical horizontal length of an ice sheet is of the order of magnitude of 1000 km. This allows us to apply the shallow ice approximation. It assumes a large ratio of horizontal to vertical length, that the basal shear stress is balanced by  the gravitational driving stress, and a large vertical to horizontal stress ratio. That represents a slow flow in the interior of an ice sheet (blue regions in Figure \ref{velocityglaciar}). The approximation makes the method computationally cheaper than the Full-Stokes model with good accuracy over long simulations.
 
 \begin{figure}[!h]
