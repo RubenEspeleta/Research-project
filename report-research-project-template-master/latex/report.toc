@@ -6,24 +6,27 @@
 \contentsline {subsubsection}{\numberline {2.1.3}Yield stress}{7}{subsubsection.2.1.3}%
 \contentsline {subsubsection}{\numberline {2.1.4}Deviatoric stress}{7}{subsubsection.2.1.4}%
 \contentsline {subsubsection}{\numberline {2.1.5}The flow law}{7}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Boundary conditions and time evolution}{9}{subsubsection.2.1.6}%
 \contentsline {subsection}{\numberline {2.2}Shallow shelf approximation}{9}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Grounding line stability}{10}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Systems and domains}{11}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Physical constants}{11}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Numerical parameters}{12}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}External forcing}{12}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Initial condition}{12}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Time step}{12}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Cone domain}{13}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Thule domain}{13}{subsection.3.7}%
-\contentsline {subsection}{\numberline {3.8}Boundary conditions}{14}{subsection.3.8}%
-\contentsline {section}{\numberline {4}Numerical model}{14}{section.4}%
-\contentsline {subsection}{\numberline {4.1}The Elmer/Ice finite element method}{14}{subsection.4.1}%
-\contentsline {section}{\numberline {5}Set-up of the simulations data}{15}{section.5}%
-\contentsline {section}{\numberline {6}Results}{16}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Cone configuration}{16}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Thule configuration}{17}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Comparison of parameters for each resolution for the different configurations}{21}{subsection.6.3}%
-\contentsline {section}{\numberline {7}Discussion}{22}{section.7}%
-\contentsline {section}{\numberline {8}Conclusion}{24}{section.8}%
-\contentsline {section}{\numberline {9}Acknowledgments}{24}{section.9}%
+\contentsline {subsection}{\numberline {2.3}Shallow ice approximation}{10}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Grounding line stability}{11}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Numerical methods}{14}{section.3}%
+\contentsline {section}{\numberline {4}Numerical model}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}The Elmer/Ice finite element method}{15}{subsection.4.1}%
+\contentsline {section}{\numberline {5}Numerical parameters}{16}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Physical parameters}{16}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Numerical variables}{17}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}External forcing}{17}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Initial condition}{17}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}Time step}{17}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Boundary conditions}{18}{subsection.5.6}%
+\contentsline {section}{\numberline {6}System and experiment set-up}{18}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Cone domain}{18}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Thule domain}{19}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Results}{21}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Cone configuration}{21}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Thule configuration}{22}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Comparison of parameters for each resolution for the different configurations}{23}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Discussion}{26}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{29}{section.9}%
+\contentsline {section}{\numberline {10}Acknowledgments}{30}{section.10}%

@@ -191,14 +191,38 @@ Where Glenn's exponent n=3. The fluid parameter A increases exponentially with t
 \begin{equation}
 	\eta = \frac{1}{2}(EA)^\frac{-1}{n} \dot{\epsilon_e}^\frac{(1-n)}{n}.
 \end{equation}
-Where A(T) can be expressed in terms of E and A, where E is an enhancement factor to account for an anisotropic effect (E=1) and A is a rheological parameter A=15,46. From the mass conservation:
+Where A(T) can be expressed in terms of E and A, where E is an enhancement factor to account for an anisotropic effect (E=1) and A is a rheological parameter A=15,46. 
+
+\subsubsection{Boundary conditions and time evolution}
+Where the ice is grounded (in contact with the bedrock), the interaction of ice with bedrock is commonly represented by a sliding law suggested by \cite{weertman1974stability}:
 \begin{equation}
-	\frac{dh}{dt}+ div(uH)=M_s + M_b;
+	u_b=C{\tau_b}^m;
 \end{equation}
-With $u$ the velocity, H the ice thickness, $M_s$ and $M_b$ the mass balance at the surface and at the bottom respectively. $M_s$ will be defined, and $M_b$ is considered as 0 for convenience purposes. 
+Where is a basal slipperiness coefficient, $\tau_b$ is the basal shear stress, m is a sliding law stress exponent and $u_b$ is the velocity. 
+
+The ice surface (assumed stress free $\sigma .n=0$) and ice base at $z_s$ and $z_b$ behave as free surfaces according to:
+
+\begin{equation}
+	\frac{\delta z_{s/b}}{\delta t}+u_{s/b}\frac{\delta z_{s/b}}{\delta x}+v_{s/b}\frac{\delta z_{s/b}}{\delta y}=w_{s/b}+a_{s/b};
+\end{equation}
+where $a_{s/b}$ is the accumulation ($a_{s/b}>0$) or ablation ($a_{s/b}<0$) in meter ice equivalent per year, at the surface or at the base, respectively. By vertical integration of the incompressibility condition, $w$ can be eliminated using Leibniz integration rule and substituting the free surface equation described previously, which yields to the thickness advection equation:
+\begin{equation}
+	\frac{\delta H}{\delta t}+\frac{\delta H\bar{u}}{\delta x}+\frac{\delta H \bar{v}}{\delta y}=a_s-a_b ;
+\end{equation}
+Where $\bar{u}$ and $\bar{v}$ are the vertically integrated horizontal velocities. 
+For the ice-ocean interface, as soon as the seawater pressure $p_w$ at the ice base $z_b$ is larger than the normal stress exerted by the ice at the bed, the ice is assumed to float. At the ice-ocean interface, the tangencial friction is neglected and:
+\begin{equation}
+	\sigma . n=-p_wn ;
+\end{equation}
+where:
+\begin{equation}
+	p_w(z)=-\rho_wgz; if z<0;
+\end{equation}
+and $\sigma .n=0$ above sea level ($z>0$). Calving at the seaward front of the ice is not explicitly modeled, but the lenght of the modeling domain is fixed and the shelf out of the domain is interpreted as a calving rate.
+  
 \subsection{Shallow shelf approximation}
 
-Floating ice does not experience basal drag, hence all resistance comes from longitudinal stresses all lateral drag at the margins. For ice shelves, the shallow shelf approximation, also called SSA, has been derived by dimensional analysis based on a small aspect ratio and surface slope. This dimensional analysis shows that vertical variation of in $u$ and $v$ is negligible, such that $w$ and $p$ can be eliminated by integrating the remaining stresses over the vertical and applying the boundary conditions at the glacier surface and base. Then, the conservation of momentum simplifies to:
+Floating ice does not experience basal drag, hence all resistance comes from longitudinal stresses all lateral drag at the margins (figure \ref{nine_stresses}). For ice shelves, the shallow shelf approximation, also called SSA, has been derived by dimensional analysis based on a small aspect ratio and surface slope. This dimensional analysis shows that vertical variation of in $u$ and $v$ is negligible, such that $w$ and $p$ can be eliminated by integrating the remaining stresses over the vertical and applying the boundary conditions at the glacier surface and base. Then, the conservation of momentum simplifies to:
 \begin{equation}
 	\nabla_h.(2\bar{\eta}(\dot{\epsilon_h}I))=\rho g H \nabla_h z_s;
 \end{equation}
@@ -209,7 +233,17 @@ Where the subscript h represents the components in the x-y plane, $\bar{\eta}$ t
 \end{equation}
 Where $w$ is eliminated using incompressibility. The SSA model is still non linear through $\bar{\eta}$, but since $w$ and $p$ are eliminated and vertical variation in $u$ and $v$ is neglected, the 3-D problem with four unknowns is reduced to a 2-D problem with two unknowns. If desirable, the vertical velocity can also be computed from the incompressibility condition. 
 
-For an ice sheet, the ratio of the vertical length over the horizontal length is more than $1:10^3$. Indeed, the thickness of an ice sheet goes from 0 m to a few thousand of meters (e.g. the ice sheet in Greenland is 3300 m thick at most \cite[]{bamber2001new}) and the typical horizontal length of an ice sheet is of the order of magnitude of 1000 km. This allows us to apply the shallow ice approximation. It assumes a large ratio of horizontal to vertical length, that the basal shear stress is balanced by  the gravitational driving stress, and a large vertical to horizontal stress ratio. That represents a slow flow in the interior of an ice sheet (blue regions in Figure \ref{velocityglaciar}). The approximation makes the method computationally cheaper than the Full-Stokes model with good accuracy over long simulations.
+\subsection{Shallow ice approximation}
+
+For an ice sheet, the ratio of the vertical length over the horizontal length is more than $1:10^3$. Indeed, the thickness of an ice sheet goes from 0 m to a few thousand of meters (e.g. the ice sheet in Greenland is 3300 m thick at most \cite[]{bamber2001new}) and the typical horizontal length of an ice sheet is of the order of magnitude of 1000 km. This allows us to apply the shallow ice approximation. The shallow ice approximation (SIA) neglects longitudinal (along flow stretching and compression) and transverse stresses (lateral drag against slower ice for an ice stream or valley walls for a valley glacier), and vertical stress gradients shown in figure \ref{nine_stresses}. However, basal sliding is difficult to implement properly, and so the accuracy of the SIA decreases as the contribution of basal slip to ice velocity increases. It is therefore not very good at simulating ice streams and other key regions of an ice sheet, such as ice divides, grounding lines and floating ice shelves (with zero basal drag). 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/nine-stresses.png}
+	\caption{Driving and basal stresses on a block of ice.}
+	\label{nine_stresses}
+\end{figure}
+The SIA is the simplest approximation of the Full Stokes equations. It assumes that basal shear stress of the grounded ice is completely balanced by the gravitational driving stress. It also assumes a small aspect ratio of vertical to horizontal length. (which is appropriate for an ice sheet) and a large ratio of vertical to horizontal stresses. That represents a slow flow in the interior of an ice sheet (blue regions in Figure \ref{velocityglaciar}). Vertical shearing is concentrated close to the bedrock, with almost no vertical shearing near the surface. It also assumes that the longitudinal derivatives of stress, velocity and temperature are small. This is typical of slow ‘sheet flow’ in the interior of ice sheets, and the SIA has been shown to model this well.
+Advantages of the SIA include that it is relatively easier to simulate numerically, and for this, to solve computationally, and so well suited to long runs, and it works well on ‘sheet flow’ in the interior of ice sheets. It is well understood, with a long history of use. Disadvantages of the SIA include that it cannot properly represent transition between grounded and floating ice, and does not represent ice shelves or ice streams. It is also not appropriate for complex, local changes, such as at the grounding line; it excludes membrane stresses cross the grounding line.
 
 \begin{figure}[!h]
 	\centering
@@ -219,48 +253,152 @@ For an ice sheet, the ratio of the vertical length over the horizontal length is
 \end{figure}
 Figure \ref{velocityglaciar} shows a map of velocities in Antarctica and Greenland topographies. Where this velocity is the highest, the basal shear stress cannot be considered balanced by gravity anymore. Instead, it is taken as 0 and the longitudinal stress dominates. This is the Shallow Shelf approximation, initially developed for ice shelves, but which has been extended to dragging ice streams. It is a 2D vertically integrated model, the ice velocity being depth-averaged.
 
-But these approximations are not mandatory: the Full Stokes model is still the most precise, it accounts for all nine stress components. It is useful around the parts that are at the limits of the other models or over complex topographies, but not needed for the interior of ice sheets, where the improvement would be minimal but the computational cost way higher \cite{larour2012continental}.
-
-The factors such as sensitivity, long time intervals, and long distances require careful treatment of the groundline neighborhood by the numerical method to discretize the model equations \cite{cheng2019full}. The most accurate ice model is the Full Stokes (FS) equations \cite{cheng2019full}. However, a simplification of these FS equations by integrating into the depth of the ice is the shallow shelf approximation \cite{macayeal1989large}. The computational advantage with Shallow Shelf approximation is that the dimension of the problem is reduced by one, it is often used for simulations of the interaction between a grounded ice sheet and a marine ice shelf \cite{cheng2019full}. 
-In this project, only the Shallow Shelf approximation is made, as this is how future projections of Greenland and Antarctica are done with the Elmer/Ice model.
+The factors such as sensitivity, long time intervals, and long distances require careful treatment of the groundline neighbourhood by the numerical method to discretize the model equations \cite{cheng2019full}. The most accurate ice model is the Full Stokes (FS) equations \cite{cheng2019full}. However, a simplification of these FS equations by integrating into the depth of the ice is the shallow shelf approximation \cite{macayeal1989large}. The computational advantage with Shallow Shelf approximation is that the dimension of the problem is reduced by one, it is often used for simulations of the interaction between a grounded ice sheet and a marine ice shelf \cite{cheng2019full}. 
+In this project, only the Shallow Shelf approximation is made, as this is how future projections of Greenland and Antarctica are done using numerical methods.
 
 \subsection{Grounding line stability}
 
-There are different variables that play an important role in the dynamics of the glaciers. There is, for example, the grounding line. Its location is still a topic of discussion in the literature surrounding ice sheet dynamics \cite{goldberg2018representing}. A long debate on the dynamics of such ice sheets was initiated in the 1970s when \cite{weertman1974stability} proposed that a marine ice sheet that lies on an upward-sloping bed is unstable. Recently, the instability hypothesis has been strongly reinforced, based on a boundary-layer theory due to \cite{schoof2007ice}. Moreover, \cite{vieli2005assessing} showed the poor ability of marine ice-sheet models to give consistent prognostic results and, more particularly, they highlighted the influence of the grid size on model results. One of their main conclusions was that no reliable model was able to predict grounding line dynamics at the time of their study.
+There are different variables that play an important role in the dynamics of the glaciers. There is, for example, the grounding line. Its location is still a topic of discussion in the literature surrounding ice sheet dynamics \cite{goldberg2018representing}. A long debate on the dynamics of such ice sheets was initiated in the 1970s when \cite{weertman1974stability} proposed that a marine ice sheet that lies on an upward-sloping bed is unstable.
+The grounding line is the boundary between the ice sheet, sitting on the bedrock, and the floating ice shelves. Ice streams merge with ice shelves in the grounding zone, a zone within which the ice is alternately ﬂoating and grounded as tides raise and lower sea level \cite{hooke2019principles}. The position and migration of this grounding line controls then the stability of a marine ice sheet.
+The marine ice sheet stability hypothesis states that when the bedrock slopes down from the coast towards the interior of the marine ice sheet, which is the case in large parts of West Antarctica, the grounding line is not stable. The figure shows this concept. The grounding line is initially located on the bedrock sill (left hand side of figure ). This position is stable: the ice flux at the grounding line, which is the amount of ice passing through the grounding line per unit time, matches the total upstream accumulation.
+A perturbation is applied at the grounding line, e.g. through the incursion of warm Circumpolar Deep Water (CDW, red arrow in Figure ) below the ice shelf. These warm waters lead to basal melting at the grounding line, ice-shelf thinning and glacier acceleration, resulting in an inland retreat of the grounding line. The groundingline is then located on a bedrock that slopes downward inland (right hand side of figure), i.e. an unstable position where the ice column at the grounding line is thicker than previously. The theory shows that ice flux at the grounding line is strongly dependent on ice thickness there \cite{weertman1974stability, schoof2007ice}, so a thicker ice leads to higher ice flux. Then, the grounding line is forced to retreat since the ice flux at the grounding line is higher than the upstream accumulation. This is a positive feedback and the retreat only stops once a new stable position is reached (e.g. a bedrock high), where both ice flux at the grounding line and upstream accumulation match.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Grounding_line.png}
+	\caption{Schematic representation of the marine ice sheet instability with an initial stable grounding line position (left hand side) and unstable grounding line position after the incursion of warm circumpolar deep water below the ice shelf. Adapted from \cite{hanna2013white}.}
+	\label{grounding_line_instability}
+\end{figure}
+
+\cite{weertman1974stability} was the first one to propose a model to handle the behaviour of the glacier dynamics at the grounding line vicinity. Figure \ref{weertman} shows a symmetric two-dimensional ice-sheet. He proposed that a considerable insight is often gained in problems of glacier mechanics by making the assumption that ice is a perfect plastic solid. Such is the case  with the ice sheet-ice shelf transition zone, namely, grounding zone. For an ice shelf with a positive accumulation, this ice shelf must have a thickness $h_{1p}$ equal to:
+
+\begin{equation}
+	h_{1p}=\frac{\tau_0}{\Delta \rho g};
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/Weertman.png}
+	\caption{Cross section of ice sheet with attached ice shelves. Adapted from \cite{weertman1974stability}.}
+	\label{weertman}
+\end{figure}
+
+If the thickness of an ice shelf were greater than $h_{1p}$ it would strain at an infinite rate until its thickness were reduced to the value $h_{1p}$. If the thickness were smaller than $h_{1p}$, the ice shelf would not creep but its thickness would increase in time because of the positive accumulation rate until it reached the value $h_{1p}$. By similar reasoning the basal shear stress of the ice sheet must take on the value $\tau=\tau_0$. The ice sheet profile thus is found by integrating the equation:
+
+\begin{equation}
+	\rho gh\alpha=\tau_0;
+\end{equation}
+
+Where:
+
+\begin{equation}
+	\alpha=-(I-\frac{\rho}{\rho_r})\frac{dh}{dx}+\beta(I-\frac{\rho_w}{\rho_r});
+\end{equation}
+
+If the ice sheet bed were flat before the ice sheet was placed on it ($\beta=0$) the solution of the equations is:
+
+\begin{equation}
+	h^2=H^2-\frac{2\tau_0x}{\rho g(I-\frac{\rho}{\rho_r})}= h^2+\frac{2\tau_0(L-x)}{\rho g(I-\frac{\rho}{\rho_r})};
+\end{equation}
+
+Where $H$ given by:
+\begin{equation}
+	H^2=h^2+\frac{2\tau_0L}{\rho g(I-\frac{\rho}{\rho_r})};
+\end{equation}
+
+is the thickness of the ice sheet at the center $x=0$ and $h_2$ is the thickness of the ice sheet at its edges ($x=L$). Because the ice sheet is afloat and its edges the thickness $h_2$ is equal to:
+
+\begin{equation}
+	h_2=(\frac{\rho_w}{\rho})D(L);
+\end{equation}
+
+When $\beta=0$ the ice sheet profile is given by:
+
+\begin{equation}
+	(H-h)-(\frac{I}{A})ln[\frac{AH-I}{Ah-I}]=\frac{\tau_0 Ax}{\rho g(I-\frac{\rho}{\rho_r})};
+\end{equation} 
+
+Where:
+
+\begin{equation}
+	A=\frac{\beta \rho g}{\tau_0}(I-\frac{\rho_w}{\rho_r});
+\end{equation}
+The value of H is found by setting $h=h_2$ at $x=L$.
+
+For the condition at the grounding line position, $x=L$, the thickness of the ice shelf, $h=h_2$ is such that the ice sheet is afloat. The ice shelf is also afloat. Thus, the thickness of the ice shelf, $h=h_{1p}$, must satisfy the condition:
+
+\begin{equation}
+	h_{1p}<h_2;
+\end{equation}
+
+Supposing that $h_{1p}$ was appreciably smaller than $h_2$, situation illustrated in figure \ref{Instability_condition}. The ice sheet is shopped off essentially at $x=L$. The effect of this truncation at the edge of the ice sheet is to cause a large longitudinal tensile stress to be set up in the ice sheet near its edge. The magnitude of this tensile stress must be of the same order as that of the stress existing in an ice shelf of thickness $h_2$. Since $h_2>>h_{1p}$ the strain rate near its edge is infinite if ice is a perfect plastic solid \cite{weertman1974stability}. Therefore it is not possible to have $h_2>>h_{1p}$ and have the ice sheet and the ice shelves in a steady state condition. So, it is concluded that the grounding line position will be stable if:
+\begin{equation}
+	h_2 \approx h_{1p};
+\end{equation}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/H2.png}
+	\caption{Grounding line position as the junction between ice shelf and ice sheet. No restriction on thickness of ice sheet at x = L. Adapted from \cite{weertman1974stability}.}
+	\label{Instability_condition}
+\end{figure}
+
+Recently, the instability hypothesis has been strongly reinforced, based on a boundary-layer theory due to \cite{schoof2007ice}. Moreover, \cite{vieli2005assessing} showed the poor ability of marine ice-sheet models to give consistent prognostic results and, more particularly, they highlighted the influence of the grid size on model results. One of their main conclusions was that no reliable model was able to predict grounding line dynamics at the time of their study.
 
 There is a need to improve marine ice-sheets models in order to corroborate recent theoretical predictions and to obtain confident simulations of the grounding line dynamics. \cite{durand2009marine} proposed a full-Stokes solution of the ice-sheet/ice-shelf transition. This approach has been built on literature dealing with the coupling between a grounded ice sheet and a floating ice shelf and identifying this transition zone as a crucial control of the marine ice sheet dynamics, like the studies carried out by \cite{weertman1974stability}, \cite{van1985response}, \cite{schoof2007ice}, and \cite{schoof2007marine}. Also, \cite{chugunov1996modelling} presented a model for the behavior of a marine glacier and ice-sheet-ice-shelf transition zone based on asymptotic analysis, which involves breaking down the equations into simpler components and analyzing their behavior as certain variables approach infinity or zero, to derive a set of simplified equations that can be used to predict the behavior of the glacier and ice-sheet-ice-shelf transition zone. \cite{hindmarsh1996stability} presents a mathematical model of ice rise stability, which takes into account the effects of ice flow, ice shelf melt, and ocean circulation. He uses this model to analyze the stability of several ice rises and uncoupled marine ice sheets in Antarctica, finding that some of these features may be more stable than previously thought. On the other hand, \cite{vieli2005assessing} evaluate the ability of numerical ice sheet models to simulate grounding line migration. They concluded that while numerical ice sheet models have made significant progress in simulating grounding line migration, there is still much work to be done to improve their accuracy and reliability.
 
 \cite{durand2009full} showed, using the finite element code Elmer/Ice, that the full-Stokes modeling of the ice-sheet/ice-shelf transition gives a consistent prediction of grounding-line migration. However, their approach is highly sensitive to the chosen mesh resolution. For a grid size smaller than $5 km$ in the grounding-line vicinity, predictions start to be consistent. For any finer resolution than $5 km$, the steady-state grounding-line position is the same (6km is the standard deviation). If a sub-grid refinement of 200m in the vicinity of the grounding line is applied the steady-state position is stable.
 
-In order to study and test the behavior of the different components of the models, idealized systems are studied and, based on the results that are obtained from these idealized cases, the hypothesis, models, and numerical methods used to solve the problems are improved. For this reason, within the framework of this project, we will analyze the behavior of the Elmer/Ice method to solve idealized systems and topographies. The framework in which the present project is focused is on the study of the Northern Europe glacier. But, since this glacier does not exist anymore, idealized cases simulations of North Europe glaciers, such as Greenland can be analyzed as mentioned before, and their results can be used to improve the numerical models, hypothesis, and parameters of the models, and this way we can better understand the behavior of ancient glaciers such as the Northern Europe glacier.
+As a more general conclution from the theory, it confirms the proposition made by \cite{weertman1974stability} that the ice flux is a function of ice thickness at the grounding line in the case of a 2-D flow problem with no lateral shearing in ice shelf, as it is the case for a shallow shelf approximation of the full stokes model. For this reason, in order to study and test the behavior of the impact of the mesh resolution on the migration of the grounding line position, idealized systems are studied and, based on the results that are obtained from these idealized cases, the hypothesis, models, and numerical methods used to solve the problems may be improved. The main focus of the experiments proposed in this project is to test the influence of the mesh resolution on the prediction of the grounding line position using a numerical model to solve a shallow shelf approximation of the governing equations of ice flow. 
 
-\section{Systems and domains}
+\section{Numerical methods}
 
-\subsection{Physical constants}
-Table \ref{Physical constants} shows the constants parameters that were set up for the experiment by the Calvin MIP project. 
+Analytical solutions to problems of glacier flows could be obtained only when the problems are quite simple \cite{hooke2019principles}. Thus, two numerical methods are the most used in modelling: the finite difference methods and the finite element method. More recently, the finite-volume method has been deployed, and researchers are experimenting with less physically-based techniques \cite{hooke2019principles}.
 
-\begin{table}[!h]
-	\begin{center}
-		\caption{Physical constants}
-		\label{Physical constants}
-		\begin{tabular}{|l|l|l|}
-			\hline
-			Variable          & Description                 & Units           \\ \hline
-			$g=9.81$         & Gravitational acceleration  & $ms^{-2}$         \\ \hline
-			$a_s=0.3$       & Surface mass balance (SMB)  & $ma^{-1}$         \\ \hline
-			$a_b=0$             & Basal mass balance (BMB)    & $ma^{-1}$         \\ \hline
-			$\rho i=917$        & Ice density                 & $kg m^{-3}$       \\ \hline
-			$\rho w=1028$      & Sea water density           & $kg m^{-3}$       \\ \hline
-			$A= 2.9377x10^{-9}$ & Ice rate factor             & $KPa^{-3}a^{-1}$  \\ \hline
-			$n=3$               & Flow law stress exponent    &                 \\ \hline
-			$C=0.001$           & basal slipperiness          & $ma^{-1}Kpa^{-3}$ \\ \hline
-			$m=3$               & Sliding law stress exponent &                 \\ \hline
-			$s2a=31556926$     & Seconds in a year           & seconds         \\ \hline
-		\end{tabular}
-	\end{center}
-\end{table}
+Finite-difference modeling is basically an extension of numerical integration. The deﬁning characteristic of the ﬁnite-difference method is that gradients in a parameter are approximated by obtaining values of the parameter at grid points and dividing by the distance between the grid points. Finite-difference techniques can also be used to integrate the momentum equation, but simpliﬁed versions of the momentum equation can be integrated analytically.
 
-These constants parameters were modified by the Calvin MIP intercomparisson project after the current project was proposed. The water density and the time equivalence from year to seconds was changed from 1030 $kg/m^3$ to 1028 $kg/m^3$ and from 365.2422 days in a year to 31556926 seconds in a year, respectively. All the rest of the parameters remained the same as listed in table \ref{Physical constants}.
+The ﬁnite element method is another way of obtaining an approximate solution to
+the governing equations. In ﬁnite-element as in ﬁnite-difference models, the
+domain of interest is broken up into a large number of small elements. In early
+applications of ﬁnite-element models to glaciological problems the elements were
+quadrilaterals, but commercial packages now in use commonly have higher-order
+element geometries. The corners of elements are called nodes. Unlike ﬁnite-
+difference models, in a ﬁnite-element model there is no advantage in making all
+of the elements rectangular and the same size \cite{hooke2019principles}.
+
+In ﬁnite-element calculations, use is made of the fact
+that the relevant differential equations can be expressed in a form consisting of a sum of integrals. A solution method, called the method of weighted residuals, then guarantees that the resulting approximate solution will be the best possible solution mathematically obtainable with a given element configuration. While initially more complicated to understand, ﬁnite-element formulations have been shown to be generally numerically more stable than ﬁnite-difference formulations \cite{hooke2019principles}. Furthermore, element shapes can be adjusted to conform to boundaries that would be awkward to model with rectangular elements Finally, element size can be reduced in areas of low gradients and increased in areas of high gradients, as near the bed , thus increasing accuracy without increasing computation time. Complex, non-uniform, and variable boundary conditions are also easier to include in ﬁnite-element models.
+
+Once a domain is discretized, stress or velocity conditions are specified at boundary nodes and equations are written relating stresses and velocities at interior nodes to each other, to the mean stress in the element, and to the stresses or velocities at the boundaries. As usual, the basic equations being solved are those for conservation of momentum, mass, and energy. Although the number of equations to be solved simultaneously is large, the number of unknowns in each equation is small, so efficient routines for solving sparse matrices can be used. Owing to the non-linearity of the ﬂow law, the set of equations is non-linear and an iterative solution is necessary. A trial solution is given initially, and this is corrected to obtain an improved solution at each iteration. For these reasons, the finite element method is commonly the most used to model the stokes equations and approximations derived from these in glacier dynamics. 
+
+\section{Numerical model}
+\subsection{The Elmer/Ice finite element method}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/non_structured_grid_10km.png}
+	\includegraphics[width=0.45\linewidth]{../fig/regular_grid_10km.png}
+	\caption{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.}
+	\label{meshes}
+\end{figure}
+
+Most of the time analytical solutions are challenging or even impossible to obtain. In order to model ice sheets, both the finite difference method (FDM) and the finite element method (FEM) are used. The finite difference method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the finite element method.
+
+The ice sheet/ice flow model Elmer/Ice includes developments related to glaciological problems and a large number of dedicated solvers and user functions that solve the Full-Stokes equations for various ice rheologies (classical, Glenn's flow law, anisotropic laws, and porous compressible firns/snow law). It includes solvers for the classical asymptotical expansions of the Stokes equations, namely the shallow ice approximation and the shallow and shallow shelf approximation (SSA). All these equations can be solved diagnostically or transiently, allowing the displacement of the boundaries.
+
+Elmer/Ice considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, which are applied to the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines or solvers. Each equation corresponds to one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows us to visualize the evolution of the flow through time.
+
+As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as shown in the left-hand side of figure \ref{meshes} for a 10km resolution mesh. This is very helpful in terms of simulating complex geometries, for example, the thule configuration.
+
+
+However, once the simulation is done and to better interpret the results obtained, it is needed to build a structured mesh, because it is ideal for these time-domain simulations this it can  easily identified elements and nodes when plotting time-dependent or spacial-dependent graphics. In this case, the objective of interest will be the spacial behaviour or dynamic of the glacier since we will analyse the position of the grounding line after the steady state is reached. To build the structured mesh, an interpolation made from the unstructured mesh values of the nodes is performed, namely an interpolation per each node of the value of the variables of interest with the values of these same variables in the non-structured mesh. This way it can be known which position the node is in, and the spacial dependent variables can be plot; for example, the velocity components as a function of the horizontal position. 
+
+\section{Numerical parameters}
+
+\subsection{Physical parameters}
+Table \ref{Physical constants} shows the constants parameters that were set up for the experiment by the CalvinMIP project. This are the parameters that are used in the model to solve the flow equations:
+
+These constants parameters were modified by the CalvinMIP intercomparisson project after the current project was proposed. The water density and the time equivalence from year to seconds was changed from 1030 kg/m$^3$ to 1028 kg/m$^3$ and from 365.2422 days in a year to 31556926 s in a year, respectively. All the rest of the parameters remained the same as listed in table \ref{Physical constants}.
 
 For the computation of $u_b=2$, we used the Weertman style sliding law:
 
@@ -286,19 +424,33 @@ Using the notation from equation (1), we can say that $C=  \frac{1}{\beta^m}$. S
 \end{equation}
 If we replace C by its value given in table \ref{Physical constants}, we get $\beta= 10^4 Pa m^{\frac{-1}{3}} a^{\frac{1}{3}}$ which converted to Mpa will give us a value of 10.
 
-\subsection{Numerical parameters}
-The numerical resolution will be our variable physical parameter, which we will vary from 10 km, 5 km, 2 km, 1 km, 500 m, and 250 m. 
+\begin{table}[!h]
+	\begin{center}
+		\caption{Physical constants}
+		\label{Physical constants}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			Variable          & Description                 & Units           \\ \hline
+			$g=9.81$         & Gravitational acceleration  & ms$^{-2}$         \\ \hline
+			$a_s=0.3$       & Surface mass balance (SMB)  & ma$^{-1}$         \\ \hline
+			$a_b=0$             & Basal mass balance (BMB)    &   ma$^{-1}$         \\ \hline
+			$\rho i=917$        & Ice density                 & kg m$^{-3}$       \\ \hline
+			$\rho w=1028$      & Sea water density           & kg m$^{-3}$       \\ \hline
+			$A= 2.9377$x$10^{-9}$ & Ice rate factor             & KPa$^{-3}$a$^{-1}$  \\ \hline
+			$n=3$               & Flow law stress exponent    &  Dimensionless               \\ \hline
+			$C=0.001$           & basal slipperiness          & ma$^{-1}$Kpa$^{-3}$ \\ \hline
+			$m=3$               & Sliding law stress exponent &   Dimensionless              \\ \hline
+			$s2a=31556926$     & Seconds in a year           & s         \\ \hline
+		\end{tabular}
+	\end{center}
+\end{table}
+
+\subsection{Numerical variables}
+The numerical resolution will be our variable parameter, which we will vary from 10 km, 5 km, 2 km, 1 km.
 \subsection{External forcing}
-We will assume that the only external force acting are gravity ($g=9.81 m/s^2$), which is translated to the weight of the ice sheet and the flotation force of this in the ocean water, as well as the ice friction with the bedrock.
+We will assume that the forces acting are gravity ($g=9.81 m/s^2$), which is translated to the weight of the ice sheet and the flotation force of this in the ocean water, as well as the ice friction with the bedrock, and the basal stress.
 \subsection{Initial condition}
-The simulation departs from no iced configuration. 
-As stated before, the flow will follow the linear Weertman friction law at the base of the ice sheet:
-\begin{equation}
-	u_b=C\tau_b^m;
-\end{equation}
-Where $\tau$ is the friction shear stress, $C$ is the basal slipperiness coefficient, and $u$ is the velocity.
-Comparisons were made using friction coefficients ranging from $C=10^{-8}$ to simulate a friction close to 0, to $C=10^{-2}$. This coefficient is also the one chosen to perform the simulations.
-The simulations will start from a topography with no ice, namely $h_0 = 0$. However, the Elmer/Ice code uses a notation where at least a minimum value should be enter in order to avoid convergence problems, so a very small value of $h_0 = 0,01$ is introduced as initial ice thickness. 
+The simulation departs from no ice configuration, from a topography with no ice, namely $h_0 = 0$. However, the Elmer/Ice numerical method code, that will be used for these experiments, uses a notation where at least a minimum value should be enter in order to avoid convergence problems, so a very small value of $h_0 = 0,01$ is introduced as initial ice thickness. 
 \subsection{Time step}
 The Courant-Friedrichs-Lewy (CFL) condition is a necessary condition to solve numerical partial differential equations. It states that the distance a variable travels between two-time steps must be smaller than the distance between two points of the mesh \cite[]{courant1967partial}. It is needed that:
 \begin{equation}
@@ -310,51 +462,6 @@ With C the courant number, $u$ the magnitude of the velocity, $\Delta t$ the tim
 \end{equation}
 This is a safe approximation. Cmax then has to be estimated by running different parameters in the simulation and seeing if it converges or not. In order to satisfy the CFL condition, a good starting point is 1 year, since it works properly and converges even for a resolution of 1km.
 However, in this experiment, it is asked to report the results every 10 years, and for this reason, we will save the results of the simulation with a frequency of 10 years. 
-
-This numerical experiment uses two different topographic profiles. A cone and a more realistic topography (Thule).
-\subsection{Cone domain}
-The idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
-\begin{equation}
-	\theta=arctan2(y,x);
-\end{equation}
-\begin{equation}
-	I=R-cos(2\theta)\frac{R}{2}
-\end{equation}
-\begin{equation}
-	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{R2}^;
-\end{equation}
-Where $R=800x10^3 m$, $Bc=0.9 x 10^3 m$, and $BI=-2 x 10^3 m$. 
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
-	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
-	\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
-	\label{circular_topo_top}
-\end{figure}
-
-\subsection{Thule domain}
-The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and is given by:
-\begin{equation}
-	\theta=arctan2(y,x);
-\end{equation}
-\begin{equation}
-	I=R-cos(2\theta)\frac{R}{2};
-\end{equation}
-\begin{equation}
-	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{R^2};
-\end{equation}
-\begin{equation}
-	Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
-\end{equation}
-With $R=800 x 10^3 m$, $Bc=0,9 x 10^3 m$, $BI=-2 x 10^3 m$, and $Ba=1,1 x 10^3$.
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
-	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
-	\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
-	\label{Thule_3D}
-\end{figure}
-
 \subsection{Boundary conditions}
 Boundary conditions are needed in order to solve differential equations. It will be assumed that:
 \begin{itemize}
@@ -370,30 +477,76 @@ Boundary conditions are needed in order to solve differential equations. It will
 	\item The simulation will be performed on a quarter of the domain since the geometry of the topography is symmetric, which allows having free slip boundary conditions at the left and downsides of the topography, and open boundary conditions at the right and top sides of the domain. 
 \end{itemize}
 
- \section{Numerical model}
- \subsection{The Elmer/Ice finite element method}
+\section{System and experiment set-up}
+\subsection{Cone domain}
+
+The formation of CalvingMIP is being undertaken as part of PROTECT, an EU funded project to "assess and project changes in the land-based cryosphere, with fully quantified uncertainties, in order to produce robust global, regional and local projections of SLR on a range of timescales". These efforts are set to culminate in a world-wide model intercomparison project on ice damage and calving, comparing the novel routines to standard approaches/calving laws, leading to recommendations for improved calving laws in ice sheet models.
+
+The idealised experimental domains comprise a simple, symmetrically circular domain as well as a more complex, synthetic, mathematically defined ice sheet "Thule". The first idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=r-cos(2\theta)\frac{r}{2}
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{r^2};
+\end{equation}
+Where r=800x10$^3 m$, Bc=0.9 x 10$^3 m$, and BI=-2 x 10$^3 m$. 
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
+	\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
+	\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
+	\label{circular_topo_top}
+\end{figure}
+
+This experiment is intended to provide initial conditions for future calving experiments using the circular domain as well as other test participating models capability to maintain a steady unchanging calving front. To this end, the idea is to spin up an ice sheet in the circular domain from no initial ice thickness to an ice sheet in steady state with a calving front located in a circular with radius 800 km from the center of the domain. The calving front position should be maintained by imposing a calving rate that is equal and opposite to the ice velocity at the calving front, resulting in a calving front position that does not move.
+Note that, in this particular experiment, the interest does not consist in the exact means by which the steady state condition is achieved but instead the experiment is concerned with the final steady state. 
+Also, due to the symmetry of the domain with respect to both axis, the domain can be reduced to a quarter.
 
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.45\linewidth]{../fig/non_structured_grid_10km.png}
-	\includegraphics[width=0.45\linewidth]{../fig/regular_grid_10km.png}
-	\caption{a) 10km resolution non-structured mesh used in Elmer/Ice. b) Regular structured mesh for 10km resolution.}
-	\label{meshes}
+	\includegraphics[width=0.7\linewidth]{../fig/cone.png}
+	\caption{Circular domain experimental profiles as well as the initial imposed calving front position.}
+	\label{cone_profile}
 \end{figure}
 
-Most of the time analytical solutions are challenging or even impossible to obtain. In order to model ice sheets, both the finite difference method (FDM) and the finite element method (FEM) are used. The finite difference method consists in converting ordinary and partial differential equations into a system of linear equations by approximating derivatives as finite differences. Elmer/Ice, on the other hand, uses the finite element method.
+\subsection{Thule domain}
+The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and is given by:
+\begin{equation}
+	\theta=arctan2(y,x);
+\end{equation}
+\begin{equation}
+	I=r-cos(2\theta)\frac{r}{2};
+\end{equation}
+\begin{equation}
+	Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{r^2};
+\end{equation}
+\begin{equation}
+	Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
+\end{equation}
+With r=800 x 10$^3 m$, Bc=0,9 x 10$^3 m$, BI=-2 x 10$^3 m$, and Ba=1,1 x 10$^3$.
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
+	\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
+	\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
+	\label{Thule_3D}
+\end{figure}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../fig/thule.png}
+	\caption{Thule domain experimental profiles as well as the initial imposed calving front position.}
+	\label{thule_profile}
+\end{figure}
+The second experiment is intended to provide initial conditions for future calving experiments using the Thule domain as well as test participating models capability to maintain a steady unchanging calving front. To this end, the idea is also to spin up an ice sheet in the Thule domain from no initial ice thickness to an ice sheet in steady state with a calving front located in a circul with radius 800 km from the centre of the domain. The calving front position should be maintained by imposing a calving rate that is equal and opposite to the ice velocity at the calving front, resulting in a calving front position that does not move. 
 
-The ice sheet/ice flow model Elmer/Ice includes developments related to glaciological problems and a large number of dedicated solvers and user functions that solve the Full-Stokes equations for various ice rheologies (classical, Glenn's flow law, anisotropic laws, and porous compressible firns/snow law). It includes solvers for the classical asymptotical expansions of the Stokes equations, namely the shallow ice approximation and the shallow and shallow shelf approximation (SSA). All these equations can be solved diagnostically or transiently, allowing the displacement of the boundaries.
+For the Thule domain it is convienient to name some geographical features that arise due to the underlying bedrock bathymetrym as such they are defined the North and South Tsalal, East and West Sphinx and Caprona A, B, C and D ice shelves. They are also defined the North and South Benett ridges as being the ridges in bedrock bathymetry located under the North and South Tsalal ice shelves respectively. Finally,  Halbrane A and B ice streams are defined as those feeding into the North Tsalal ice shelf whilst Halbrane C and D feed into the South Tsalal ice shelf.
 
-Elmer/Ice considers a continuum as an assembly of non-overlapping elements forming the same geometry, which makes the modeling of complex geometries possible. Each element is made of at least two points, which are applied to the forces and computed the displacements. To solve the equations, Elmer/Ice uses subroutines or solvers. Each equation corresponds to one solver to be referenced in the input file, together with the different parameters of the problem. They each compute the evolution of given variables, such as the ice thickness or the velocity, to give at each time step a picture of the flow. All combined, it allows us to visualize the evolution of the flow through time.
- 
-As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as shown in the left-hand side of figure \ref{meshes} for a 10km resolution mesh. This is very helpful in terms of simulating complex geometries, for example, the thule configuration.
+For the quarter of the domain, the experiment will be performed along Caprona B and Halbrane B profiles due to the symmetry of the domain.
 
-
-However, once the simulation is done and to better interpret the results obtained, it is needed to build a structured mesh, because it is ideal for these time-domain simulations this it can  easily identified elements and nodes when plotting time-dependent or spacial-dependent graphics. In this case, the objective of interest will be the spacial behaviour or dynamic of the glacier since we will analyse the position of the grounding line after the steady state is reached. To build the structured mesh, an interpolation made from the unstructured mesh values of the nodes is performed, namely an interpolation per each node of the value of the variables of interest with the values of these same variables in the non-structured mesh. This way it can be known which position the node is in, and the spacial dependent variables can be plot; for example, the velocity components as a function of the horizontal position. 
-
-\section{Set-up of the simulations data}
-Once both results for both experiments are obtained, for the domain complete and the quarter domain, the grounding line position per each resolution along the profiles proposed will be quantified. For this, a function that can be denominated grounding line needs to be created, and this function is defined as the product of the bedrock position and a grounding mask. This grounded mask is a step function created, which a value of -1 is assigned to the grounded ice, and 1 to the part of the ice that is no longer in contact with the bedrock, namely:
+Both experiments are performed modeling the SSA approximation of the stokes equations until the steady state is reached. Once the variation in time is 0 (or very small) the convergence of the system is concluded and the system has reached the final steady state. For both experiments, the grounding line position along the defined proposed profiles is calculated. For this, a function that can be denominated grounding line needs to be created, and this function is defined as the product of the bedrock position and a grounding mask. This grounded mask is a step function created, which a value of -1 is assigned to the grounded ice, and 1 to the part of the ice that is no longer in contact with the bedrock, namely:
 
 \[ \begin{cases} 
 	-1 & bedrock = z_b \\
@@ -401,7 +554,7 @@ Once both results for both experiments are obtained, for the domain complete and
 \end{cases}
 \]
 
-Using this mask, the grounding line function is defined as the negative product of this mask and the bedrock (the negative sign is only implemented for convention). From the fact that this grounding line function is an increasing function, it must have an unique maximum, namely, the point where the function changes sign. This maximum means the point where $z_b$ is no longer equal to bedrock position, so starting from this point, the lower part of the ice sheet is not grounded any more. This maximum value of the grounding line function corresponds, physically, to the point where the grounding line or zone is along an x-profile. Knowing this point, the distance from the origin of our coordinate system to that point can be computed, knowing the x and y coordinates of this point, as the norm if this vector, this distance determines the grounding line position, in meters, along an x axis. The results are calculated in two parts: along three profiles A,B and C for the quarter of the domain, and along all the profiles from A to H for the domain complete, in the case of the Cone domain experiment. For the thule experiment, in the first part the grounding line position along Caprona B and Halbrane B needs to be calculated for the quarter domain, and then along all Capronas and Halbranes profiles for the complete domain. For both cases, per each resolution the mean, maximum and minimum value of the grounding line position was calculated.
+Using this mask, the grounding line function is defined as the negative product of this mask and the bedrock (the negative sign is only implemented for convention). From the fact that this grounding line function is an increasing function, it must have an unique maximum, namely, the point where the function changes sign. This maximum means the point where $z_b$ is no longer equal to bedrock position, so starting from this point, the lower part of the ice sheet is not grounded any more. This maximum value of the grounding line function corresponds, physically, to the point where the grounding line or zone is along an x-profile. Knowing this point, the distance from the origin of our coordinate system to that point can be computed, knowing the x and y coordinates of this point, as the norm if this vector, this distance determines the grounding line position, in meters, along an x axis. The results will be calculated in two parts: along three profiles A,B and C for the quarter of the domain, and along all the profiles from A to H for the domain complete, in the case of the Cone domain experiment. For the thule experiment, in the first part the grounding line position along Caprona B and Halbrane B needs to be calculated for the quarter domain, and then along all Capronas and Halbranes profiles for the complete domain. For both cases, per each resolution the mean, maximum and minimum value of the grounding line position will be calculated.
 
 \section{Results}
 \subsection{Cone configuration}
