@@ -25,8 +25,8 @@
 \contentsline {subsection}{\numberline {6.2}Thule domain}{19}{subsection.6.2}%
 \contentsline {section}{\numberline {7}Results}{21}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Cone configuration}{21}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}Thule configuration}{22}{subsection.7.2}%
-\contentsline {subsection}{\numberline {7.3}Comparison of parameters for each resolution for the different configurations}{23}{subsection.7.3}%
-\contentsline {section}{\numberline {8}Discussion}{26}{section.8}%
-\contentsline {section}{\numberline {9}Conclusion}{29}{section.9}%
+\contentsline {subsection}{\numberline {7.2}Thule configuration}{23}{subsection.7.2}%
+\contentsline {subsection}{\numberline {7.3}Comparison of parameters for each resolution for the different configurations}{25}{subsection.7.3}%
+\contentsline {section}{\numberline {8}Discussion}{27}{section.8}%
+\contentsline {section}{\numberline {9}Conclusion}{30}{section.9}%
 \contentsline {section}{\numberline {10}Acknowledgments}{30}{section.10}%

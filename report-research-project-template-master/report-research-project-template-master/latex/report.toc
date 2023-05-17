@@ -1,0 +1,23 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{}%
+\contentsline {section}{\numberline {2}Glaciar Dynamics}{5}{}%
+\contentsline {subsection}{\numberline {2.1}Mass and movement balance equations}{5}{}%
+\contentsline {subsection}{\numberline {2.2}Grounding line stability}{7}{}%
+\contentsline {section}{\numberline {3}Numerical model}{8}{}%
+\contentsline {subsection}{\numberline {3.1}The Elmer/Ice finite element method}{8}{}%
+\contentsline {section}{\numberline {4}Numerical setup}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Topographic profiles}{9}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}Cone}{9}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}Thule}{9}{}%
+\contentsline {subsection}{\numberline {4.2}Boundary conditions}{10}{}%
+\contentsline {subsection}{\numberline {4.3}Physical parameters}{11}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Numerical parameters}{11}{}%
+\contentsline {subsubsection}{\numberline {4.3.2}External forcing}{11}{}%
+\contentsline {subsubsection}{\numberline {4.3.3}Initial condition}{12}{}%
+\contentsline {subsubsection}{\numberline {4.3.4}Time step}{12}{}%
+\contentsline {section}{\numberline {5}Work plan and tasks schedule}{12}{}%
+\contentsline {subsection}{\numberline {5.1}January}{12}{}%
+\contentsline {subsection}{\numberline {5.2}February}{13}{}%
+\contentsline {subsection}{\numberline {5.3}March}{13}{}%
+\contentsline {subsection}{\numberline {5.4}April}{13}{}%
+\contentsline {subsection}{\numberline {5.5}May}{13}{}%
+\contentsline {section}{\numberline {6}Bibliography}{14}{}%
