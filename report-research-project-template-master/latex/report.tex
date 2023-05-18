@@ -54,7 +54,7 @@ Figure \ref{control_volume} shows a control volume of size $dx.dy.dz$. The veloc
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../fig/Control_volume.png}
-	\caption{Derivation of the condition of incompressibility.}
+	\caption{Derivation of the condition of incompressibility. Adapted from \cite{hooke2019principles}.}
 	\label{control_volume}
 \end{figure}
 
@@ -100,7 +100,7 @@ As shown in figure \ref{Stress2D}, $\sigma_{XZ}$ is the shear stress in the z‑
 		\caption{Stresses on a cube.}
 		\label{Stress_tensor}
 	\end{subfigure}
-	\caption{Stress in a elementary control volume of ice.}
+	\caption{Stress in a elementary control volume of ice. Adapted from \cite{hooke2019principles}.}
 	\label{Stress}
 \end{figure}
 
@@ -140,7 +140,7 @@ Where P is the mean normal stress:
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../fig/Non_hydrostatic_pressure.png}
-	\caption{Sketch to illustrate non-hydrostatic pressure.}
+	\caption{Sketch to illustrate non-hydrostatic pressure. Adapted from \cite{hooke2019principles}.}
 	\label{Deviatoric_stress}
 \end{figure}
 
@@ -239,7 +239,7 @@ For an ice sheet, the ratio of the vertical length over the horizontal length is
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../fig/nine-stresses.png}
-	\caption{Driving and basal stresses on a block of ice.}
+	\caption{Driving and basal stresses on a block of ice. Adapted from AntarticGlaciers.org}
 	\label{nine_stresses}
 \end{figure}
 The SIA is the simplest approximation of the Full Stokes equations. It assumes that basal shear stress of the grounded ice is completely balanced by the gravitational driving stress. It also assumes a small aspect ratio of vertical to horizontal length. (which is appropriate for an ice sheet) and a large ratio of vertical to horizontal stresses. That represents a slow flow in the interior of an ice sheet (blue regions in Figure \ref{velocityglaciar}). Vertical shearing is concentrated close to the bedrock, with almost no vertical shearing near the surface. It also assumes that the longitudinal derivatives of stress, velocity and temperature are small. This is typical of slow ‘sheet flow’ in the interior of ice sheets, and the SIA has been shown to model this well.
@@ -260,8 +260,8 @@ In this project, only the Shallow Shelf approximation is made, as this is how fu
 
 There are different variables that play an important role in the dynamics of the glaciers. There is, for example, the grounding line. Its location is still a topic of discussion in the literature surrounding ice sheet dynamics \cite{goldberg2018representing}. A long debate on the dynamics of such ice sheets was initiated in the 1970s when \cite{weertman1974stability} proposed that a marine ice sheet that lies on an upward-sloping bed is unstable.
 The grounding line is the boundary between the ice sheet, sitting on the bedrock, and the floating ice shelves. Ice streams merge with ice shelves in the grounding zone, a zone within which the ice is alternately ﬂoating and grounded as tides raise and lower sea level \cite{hooke2019principles}. The position and migration of this grounding line controls then the stability of a marine ice sheet.
-The marine ice sheet stability hypothesis states that when the bedrock slopes down from the coast towards the interior of the marine ice sheet, which is the case in large parts of West Antarctica, the grounding line is not stable. The figure shows this concept. The grounding line is initially located on the bedrock sill (left hand side of figure ). This position is stable: the ice flux at the grounding line, which is the amount of ice passing through the grounding line per unit time, matches the total upstream accumulation.
-A perturbation is applied at the grounding line, e.g. through the incursion of warm Circumpolar Deep Water (CDW, red arrow in Figure ) below the ice shelf. These warm waters lead to basal melting at the grounding line, ice-shelf thinning and glacier acceleration, resulting in an inland retreat of the grounding line. The groundingline is then located on a bedrock that slopes downward inland (right hand side of figure), i.e. an unstable position where the ice column at the grounding line is thicker than previously. The theory shows that ice flux at the grounding line is strongly dependent on ice thickness there \cite{weertman1974stability, schoof2007ice}, so a thicker ice leads to higher ice flux. Then, the grounding line is forced to retreat since the ice flux at the grounding line is higher than the upstream accumulation. This is a positive feedback and the retreat only stops once a new stable position is reached (e.g. a bedrock high), where both ice flux at the grounding line and upstream accumulation match.
+The marine ice sheet stability hypothesis states that when the bedrock slopes down from the coast towards the interior of the marine ice sheet, which is the case in large parts of West Antarctica, the grounding line is not stable. The figure \ref{grounding_line_instability} shows this concept. The grounding line is initially located on the bedrock sill (left hand side of figure \ref{grounding_line_instability}). This position is stable: the ice flux at the grounding line, which is the amount of ice passing through the grounding line per unit time, matches the total upstream accumulation.
+A perturbation is applied at the grounding line, e.g. through the incursion of warm Circumpolar Deep Water (CDW, red arrow in Figure \ref{grounding_line_instability}) below the ice shelf. These warm waters lead to basal melting at the grounding line, ice-shelf thinning and glacier acceleration, resulting in an inland retreat of the grounding line. The grounding line is then located on a bedrock that slopes downward inland (right hand side of figure), i.e. an unstable position where the ice column at the grounding line is thicker than previously. The theory shows that ice flux at the grounding line is strongly dependent on ice thickness there \cite{weertman1974stability, schoof2007ice}, so a thicker ice leads to higher ice flux. Then, the grounding line is forced to retreat since the ice flux at the grounding line is higher than the upstream accumulation. This is a positive feedback and the retreat only stops once a new stable position is reached (e.g. a bedrock high), where both ice flux at the grounding line and upstream accumulation match.
 
 \begin{figure}[!h]
 	\centering
@@ -391,7 +391,7 @@ Elmer/Ice considers a continuum as an assembly of non-overlapping elements formi
 As mentioned before, the simulations using Elmer/Ice use unstructured meshes, as shown in the left-hand side of figure \ref{meshes} for a 10km resolution mesh. This is very helpful in terms of simulating complex geometries, for example, the thule configuration.
 
 
-However, once the simulation is done and to better interpret the results obtained, it is needed to build a structured mesh, because it is ideal for these time-domain simulations this it can  easily identified elements and nodes when plotting time-dependent or spacial-dependent graphics. In this case, the objective of interest will be the spacial behaviour or dynamic of the glacier since we will analyse the position of the grounding line after the steady state is reached. To build the structured mesh, an interpolation made from the unstructured mesh values of the nodes is performed, namely an interpolation per each node of the value of the variables of interest with the values of these same variables in the non-structured mesh. This way it can be known which position the node is in, and the spacial dependent variables can be plot; for example, the velocity components as a function of the horizontal position. 
+However, once the simulation is done and to better interpret the results obtained, it is needed to build a structured mesh, because it is ideal for these time-domain simulations this it can  easily identified elements and nodes when plotting time-dependent or spacial-dependent graphics. In this case, the objective of interest will be the spacial behaviour or dynamic of the glacier since the interest is to analyse the position of the grounding line after the steady state is reached. To build the structured mesh, an interpolation made from the unstructured mesh values of the nodes is performed, namely an interpolation per each node of the value of the variables of interest with the values of these same variables in the non-structured mesh. This way the position where the node is, and the spacial dependent variables can be plot; for example, the velocity components as a function of the horizontal position. 
 
 \section{Numerical parameters}
 
@@ -508,7 +508,7 @@ Also, due to the symmetry of the domain with respect to both axis, the domain ca
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../fig/cone.png}
-	\caption{Circular domain experimental profiles as well as the initial imposed calving front position.}
+	\caption{Circular domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvinMIP inter-comparison project.}
 	\label{cone_profile}
 \end{figure}
 
@@ -537,7 +537,7 @@ With r=800 x 10$^3 m$, Bc=0,9 x 10$^3 m$, BI=-2 x 10$^3 m$, and Ba=1,1 x 10$^3$.
 \begin{figure}[!h]
 	\centering
 	\includegraphics[width=0.7\linewidth]{../fig/thule.png}
-	\caption{Thule domain experimental profiles as well as the initial imposed calving front position.}
+	\caption{Thule domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvinMIP inter-comparison project.}
 	\label{thule_profile}
 \end{figure}
 The second experiment is intended to provide initial conditions for future calving experiments using the Thule domain as well as test participating models capability to maintain a steady unchanging calving front. To this end, the idea is also to spin up an ice sheet in the Thule domain from no initial ice thickness to an ice sheet in steady state with a calving front located in a circul with radius 800 km from the centre of the domain. The calving front position should be maintained by imposing a calving rate that is equal and opposite to the ice velocity at the calving front, resulting in a calving front position that does not move. 
@@ -561,7 +561,88 @@ Using this mask, the grounding line function is defined as the negative product 
 
 Using the settings for the experiment described in the previous sections, different simulations were driven varying the resolution mesh from 10km, 5km, 2km and 1km. Steady state was reached and the corresponding ice sheet-ice and ice shelf surface profiles are plotted in figure \ref{Cone_scheme}. The point or zone where the lower part of the ice sheet stops being in contact with the bedrock is the grounding line, along each profile (figure \ref{Profiles_cone}). In this figure it is also highlighted the quarter of the domain in figure \ref{Schematic_Cone} and its three profiles A,B,C since, as mentioned before, both simulations for the domain complete and the quarter domain were run to compare the results. 
 
-For this first experiment proposed, the simulations were run varying the resolution from 10km and up to 1km. In figure \ref{figCONO1} we show a qualitative representation of the simulation results for the different resolutions, where we also run 50 and 20km resolution just to have a better idea of how this change in the resolution has an impact in the results. In these figures, the blue part represents the grounded part of the domain, and the grey part represent the floating part. This way we can identify the changes in the transition from grounded to not grounded, namely the grounding zone. We can see also how, as we go closer to a minimum resolution, the differences start to be not that notorious. 
+\begin{figure}
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_combined_domains.png}
+		\caption{Profiles for Cone circular domain}
+		\label{Schematic_Cone}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_domain_sin_fondo.png}
+		\caption{Ice thickess per profile}
+		\label{Profiles_cone}
+	\end{subfigure}
+	\caption{Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.}
+	\label{Cone_scheme}
+\end{figure}
+
+The evolution in time of the grounding line is shown also in fig . The figure \ref{Volume_CONE_VS_TIME_VS_NODES} and \ref{H_CONE_VS_TIME_VS_NODES} also show the evolution in time for the volume and the ice thickness per each resolution, showing the convergence of the simulation after certain amount of time (50000 years for the 10km resolution, 3000 years for 5 and 2 km resolution, and around 1000 years for the 1km resolution). It is important to remark that for convenience purposes in these figures the time axis for the 10 km resolution was divided by 10 to be in the same scale with the results for the other resolutions. It can be observed that the ice thickness increases as the resolution increases. For this reason, the volume of the ice sheet also increases as the mesh resolution increases, as it can be observed in figure \ref{Volume_CONE_VS_TIME_VS_NODES}. This figure also shows the convergence of the volume after certain amount of simulation time per each resolution, showing also that a steady state was reached. This behaviour is expected since the volume depends on the ice thickness, meaning that if the ice thickness increases, the volume of the ice sheet domain increases. The figures \ref{VOLUME_CONE_VS_NODES} and \ref{H_CONE_VS_NODES} also show the variation of the ice volume and the ice thickness, respectively, as a function of the number of nodes per each mesh resolution. In the figure \ref{VOLUME_CONE_VS_NODES} the variation of ice volume with respect to the 1 km resolution volume is shown (taken as a reference), and it can be observed that the difference decays as the number of nodes increases (as the resolution increases). This behaviour is expected since in figure \ref{VOLUME_CONE_VS_TIME} it is shown that ice volume tends to converge to a value as the resolution increases.
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_time.png}
+		\caption{Volume variation in time.}
+		\label{VOLUME_CONE_VS_TIME}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_num_nodes.png}
+		\caption{Volume relative variation as a function of the number of nodes.}
+		\label{VOLUME_CONE_VS_NODES}
+	\end{subfigure}
+	\caption{Volume variation in time for the cone domain experiment.}
+	\label{Volume_CONE_VS_TIME_VS_NODES}
+\end{figure}
+
+A different behaviour is observed in figure \ref{H_CONE_VS_NODES} where the ice thickness difference increases as the number of nodes increases, taken as a reference the 1km resolution ice thickness value. This is expected since the ice thickness increases as the resolution does, as observed in figure \ref{H_CONE_VS_TIME}. 
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_time.png}
+		\caption{Ice thickess variation in time.}
+		\label{H_CONE_VS_TIME}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_num_nodes.png}
+		\caption{Ice thickness error as a function of the number of nodes.}
+		\label{H_CONE_VS_NODES}
+	\end{subfigure}
+	\caption{Ice thickess variation in time for the Cone circular domain experiment.}
+	\label{H_CONE_VS_TIME_VS_NODES}
+\end{figure}
+
+On the other hand, the fact that in figure \ref{VOLUME_CONE_VS_TIME} for each resolution the ice volume starts from the previous resolution volume value, is explained since, to save computational time, each simulation was driven using the previous results as a restart point, so the number of iterations that the solver had to do to reach a steady state was lower for the new resolution. Figure \ref{Computation time} shows the simulation time spent as a function of the number of nodes, where in figure \ref{32_proce} it is shown the simulation time spent using all the 32 processors, while the figure \ref{1_proce} shows the time that would have been spent using only 1 processor, for both experiments cone and thule. The computation time is plotted for 50000 years of simulation. This severally constrained the investigation of the models behaviour with higher resolutions beyond 1 km, since the computation time is plotted in logarithm base 10 scale, the time expected for 50000 years of simulation with higher resolution would be a main limitation. For example, it can be observed that to complete a simulation for 1km resolution mesh the computation time would be around 2222 hours with the maximum computational time allowed in the laboratory using the 32 processors, as shown in figure \ref{32_proce}. This time would be 32 times greater if only 1 processor were used (figure \ref{1_proce}).
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_Segundos.png}
+		\caption{Time for 32 processors used.}
+		\label{32_proce}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_32.png}
+		\caption{Time for 1 processor.}
+		\label{1_proce}
+	\end{subfigure}
+	\caption{Simulation time as a function of the number of nodes for each resolution mesh.}
+	\label{Computation time}
+\end{figure}
+
+
+Figure \ref{figCONO1} shows an schematic representation of the steady state grounded area for the cone experiment, for each resolution. 50km and 20km resolutions simulations are also shown. It can be observed in blue the grounded area and in grey the floating part of the ice. This corresponds to the ice shelf. In this figure it can be directly observed the impact that the resolution mesh has over the prediction of the grounding zone, since starting from the 50km resolution the grounded area has an irregular shape, not axisymmetric and as the resolution increases until 1km resolution, the differences between one resolution and the previous one start to be not that notorious, and also, the grounded area becomes more axisymmetric as expected since the domain is axisymmetric. 
+
+Once the steady state is reached, figure \ref{Grounding_lines__CONE_comparison} shows the position of the grounding line per each resolution, for both the complete and the quarter domain. In this case, per each resolution the mean, maximum and minimum are plotted, as well as the error bar associated for each resolution. The error is set to be half of the resolution. In the y-axis the grounding line position is shown in meters, that is the distance calculated from an origin to the grounding line or grounding zone computed using the grounding line function described previously. This distance is computed as the norm of a vector that defines this grounding line position.  
 
 \begin{figure}[!h]
 	\centering % <-- added
@@ -601,27 +682,27 @@ For this first experiment proposed, the simulations were run varying the resolut
 	\label{figCONO1}
 \end{figure}
 
-In figure \ref{Cone_scheme}, we see an schematic representation of the results for the cone circular domain experiment. For the analysis of these results, the ice thickness of the profile was analysed along 8 linear profiles, namely A,B,C,D,E,F,G and H for the domain complete, as shown in figure \ref{Schematic_Cone}, and in figure \ref{Profiles_cone} we see all the positions and the ice thickness along the different profiles in the same figure. The point or zone where the lower part of the ice sheet stops being in contact with the bedrock is the grounding line. In this figure it is also highlighted the quarter of the domain in figure \ref{Schematic_Cone} and its three profiles A,B,C since, as mentioned before, both simulations for the domain complete and the quarter domain were run to compare the results.
-
-\begin{figure}
+\begin{figure}[!h]
 	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_combined_domains.png}
-		\caption{Profiles for Cone circular domain}
-		\label{Schematic_Cone}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_domain_sin_fondo.png}
-		\caption{Ice thickess per profile}
-		\label{Profiles_cone}
-	\end{subfigure}
-	\caption{Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.}
-	\label{Cone_scheme}
+	\includegraphics[width=0.8\linewidth]{../fig/Figure_CONE_GL_positions.png}
+	\caption{Grounding line positions as a function of the resolution for quarter and complete circular cone domain.}
+	\label{Grounding_lines__CONE_comparison}
 \end{figure}
 
-To have a better idea of the simulations convergence, in figure \ref{h_and_h_velocities_cone} it is shown on the left sides all the values of ice thickness in meters per each resolution, and on the left sides the values of the ice thickness velocity obtained, namely the rate of change of the ice thickness in meters per year. The range of these values, maximum and minimum per resolution are very low (less than 0,001 m/y), which is a brief image that shows that the simulations reached a steady state with a low estimation error. 
+It can be observed the differences between the grounding line position for the quarter and complete domain for each resolution, and how it starts to decrease as the resolution gets higher. This results is expected and it matches the result shown in figure \ref{figCONO1} where it can be shown that the grounded area is not axisymmetric for very low resolution. Hence, the importance of the comparison between the quarter and complete domain, since it allows to visualize in figure \ref{Grounding_lines__CONE_comparison} the quantitative approach whether the domain is axisymmetric or not. The mean values for the complete domain are computed for all the profiles, while for the quarter domain it is computed for the profiles A,B and C. It can be observed that for higher resolutions (higher than 5km) the differences in the mean values start to decay. It can also be observed that the grounding line position tends to converge to a value as the resolution gets higher. However, further simulations with resolutions higher than 1km should be performed in order to conclude a value for the steady state of the grounding line position. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{../fig/Grounding_line_integrated_full_domain-quarter-_CONE_time.png}
+	\caption{Velocity vectors along the cone spacial domain. THe grounded zone is highlighted in purple.}
+	\label{SSA_velocity}
+\end{figure}
+
+In figure \ref{SSA_velocity} an schematic representation of the cone domain experiment is shown, where it can be observed also the ice velocity vectors and the magnitude of the velocity as a function of the spacial domain. The quarter of the domain is highlighted and also the grounded zone is highlighted in purple. These velocity vectors are the resultant velocity vectors that come from the computation of the two velocity components using the SSA approximation, and it can be observed that the velocity vectors are radial and perpendicular to the grounding surface highlated in purple. It can be also observed that the velocity has low values in the grounded zone, and then the velocity starts to increase in the ice shelf zones until it reaches the maximum values perpendicularly at the front. This result is expected and corresponds to the fact that the shallow shelf approximation considers the basal shear stress as 0 in the ice shelf that is no longer in contact with the bedrock, so the longitudinal stress dominates, as shown by \cite{allison2009ice}.
+
+In addition to the steady state ice thickness, figure \ref{h_and_h_velocities_cone} shows an schematic of the ice thickness and the ice thickness rate of change in the spacial domain for the different resolutions. It can be observed how, when the resolution starts to be higher, the ice thickness higher differences start to appear in the vicinity of the grounding line. Also, the ice thickness in the ice shelf part of the domain shows more differences for smaller resolutions (10km) where it can be observed radial light blue lines along the ice shelf indicating higher ice thickness in these parts, in comparison with higher resolution where in the ice shelves' part the ice thickness values start to be more uniform. However, despite the fact that there are zones where there are some variations of the ice thickness in the spacial domain, these differences are in a very small range (the largest from the order of 10$^{-3}$) so it can be concluded the uniformity of the ice thickness values along the domains.
+
+
 
 \begin{figure}[!h]
 	\centering % <-- added
@@ -673,21 +754,10 @@ To have a better idea of the simulations convergence, in figure \ref{h_and_h_vel
 	\label{h_and_h_velocities_cone}
 \end{figure}
 
-The mean, maximum and minimum value of the grounding line position per resolution is shown in figure \ref{Grounding_lines__CONE_comparison} for both case studies, the quarter and complete domain. In the y-axis we have the grounding line position in meters, that is the distance calculated from an origin to the grounding line or zone computed before using the function. This distance is computed as the norm of a vector (x,y) that defines this grounding line position. 
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.8\linewidth]{../fig/Figure_CONE_GL_positions.png}
-	\caption{Grounding line positions as a function of the resolution for quarter and complete circular cone domain.}
-	\label{Grounding_lines__CONE_comparison}
-\end{figure}
-
-For both cases, the complete and quarter of the domain results, it is associated an error bar for the mean values of the grounding line position. The yellow bar corresponds to the quarter domain mean value error bar, and the blue bar corresponds to the complete domain mean value error bar. The error associated was determined as half of the value for each resolution (5km for the 10km resolution, 2.5km for 5km, 1km for 2km and 500m for 1km resolution).
-
-It can be observed how, for greater resolutions as 10km, the results have a difference of around 20km for the grounding line position between the quarter of the domain and the complete domain results, but for lower resolutions these difference starts to be lower. 
+It is important to mention also that in figure \ref{h_and_h_velocities_cone} the blue dark radial line marks the calving front, so the lighter blue part that its outside of the circumference in this case is not part of the domain.
 
 \subsection{Thule configuration}
-For the second part of the experiments, the results for the thule configuration were obtained for a quarter of the domain and the domain complete, and following the Calving MIP inter comparison project, the simulations using this topography were run using 10,5,2 and 2 km meshes. The figure \ref{Thule_profiles_capronas_and_halbranes} shows the schematic representation of the thule domain experiment results. Similar to the Cone domain experiment, here it is proposed to analyse the results along profiles called Caprona and Halbrane. The figure \ref{Profiles_Thule} highlights the quarter of the domain, since the simulations were also run for this part of the domain to compare it with the complete system. In this case the results were analysed for Caprona profiles and separately for the Halbrane profiles. In figures \ref{Capronas_thule} and \ref{Halbranes_thule} it can be observed the ice thickness along each one of the profiles and so the position of the grounding line.
+For the second part of the experiments, the results for the thule configuration were obtained for a quarter of the domain and the domain complete, and following the CalvingMIP inter-comparison project, the simulations using this topography were run using 10,5,2 and 1 km resolution meshes. The figure \ref{Thule_profiles_capronas_and_halbranes} shows the schematic representation of the thule domain experiment results. Similar to the Cone domain experiment, here it is proposed to analyse the results along profiles called Caprona and Halbrane. The figure \ref{Profiles_Thule} highlights the quarter of the domain, since the simulations were also run for this part of the domain to compare it with the complete one. In this case the results were analysed for Caprona profiles and separately for the Halbrane profiles. In figures \ref{Capronas_thule} and \ref{Halbranes_thule} it can be observed the ice thickness along each one of the profiles and so the position of the grounding line.
 
 \begin{figure}[!h]
   \begin{subfigure}[c]{.52\linewidth}
@@ -727,119 +797,9 @@ For the second part of the experiments, the results for the thule configuration 
     }
 \end{figure}
 
-In figure \ref{Thule_resolutions} a qualitative representation of the simulations results can be observed as well to have a visualization of the impact of the resolution on the grounded area of the domain. Similar to the results for the Cone circular domain, the blue part represents the grounded part and the grey part represents the part of the ice that is floating in water. 
+In figure \ref{H_THULE_VS_TIME_VS_NODES} it can be observed the evolution in time of the ice thickness for each one of the resolutions, as well as the ice thickness variation as a function of the number of nodes, taking the 1km resolution thickness as the reference. It is important to mention that the time domain for the 10km resolution was divided per 10 to make the scale match with the other resolutions results. As the same case for the cone domain experiment, in this case each simulation was driven using the previous resolution result as a restart point, and it can be observed in figure \ref{H_THULE_VS_TIME} that, similarly with the cone domain experiment, the ice thickness increases with the resolution, and for this reason the ice thickness differences are higher once the resolution gets higher (observed in figure \ref{H_THULE_VS_NODES}). 
 
-\begin{figure}[!h]
-	\centering % <-- added
-	\begin{subfigure}{0.25\textwidth}
-		\includegraphics[width=\linewidth]{../fig/Grounded_zone_50km.png}
-		\caption{image1}
-		\label{fig:1}
-	\end{subfigure}\hfil % <-- added
-	\begin{subfigure}{0.25\textwidth}
-		\includegraphics[width=\linewidth]{../fig/Grounded_zone_20km.png}
-		\caption{image2}
-		\label{fig:2}
-	\end{subfigure}\hfil % <-- added
-	\begin{subfigure}{0.25\textwidth}
-		\includegraphics[width=\linewidth]{../fig/Grounded_zone_10km.png}
-		\caption{image3}
-		\label{fig:3}
-	\end{subfigure}
-	
-	\medskip
-	\begin{subfigure}{0.25\textwidth}
-		\includegraphics[width=\linewidth]{../fig/Grounded_zone_5km.png}
-		\caption{image4}
-		\label{fig:4}
-	\end{subfigure}\hfil % <-- added
-	\begin{subfigure}{0.25\textwidth}
-		\includegraphics[width=\linewidth]{../fig/Grounded_zone_2km.png}
-		\caption{image5}
-		\label{fig:5}
-	\end{subfigure}\hfil % <-- added
-	\begin{subfigure}{0.25\textwidth}
-		\includegraphics[width=\linewidth]{../fig/Grounded_zone_1km.png}
-		\caption{image6}
-		\label{fig:6}
-	\end{subfigure}
-	\caption{Impact of the resolution in the grounded area}
-	\label{Thule_resolutions}
-\end{figure}
-
-For the analysis of these results the same procedure was followed; the simulations were run using a quarter of the domain and the complete one, and the results for the grounding line position were analysed along the profile of Halbrane B and Caprona B for the quarter of the domain. A grounding line function is created and computed as the product of the grounded mask function and the negative of the bedrock position. The negative sign is introduced for the same reason as for the cone domain procedure, since the grounding line is an increasing function and as long as $z_b$ is equal to the bedrock position (namely, the ice sheet is grounded) this product will be negative, so if a negative sign is introduced, it will turn positive, making the inflexion point a unique maximum. This point that represents the position of the grounding line is identified per each resolution and the distance to the origin is calculated, along each one of the profiles Capronas and Halbranes.
-
-The figure \ref{Grounding_lines__caprona_halbrane_comparison} shows the comparison of the grounding line position along the two types of profiles, Caprona and Halbrane for the quarter and complete domain. 
-
-\begin{figure}[!h]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Capronas.png}
-		\caption{Grounding line positions along Capronas profiles.}
-		\label{Thule_Capronas}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Halbranes.png}
-		\caption{Grounding line positions along Halbrane profiles}
-		\label{Thule_halbranes}
-	\end{subfigure}
-	\caption{Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.}
-	\label{Grounding_lines__caprona_halbrane_comparison}
-\end{figure}
-
-For this experiment, for the quarter of the domain there are only two profiles Caprona B and Halbrane B. For both profiles there is only a value of grounding line position, that is shown in figure \ref{Thule_Capronas} and \ref{Thule_halbranes} respectively. To compare these positions obtained for the quarter domain, the grounding line positions along Halbrane A,B, C and D are computed for the complete domain following the procedure described previously, and the mean, maximum and minimum value per each resolution are listed in figure \ref{Thule_halbranes}. The exact same procedure is applied using the results along the Capronas profiles. For both, the mean value of the grounding line position for the complete domain, and the grounding line position for the quarter domain, the associated error bars are also shown.
-
-It can be observed that as the mesh resolution starts to decrease, the differences between the results for the grounding line positions along both profiles for the complete and quarter domain start to decrease, a similar behaviour observed in the cone circular domain results. 
-
-\subsection{Comparison of parameters for each resolution for the different configurations}
-
-An important parameter to take into account for the results for both experiments, is the computation time spent to complete all the simulations of the experiments. The figure \ref{Computation time} shows the relation between the number of nodes for each one of the mesh resolutions and the time.
-
-\begin{figure}[!h]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_Segundos.png}
-		\caption{Time for 32 processors used.}
-		\label{32_proce}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_32.png}
-		\caption{Time for 1 processor.}
-		\label{1_proce}
-	\end{subfigure}
-	\caption{Simulation time as a function of the number of nodes for each resolution mesh.}
-	\label{Computation time}
-\end{figure}
-
-Figure \ref{32_proce} shows the time spent using the 32 processors to run all the simulations, while in the figure \ref{1_proce} it is shown the expected time for a 50000 years of simulation if 1 processor was used. 
-
-In figure \ref{H_CONE_VS_TIME_VS_NODES} it can be observed also a comparison of the ice thickness variation in time, for each one of the resolutions for the cone circular domain experiment and the error graph associated to this ice thickness as a function of the number of nodes per each resolution.
-
-\begin{figure}[!h]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_time.png}
-		\caption{Ice thickess variation in time.}
-		\label{H_CONE_VS_TIME}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_num_nodes.png}
-		\caption{Ice thickness error as a function of the number of nodes.}
-		\label{H_CONE_VS_NODES}
-	\end{subfigure}
-	\caption{Ice thickess variation in time for the Cone circular domain experiment.}
-	\label{H_CONE_VS_TIME_VS_NODES}
-\end{figure}
-
-As it can be observed, the ice thickess does not vary nor oscillates around each value for each resolution, which shows the convergence of the system.
-
-The same figures can be plot for the thule experiment, where in figure X it can be observed the ice thickness variation as a function of time and the error or variation of the ice thickness as a function of the number of nodes per each resolution. In both cases, for the computation of $\epsilon_H$ the reference value of H it is assumed to be the one corresponding to 1km resolution. 
+The different behaviour is observed in figure \ref{Volume_THULE_VS_TIME_VS_NODES} where the ice volume difference decays as the number of nodes increases taking as reference the 1km resolution volume, since the figure \ref{VOLUME_THULE_VS_TIME} shows that as the resolution increases, the ice sheet volume tends to converge to a value as it reaches the steady state for each resolution, and the differences between resolutions is every time smaller. 
 
 \begin{figure}[!h]
 	\centering
@@ -859,28 +819,6 @@ The same figures can be plot for the thule experiment, where in figure X it can 
 	\label{H_THULE_VS_TIME_VS_NODES}
 \end{figure}
 
-A similar procedure can be done for the volume of the ice sheet. In the figure \ref{Volume_CONE_VS_TIME_VS_NODES} it is shown the volume as a function of time and the relative variation associated taking into account the 1km resolution volume as the reference for the computation of $\epsilon_V$. It can be observed how the differences start to decrease as long as the resolution decreases until the 1 km reference resolution is reached. 
-
-\begin{figure}[!h]
-	\centering
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_time.png}
-		\caption{Volume variation in time.}
-		\label{VOLUME_CONE_VS_TIME}
-	\end{subfigure}%
-	\begin{subfigure}{.5\textwidth}
-		\centering
-		\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_num_nodes.png}
-		\caption{Volume relative variation as a function of the number of nodes.}
-		\label{VOLUME_CONE_VS_NODES}
-	\end{subfigure}
-	\caption{Volume variation in time for the cone domain experiment.}
-	\label{Volume_CONE_VS_TIME_VS_NODES}
-\end{figure}
-
-In figure \ref{Volume_THULE_VS_TIME_VS_NODES}, the evolution in time for the volume is also computed for the thule domain per each resolution, as well as the relative variation having the 1km resolution volume as reference. 
-
 \begin{figure}[!h]
 	\centering
 	\begin{subfigure}{.5\textwidth}
@@ -899,23 +837,96 @@ In figure \ref{Volume_THULE_VS_TIME_VS_NODES}, the evolution in time for the vol
 	\label{Volume_THULE_VS_TIME_VS_NODES}
 \end{figure}
 
+\begin{figure}[!h]
+	\centering % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_50km.png}
+		\caption{Grounding zone (blue) and floating ice (grey) for 50km resolution.}
+		\label{fig:1}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_20km.png}
+		\caption{Grounding zone (blue) and floating ice (grey) for 20km resolution.}
+		\label{fig:2}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_10km.png}
+		\caption{Grounding zone (blue) and floating ice (grey) for 10km resolution.}
+		\label{fig:3}
+	\end{subfigure}
+	
+	\medskip
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_5km.png}
+		\caption{Grounding zone (blue) and floating ice (grey) for 5km resolution.}
+		\label{fig:4}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_2km.png}
+		\caption{Grounding zone (blue) and floating ice (grey) for 2km resolution.}
+		\label{fig:5}
+	\end{subfigure}\hfil % <-- added
+	\begin{subfigure}{0.25\textwidth}
+		\includegraphics[width=\linewidth]{../fig/Grounded_zone_1km.png}
+		\caption{Grounding zone (blue) and floating ice (grey) for 1km resolution.}
+		\label{fig:6}
+	\end{subfigure}
+	\caption{Impact of the resolution in the grounded area.}
+	\label{Thule_resolutions}
+\end{figure}
+
+For the analysis of these results the same procedure was followed; the simulations were run using a quarter of the domain and the complete one, and the results for the grounding line position were analysed along the profile of Halbrane B and Caprona B for the quarter of the domain. A grounding line function is created and computed as the product of the grounded mask function and the negative of the bedrock position. The negative sign is introduced for the same reason as for the cone domain procedure, since the grounding line is an increasing function and as long as $z_b$ is equal to the bedrock position (namely, the ice sheet is grounded) this product will be negative, so if a negative sign is introduced, it will turn positive, making the inflexion point a unique maximum. This point that represents the position of the grounding line is identified per each resolution and the distance to the origin is calculated, along each one of the profiles Capronas and Halbranes.
+
+The figure \ref{Thule_resolutions} shows a similar scheme of the one done for the circular domain, where the grounded area and the ice shelf can be observed per each resolution, being the grounded area the blue part. In this case, due to the thule topography, it can be observed that lower resolutions does not even get to identify some zones that actually belong the grounded part (as it can be observed in figure \ref{fig:1} for the 50km resolution mesh, and also for 20 km resolution in figure \ref{fig:2}). Also, due to the topography of the thule, it is easier to observe that as the resolution increases, actually the grounded area increases, meaning that increasing the resolution grid mesh improves the ability of the model to identify a grounded or not grounded node, that with lower resolutions can be waived. However, for lower resolutions than 5 km it can be observed that the grounded area results start to be consisted and the differences start to decrease.
+
+This fact can be observed when plotting the grounding line position as the function of the resolution along the different profiles. For this experiment, for the quarter of the domain there are only two profiles Caprona B and Halbrane B. For both profiles there is only a value of grounding line position, that is shown in figure \ref{Thule_Capronas} and \ref{Thule_halbranes} respectively. To compare these positions obtained for the quarter domain, the grounding line positions along Halbrane A,B, C and D are computed for the complete domain following the procedure described previously, and the mean, maximum and minimum value per each resolution are listed in figure \ref{Thule_halbranes}. The exact same procedure is applied using the results along the Capronas profiles. For both, the mean value of the grounding line position for the complete domain, and the grounding line position for the quarter domain are shown, the associated error bars are also shown.
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Capronas.png}
+		\caption{Grounding line positions along Capronas profiles.}
+		\label{Thule_Capronas}
+	\end{subfigure}%
+	\begin{subfigure}{.5\textwidth}
+		\centering
+		\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Halbranes.png}
+		\caption{Grounding line positions along Halbrane profiles}
+		\label{Thule_halbranes}
+	\end{subfigure}
+	\caption{Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.}
+	\label{Grounding_lines__caprona_halbrane_comparison}
+\end{figure}
+
+It can be observed that as the mesh resolution increases, the differences between the results for the grounding line positions along both profiles for the complete and quarter domain start to decrease, a similar behaviour observed in the cone circular domain results. However lower differences are observed for the grounding line position along Caprona profiles in comparison with the ones along Halbranes profiles. The grounding line positions along caprona profiles are very similar and results start to be consistent between the full domain and the quarter domain for resolutions higher than 5km. This result matches the one obtained for the cone experiment. This behavior is actually expected, due to the similarity of the topography along caprona profile, and the one along the cone profiles. However, the halbrane profiles are more irregular and the topography along these profiles is not strictly decreasing, as it is the case for the caprona profiles and the cone domain topography. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\linewidth]{../fig/H_EXP3_colorfull_noProfiles.png}
+	\caption{Velocity vectors along the thule spacial domain. The grounded zone is highlighted in purple.}
+	\label{SSA_velocity_thule}
+\end{figure}
+
+Figure \ref{SSA_velocity_thule} shows the velocity profiles as a function of the spacial domain for the thule experiment. In this case, the velocity vectors obtained are not radial as the ones that were obtained for the first experiment, were it could be observed that the velocity was always perpendicular to the grounded surface. For these experiments, due to the topography of the domain it can be observed how the velocity magnitudes are greater in the center parts of the valleys between the Halbrane A and Halbrane B, for example. Due to the symmetry of the domain, the same case is observed on the opposite part (lower part of the domain). However, it can be observed that the velocity increases in the ice shelf part, once the ice is not grounded, which matches the behavior observed for the cone experiment and it is also expected since in this part the basal shear stress is 0 and the longitudinal stress dominates. 
+
 \section{Discussion}
 
 The outcomes of this research have provided insight into the importance of the mesh resolution in the prediction of important parameters like the grounding line position for the glaciers dynamics. The results obtained for the grounding line position for both experiments were consistent with the ones carried out by \cite{durand2009full} were they could show that the grounding line position results start to be consistent for a grid size smaller than 5km. In that case, a Full-Stokes model was implemented, while in this case a Shallow-Shelf approximation was carried out, decreasing the simulation time and the computational resources. For the complete domains, as well as for the quarter domains, the results start to be consistent after 5 km resolution meshes. 
 
-However, this prediction should be interpreted with caution due to the limitations of the current research. As it can be observed in figure \ref{Computation time}, the time spent by simulations as a function of the number of nodes in the mesh was obtained, showing a linear behaviour. This expected computational time is calculated based on 50000 years of simulation, and shows that for example, to complete a simulation of a 1 km mesh ($3x10^6$ nodes), on 50000 years of simulation, the computing time would be around 2222 hours with the maximum computational time allowed in the laboratory using the 32 processors, as showed in figure \ref{32_proce}. This time would be 32 times greater if 1 processor is used, instead of using all, as shown in figure \ref{1_proce}. This is the main limitation of the project, due to the amount of time required for further simulations of mesh resolutions lower than 1km that could not be carried out for these reason. Besides, even that it has been shown according to the results that a shallow shelf approximation of the Full-Stokes equations can be a good approximation for the prediction of the grounding line position, further experiments with lower mesh resolutions need to be implemented to conclude a robust prediction of these result. 
+However, this prediction should be interpreted with caution due to the limitations of the current research. As it was mentioned previously, the time spent by the simulations as a function of the number of nodes in the mesh was obtained, showing an exponential behaviour. In these experiments, the results of the simulations were used as a restart for the new resolution simulation. By this, the simulations takes less time to converge to the final value. For example, it can be observed that for the 2 km resolution simulation for the cone experiment, the difference between the ice thickness in comparison with the 10km resolution ice thickness is around 50\%, meaning that by taking the results of the 10km resolution as a restart point would save this difference in computational time. This is an important remark in order to do further simulations with mesh resolutions higher than 1km.
 
-On the other hand, with respect to the convergence of the simulations, figure \ref{h_and_h_velocities_cone} shows the range of values for the ice thickness rate of change after the steady state was reached, results that are later detailed on figure \ref{H_CONE_VS_TIME} and \ref{H_THULE_VS_TIME} for both configurations. In these last figures, it can be observed how after several iterations for different time steps, the ice thickness starts to converge to a constant value. Due to the large computation times discussed before, the implementation of this research was to perform each simulation starting from the previous one as a restart point, and that is the reason why it can be observed that each simluation for each resolution mesh starts from the previous value, (except for the 1km resolution simulation that was performed at the same time with the 2km one, starting from the 5km result, for both configurations.) The fact that the 1 km simulations were run starting from the 5km resolution result, may explain the reason why this simulation did not stabilized completely to a constant value, since it can be observed that it did not converged fully to a constant line. Also, the values of convergence were increasing as the resolution mesh decreased (from a very small close to 0 value for ice thickness for the 10km resolution, to around 1,77 m/y for the thule domain and 2,5 m/y for the cone domain). 
+Besides, even that it has been shown according to the results that a shallow shelf approximation of the Full-Stokes equations can be a good approximation for the prediction of the grounding line position, further experiments with lower mesh resolutions need to be implemented to conclude a robust prediction of these result. 
 
-For these reasons, the convergence of the ice thickness can not be fully concluded after these results obtained. further simulations beyond 1km resolution mesh could be needed in order to evaluate the convergence to an specific value of ice thickness for a certain configuration domain. In figure \ref{h_and_h_velocities_cone} it can be observed in the right hand side the zones where the variation of the ice thickness was the lowest and the highest, and as stated before, since the simulations were run using the previous results as a restart point, the iterations started from these values and not from 0. For these reasons, for a certain time of simulation, it converged faster for the zones of the domain where the variables (in this case, the high thickness velocity) did not change too much with respect to one resolution or another, due to the simplicity of the zone or the geometry.
+On the other hand, it could be observed that the steady state ice thickness increases as the resolution mesh increases. This result is expected from the fact that the grounding line position is also increasing as a function of the resolution, as observed in figures \ref{Grounding_lines__CONE_comparison}, \ref{Thule_Capronas} and \ref{Thule_halbranes} for the cone domain, capronas profiles and hablranes profiles for the thule experiment, respectively. Due to the topography of both experiments being in a decreasing slope, it is expected that from very small resolutions to higher ones, the tendency of the model is to find the position of the grounding line in a larger value of $x$, since for the grounding line it must be that $z_b > bedrock$. Once $z_b$ starts being larger than $bedrock$ the ice is set to be not grounded anymore, so this is fixed as the grounding line position. As long as $\Delta x$ or the mesh resolution gets higher, and since the $bedrock$ is a decreasing slope, the new position of the grounding line will be greater than the previous resolution. The fact that the grounding line position increases in a higher resolution, means that the ice thickness will also increase, since the ice column at the grounding line is now larger due to the decreasing slope of the bedrock, meaning that the ice flux through the grounding line will increase. These results matches the theory (\cite{weertman1974stability, schoof2007ice}) that states that the ice flux through the grounding line is dependent on the ice thickness. 
 
-However, even if the convergence of the ice thickness can not be fully concluded as stated before, figures \ref{VOLUME_CONE_VS_TIME} and \ref{VOLUME_THULE_VS_TIME} show a different behaviour for the convergence of the domains volume. For both configurations, the volume variation in time converges to a constant value. The behaviour of convergence is similar to the one for the ice thickness, but in this case for both configuration the value of the volume starts to reach the same constant value as the resolution mesh decreases. For this case as well the 1 km resolution is taken as the reference for the computation of the relative variation and it can be observed in figure \ref{VOLUME_CONE_VS_NODES} and \ref{VOLUME_THULE_VS_NODES} that the differences decrease as a function of the number of nodes, with a slight difference for the 2 km resolution for both configurations. This difference in the convergence of the volume and the convergence of the ice thickness can be explained, by the fact that the volume not only depends of the ice thickness but also on the surface area. The computation of the volume stands for the summary of each volume per element, and each element surface area is greater than its thickness and ends up being the determinant quantity at the time of computing the complete domain volume. 
+Also, as mentioned before, the groundling line position starts to converge to a value as the resolution gets higher. The results for the grounding line position in figures \ref{Grounding_lines__CONE_comparison} and in figure \ref{Thule_Capronas} can be compared since, as observed, the bedrock topography is similar along the caprona profiles and the cone profiles, however along the halbranes profiles, even if the results start to be very similar between the quarter and the full domain as the resolution increases, there are still some differences as observed in figure \ref{Thule_halbranes}. Further simulations higher than 1km would be needed to conclude the convergence of the grounding line position along the halbranes profiles or to reach a point where the grounding line does not depend on the resolution. This differences are expected since the bedrock topography along these halbranes is not strictly decreasing, so there is more uncertainty to predict the point where $z_b$ becomes larger than the bedrock value. 	Since the differences between the quarter and complete domain grounding line position along halbranes profiles remains around 2km, further resolutions larger than 1km would be needed in order to conclude a grounding line position independent of the mesh resolution along this profile. 
 
-For these reasons, even if the results obtained show that the position of the grounding line can be well predicted using the SSA model for resolution meshes lower than 5km, these results may not indicate enough information about the convergence of variables as the ice thickness when varying the resolution. However, as it was shown, using only a quarter domain can reduce the computation time of further simulations and researches, and these way further simulations beyond 1km resolution meshes can be performed in order to reach to a convergence for these kind of variables.  
+For these reasons, even if the results obtained show that the position of the grounding line can be well predicted using the SSA model for resolution meshes lower than 5km, these results may not indicate enough information about the convergence to a grounding line value independent of the mesh resolution. However, as it was shown, using only a quarter domain can reduce the computation time of further simulations and researches, and these way further simulations beyond 1km resolution meshes can be performed in order to reach to find a stable grounding line position independent of the mesh resolution. In the case of our study, even if the model reached the steady state as shown, for certain topographies there exists still discrepancies between the quarter of the domain and the domain complete for the computation of the grounding line. However, the differences decrease as the mesh resolution increases. It is then encouraging to continue working in the development of models using lower resolutions using previous simulations results as restarting points to try to reach to a resolution where the grounding line position after reaching steady state is the same. This may allow to model systems and domains with even more complicated topographies. 
 
 \section{Conclusion}
 
-In this project an approach using a shallow shelf approximation (SSA) model was proposed to simulate the motion of glaciers with two different configuration topography. The ice flow is determined by solving the Stokes problem implemented in finite element code Elmer/Ice with the SSA assumptions. This problem was solved by taking into account the complete domain and also solving only a quarter of the domain, due to the symmetry of the system. The position of the grounding line was studied for different resolution meshes starting from 10km and up to 1km, and it was shown that despite the sensitivity of the grounding line to the mesh resolution, it started to converge for resolutions lower to 5km, despite the configuration or the topography as well. The results for the quarter domain for both topographies showed consistency with the results for the complete domain for the prediction of the grounding line position. However, further simulations need to be performed with resolution meshes lower than 1km to fully conclude the convergence of all the variable results. According to the results obtained in this research project, it can be a good path for future researches to run simulation experiments with a quarter of the domain to save computational time, as the results are consistent due to the symmetry, and it can be possible to model more realistic glacier topographies using SSA models. Developing approaches to model more realistic glacier topographies, can allowed to better understand and predict the dynamics of the glaciers along time, and this way it can be better understood its impact on the formation and changes of the ice sheets and their behaviour. 
+In this project an approach using a shallow shelf approximation (SSA) model was proposed to simulate the motion of glaciers with two different configuration topography. The ice flow is determined by solving the Stokes problem implemented in finite element code Elmer/Ice with the SSA assumptions. This problem was solved by taking into account the complete domain and also solving only a quarter of the domain, due to the symmetry of the system. The position of the grounding line was studied for different resolution meshes starting from 10km and up to 1km, and it was shown that despite the sensitivity of the grounding line to the mesh resolution, it started to converge for resolutions lower to 5km, despite the configuration or the topography as well. The results for the quarter domain for both topographies showed consistency with the results for the complete domain for the prediction of the grounding line position. However, further simulations need to be performed with resolution meshes lower than 1km to fully conclude the convergence of the grounding line position along all the profiles of the domains. According to the results obtained in this research project, it can be a good path for future researches to run simulation experiments with a quarter of the domain to save computational time, using meshes resolution lower than 5km as the results are consistent due to the symmetry, and it can be possible to model more realistic glacier topographies using SSA models. Developing approaches to model more realistic glacier topographies, can allowed to better understand and predict the dynamics of the glaciers along time, and this way it can be better understood its impact on the formation and changes of the ice sheets and their behaviour. 
 
 \section{Acknowledgments} 
 
