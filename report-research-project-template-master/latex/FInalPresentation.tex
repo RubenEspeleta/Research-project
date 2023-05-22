@@ -7,6 +7,7 @@
 \usepackage{amssymb}
 \usepackage{ragged2e}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{natbib}
 \usetheme{Madrid}
 	\author{Ruben ESPELETA BOLIVAR}
@@ -22,11 +23,11 @@
 %\subject{}
 %\setbeamercovered{transparent}
 %\setbeamertemplate{navigation symbols}{}
-\AtBeginSection[]{
-	\begin{frame}<beamer>{Contenido}
-		\tableofcontents[currentsection]
-	\end{frame}
-}
+%\AtBeginSection[]{
+%	\begin{frame}<beamer>{Contenido}
+%		\tableofcontents[currentsection]
+%	\end{frame}
+%}
 \begin{document}
 
 	\begin{frame}
@@ -61,39 +62,14 @@
 		\end{itemize}
 		\end{frame}
 	\section{Glacier dynamics}
-	\subsection{Mass flux}
-		\begin{frame}{Mass flux}
-		\justifying
-		The velocity out in the x-direction is:
-		\begin{equation}
-			U = u+\frac{\delta u}{\delta x}dx;
-		\end{equation}
-		\begin{figure}
-			\centering
-			\includegraphics[scale=0.2]{../fig/Control_volume.png}
-			\caption{Derivation of the condition of incompressibility. Adapted from \cite{hooke2019principles}.}
-			\label{control_volume}
-		\end{figure}
-		\end{frame}
-	\subsection{Incompessibility condition}
+
+	\subsection{Incompessibility condition and deviatoric stress}
 		\begin{frame}{Incompressibility condition}
 		\justifying
-		Mass fluxes into and out of a elementary control volume of ice in a glacier in the x-direction are:
-		\begin{equation}
-			({\rho u + \frac{\delta \rho u}{\delta x}dx})dy dz;
-		\end{equation}
-		Here, $\rho$ is the density of the ice. Similar relations may be written for the mass fluxes into and out of the volume control in the $y$ and $z$-directions. Summing these fluxes we find that the change in mass with time, $\frac{\delta m}{\delta t}$ in the control volume is:
-		\begin{equation}
-			-\frac{1}{dxdydz}\frac{\delta m}{\delta t}=\frac{\delta \rho u}{\delta x}+\frac{\delta \rho v}{\delta y}+\frac{\delta \rho w}{\delta z};
-		\end{equation}
-		The mass of ice in the control volume can change if the control volume is not full initially. When it is full of incompressible ice, however, $\frac{\delta m}{\delta t}=0$, and the equation becomes:
+		Ice can be considered an incompressible viscous fluid:
 		\begin{equation}
 			\frac{\delta u}{\delta x}+\frac{\delta v}{\delta y}+\frac{\delta w}{\delta z}=0;
 		\end{equation}
-		\end{frame}
-	\subsection{Deviatoric stress}
-		\begin{frame}{Deviatoric stress}
-		\justifying
 		The deviatoric normal stress in the x-direction is:
 		\begin{equation}
 			\sigma_{XX}'= \sigma_{XX}-P;
@@ -109,19 +85,7 @@
 			\label{Deviatoric_stress}
 		\end{figure}
 		\end{frame}
-	\subsection{The flow law and governing equations}
-		\begin{frame}{The flow law and governing equations}
-		\justifying
-		The most commonly used ﬂow law for ice is Glen’s ﬂow law, named after John W. Glen upon whose experiments it is based \cite{glen1958flow}. This equation was originally written in the form:
-		\begin{equation}
-			\dot{\epsilon_{e}}=({\frac{\sigma_{e}}{B}})^n;
-		\end{equation}
-		where B is a viscosity parameter that increases as the ice becomes stiffer, and n is an empirically determined constant. Most studies have found that n=3¸. An alternative form of the ﬂow law that is commonly used, and that can be used, is:
-		\begin{equation}
-			\dot{\epsilon_{e}}=A{\sigma_{e}}^n
-		\end{equation}
-		A is called the rate factor. B is normally given in Mpa yr$^{\frac{1}{n}}$ while A is in MPa$^{-n}$ yr $^{-1}$ or MPa$^{-n}$ s $^{-1}$.
-		\end{frame}
+
 	\subsection{Governing equations}
 		\begin{frame}[allowframebreaks]{Governing equations}
 		\justifying
@@ -145,6 +109,20 @@
 		\end{equation}
 		Where I is the identity tensor. Together, these two last mathematical equations are called the full-stokes model.
 		\end{frame}
+	\subsection{The flow law}
+		\begin{frame}{The flow law}
+			\justifying
+			The most commonly used ﬂow law for ice is Glen’s ﬂow law, named after John W. Glen upon whose experiments it is based \cite{glen1958flow}. This equation was originally written in the form:
+			\begin{equation}
+				\dot{\epsilon_{e}}=({\frac{\sigma_{e}}{B}})^n;
+			\end{equation}
+			where B is a viscosity parameter that increases as the ice becomes stiffer, and n is an empirically determined constant. Most studies have found that n=3¸. An alternative form of the ﬂow law that is commonly used, and that can be used, is:
+			\begin{equation}
+				\dot{\epsilon_{e}}=A{\sigma_{e}}^n
+			\end{equation}
+			A is called the rate factor. B is normally given in Mpa yr$^{\frac{1}{n}}$ while A is in MPa$^{-n}$ yr $^{-1}$ or MPa$^{-n}$ s $^{-1}$.
+		\end{frame}
+	\subsection{Boundary conditions and time evolution}
 		\begin{frame}[allowframebreaks]{Boundary conditions and time evolution}
 		\justifying
 			\begin{itemize}
@@ -154,9 +132,9 @@
 				\end{equation}
 				\item The ice surface is assummed stress free $\sigma .n=0$ and ice base at $z_s$ and $z_b$ behave as free surfaces according to:
 				\begin{equation}
-					\frac{\delta z_{s/b}}{\delta t}+u_{s/b}\frac{\delta z_{s/b}}{\delta x}+v_{s/b}\frac{\delta z_{s/b}}{\delta y}=w_{s/b}+a_{s/b};
+					\frac{\delta z_{i}}{\delta t}+u_{i}\frac{\delta z_{i}}{\delta x}+v_{i}\frac{\delta z_{i}}{\delta y}=w_{i}+a_{i};
 				\end{equation}
-			where $a_{s/b}$ is the accumulation ($a_{s/b}>0$) or ablation ($a_{s/b}<0$) in meter ice equivalent per year, at the surface or at the base, respectively.
+			where $a_{i}$ is the accumulation ($a_{i}>0$) or ablation ($a_{i}<0$) in meter ice equivalent per year, and $i=$ surface or base, respectively.
 			\item By vertical integration of the incompressibility condition, $w$ can be eliminated:
 			\begin{equation}
 				\frac{\delta H}{\delta t}+\frac{\delta H\bar{u}}{\delta x}+\frac{\delta H \bar{v}}{\delta y}=a_s-a_b ;
@@ -168,7 +146,7 @@
 			\end{equation}
 			where:
 			\begin{equation}
-				p_w(z)=-\rho_wgz; if z<0;
+				p_w(z)=-\rho_wgz; z<0;
 			\end{equation}
 			and $\sigma n=0$ above sea level ($z>0$).
 			\end{itemize}
@@ -176,16 +154,33 @@
 
 	\subsection{Shallow shelf approximation}
 		\begin{frame}{Shallow shelf approximation}
-			Floating ice does not experience basal drag, hence all resistance comes from longitudinal stresses and lateral drag at the margins (figure \ref{nine_stresses}).
-			A dimensional analysis shows that vertical variation of in $u$ and $v$ is negligible, such that $w$ and $p$ can be eliminated by integrating the remaining stresses over the vertical and applying the boundary conditions at the glacier surface and base:
+			\justifying
+			The conservation of momentum simplifies to:
 			\begin{equation}
 				\nabla_h.(2\bar{\eta}(\dot{\epsilon_h}I))=\rho g H \nabla_h z_s;
 			\end{equation}
+			Where the subscript h represents the components in the x-y plane and $\bar{\eta}$ the vertically integrated viscosity. The effective strain rate simplifies to:
 			
+			\begin{equation}
+				\dot{\epsilon_h}=\sqrt{{\frac{\delta u}{\delta x}}^2+{\frac{\delta v}{\delta y}}^2+\frac{\delta u}{\delta x}\frac{\delta v}{\delta y}+\frac{1}{4}{(\frac{\delta u}{\delta y}+\frac{\delta v}{\delta y})}^2};
+			\end{equation}
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.25]{../fig/nine-stresses.png}
+				\caption{Driving and basal stresses on a block of ice. Adapted from AntarticGlaciers.org}
+				\label{nine_stresses}
+			\end{figure}
 		\end{frame}
+			
+		
 	\section{Grounding line dynamics and stability}
 		\begin{frame}{Grounding line dynamics and stability}
-		contenidos...
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.3]{../fig/Grounding_line.png}
+			\caption{Schematic representation of the marine ice sheet instability with an initial stable grounding line position (left hand side) and unstable grounding line position after the incursion of warm circumpolar deep water below the ice shelf. Adapted from \cite{hanna2013white}.}
+			\label{grounding_line_instability}
+		\end{figure}
 		\end{frame}
 
 	\section{Numerical model}
@@ -200,24 +195,281 @@
 			\label{Modelling}
 		\end{figure}
 	\end{frame}
-		\begin{frame}{Numerical model}
-		contenidos...
-		\end{frame}
+	\subsection{Elmer/Ice finite element method}
+	\begin{frame}{Elmer/Ice finite element method}
+		\justifying
+		\begin{itemize}
+			\item Open source finite element code, mainly developed in Finland.
+			\item The ice sheet/ice flow model Elmer/Ice is based on Elmer and includes developments related to glaciological problems. It includes a large number of dedicated solvers and users functions.
+			\item Elmer/Ice solves the Stokes equations and it includes solvers for the approximations of the Stokes equations, namely shallow shelf and shallow ice approximations.
+		\end{itemize}
+	\end{frame}
 	\section{Numerical parameters}
 		\begin{frame}{Numerical parameters}
-		contenidos...
+		\justifying
+		\begin{table}
+			\begin{center}
+				\caption{Physical parameters}
+				\label{Physical constants}
+				\begin{tabular}{|l|l|l|}
+					\hline
+					Variable          & Description                 & Units           \\ \hline
+					$g=9.81$         & Gravitational acceleration  & ms$^{-2}$         \\ \hline
+					$a_s=0.3$       & Surface mass balance (SMB)  & ma$^{-1}$         \\ \hline
+					$a_b=0$             & Basal mass balance (BMB)    &   ma$^{-1}$         \\ \hline
+					$\rho i=917$        & Ice density                 & kg m$^{-3}$       \\ \hline
+					$\rho w=1028$      & Sea water density           & kg m$^{-3}$       \\ \hline
+					$A= 2.9377$x$10^{-9}$ & Ice rate factor             & KPa$^{-3}$a$^{-1}$  \\ \hline
+					$n=3$               & Flow law stress exponent    &  Dimensionless               \\ \hline
+					$C=0.001$           & basal slipperiness          & ma$^{-1}$KPa$^{-3}$ \\ \hline
+					$m=3$               & Sliding law stress exponent &   Dimensionless              \\ \hline
+					$s2a=31556926$     & Seconds in a year           & s         \\ \hline
+				\end{tabular}
+			\end{center}
+		\end{table}
+		\end{frame}
+		\subsection{Numerical variables, external forcings and initial condition}
+		\begin{frame}{Numerical variables, external forcings and initial condition}
+			\begin{itemize}
+				\item The numerical resolution will be the variable parameter, varying from 10km, 5km, 2km, and 1km.
+				\item The external forces acting will be gravity, as well as the ice friction and the basal stress.
+				\item The initial condition will be a topography with no ice, namely $h_0$=0m.
+				\item The CFL condition will be necessary to verify the stability of the model. It is needed that:
+				\begin{equation}
+					C=\frac{u\Delta t}{\Delta x}<C_{max};
+				\end{equation}
+				where, C is the Courant number, $u$ is the velocity, $\Delta t$ is the time step, $\Delta x$ is the horizontal resolution. C$_{max}=1$ is a safe approximation.  
+			\end{itemize}
 		\end{frame}
 	\section{Systems and experiment set-up}
-		\begin{frame}{Systems and experiment set-up}
-		contenidos...
+	\subsection{Cone domain}
+	
+		\begin{frame}[allowframebreaks]{Cone domain}
+		\justifying
+		Systems are proposed in the context of the CalvingMIP inter-comparison project (https://github.com/JRowanJordan/CalvingMIP). The idealised experimental domain comprise a simple, symmetrically circular domain. This first idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
+		\begin{equation}
+			\theta=arctan2(y,x);
+		\end{equation}
+		\begin{equation}
+			I=r-cos(2\theta)\frac{r}{2}
+		\end{equation}
+		\begin{equation}
+			Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{r^2};
+		\end{equation}
+		Where r=800x10$^3$m, Bc=0.9 x 10$^3$m, and BI=-2 x 10$^3$m. 
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
+			\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
+			\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
+			\label{circular_topo_top}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{../fig/cone.png}
+			\caption{Circular domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvingMIP inter-comparison project.}
+			\label{cone_profile}
+		\end{figure}
+		\end{frame}
+	\subsection{Thule domain}
+		\begin{frame}[allowframebreaks]{Thule domain}
+			The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and is given by:
+			\begin{equation}
+				\theta=arctan2(y,x);
+			\end{equation}
+			\begin{equation}
+				I=r-cos(2\theta)\frac{r}{2};
+			\end{equation}
+			\begin{equation}
+				Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{r^2};
+			\end{equation}
+			\begin{equation}
+				Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
+			\end{equation}
+			With r=800 x 10$^3 m$, Bc=0,9 x 10$^3 m$, BI=-2 x 10$^3 m$, and Ba=1.1 x 10$^3 m$.
+			\begin{figure}[!h]
+				\centering
+				\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
+				\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
+				\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
+				\label{Thule_3D}
+			\end{figure}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\linewidth]{../fig/thule.png}
+				\caption{Thule domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvinMIP inter-comparison project.}
+				\label{thule_profile}
+			\end{figure}
 		\end{frame}
 	\section{Results}
-		\begin{frame}{Results}
-		contenidos...
+		\begin{frame}[allowframebreaks]{Results:Cone domain}
+		\justifying
+		\begin{figure}
+			\centering
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_combined_domains.png}
+				\caption{Profiles for Cone circular domain}
+				\label{Schematic_Cone}
+			\end{subfigure}%
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=0.99\linewidth]{../fig/Profiles_Cone_domain_sin_fondo.png}
+				\caption{Ice thickess per profile}
+				\label{Profiles_cone}
+			\end{subfigure}
+			\caption{Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.}
+			\label{Cone_scheme}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_time.png}
+				\caption{Volume variation in time.}
+				\label{VOLUME_CONE_VS_TIME}
+			\end{subfigure}%
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_time.png}
+				\caption{Ice thickess variation in time.}
+				\label{H_CONE_VS_TIME}
+			\end{subfigure}%
+			\caption{Volume and thickness variation in time for the cone domain experiment.}
+			\label{Volume_CONE_VS_TIME_VS_NODES}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_num_nodes.png}
+				\caption{Volume relative variation as a function of the number of nodes.}
+				\label{VOLUME_CONE_VS_NODES}
+			\end{subfigure}
+			\begin{subfigure}{.45\textwidth}
+				\centering
+				\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_num_nodes.png}
+				\caption{Ice thickness error as a function of the number of nodes.}
+				\label{H_CONE_VS_NODES}
+			\end{subfigure}
+			\caption{Ice thickess and volume variation with respect to the number of nodes for the Cone circular domain experiment.}
+			\label{H_CONE_VS_TIME_VS_NODES}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_Segundos.png}
+				\caption{Time for 32 processors used.}
+				\label{32_proce}
+			\end{subfigure}%
+			\begin{subfigure}{.5\textwidth}
+				\centering
+				\includegraphics[width=1.1\linewidth]{../fig/Figure_Time_vs_nodes_32.png}
+				\caption{Time for 1 processor.}
+				\label{1_proce}
+			\end{subfigure}
+			\caption{Simulation time as a function of the number of nodes for each resolution mesh.}
+			\label{Computation time}
+		\end{figure}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\linewidth]{../fig/Figure_CONE_GL_positions.png}
+			\caption{Grounding line positions as a function of the resolution for quarter and complete circular cone domain.}
+			\label{Grounding_lines__CONE_comparison}
+		\end{figure}
+		
+		\end{frame}
+	\subsection{Thule domain}
+		\begin{frame}[allowframebreaks]{Results: Thule domain}
+			\justifying
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.2]{../fig/Profiles_Thule_combined_domains_2_con_fondo.png}%
+				\caption
+				{%
+					Profiles for the thule domain%
+					\label{Profiles_Thule}%
+				}%
+			\end{figure}
+			\begin{figure}
+				\centering
+				\begin{subfigure}{.5\textwidth}
+					\centering
+					\includegraphics[width=1\linewidth]{../fig/Capronas_Thule_Domain_con_fondo.png}
+					\caption{Ice thickness along each Caprona profiles.}
+					\label{Capronas_thule}
+				\end{subfigure}%
+				\begin{subfigure}{.5\textwidth}
+					\centering
+					\includegraphics[width=1\linewidth]{../fig/Halbranes_thule_domain_con_fondo.png}
+					\caption{Ice thickness along each Halbrane profiles.}
+					\label{Halbranes_thule}
+				\end{subfigure}
+				\caption{Ice thickness along the thule domain profiles.}
+				\label{Thule_profiles_capronas_and_halbranes}
+			\end{figure}
+			\begin{figure}
+				\centering
+				\begin{subfigure}{.5\textwidth}
+					\centering
+					\includegraphics[width=1.1\linewidth]{../fig/H_THULE_full_all_res_vs_time.png}
+					\caption{Ice thickess variation in time.}
+					\label{H_THULE_VS_TIME}
+				\end{subfigure}%
+				\begin{subfigure}{.5\textwidth}
+					\centering
+					\includegraphics[width=1.1\linewidth]{../fig/Volume_THULE_full_all_res_vs_time.png}
+					\caption{Volume variation in time.}
+					\label{VOLUME_THULE_VS_TIME}
+				\end{subfigure}
+				\caption{Ice thickess and volume variation in time for the Thule domain experiment.}
+				\label{H_THULE_VS_TIME_VS_NODES}
+			\end{figure}
+			\begin{figure}
+				\centering
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=1.1\linewidth]{../fig/H_THULE_full_all_res_vs_num_nodes.png}
+					\caption{Ice thickness error as a function of the number of nodes.}
+					\label{H_THULE_VS_NODES}
+				\end{subfigure}
+				\begin{subfigure}{.45\textwidth}
+					\centering
+					\includegraphics[width=1.1\linewidth]{../fig/Volume_THULE_full_all_res_vs_num_nodes.png}
+					\caption{Volume relative variation as a function of the number of nodes.}
+					\label{VOLUME_THULE_VS_NODES}
+				\end{subfigure}
+				\caption{Volume and ice thickness variation as a function of the number of nodes for the thule domain experiment.}
+				\label{Volume_THULE_VS_TIME_VS_NODES}
+			\end{figure}
+			\begin{figure}
+				\centering
+				\begin{subfigure}{.5\textwidth}
+					\centering
+					\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Capronas.png}
+					\caption{Grounding line positions along Capronas profiles.}
+					\label{Thule_Capronas}
+				\end{subfigure}%
+				\begin{subfigure}{.5\textwidth}
+					\centering
+					\includegraphics[width=1.1\linewidth]{../fig/Figure_THULE_GLpositions_Halbranes.png}
+					\caption{Grounding line positions along Halbrane profiles}
+					\label{Thule_halbranes}
+				\end{subfigure}
+				\caption{Grounding line positions as a function of the resolution for quarter and complete thule domain along the Caprona and Halbrane profiles.}
+				\label{Grounding_lines__caprona_halbrane_comparison}
+			\end{figure}
 		\end{frame}
 	\section{Conclusions}
 		\begin{frame}{Conclusions}
-		contenidos...
+		\begin{itemize}
+			\justifying
+			\item The results obtained for the grounding line position for both experiments were consistent with the ones carried out by \cite{durand2009full} were they could show that the grounding line position results start to be consistent for a grid size smaller than 5km.
+			\item The grounding line position is increasing as a function of the resolution, due to the topography of both experiments.
+			\item The fact that the grounding line position increases in a higher resolution, means that the ice thickness will also increase, since the ice column at the grounding line is now larger due to the decreasing slope of the bedrock, meaning that the ice flux through the grounding line will increase.
+			\item The resolution has a direct impact in the symmetry of the domain of study, leading to differences in results of parts of the domain if the resolution is low.
+		\end{itemize}
 		\end{frame}
 	\section{Bibliography and references}
 		\begin{frame}[allowframebreaks]
