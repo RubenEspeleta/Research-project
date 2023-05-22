@@ -49,17 +49,7 @@
 		\label{Glacier}
 		\end{figure}
 		\end{frame}
-	\subsection{Process of modelling}
-		\begin{frame}{Process of modelling}
-		\justifying
-		The physical phenomena that impacts the dynamics of the glaciers can be represented using mathematical models that implement partial differential equations, which can then be discretized to be solved using numerical methods.
-		\begin{figure}
-		\centering
-		\includegraphics[scale=0.4]{../fig/Numerical_modelling_scheme.png}
-		\caption{Process of modelling, starting with a physical phenomena which can be represented mathematically in a physical model than can then be discretized to solve numerically. Adapted from AntarticGlaciers.org}
-		\label{Modelling}
-		\end{figure}
-		\end{frame}
+
 	\subsection{Importance of understanding the dynamics of glaciers}
 		\begin{frame}{Importance of understanding the dynamics of glaciers}
 		\justifying
@@ -155,15 +145,61 @@
 		\end{equation}
 		Where I is the identity tensor. Together, these two last mathematical equations are called the full-stokes model.
 		\end{frame}
+		\begin{frame}[allowframebreaks]{Boundary conditions and time evolution}
+		\justifying
+			\begin{itemize}
+				\item Ice in contact with the bedrock: Weertman sliding law \cite[]{weertman1974stability}:
+				\begin{equation}
+					u_b=C{\tau_b}^m;
+				\end{equation}
+				\item The ice surface is assummed stress free $\sigma .n=0$ and ice base at $z_s$ and $z_b$ behave as free surfaces according to:
+				\begin{equation}
+					\frac{\delta z_{s/b}}{\delta t}+u_{s/b}\frac{\delta z_{s/b}}{\delta x}+v_{s/b}\frac{\delta z_{s/b}}{\delta y}=w_{s/b}+a_{s/b};
+				\end{equation}
+			where $a_{s/b}$ is the accumulation ($a_{s/b}>0$) or ablation ($a_{s/b}<0$) in meter ice equivalent per year, at the surface or at the base, respectively.
+			\item By vertical integration of the incompressibility condition, $w$ can be eliminated:
+			\begin{equation}
+				\frac{\delta H}{\delta t}+\frac{\delta H\bar{u}}{\delta x}+\frac{\delta H \bar{v}}{\delta y}=a_s-a_b ;
+			\end{equation}
+			Where $\bar{u}$ and $\bar{v}$ are the vertically integrated horizontal velocities. 
+			\item For the ice-ocean interface, as soon as the seawater pressure $p_w$ at the ice base $z_b$ is larger than the normal stress exerted by the ice at the bed, the ice is assumed to float. At the ice-ocean interface, the tangential friction is neglected and:
+			\begin{equation}
+				\sigma  n=-p_wn ;
+			\end{equation}
+			where:
+			\begin{equation}
+				p_w(z)=-\rho_wgz; if z<0;
+			\end{equation}
+			and $\sigma n=0$ above sea level ($z>0$).
+			\end{itemize}
+		\end{frame}
+
+	\subsection{Shallow shelf approximation}
+		\begin{frame}{Shallow shelf approximation}
+			Floating ice does not experience basal drag, hence all resistance comes from longitudinal stresses and lateral drag at the margins (figure \ref{nine_stresses}).
+			A dimensional analysis shows that vertical variation of in $u$ and $v$ is negligible, such that $w$ and $p$ can be eliminated by integrating the remaining stresses over the vertical and applying the boundary conditions at the glacier surface and base:
+			\begin{equation}
+				\nabla_h.(2\bar{\eta}(\dot{\epsilon_h}I))=\rho g H \nabla_h z_s;
+			\end{equation}
+			
+		\end{frame}
 	\section{Grounding line dynamics and stability}
 		\begin{frame}{Grounding line dynamics and stability}
 		contenidos...
 		\end{frame}
-	\section{Numerical methods}
-		\begin{frame}{Numerical methods}
-		contenidos...
-		\end{frame}
+
 	\section{Numerical model}
+	\subsection{Process of modelling}
+	\begin{frame}{Process of modelling}
+		\justifying
+		The physical phenomena that impacts the dynamics of the glaciers can be represented using mathematical models that implement partial differential equations, which can then be discretized to be solved using numerical methods.
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.4]{../fig/Numerical_modelling_scheme.png}
+			\caption{Process of modelling, starting with a physical phenomena which can be represented mathematically in a physical model than can then be discretized to solve numerically. Adapted from AntarticGlaciers.org}
+			\label{Modelling}
+		\end{figure}
+	\end{frame}
 		\begin{frame}{Numerical model}
 		contenidos...
 		\end{frame}
