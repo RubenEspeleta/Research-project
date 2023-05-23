@@ -1,22 +1,23 @@
 \beamer@sectionintoc {1}{Introduction}{3}{0}{1}
 \beamer@subsectionintoc {1}{1}{Definition}{3}{0}{1}
-\beamer@subsectionintoc {1}{2}{Importance of understanding the dynamics of glaciers}{4}{0}{1}
-\beamer@sectionintoc {2}{Glacier dynamics}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Incompessibility condition and deviatoric stress}{5}{0}{2}
-\beamer@subsectionintoc {2}{2}{Governing equations}{6}{0}{2}
-\beamer@subsectionintoc {2}{3}{The flow law}{8}{0}{2}
-\beamer@subsectionintoc {2}{4}{Boundary conditions and time evolution}{9}{0}{2}
-\beamer@subsectionintoc {2}{5}{Shallow shelf approximation}{11}{0}{2}
-\beamer@sectionintoc {3}{Grounding line dynamics and stability}{12}{0}{3}
-\beamer@sectionintoc {4}{Numerical model}{13}{0}{4}
-\beamer@subsectionintoc {4}{1}{Process of modelling}{13}{0}{4}
-\beamer@subsectionintoc {4}{2}{Elmer/Ice finite element method}{14}{0}{4}
-\beamer@sectionintoc {5}{Numerical parameters}{15}{0}{5}
-\beamer@subsectionintoc {5}{1}{Numerical variables, external forcings and initial condition}{16}{0}{5}
-\beamer@sectionintoc {6}{Systems and experiment set-up}{17}{0}{6}
-\beamer@subsectionintoc {6}{1}{Cone domain}{17}{0}{6}
-\beamer@subsectionintoc {6}{2}{Thule domain}{20}{0}{6}
-\beamer@sectionintoc {7}{Results}{23}{0}{7}
-\beamer@subsectionintoc {7}{1}{Thule domain}{28}{0}{7}
-\beamer@sectionintoc {8}{Conclusions}{33}{0}{8}
-\beamer@sectionintoc {9}{Bibliography and references}{34}{0}{9}
+\beamer@subsectionintoc {1}{2}{Importance of understanding the dynamics of the grounding line}{5}{0}{1}
+\beamer@sectionintoc {2}{Glacier dynamics}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Glacier flow}{8}{0}{2}
+\beamer@subsectionintoc {2}{2}{Governing equations}{9}{0}{2}
+\beamer@subsectionintoc {2}{3}{The flow law}{10}{0}{2}
+\beamer@subsectionintoc {2}{4}{Boundary conditions and time evolution}{11}{0}{2}
+\beamer@subsectionintoc {2}{5}{Shallow shelf approximation}{13}{0}{2}
+\beamer@sectionintoc {3}{Grounding line dynamics and stability}{14}{0}{3}
+\beamer@sectionintoc {4}{Numerical model}{15}{0}{4}
+\beamer@subsectionintoc {4}{1}{Process of modelling}{15}{0}{4}
+\beamer@subsectionintoc {4}{2}{Elmer/Ice finite element method}{16}{0}{4}
+\beamer@sectionintoc {5}{Systems and experiment set-up}{17}{0}{5}
+\beamer@subsectionintoc {5}{1}{Calving intercomparison project CalvingMIP}{17}{0}{5}
+\beamer@subsectionintoc {5}{2}{Cone domain}{18}{0}{5}
+\beamer@subsectionintoc {5}{3}{Thule domain}{20}{0}{5}
+\beamer@sectionintoc {6}{Numerical parameters}{23}{0}{6}
+\beamer@subsectionintoc {6}{1}{Numerical variables, external forcings and initial condition}{24}{0}{6}
+\beamer@sectionintoc {7}{Results}{25}{0}{7}
+\beamer@subsectionintoc {7}{1}{Thule domain}{29}{0}{7}
+\beamer@sectionintoc {8}{Conclusions}{34}{0}{8}
+\beamer@sectionintoc {9}{Bibliography and references}{35}{0}{9}

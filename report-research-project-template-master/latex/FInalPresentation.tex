@@ -10,7 +10,11 @@
 \usepackage{subcaption}
 \usepackage{natbib}
 \usetheme{Madrid}
-	\author{Ruben ESPELETA BOLIVAR}
+\usecolortheme{orchid}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]{}
+	\author{Ruben \textsc{Espeleta Bolivar} \\
+	\and {Advisor: Dr. Cruz \textsc{García Molina}}}
 \title[Numerical experiments]{Numerical experiments in idealized glacier topographies}
 \date{May 24th, 2023}
 
@@ -35,79 +39,60 @@
 	\end{frame}
 	
 	\begin{frame}{Content}
-		\tableofcontents
+		\tableofcontents[hideallsubsections]
 	\end{frame}
 	
 	\section{Introduction}
 	\subsection{Definition}
-		\begin{frame}{Definition}
+		\begin{frame}{What is a glacier?}
 		\justifying
-		Glaciers can be defined as a mass of ice that accumulates from snow and flows slowly downwards
+		Glaciers can be defined as a mass of ice that accumulates from snow and flows downwards from a few hundreds of meters per year and up to 15 km per year.\pause
 		\begin{figure}
 		\centering
 		\includegraphics[scale=0.4]{../fig/groundingzone.png}
-		\caption{Schema of a tributary glacier where we can observe the different parts denoting the grounding zone \cite[]{fricker2009mapping}. Adapted from AntarticGlaciers.org}
+		\caption{Schema of a tributary glacier where we can observe the different parts denoting the grounding zone Adapted from \cite{fricker2009mapping}. }
 		\label{Glacier}
 		\end{figure}
 		\end{frame}
 
-	\subsection{Importance of understanding the dynamics of glaciers}
+	\subsection{Importance of understanding the dynamics of the grounding line}
 		\begin{frame}{Importance of understanding the dynamics of glaciers}
 		\justifying
 		\begin{itemize}
-			\item The rate of present-day sea-level rise has increased in recent decades and it is expected to continue increasing in coming decades and centuries \cite[]{clark2015recent}.
-			\item \cite{morlighem2017bedmachine} and \cite{haywood2011pliocene} mentioned that if all the ice were to melt completely, the sea level would rise by an estimated of 65m.
-			\item The Unites Nations states that around 40\% of the world's population lives in coastal regions, within 100km of the coastline \cite[]{barbier2015climate, montgomery2007united}.
-			\item The land area that is less than 10m above sea level is just 2\% of the world's total land area, yet it is home to 10\% of the world's population and 13\% of the world's urban population \cite[]{nevermann2023land}.
+			\item The rate of present-day sea-level rise has increased in recent decades and it is expected to continue increasing in coming decades and centuries \cite[]{clark2015recent}. \pause
+			\item Mass loss from glaciers is strongly linked to changes in the ice shelves and their grounding lines \cite[]{brunt2010mapping, pritchard2012antarctic}. \pause
+			\item Ice thinning and rising sea levels can cause grounding line to retreat while thickening or declining sea levels can cause an advance \cite[]{friedl2020remote}.
 		\end{itemize}
 		\end{frame}
 	\section{Glacier dynamics}
-
-	\subsection{Incompessibility condition and deviatoric stress}
-		\begin{frame}{Incompressibility condition}
-		\justifying
-		Ice can be considered an incompressible viscous fluid:
-		\begin{equation}
-			\frac{\delta u}{\delta x}+\frac{\delta v}{\delta y}+\frac{\delta w}{\delta z}=0;
-		\end{equation}
-		The deviatoric normal stress in the x-direction is:
-		\begin{equation}
-			\sigma_{XX}'= \sigma_{XX}-P;
-		\end{equation}
-		Where P is the mean normal stress:
-		\begin{equation}
-			P=-\frac{1}{3}({\sigma_{XX}+\sigma_{YY}+\sigma_{ZZ}})
-		\end{equation}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.4\linewidth]{../fig/Non_hydrostatic_pressure.png}
-			\caption{Sketch to illustrate non-hydrostatic pressure. Adapted from \cite{hooke2019principles}.}
-			\label{Deviatoric_stress}
-		\end{figure}
-		\end{frame}
-
-	\subsection{Governing equations}
-		\begin{frame}[allowframebreaks]{Governing equations}
+	\subsection{Glacier flow}
+		\begin{frame}{Glacier flow}
 		\justifying
 			\begin{figure}
 				\centering
-				\includegraphics[scale=0.3]{../fig/ice_flow.png}
-				\caption{Stress within a valley glacier (red numbers) and the ice velocity (blue arrows). Figure adapted from \cite{earle2015physical}}
+				\includegraphics[scale=0.3]{../fig/glacier_flowing.png}
+				\caption{Glaciers behave as a very viscous fluid for time scales between a few years to a few thousands of years. }
 				\label{Flow_ice}
 			\end{figure}
-		The plastic lower ice of the glacier can flow like a very viscous fluid. The incompressibility condition leads to:
+		\end{frame}
+	\subsection{Governing equations}
+		\begin{frame}[allowframebreaks]{Governing equations}
+		\begin{itemize}
+		\item The plastic lower ice of the glacier can flow like a very viscous fluid. The incompressibility condition leads to: 
 		\begin{equation}
-			\nabla u=0
+			\nabla \cdot u=0.
 		\end{equation}
-		For ice flow, the acceleration term can be neglected in the Navier-Stokes equations \cite[]{hutter1982mathematical}. Therefore:
+		\item For ice flow, the acceleration term can be neglected in the Navier-Stokes equations \cite[]{hutter1982mathematical}. Therefore:
 		\begin{equation}
-			-\nabla p+\nabla (\eta (\nabla u+(\nabla u)^T))+\rho g = 0;
+			-\nabla \cdot p+\nabla \cdot (\eta (\nabla \cdot u+(\nabla \cdot u)^T))+\rho g = 0.
 		\end{equation}
-		Where $\eta$ is the viscosity and $g$ is the gravity. Letting $\sigma$ denote the stress tensor and pressure $p$ is the mean normal stress denoted previously, and the strain rate tensor $\epsilon_{e}$, related by:
+		Where $\eta$ is the viscosity and $g$ is the gravity.
+		\item Letting $\sigma$ denote the stress tensor and pressure $p$ is the mean normal stress denoted previously, and the strain rate tensor $\epsilon_{e}$, related by:
 		\begin{equation}
-			\sigma=2\eta \epsilon_{e}-pI = \eta (\nabla u+(\nabla u)^T)-pI; 
+			\sigma=2\eta \epsilon_{e}-pI = \eta \cdot(\nabla \cdot u+(\nabla \cdot u)^T)-pI.
 		\end{equation}
 		Where I is the identity tensor. Together, these two last mathematical equations are called the full-stokes model.
+		\end{itemize}
 		\end{frame}
 	\subsection{The flow law}
 		\begin{frame}{The flow law}
@@ -140,36 +125,24 @@
 				\frac{\delta H}{\delta t}+\frac{\delta H\bar{u}}{\delta x}+\frac{\delta H \bar{v}}{\delta y}=a_s-a_b ;
 			\end{equation}
 			Where $\bar{u}$ and $\bar{v}$ are the vertically integrated horizontal velocities. 
-			\item For the ice-ocean interface, as soon as the seawater pressure $p_w$ at the ice base $z_b$ is larger than the normal stress exerted by the ice at the bed, the ice is assumed to float. At the ice-ocean interface, the tangential friction is neglected and:
-			\begin{equation}
-				\sigma  n=-p_wn ;
-			\end{equation}
-			where:
-			\begin{equation}
-				p_w(z)=-\rho_wgz; z<0;
-			\end{equation}
-			and $\sigma n=0$ above sea level ($z>0$).
+			\item For the ice-ocean interface, the ice flux out of the domain will be fixed as the calving rate.
 			\end{itemize}
 		\end{frame}
 
 	\subsection{Shallow shelf approximation}
 		\begin{frame}{Shallow shelf approximation}
 			\justifying
+			SSA approximation has been derived by dimensional analysis based on a small aspect ratio between vertical and longitudinal lenght of the ice shelf
 			The conservation of momentum simplifies to:
 			\begin{equation}
-				\nabla_h.(2\bar{\eta}(\dot{\epsilon_h}I))=\rho g H \nabla_h z_s;
+				\nabla_h \cdot(2\bar{\eta}(\dot{\epsilon_h}I))=\rho g H \nabla_h \cdot z_s;
 			\end{equation}
 			Where the subscript h represents the components in the x-y plane and $\bar{\eta}$ the vertically integrated viscosity. The effective strain rate simplifies to:
 			
 			\begin{equation}
 				\dot{\epsilon_h}=\sqrt{{\frac{\delta u}{\delta x}}^2+{\frac{\delta v}{\delta y}}^2+\frac{\delta u}{\delta x}\frac{\delta v}{\delta y}+\frac{1}{4}{(\frac{\delta u}{\delta y}+\frac{\delta v}{\delta y})}^2};
 			\end{equation}
-			\begin{figure}
-				\centering
-				\includegraphics[scale=0.25]{../fig/nine-stresses.png}
-				\caption{Driving and basal stresses on a block of ice. Adapted from AntarticGlaciers.org}
-				\label{nine_stresses}
-			\end{figure}
+
 		\end{frame}
 			
 		
@@ -177,7 +150,7 @@
 		\begin{frame}{Grounding line dynamics and stability}
 		\begin{figure}
 			\centering
-			\includegraphics[scale=0.3]{../fig/Grounding_line.png}
+			\includegraphics[scale=0.3]{../fig/GroundingLineInstability.png}
 			\caption{Schematic representation of the marine ice sheet instability with an initial stable grounding line position (left hand side) and unstable grounding line position after the incursion of warm circumpolar deep water below the ice shelf. Adapted from \cite{hanna2013white}.}
 			\label{grounding_line_instability}
 		\end{figure}
@@ -204,8 +177,75 @@
 			\item Elmer/Ice solves the Stokes equations and it includes solvers for the approximations of the Stokes equations, namely shallow shelf and shallow ice approximations.
 		\end{itemize}
 	\end{frame}
-	\section{Numerical parameters}
-		\begin{frame}{Numerical parameters}
+	\section{Systems and experiment set-up}
+	\subsection{Calving intercomparison project CalvingMIP}
+	\begin{frame}{Calving intercomparison project}
+		\justifying
+		The intercomparison project (https://github.com/JRowanJordan/CalvingMIP) is intended to develop models to explore calving, ice damage, and glacier dynamics leading to recommendations for improved calving laws in ice sheet models.
+		
+	\end{frame}
+	\subsection{Cone domain}
+		\begin{frame}{Cone domain}
+		\justifying
+		The idealised experimental domain comprise a simple, symmetrically circular domain. This first idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
+		\begin{equation}
+			Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{r^2};
+		\end{equation}
+		Where r=800x10$^3$m, Bc=0.9 x 10$^3$m, and BI=-2 x 10$^3$m. 
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
+			\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
+			\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
+			\label{circular_topo_top}
+		\end{figure}
+		\end{frame}
+		\begin{frame}{Experimental profiles}
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.5\linewidth]{../fig/cone.png}
+			\caption{Circular domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvingMIP inter-comparison project.}
+			\label{cone_profile}
+		\end{figure}
+		\end{frame}
+	
+	\subsection{Thule domain}
+		\begin{frame}{Thule domain}
+			The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and is given by:
+			\begin{equation}
+				\theta=arctan2(y,x);
+			\end{equation}
+			\begin{equation}
+				I=r-cos(2\theta)\frac{r}{2};
+			\end{equation}
+			\begin{equation}
+				Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{r^2};
+			\end{equation}
+			\begin{equation}
+				Bed=Bacos(3\pi\frac{\sqrt{x^2+y^2}}{I})+Bed_0;
+			\end{equation}
+			With r=800 x 10$^3 m$, Bc=0,9 x 10$^3 m$, BI=-2 x 10$^3 m$, and Ba=1.1 x 10$^3 m$.
+		\end{frame}
+			\begin{frame}{Thule domain bedrock topography}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
+				\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
+				\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
+				\label{Thule_3D}
+			\end{figure}
+			\end{frame}
+			\begin{frame}{Thule experimental profiles}
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\linewidth]{../fig/thule.png}
+				\caption{Thule domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvinMIP inter-comparison project.}
+				\label{thule_profile}
+			\end{figure}
+			\end{frame}
+		
+\section{Numerical parameters}
+	\begin{frame}{Numerical parameters}
 		\justifying
 		\begin{table}
 			\begin{center}
@@ -227,82 +267,22 @@
 				\end{tabular}
 			\end{center}
 		\end{table}
-		\end{frame}
-		\subsection{Numerical variables, external forcings and initial condition}
-		\begin{frame}{Numerical variables, external forcings and initial condition}
-			\begin{itemize}
-				\item The numerical resolution will be the variable parameter, varying from 10km, 5km, 2km, and 1km.
-				\item The external forces acting will be gravity, as well as the ice friction and the basal stress.
-				\item The initial condition will be a topography with no ice, namely $h_0$=0m.
-				\item The CFL condition will be necessary to verify the stability of the model. It is needed that:
-				\begin{equation}
-					C=\frac{u\Delta t}{\Delta x}<C_{max};
-				\end{equation}
-				where, C is the Courant number, $u$ is the velocity, $\Delta t$ is the time step, $\Delta x$ is the horizontal resolution. C$_{max}=1$ is a safe approximation.  
-			\end{itemize}
-		\end{frame}
-	\section{Systems and experiment set-up}
-	\subsection{Cone domain}
-	
-		\begin{frame}[allowframebreaks]{Cone domain}
-		\justifying
-		Systems are proposed in the context of the CalvingMIP inter-comparison project (https://github.com/JRowanJordan/CalvingMIP). The idealised experimental domain comprise a simple, symmetrically circular domain. This first idealized model consists of a circular bedrock configuration (Figure \ref{circular_topo_top}) given by:
-		\begin{equation}
-			\theta=arctan2(y,x);
-		\end{equation}
-		\begin{equation}
-			I=r-cos(2\theta)\frac{r}{2}
-		\end{equation}
-		\begin{equation}
-			Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{r^2};
-		\end{equation}
-		Where r=800x10$^3$m, Bc=0.9 x 10$^3$m, and BI=-2 x 10$^3$m. 
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
-			\includegraphics[width=0.45\linewidth]{../fig/circular_topo_jet}
-			\caption{Circular bedrock topography. On the left side top view and on the right side, lateral view.}
-			\label{circular_topo_top}
-		\end{figure}
-		\begin{figure}
-			\centering
-			\includegraphics[width=0.5\linewidth]{../fig/cone.png}
-			\caption{Circular domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvingMIP inter-comparison project.}
-			\label{cone_profile}
-		\end{figure}
-		\end{frame}
-	\subsection{Thule domain}
-		\begin{frame}[allowframebreaks]{Thule domain}
-			The Thule bedrock configuration is shown in Figure \ref{Thule_3D} and is given by:
+	\end{frame}
+	\subsection{Numerical variables, external forcings and initial condition}
+	\begin{frame}{Numerical variables, external forcings and initial condition}
+		\begin{itemize}
+			\item The numerical resolution will be the variable parameter, varying from 10km, 5km, 2km, and 1km.
+			\item The external forces acting will be gravity, as well as the ice friction and the basal stress.
+			\item The initial condition will be a topography with no ice, namely $h_0$=0m.
+			\item The CFL condition will be necessary to verify the stability of the model. It is needed that:
 			\begin{equation}
-				\theta=arctan2(y,x);
+				C=\frac{u\Delta t}{\Delta x}<C_{max};
 			\end{equation}
-			\begin{equation}
-				I=r-cos(2\theta)\frac{r}{2};
-			\end{equation}
-			\begin{equation}
-				Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2}{r^2};
-			\end{equation}
-			\begin{equation}
-				Bed=Bacos(3\pi\frac{\sqrt[2]{x^2+y^2}}{I})+Bed_0;
-			\end{equation}
-			With r=800 x 10$^3 m$, Bc=0,9 x 10$^3 m$, BI=-2 x 10$^3 m$, and Ba=1.1 x 10$^3 m$.
-			\begin{figure}[!h]
-				\centering
-				\includegraphics[width=0.45\linewidth]{../fig/Thule_2D}
-				\includegraphics[width=0.45\linewidth]{../fig/Thule_3D}
-				\caption{Thule bedrock topography 3D. On the left side the top view, and on the right side a lateral view.}
-				\label{Thule_3D}
-			\end{figure}
-			\begin{figure}
-				\centering
-				\includegraphics[width=0.5\linewidth]{../fig/thule.png}
-				\caption{Thule domain experimental profiles as well as the initial imposed calving front position. Adapted from CalvinMIP inter-comparison project.}
-				\label{thule_profile}
-			\end{figure}
-		\end{frame}
+			where, C is the Courant number, $u$ is the velocity, $\Delta t$ is the time step, $\Delta x$ is the horizontal resolution. C$_{max}=1$ is a safe approximation.  
+		\end{itemize}
+	\end{frame}
 	\section{Results}
-		\begin{frame}[allowframebreaks]{Results:Cone domain}
+		\begin{frame}{Results:Cone ice thickness}
 		\justifying
 		\begin{figure}
 			\centering
@@ -318,9 +298,11 @@
 				\caption{Ice thickess per profile}
 				\label{Profiles_cone}
 			\end{subfigure}
-			\caption{Schematic representation of the circular domain ice sheet showing the ice thickness results along the profiles proposed.}
+			\caption{Circular domain ice sheet showing the ice thickness results along the profiles proposed.}
 			\label{Cone_scheme}
 		\end{figure}
+		\end{frame}
+		\begin{frame}{Volume variation in time and per number of nodes}
 		\begin{figure}
 			\centering
 			\begin{subfigure}{.5\textwidth}
@@ -331,30 +313,17 @@
 			\end{subfigure}%
 			\begin{subfigure}{.5\textwidth}
 				\centering
-				\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_time.png}
-				\caption{Ice thickess variation in time.}
-				\label{H_CONE_VS_TIME}
-			\end{subfigure}%
-			\caption{Volume and thickness variation in time for the cone domain experiment.}
-			\label{Volume_CONE_VS_TIME_VS_NODES}
-		\end{figure}
-		\begin{figure}
-			\centering
-			\begin{subfigure}{.45\textwidth}
-				\centering
 				\includegraphics[width=1.1\linewidth]{../fig/Volume_CONE_full_all_res_vs_num_nodes.png}
 				\caption{Volume relative variation as a function of the number of nodes.}
-				\label{VOLUME_CONE_VS_NODES}
-			\end{subfigure}
-			\begin{subfigure}{.45\textwidth}
-				\centering
-				\includegraphics[width=1.1\linewidth]{../fig/H_CONE_full_all_res_vs_num_nodes.png}
-				\caption{Ice thickness error as a function of the number of nodes.}
 				\label{H_CONE_VS_NODES}
-			\end{subfigure}
-			\caption{Ice thickess and volume variation with respect to the number of nodes for the Cone circular domain experiment.}
-			\label{H_CONE_VS_TIME_VS_NODES}
+			\end{subfigure}%
+			\caption{Volume variation in time and per number of nodes for the cone experiment.}
+			\label{Volume_CONE_VS_TIME_VS_NODES}
 		\end{figure}
+		\end{frame}
+		\begin{frame}{Simulations time as a function of the number of nodes}
+			
+	
 		\begin{figure}
 			\centering
 			\begin{subfigure}{.5\textwidth}
@@ -372,14 +341,16 @@
 			\caption{Simulation time as a function of the number of nodes for each resolution mesh.}
 			\label{Computation time}
 		\end{figure}
+		\end{frame}
+	\begin{frame}{Grounding line position per resolution}
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.8\linewidth]{../fig/Figure_CONE_GL_positions.png}
 			\caption{Grounding line positions as a function of the resolution for quarter and complete circular cone domain.}
 			\label{Grounding_lines__CONE_comparison}
 		\end{figure}
-		
-		\end{frame}
+	
+	\end{frame}
 	\subsection{Thule domain}
 		\begin{frame}[allowframebreaks]{Results: Thule domain}
 			\justifying
@@ -465,7 +436,6 @@
 		\begin{frame}{Conclusions}
 		\begin{itemize}
 			\justifying
-			\item The results obtained for the grounding line position for both experiments were consistent with the ones carried out by \cite{durand2009full} were they could show that the grounding line position results start to be consistent for a grid size smaller than 5km.
 			\item The grounding line position is increasing as a function of the resolution, due to the topography of both experiments.
 			\item The fact that the grounding line position increases in a higher resolution, means that the ice thickness will also increase, since the ice column at the grounding line is now larger due to the decreasing slope of the bedrock, meaning that the ice flux through the grounding line will increase.
 			\item The resolution has a direct impact in the symmetry of the domain of study, leading to differences in results of parts of the domain if the resolution is low.
