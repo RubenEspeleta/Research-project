@@ -1,0 +1,9 @@
+##This script reads the csv file with the results from paraview and calculates the distance from which the value of the grounding line function is the maximum##
+
+import panda as pd
+import numpy as np
+rP = pd.read_csv('groundingLines10km_CapronaB.csv')
+print('CapronaB 10km', rP['distance'][np.argmax(rP['groundingline'])])
+
+
+

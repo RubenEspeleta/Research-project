@@ -1,0 +1,13 @@
+##Para entrar al servidor###
+ssh -CX ruben.ige
+
+
+time mpirun -np 8 ELmerSolver_mpi 2>error.log>Salida.log &
+
+
+
+####Para montar el disco a mi pc######
+sshfs espeletr@luke:/bettik/espeletr/ElmerConfigs/07Feb2023-CalvingMIP /home/ruben/Documents/emptydirectory
+
+
+

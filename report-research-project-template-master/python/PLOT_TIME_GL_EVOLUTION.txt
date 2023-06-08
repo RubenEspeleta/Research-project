@@ -1,0 +1,60 @@
+import matplotlib.pyplot as plt
+
+filename = "10km_exp1_Ao9_C001_rhoi917_rhow1028-3_2500.nc"
+path = "/home/ruben/Documents/emptydirectory/CONE/OUTPUT_FILES_quarter/10km"
+
+def distance(x=1, y=1):
+    '''This function computes the distance to the origin
+     takes as argument x and y arrays'''
+    return(np.sqrt(x**2+y**2))
+
+def funcion(myfile=filename):
+    ''' Computes the grounding line position along the Profile A. TO BE IMPROVED.
+         usage:
+             '''
+    nc = Dataset(filename, 'r')
+    bedrock = nc.variables['bedrock'][:]
+    ground = nc.variables['groundedmask'][:]
+    mymask = -bedrock*ground
+    x = np.squeeze(nc.variables['x'][0, :])
+    y = np.squeeze(nc.variables['y'][0, :])
+    x0 = np.argmin(np.abs(x))
+    y0 = np.argmin(np.abs(y))
+    profileA = np.where(x == np.argmin(np.abs(x)), mymask, np.nan)
+    profileA = np.where(y >= 0, profileA, np.nan)
+    Amax = np.nanargmax(profileA)
+    Amax = distance(x[Amax], y[Amax])
+    profileE = np.where(y <= 0, profileA, np.nan)
+    Emax = np.nanargmax(profileE)
+    Emax = distance(x[Emax], y[Emax])
+
+    return(filename, Amax, Emax)
+
+
+# Create lists to store results
+filenames = []
+Amax_list = []
+Emax_list = []
+
+# Iterate over files in the directory
+for filename in Path(path).glob('10km_exp1*-*.nc'):
+    # Call funcion() function to get results
+    (a, b, c) = funcion(myfile=filename)
+    
+    # Append results to lists
+    filenames.append(a)
+    Amax_list.append(b)
+    Emax_list.append(c)
+    
+    # Print results
+    print(a, b, c)
+
+# Plot results
+plt.figure()
+plt.plot(filenames, Amax_list, 'o', label='Amax')
+plt.plot(filenames, Emax_list, 'o', label='Emax')
+plt.xlabel('Filename')
+plt.ylabel('Distance')
+plt.legend()
+plt.title('Amax and Emax for each filename')
+plt.show()

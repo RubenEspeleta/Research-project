@@ -1,0 +1,76 @@
+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
+
+
+####ALGORITMO PARA 
+
+plt.scatter(t1_3,v1_3, label="3")
+Out[18]: <matplotlib.collections.PathCollection at 0x7f18f7f52ec0>
+
+plt.scatter(t1_2,v1_2, label="2")
+Out[19]: <matplotlib.collections.PathCollection at 0x7f18f7f90130>
+
+plt.scatter(t1_0,v1_0, label ="0")
+Out[20]: <matplotlib.collections.PathCollection at 0x7f18f7f90340>
+
+plt.legend()
+Out[21]: <matplotlib.legend.Legend at 0x7f18f7f91d80>
+
+np.argmax(t1_0)
+Out[22]: 11
+
+np.max(t1_0)
+Out[23]: 1609.0
+
+np.min(t1_2)
+Out[24]: 9.0
+
+t0_1_try = t1_0 + np.max(t1_0)
+
+plt.scatter(t0_1_try, v1_2, label="try")
+Traceback (most recent call last):
+
+  Cell In[26], line 1
+    plt.scatter(t0_1_try, v1_2, label="try")
+
+  File ~/mambaforge/lib/python3.10/site-packages/matplotlib/pyplot.py:2862 in scatter
+    __ret = gca().scatter(
+
+  File ~/mambaforge/lib/python3.10/site-packages/matplotlib/__init__.py:1442 in inner
+    return func(ax, *map(sanitize_sequence, args), **kwargs)
+
+  File ~/mambaforge/lib/python3.10/site-packages/matplotlib/axes/_axes.py:4584 in scatter
+    raise ValueError("x and y must be the same size")
+
+ValueError: x and y must be the same size
+
+
+t0_1_try = t1_2 + np.max(t1_0)
+
+plt.scatter(t0_1_try, v1_2, label="try")
+Out[28]: <matplotlib.collections.PathCollection at 0x7f18f7f931f0>
+
+plt.scatter(t1_0,v1_0, label ="0")
+Out[29]: <matplotlib.collections.PathCollection at 0x7f18fcee5a80>
+
+plt.scatter(t0_1_try, v1_2, label="try")
+Out[30]: <matplotlib.collections.PathCollection at 0x7f18fc44ec50>
+
+np.max(t1_2)
+Out[31]: 2409.0
+
+t1_2_try=t1_3+np.max(t1_2)
+
+plt.scatter(t1_2_try, v1_3, label="try_2")
+Out[33]: <matplotlib.collections.PathCollection at 0x7f18fc4b5ae0>
+
+t1_2_try=t1_3+np.max(t0_1_try)
+
+plt.scatter(t1_2_try, v1_3, label="try_2")
+Out[35]: <matplotlib.collections.PathCollection at 0x7f18fc4c5360>
+
+plt.scatter(t0_1_try, v1_2, label="try")
+Out[36]: <matplotlib.collections.PathCollection at 0x7f18f5c30760>
+
+plt.scatter(t1_0,v1_0, label ="0")
+Out[37]: <matplotlib.collections.PathCollection at 0x7f18f5c154b0>
+

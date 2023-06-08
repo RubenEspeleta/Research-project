@@ -1,0 +1,50 @@
+ncdumb -h (name of the file)
+
+#####Para abrir paraview#######
+ssh -CX sno
+
+pvserver
+
+ssh -L 2244:localhost:2244 sno
+
+module list
+module avail
+module load paraview
+paraview
+
+####Para montar resultados en el server###
+sshsf ruben.ige: FolderOrigin Folder DatosLocalMachine
+
+###Para borrar carpeta#######
+rm -r
+
+###Para hacer una simulacion####
+
+mpirun -np 8 ElmerSolver_mpi File.sif 2>error.log>salida.log &
+
+#####Para ver lo que hace la maquina en tiempo real#########
+top
+
+######## Prueba de algoritmo para hacer un RUN.sh#####
+
+mkdir prueba
+mkdir SRC
+echo "hola mundo" >> totto.src
+touch RUN.sh
+chmod +x RUN.sh 
+
+sed -e 's/a/3/g' 
+
+chattr +i totto_src 
+chmod -w totto_src 
+
+./RUN.sh
+
+./RUN.sh -R "10km" -r "5km"
+
+
+
+
+ncdump -h file.nc | grep currently
+
+
