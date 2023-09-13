@@ -16,7 +16,8 @@
 	\author{Ruben \textsc{Espeleta Bolivar} \\
 	\and {Advisor: Dr. Cruz \textsc{García Molina}}}
 \title[Numerical experiments]{Numerical experiments in idealized glacier topographies}
-\date{May 24th, 2023}
+\date[KPT 2004]{Presented in the partial fulfillment of the requirements for the degree of \\
+Master applied mechanics}
 
 \subtitle{Case study of the impact of the mesh resolution on the prediction of the grounding line position}
 \logo{\includegraphics[scale=0.15]{../fig/logo_IGE.png}}
@@ -24,7 +25,7 @@
 	\inst{1}
 	Institut des geosciences de l'environnement
 }
-%\subject{}
+
 %\setbeamercovered{transparent}
 %\setbeamertemplate{navigation symbols}{}
 %\AtBeginSection[]{
@@ -50,7 +51,7 @@
 		\begin{figure}
 		\centering
 		\includegraphics[scale=0.4]{../fig/groundingzone.png}
-		\caption{Schema of a tributary glacier where we can observe the different parts denoting the grounding zone Adapted from \cite{fricker2009mapping}. }
+		\caption{Schema of a tributary glacier where we can observe the different parts denoting the grounding zone. Adapted from \cite{fricker2009mapping}. }
 		\label{Glacier}
 		\end{figure}
 		\end{frame}
@@ -76,23 +77,22 @@
 			\end{figure}
 		\end{frame}
 	\subsection{Governing equations}
-		\begin{frame}[allowframebreaks]{Governing equations}
-		\begin{itemize}
-		\item The plastic lower ice of the glacier can flow like a very viscous fluid. The incompressibility condition leads to: 
+		\begin{frame}{Governing equations}
+		The plastic lower ice of the glacier can flow like a very viscous fluid. The incompressibility condition leads to: 
 		\begin{equation}
 			\nabla \cdot u=0.
 		\end{equation}
-		\item For ice flow, the acceleration term can be neglected in the Navier-Stokes equations \cite[]{hutter1982mathematical}. Therefore:
+		\pause For ice flow, the acceleration term can be neglected in the Navier-Stokes equations \cite[]{hutter1982mathematical}. Therefore:
 		\begin{equation}
 			-\nabla \cdot p+\nabla \cdot (\eta (\nabla \cdot u+(\nabla \cdot u)^T))+\rho g = 0.
 		\end{equation}
 		Where $\eta$ is the viscosity and $g$ is the gravity.
-		\item Letting $\sigma$ denote the stress tensor and pressure $p$ is the mean normal stress denoted previously, and the strain rate tensor $\epsilon_{e}$, related by:
+		\pause Letting $\sigma$ denote the stress tensor and pressure $p$ is the mean normal stress, and the strain rate tensor $\epsilon_{e}$, related by:
 		\begin{equation}
 			\sigma=2\eta \epsilon_{e}-pI = \eta \cdot(\nabla \cdot u+(\nabla \cdot u)^T)-pI.
 		\end{equation}
 		Where I is the identity tensor. Together, these two last mathematical equations are called the full-stokes model.
-		\end{itemize}
+		
 		\end{frame}
 	\subsection{The flow law}
 		\begin{frame}{The flow law}
@@ -101,31 +101,31 @@
 			\begin{equation}
 				\dot{\epsilon_{e}}=({\frac{\sigma_{e}}{B}})^n;
 			\end{equation}
-			where B is a viscosity parameter that increases as the ice becomes stiffer, and n is an empirically determined constant. Most studies have found that n=3¸. An alternative form of the ﬂow law that is commonly used, and that can be used, is:
+			\pause where B is a viscosity parameter that increases as the ice becomes stiffer, and n is an empirically determined constant, and n=3. An alternative form of the ﬂow law that is commonly used, and that can be used, is:
 			\begin{equation}
 				\dot{\epsilon_{e}}=A{\sigma_{e}}^n
 			\end{equation}
-			A is called the rate factor. B is normally given in Mpa yr$^{\frac{1}{n}}$ while A is in MPa$^{-n}$ yr $^{-1}$ or MPa$^{-n}$ s $^{-1}$.
+			\pause A is called the rate factor. B is normally given in Mpa yr$^{\frac{1}{n}}$ while A is in MPa$^{-n}$ yr $^{-1}$ or MPa$^{-n}$ s $^{-1}$.
 		\end{frame}
 	\subsection{Boundary conditions and time evolution}
-		\begin{frame}[allowframebreaks]{Boundary conditions and time evolution}
+		\begin{frame}{Boundary conditions and time evolution}
 		\justifying
 			\begin{itemize}
 				\item Ice in contact with the bedrock: Weertman sliding law \cite[]{weertman1974stability}:
 				\begin{equation}
 					u_b=C{\tau_b}^m;
 				\end{equation}
-				\item The ice surface is assummed stress free $\sigma .n=0$ and ice base at $z_s$ and $z_b$ behave as free surfaces according to:
+				\pause \item The ice surface is assummed stress free $\sigma .n=0$ and ice base at $z_s$ and $z_b$ behave as free surfaces according to:
 				\begin{equation}
 					\frac{\delta z_{i}}{\delta t}+u_{i}\frac{\delta z_{i}}{\delta x}+v_{i}\frac{\delta z_{i}}{\delta y}=w_{i}+a_{i};
 				\end{equation}
 			where $a_{i}$ is the accumulation ($a_{i}>0$) or ablation ($a_{i}<0$) in meter ice equivalent per year, and $i=$ surface or base, respectively.
-			\item By vertical integration of the incompressibility condition, $w$ can be eliminated:
+			\pause \item By vertical integration of the incompressibility condition, $w$ can be eliminated:
 			\begin{equation}
 				\frac{\delta H}{\delta t}+\frac{\delta H\bar{u}}{\delta x}+\frac{\delta H \bar{v}}{\delta y}=a_s-a_b ;
 			\end{equation}
 			Where $\bar{u}$ and $\bar{v}$ are the vertically integrated horizontal velocities. 
-			\item For the ice-ocean interface, the ice flux out of the domain will be fixed as the calving rate.
+			\pause \item For the ice-ocean interface, the ice flux out of the domain will be fixed as the calving rate.
 			\end{itemize}
 		\end{frame}
 
@@ -164,24 +164,42 @@
 		\begin{figure}
 			\centering
 			\includegraphics[scale=0.4]{../fig/Numerical_modelling_scheme.png}
-			\caption{Process of modelling, starting with a physical phenomena which can be represented mathematically in a physical model than can then be discretized to solve numerically. Adapted from AntarticGlaciers.org}
+			\caption{Process of modelling, starting with a physical phenomena which can be represented mathematically in a physical model than can then be discretized to solve numerically.}
 			\label{Modelling}
 		\end{figure}
 	\end{frame}
+	\subsection{Finite element methods}
+		\begin{frame}{Finite element methods}
+		
+		\begin{itemize} 
+			\justifying
+			\item Numerical technique to calculate approximate solutions to differential equations problems.
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.2]{../fig/grid_and_bedrock.png}
+				\caption{Discretization of the glacier domain using finite elements.}
+				\label{FEM}
+			\end{figure}
+		\end{itemize}
+		\end{frame}
 	\subsection{Elmer/Ice finite element method}
 	\begin{frame}{Elmer/Ice finite element method}
-		\justifying
+		
 		\begin{itemize}
-			\item Open source finite element code, mainly developed in Finland.
-			\item The ice sheet/ice flow model Elmer/Ice is based on Elmer and includes developments related to glaciological problems. It includes a large number of dedicated solvers and users functions.
-			\item Elmer/Ice solves the Stokes equations and it includes solvers for the approximations of the Stokes equations, namely shallow shelf and shallow ice approximations.
+			\justifying
+			\item Open source finite element code, mainly developed in Grenoble and Helsinki. Still being developed and there are many contributors
+			\pause \item The ice sheet/ice flow model Elmer/Ice is based on Elmer and includes developments related to glaciological problems. It includes a large number of dedicated solvers and users functions.
+			\pause \item Elmer/Ice solves the Stokes equations and it includes solvers for the approximations of the Stokes equations, namely shallow shelf and shallow ice approximations.
 		\end{itemize}
 	\end{frame}
 	\section{Systems and experiment set-up}
 	\subsection{Calving intercomparison project CalvingMIP}
 	\begin{frame}{Calving intercomparison project}
+		\begin{itemize}
 		\justifying
-		The intercomparison project (https://github.com/JRowanJordan/CalvingMIP) is intended to develop models to explore calving, ice damage, and glacier dynamics leading to recommendations for improved calving laws in ice sheet models.
+		\item The intercomparison project (https://github.com/JRowanJordan/CalvingMIP) is intended to develop models to explore calving, ice damage, and glacier dynamics leading to recommendations for improved calving laws in ice sheet models.
+		\pause \item The objective is to develop a model based on the topographies proposed by the CalvingMIP project to study the grounding line position for different resolutions.
+		\end{itemize}
 		
 	\end{frame}
 	\subsection{Cone domain}
@@ -191,7 +209,7 @@
 		\begin{equation}
 			Bed_0=Bc-(Bc-BI)\frac{|x^2+y^2|}{r^2};
 		\end{equation}
-		Where r=800x10$^3$m, Bc=0.9 x 10$^3$m, and BI=-2 x 10$^3$m. 
+		Where r=800x10$^3$m, Bc=0.9 x 10$^3$m, and BI=-2 x 10$^3$m. \pause
 		\begin{figure}
 			\centering
 			\includegraphics[width=0.45\linewidth]{../fig/circular_topo_top.png}
@@ -272,9 +290,9 @@
 	\begin{frame}{Numerical variables, external forcings and initial condition}
 		\begin{itemize}
 			\item The numerical resolution will be the variable parameter, varying from 10km, 5km, 2km, and 1km.
-			\item The external forces acting will be gravity, as well as the ice friction and the basal stress.
-			\item The initial condition will be a topography with no ice, namely $h_0$=0m.
-			\item The CFL condition will be necessary to verify the stability of the model. It is needed that:
+			\pause \item The external forces acting will be gravity, as well as the ice friction and the basal stress.
+			\pause \item The initial condition will be a topography with no ice, namely $h_0$=0m.
+			\pause \item The CFL condition will be necessary to verify the stability of the model. It is needed that:
 			\begin{equation}
 				C=\frac{u\Delta t}{\Delta x}<C_{max};
 			\end{equation}
@@ -351,19 +369,21 @@
 		\end{figure}
 	
 	\end{frame}
-	\subsection{Thule domain}
-		\begin{frame}[allowframebreaks]{Results: Thule domain}
+	\subsection{Thule ice thickness}
+		\begin{frame}{Results: Thule ice thickness}
 			\justifying
 			\begin{figure}
 				\centering
 				\includegraphics[scale=0.2]{../fig/Profiles_Thule_combined_domains_2_con_fondo.png}%
 				\caption
 				{%
-					Profiles for the thule domain%
+					Ice thickness along the different profiles for the thule domain%
 					\label{Profiles_Thule}%
 				}%
 			\end{figure}
-			\begin{figure}
+		\end{frame}
+		\begin{frame}{Ice thickness along profiles}
+				\begin{figure}
 				\centering
 				\begin{subfigure}{.5\textwidth}
 					\centering
@@ -380,13 +400,15 @@
 				\caption{Ice thickness along the thule domain profiles.}
 				\label{Thule_profiles_capronas_and_halbranes}
 			\end{figure}
+		\end{frame}
+		\begin{frame}{Volume variation in time and per number of nodes}
 			\begin{figure}
 				\centering
 				\begin{subfigure}{.5\textwidth}
 					\centering
-					\includegraphics[width=1.1\linewidth]{../fig/H_THULE_full_all_res_vs_time.png}
-					\caption{Ice thickess variation in time.}
-					\label{H_THULE_VS_TIME}
+					\includegraphics[width=1.1\linewidth]{../fig/Volume_THULE_full_all_res_vs_num_nodes.png}
+					\caption{Volume relative variation as a function of the number of nodes.}
+					\label{H_THULE_VS_NODES}
 				\end{subfigure}%
 				\begin{subfigure}{.5\textwidth}
 					\centering
@@ -394,26 +416,11 @@
 					\caption{Volume variation in time.}
 					\label{VOLUME_THULE_VS_TIME}
 				\end{subfigure}
-				\caption{Ice thickess and volume variation in time for the Thule domain experiment.}
+				\caption{Volume variation in time and as a function of the number of nodes for the Thule experiment.}
 				\label{H_THULE_VS_TIME_VS_NODES}
 			\end{figure}
-			\begin{figure}
-				\centering
-				\begin{subfigure}{.45\textwidth}
-					\centering
-					\includegraphics[width=1.1\linewidth]{../fig/H_THULE_full_all_res_vs_num_nodes.png}
-					\caption{Ice thickness error as a function of the number of nodes.}
-					\label{H_THULE_VS_NODES}
-				\end{subfigure}
-				\begin{subfigure}{.45\textwidth}
-					\centering
-					\includegraphics[width=1.1\linewidth]{../fig/Volume_THULE_full_all_res_vs_num_nodes.png}
-					\caption{Volume relative variation as a function of the number of nodes.}
-					\label{VOLUME_THULE_VS_NODES}
-				\end{subfigure}
-				\caption{Volume and ice thickness variation as a function of the number of nodes for the thule domain experiment.}
-				\label{Volume_THULE_VS_TIME_VS_NODES}
-			\end{figure}
+		\end{frame}
+		\begin{frame}{Grounding line position along profiles in Thule}
 			\begin{figure}
 				\centering
 				\begin{subfigure}{.5\textwidth}
@@ -437,8 +444,8 @@
 		\begin{itemize}
 			\justifying
 			\item The grounding line position is increasing as a function of the resolution, due to the topography of both experiments.
-			\item The fact that the grounding line position increases in a higher resolution, means that the ice thickness will also increase, since the ice column at the grounding line is now larger due to the decreasing slope of the bedrock, meaning that the ice flux through the grounding line will increase.
-			\item The resolution has a direct impact in the symmetry of the domain of study, leading to differences in results of parts of the domain if the resolution is low.
+			\pause \item The fact of imposing a calving front, causes that the the ice thickness increases with the resolution, as the flux through the grounding line is increasing, causing that the grounding line position advances.
+			\pause \item The resolution has a direct impact in the symmetry of the domain of study, leading to differences in results of parts of the domain if the resolution is low.
 		\end{itemize}
 		\end{frame}
 	\section{Bibliography and references}
